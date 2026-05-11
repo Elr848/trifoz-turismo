@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-dark: #0a2540;
+    --primary-light: #1a3a52;
+    --accent-green: #2d8659;
+    --gold: #c9a961;
+    --gold-light: #d4af37;
+    --white: #ffffff;
+    --text-dark: #333333;
+    --gray-light: #f5f5f5;
+    --border-radius: 8px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--white);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Top Bar */
+.top-bar {
+    height: 8px;
+    background: linear-gradient(90deg, var(--primary-dark) 0%, var(--accent-green) 50%, var(--accent-green) 100%);
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(180deg, #1a4d7a 0%, #0f3a5e 70%, #0a2540 100%);
+    color: var(--gold);
+    padding: 12px 20px 8px 20px;
+    text-align: center;
+}
+
+.header-content {
+    margin-bottom: 8px;
+}
+
+.logo {
+    font-size: 5.5rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    font-family: 'Arial Black', sans-serif;
+    margin-bottom: -10px;
+    color: #f8b500;
+    background: linear-gradient(to bottom, #ffe6c2 0%, #d6ad76 45%, #8f5c30 55%, #ffe6c2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: 
+        drop-shadow(0px 1px 0px #a46d32)
+        drop-shadow(0px 2px 0px #825422)
+        drop-shadow(0px 3px 0px #6d4215)
+        drop-shadow(0px 4px 0px #58330d)
+        drop-shadow(0px 5px 0px #422305)
+        drop-shadow(0px 8px 6px rgba(0, 0, 0, 0.6))
+        drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.4));
+}
+
+.logo-subtitle {
+    font-size: 1.6rem;
+    letter-spacing: 18px;
+    font-weight: 700;
+    font-family: 'Arial Black', sans-serif;
+    margin-bottom: 30px;
+    margin-left: 18px; /* Offset for letter spacing so it's centered */
+    background: linear-gradient(to bottom, #ffe6c2 0%, #e0b471 50%, #905d31 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: 
+        drop-shadow(0px 1px 0px #a46d32)
+        drop-shadow(0px 2px 0px #6d4215)
+        drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+}
+
+.banner {
+    background: linear-gradient(to bottom, #ebd197 0%, #cba054 100%);
+    color: #132c45;
+    padding: 8px 24px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 900;
+    font-size: 1.05rem;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 4px 10px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    border: 1px solid #a67c33;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.banner:hover {
+    transform: translateY(-2px);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 6px 14px rgba(0, 0, 0, 0.5);
+}
+
+.hand-icon {
+    display: flex;
+    align-items: center;
+    color: #132c45;
+}
+
+
+/* Main Content */
+.main-content {
+    padding: 0;
+}
+
+/* Card Overlay */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 37, 64, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+}
+
+.card-with-overlay:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-logo {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    line-height: 1.2;
+}
+
+.card-logo small {
+    font-size: 0.5em;
+    letter-spacing: 2px;
+    display: block;
+}
+
+.attractions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 15px 15px 30px 15px;
+    background-color: #0a192f;
+}
+
+.card {
+    background: #0f2a4a; /* Darker card background */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(201, 169, 97, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    border-color: var(--gold);
+}
+
+.card-large {
+    grid-column: span 2;
+}
+
+.card-full {
+    grid-column: span 4;
+}
+
+.card-small {
+    grid-column: span 1;
+}
+
+.card-image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background-color: #1a3a52;
+    position: relative;
+}
+
+.card-full .card-image {
+    height: 380px;
+}
+
+.card-full .card-image img {
+    object-position: center 35%;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 15px;
+    background: linear-gradient(180deg, rgba(15, 42, 74, 0.9) 0%, rgba(10, 25, 47, 1) 100%);
+    flex-grow: 1;
+    border-top: 2px solid var(--gold);
+}
+
+.card h3 {
+    color: var(--gold);
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card p {
+    color: #e0e0e0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.card p strong {
+    color: var(--gold-light);
+    font-size: 0.75rem;
+    margin-right: 5px;
+}
+
+/* Contact Section */
+.contact {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--gold);
+}
+
+/* Contact Section */
+.contact {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+    padding: 30px 20px;
+    text-align: center;
+    color: var(--gold);
+}
+
+.whatsapp-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.whatsapp-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 25px;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--gold);
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.whatsapp-box:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+}
+
+.whatsapp-icon {
+    width: 50px;
+    height: 50px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.whatsapp-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.whatsapp-text {
+    text-align: left;
+}
+
+.whatsapp-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2px;
+}
+
+.whatsapp-number {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--gold);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-dark);
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid rgba(201, 169, 97, 0.3);
+    font-size: 0.8rem;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 3.5rem;
+        letter-spacing: 2px;
+        filter: 
+            drop-shadow(0px 1px 0px #a46d32)
+            drop-shadow(0px 2px 0px #825422)
+            drop-shadow(0px 3px 0px #6d4215)
+            drop-shadow(0px 8px 6px rgba(0, 0, 0, 0.5));
+    }
+
+    .logo-subtitle {
+        font-size: 1rem;
+        letter-spacing: 10px;
+        margin-left: 10px;
+    }
+
+    .banner {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .attractions {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    .card-large, .card-full {
+        grid-column: span 2;
+    }
+    
+    .card-small {
+        grid-column: span 1;
+    }
+
+    .card-image {
+        height: 180px;
+    }
+
+    .card-large .card-image {
+        height: 240px;
+    }
+    
+    /* Efecto Banner Base (Tablet) */
+    .card-full {
+        background: linear-gradient(180deg, #0a192f 0%, #061121 100%);
+        border-color: #2d8659;
+    }
+    
+    .card-full .card-image {
+        height: 200px; /* Banner con más altura para que no se vea aplastado en tablet */
+    }
+
+    .card-full .card-image img {
+        object-position: center 45%; /* Sube la imagen un poco más para que se vea bien el agua */
+    }
+
+    .card-full .card-content {
+        border-top: 3px solid #2d8659;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .whatsapp-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .whatsapp-number {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+    }
+    
+    .logo-subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 6px;
+        margin-left: 6px;
+    }
+
+    .card h3 {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+    
+    .card p {
+        font-size: 0.75rem;
+    }
+
+    .card-large h3 {
+        font-size: 1.25rem;
+    }
+
+    /* Adaptación del Banner para celular (<480px) */
+    .card-full .card-image {
+        height: 120px;
+    }
+
+    .card-full .card-image img {
+        object-position: center 35%;
+    }
+
+    .card-full .card-content {
+        padding: 10px;
+    }
+
+    .contact-title {
+        font-size: 1.2rem;
+    }
+
+    .whatsapp-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+}
