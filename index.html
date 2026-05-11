@@ -195,7 +195,8 @@
             background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url('images/hero_principal.jpg');
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            height: 100vh; /* Fallback for older browsers */
+            height: 100svh; /* Prevents flicker on mobile */
             display: flex;
             align-items: center;
             justify-content: center;
