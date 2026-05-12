@@ -192,6 +192,8 @@
             animation: floating 4s ease-in-out infinite;
             max-width: 950px;
             width: 95%;
+            -webkit-font-smoothing: antialiased;
+            transform: translateZ(0); /* Forzar GPU en el contenedor padre también para evitar parpadeos */
         }
 
         .fire-wrapper::before {
@@ -204,7 +206,7 @@
             will-change: transform;
             transform: translateZ(0);
             backface-visibility: hidden;
-            -webkit-font-smoothing: antialiased;
+            perspective: 1000px;
         }
 
         /* CUADRO AERO */
