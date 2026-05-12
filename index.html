@@ -161,35 +161,6 @@
         }
 
 
-        /* FRANJA AZUL SUPERIOR — estilo pinceladas azul */
-        .top-bar {
-            position: relative;
-            height: 120px;
-            width: 100%;
-            overflow: hidden;
-            z-index: 1;
-            background:
-                radial-gradient(ellipse 150% 60% at -10% 50%, rgba(65, 105, 225, 0.55) 0%, transparent 55%),
-                radial-gradient(ellipse 120% 40% at 110% 30%, rgba(30, 144, 255, 0.50) 0%, transparent 55%),
-                radial-gradient(ellipse 200% 30% at 50% 80%, rgba(0, 0, 139, 0.60) 0%, transparent 60%),
-                radial-gradient(ellipse 90% 50% at 80% 10%, rgba(0, 191, 255, 0.30) 0%, transparent 55%),
-                linear-gradient(135deg, #002366 0%, #003399 30%, #4169E1 55%, #1a53ff 80%, #001a4d 100%);
-        }
-
-        .top-bar::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 200% 25% at 20% 60%, rgba(77, 148, 255, 0.18) 0%, transparent 55%),
-                radial-gradient(ellipse 180% 20% at 75% 40%, rgba(100, 149, 237, 0.15) 0%, transparent 55%),
-                radial-gradient(ellipse 160% 18% at 50% 20%, rgba(0, 191, 255, 0.20) 0%, transparent 55%);
-            background-size: 300% 300%;
-            animation: brushstroke-drift 10s ease-in-out infinite alternate;
-            pointer-events: none;
-            z-index: 0;
-        }
-
         /* HERO SECTION */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url('images/hero_principal.jpg');
@@ -210,7 +181,7 @@
         /* LLAMA ROTATIVA */
         .fire-wrapper {
             position: relative;
-            margin-top: -160px;
+            margin-top: 20px;
             z-index: 10;
             padding: 4px;
             border-radius: 15px;
@@ -708,7 +679,7 @@
 
             .fire-wrapper {
                 width: 96%;
-                margin-top: -30px;
+                margin-top: 20px;
             }
 
             .hero-container {
@@ -724,12 +695,8 @@
                 align-items: flex-start;
             }
 
-            .top-bar {
-                height: 80px;
-            }
-
             .fire-wrapper {
-                margin-top: -100px;
+                margin-top: 20px;
                 width: 97%;
             }
 
@@ -828,12 +795,8 @@
                 align-items: flex-start;
             }
 
-            .top-bar {
-                height: 60px;
-            }
-
             .fire-wrapper {
-                margin-top: -80px;
+                margin-top: 20px;
                 border-radius: 10px;
             }
 
@@ -956,8 +919,6 @@
         <div class="grass-blade"></div>
         <div class="gold-lines-overlay"></div>
     </div>
-
-    <div class="top-bar"></div>
 
     <section class="hero">
         <div class="fire-wrapper">
