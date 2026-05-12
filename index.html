@@ -25,7 +25,7 @@
         body {
             margin: 0;
             font-family: 'Open Sans', sans-serif;
-            background: var(--verde-selva);
+            background: #000;
             color: white;
             overflow-x: hidden;
             position: relative;
@@ -47,7 +47,7 @@
             z-index: -1;
             overflow: hidden;
             pointer-events: none;
-            background: linear-gradient(to bottom, #001a4d 0%, #002366 100%);
+            background: #000;
         }
 
         .grass-blade {
@@ -55,7 +55,7 @@
             bottom: -100px;
             width: 150%;
             height: 500px;
-            background: radial-gradient(ellipse at 50% 100%, rgba(65, 105, 225, 0.25) 0%, transparent 80%);
+            background: radial-gradient(ellipse at 50% 100%, rgba(212, 175, 55, 0.15) 0%, transparent 80%);
             filter: blur(60px);
             animation: wave-grass 7s ease-in-out infinite alternate;
             transform-origin: bottom center;
@@ -63,7 +63,7 @@
 
         .grass-blade:nth-child(2) {
             height: 600px;
-            background: radial-gradient(ellipse at 20% 100%, rgba(30, 144, 255, 0.2) 0%, transparent 75%);
+            background: radial-gradient(ellipse at 20% 100%, rgba(255, 215, 0, 0.1) 0%, transparent 75%);
             animation-duration: 11s;
             animation-delay: -3s;
             opacity: 0.8;
@@ -71,7 +71,7 @@
 
         .grass-blade:nth-child(3) {
             height: 450px;
-            background: radial-gradient(ellipse at 80% 100%, rgba(0, 0, 139, 0.3) 0%, transparent 70%);
+            background: radial-gradient(ellipse at 80% 100%, rgba(255, 69, 0, 0.15) 0%, transparent 70%);
             animation-duration: 9s;
             animation-delay: -6s;
             opacity: 0.9;
@@ -79,7 +79,7 @@
 
         .grass-blade:nth-child(4) {
             height: 700px;
-            background: radial-gradient(ellipse at 50% 100%, rgba(0, 35, 102, 0.4) 0%, transparent 85%);
+            background: radial-gradient(ellipse at 50% 100%, rgba(212, 175, 55, 0.2) 0%, transparent 85%);
             animation-duration: 15s;
             animation-delay: -1s;
             opacity: 0.6;
@@ -303,36 +303,13 @@
             font-weight: 600;
         }
 
-        /* SECCIÓN ATRACCIONES — estilo pinceladas azul */
+        /* SECCIÓN ATRACCIONES */
         .attractions {
             position: relative;
             padding: 60px 20px 80px;
             text-align: center;
             overflow: hidden;
-            background:
-                radial-gradient(ellipse 130% 35% at 5% 25%, rgba(65, 105, 225, 0.45) 0%, transparent 60%),
-                radial-gradient(ellipse 110% 28% at 90% 15%, rgba(30, 144, 255, 0.50) 0%, transparent 60%),
-                radial-gradient(ellipse 150% 22% at 50% 60%, rgba(0, 0, 139, 0.55) 0%, transparent 60%),
-                radial-gradient(ellipse 80% 40% at 15% 80%, rgba(0, 191, 255, 0.40) 0%, transparent 65%),
-                radial-gradient(ellipse 100% 30% at 80% 75%, rgba(0, 35, 102, 0.55) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 45% at 98% 50%, rgba(0, 191, 255, 0.25) 0%, transparent 65%),
-                linear-gradient(145deg, #001a4d 0%, #003399 25%, #4169E1 50%, #1a53ff 75%, #000d1a 100%);
-        }
-
-        /* Pinceladas animadas capa extra — azul flows */
-        .attractions::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 200% 20% at 25% 40%, rgba(77, 148, 255, 0.14) 0%, transparent 55%),
-                radial-gradient(ellipse 170% 16% at 72% 62%, rgba(100, 149, 237, 0.12) 0%, transparent 55%),
-                radial-gradient(ellipse 140% 14% at 50% 18%, rgba(0, 191, 255, 0.16) 0%, transparent 55%),
-                radial-gradient(ellipse 160% 18% at 10% 78%, rgba(30, 144, 255, 0.13) 0%, transparent 55%);
-            background-size: 300% 300%;
-            animation: brushstroke-drift 14s ease-in-out infinite alternate;
-            pointer-events: none;
-            z-index: 0;
+            background: transparent;
         }
 
         .attractions>* {
