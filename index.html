@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>TRIFOZ TURISMO - VIP FIRE & ELECTRIC</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -730,12 +730,15 @@
             }
 
             .hero-container {
-                padding: 22px 18px;
+                padding: 20px 18px 22px 18px;
+                margin-top: 0;
+                height: auto;
             }
 
             .hero-container h1 {
-                font-size: clamp(1.4rem, 8vw, 2.6rem);
+                font-size: 1.8rem;
                 letter-spacing: 4px;
+                margin-top: 10px;
             }
 
             .hero-container h2 {
@@ -827,13 +830,30 @@
             }
 
             .hero-container {
-                padding: 18px 12px;
+                padding: 10px 12px 18px 12px !important;
+                margin-top: 5px !important;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
                 border-radius: 8px;
             }
 
             .hero-container h1 {
-                font-size: clamp(1.1rem, 9vw, 2rem);
+                font-size: 1.5rem !important;
+                margin-bottom: 5px !important;
                 letter-spacing: 2px;
+            }
+
+            .hero-container p,
+            .hero-container span {
+                font-size: 0.9rem !important;
+                margin-bottom: 8px !important;
+                line-height: 1.2 !important;
+            }
+
+            .flags-section {
+                margin-top: 10px !important;
+                padding-bottom: 20px !important;
             }
 
             .hero-container h2 {
