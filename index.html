@@ -779,47 +779,46 @@
                 padding: 40px 14px 60px;
             }
 
+            /* Botão LIBRAS compacto em tablet */
             .btn-libras-premium {
-                padding: 13px 22px;
-                font-size: 0.82rem;
-                margin-bottom: 30px;
+                padding: 8px 16px;
+                font-size: 0.78rem;
+                margin-bottom: 20px;
                 text-align: center;
-                line-height: 1.5;
+                line-height: 1.4;
+                gap: 12px;
+            }
+
+            .libras-icon-img {
+                height: 70px !important;
             }
 
             .libras-icon-fa {
-                font-size: 24px;
-                margin-right: 8px;
+                font-size: 20px;
+                margin-right: 6px;
             }
 
+            /* Grade em 2 colunas para tablet */
             .grid-attractions {
-                grid-template-columns: 1fr;
-                gap: 22px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
                 padding: 0 4px;
             }
 
             .card-image img {
-                height: 200px;
+                height: 140px;
             }
 
             .card-content h3 {
-                font-size: 1.1rem;
+                font-size: 0.95rem;
+            }
+
+            .card-content p {
+                font-size: 0.8rem;
             }
 
             .video-card {
                 max-width: 100% !important;
-            }
-
-            .whatsapp-lux {
-                bottom: 16px;
-                right: 16px;
-                padding: 10px 16px;
-                font-size: 0.85rem;
-                gap: 8px;
-            }
-
-            .whatsapp-lux i {
-                font-size: 1.4rem;
             }
 
             footer {
@@ -894,61 +893,74 @@
                 letter-spacing: 0.5px;
             }
 
+            /* Botão LIBRAS ainda menor em celular */
             .btn-libras-premium {
-                padding: 11px 14px;
-                font-size: 0.75rem;
-                width: 90%;
-                display: block;
+                padding: 7px 12px;
+                font-size: 0.7rem;
+                width: 92%;
+                display: flex;
                 margin-left: auto;
                 margin-right: auto;
+                margin-bottom: 16px;
+                gap: 8px;
+            }
+
+            .libras-icon-img {
+                height: 52px !important;
             }
 
             .libras-icon-fa {
-                font-size: 20px;
-                margin-right: 6px;
+                font-size: 18px;
+                margin-right: 4px;
+            }
+
+            .libras-pt {
+                font-size: 0.85rem;
+            }
+
+            .libras-en, .libras-multi {
+                font-size: 0.7rem;
             }
 
             .attractions {
-                padding: 30px 10px 50px;
+                padding: 22px 8px 80px;
+            }
+
+            /* Grade em 2 colunas para celular */
+            .grid-attractions {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                padding: 0 2px;
             }
 
             .card-image img {
-                height: 180px;
+                height: 110px;
+            }
+
+            /* Vídeo ocupa linha inteira */
+            .video-card {
+                grid-column: 1 / -1;
+                max-width: 100% !important;
             }
 
             .card-content {
-                padding: 14px;
+                padding: 10px;
             }
 
             .card-content h3 {
-                font-size: 1rem;
+                font-size: 0.8rem;
+                margin-bottom: 4px;
             }
 
-            .whatsapp-lux {
-                bottom: 12px;
-                right: 12px;
-                padding: 8px 14px;
-                font-size: 0.7rem;
-                gap: 6px;
-                border-radius: 40px;
-            }
-
-            .whatsapp-lux i {
-                font-size: 1.1rem;
-            }
-
-            .whatsapp-lux span {
-                display: inline;
-                white-space: nowrap;
-                letter-spacing: -0.3px;
+            .card-content p {
+                font-size: 0.72rem;
+                margin: 0;
             }
 
             footer {
                 padding: 20px 12px;
                 font-size: 0.78rem;
             }
-
-
         }
 
         /* ============================================
@@ -1369,7 +1381,7 @@
                     <div class="booking-field-body">
                         <span class="booking-field-label">Destino</span>
                         <select id="booking-destino" class="booking-select" aria-label="Selecionar destino">
-                            <option value="">¿A dónde vas?</option>
+                            <option value="">Para onde vai?</option>
                             <option value="Cataratas do Iguaçu (Brasil)">🇧🇷 Cataratas do Iguaçu</option>
                             <option value="Cataratas del Iguazú (Argentina)">🇦🇷 Cataratas del Iguazú</option>
                             <option value="Parque das Aves">🦜 Parque das Aves</option>
@@ -1455,7 +1467,7 @@
             <div class="booking-mobile-field-body">
                 <span class="booking-mobile-label">Destino</span>
                 <select id="booking-destino-m" class="booking-mobile-select" aria-label="Destino">
-                    <option value="">¿A dónde vas?</option>
+                    <option value="">Para onde vai?</option>
                     <option value="Cataratas do Iguaçu (Brasil)">🇧🇷 Cataratas do Iguaçu</option>
                     <option value="Cataratas del Iguazú (Argentina)">🇦🇷 Cataratas del Iguazú</option>
                     <option value="Parque das Aves">🦜 Parque das Aves</option>
