@@ -702,9 +702,32 @@
             }
 
             .fire-wrapper::before {
-                animation: none !important; /* Quitar parpadeo por rotación */
-                background: linear-gradient(45deg, #ff4500, #ffd700) !important;
-                will-change: auto !important;
+                animation: rotate-fire 3s linear infinite !important; /* MANTENER ESTE EFECTO */
+                will-change: transform !important;
+            }
+
+            /* Desactivar todos los demás efectos, transiciones y animaciones en móviles */
+            .guia-box, 
+            .libras-icon-fa, 
+            .whatsapp-lux,
+            .card,
+            .card:hover,
+            .flag-icon,
+            .flag-icon:hover,
+            .btn-libras-premium,
+            .btn-libras-premium:hover,
+            .whatsapp-lux:hover,
+            .hero-container h1 {
+                animation: none !important;
+                transform: none !important;
+                box-shadow: none !important;
+                transition: none !important;
+            }
+
+            /* Desactivar específicamente el emoji que señala en el video */
+            [style*="animation: pointing-down"] {
+                animation: none !important;
+                transition: none !important;
             }
 
             .hero-container {
