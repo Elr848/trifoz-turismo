@@ -950,6 +950,211 @@
 
 
         }
+
+        /* ============================================
+           LUXURY BOOKING BAR
+           ============================================ */
+        .booking-bar-wrapper {
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 94%;
+            max-width: 980px;
+            z-index: 20;
+        }
+
+        .booking-bar {
+            display: flex;
+            align-items: stretch;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+            border: 1px solid rgba(255, 255, 255, 0.38);
+            border-radius: 60px;
+            padding: 10px 10px 10px 24px;
+            gap: 4px;
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.35),
+                inset 0 1px 0 rgba(255,255,255,0.45);
+        }
+
+        .booking-field {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 18px;
+            cursor: pointer;
+            border-right: 1px solid rgba(255,255,255,0.22);
+            transition: background 0.25s;
+            border-radius: 40px;
+            min-width: 0;
+        }
+
+        .booking-field:last-of-type {
+            border-right: none;
+        }
+
+        .booking-field:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .booking-field-icon {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.75);
+            flex-shrink: 0;
+        }
+
+        .booking-field-body {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .booking-field-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 2px;
+            white-space: nowrap;
+        }
+
+        .booking-select,
+        .booking-datetime {
+            background: transparent;
+            border: none;
+            outline: none;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            width: 100%;
+            padding: 0;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .booking-select option {
+            background: #0a2540;
+            color: #fff;
+        }
+
+        .booking-select option.option-highlight {
+            color: #ffd700;
+            font-weight: 700;
+        }
+
+        /* Passenger counter */
+        .passenger-counter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pax-btn {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255,255,255,0.55);
+            background: transparent;
+            color: #fff;
+            font-size: 1rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+            flex-shrink: 0;
+        }
+
+        .pax-btn:hover {
+            background: rgba(255,255,255,0.25);
+            border-color: #fff;
+        }
+
+        .pax-value {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
+            min-width: 22px;
+            text-align: center;
+        }
+
+        /* CTA Button */
+        .booking-cta {
+            flex-shrink: 0;
+            background: var(--azul-electrico);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 26px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 900;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+            box-shadow: 0 4px 18px rgba(20, 178, 196, 0.55);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .booking-cta:hover {
+            background: #0ea5b8;
+            transform: scale(1.04);
+            box-shadow: 0 6px 24px rgba(20, 178, 196, 0.75);
+        }
+
+        .booking-cta:active {
+            transform: scale(0.98);
+        }
+
+        /* MOBILE booking bar stacks vertically */
+        @media (max-width: 768px) {
+            .booking-bar-wrapper {
+                bottom: 18px;
+                width: 92%;
+            }
+
+            .booking-bar {
+                flex-direction: column;
+                border-radius: 24px;
+                padding: 18px 20px 14px;
+                gap: 0;
+            }
+
+            .booking-field {
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.18);
+                border-radius: 0;
+                padding: 12px 4px;
+            }
+
+            .booking-field:last-of-type {
+                border-bottom: none;
+                padding-bottom: 8px;
+            }
+
+            .booking-cta {
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+                padding: 16px;
+                font-size: 0.85rem;
+            }
+
+            .booking-field:hover {
+                background: transparent;
+            }
+        }
     </style>
 </head>
 
@@ -997,6 +1202,67 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- LUXURY BOOKING BAR -->
+        <div class="booking-bar-wrapper">
+            <div class="booking-bar">
+
+                <!-- Field 1: Destination -->
+                <div class="booking-field" onclick="document.getElementById('booking-destino').focus()">
+                    <div class="booking-field-icon">📍</div>
+                    <div class="booking-field-body">
+                        <span class="booking-field-label">Destino</span>
+                        <select id="booking-destino" class="booking-select" aria-label="Selecionar destino">
+                            <option value="">¿A dónde vas?</option>
+                            <option value="Cataratas do Iguaçu (Brasil)">🇧🇷 Cataratas do Iguaçu</option>
+                            <option value="Cataratas del Iguazú (Argentina)">🇦🇷 Cataratas del Iguazú</option>
+                            <option value="Parque das Aves">🦜 Parque das Aves</option>
+                            <option value="Marco das 3 Fronteiras">🏛️ Marco das 3 Fronteiras</option>
+                            <option value="Itaipu Binacional">⚡ Itaipu Binacional</option>
+                            <option value="Macuco Safari">🚤 Macuco Safari</option>
+                            <option value="Roda Gigante Yup Star">🎡 Roda Gigante Yup Star</option>
+                            <option value="Museu de Cera Dreamland">🎭 Museu de Cera Dreamland</option>
+                            <option value="Ciudad del Este (Paraguay)">🇵🇾 Ciudad del Este</option>
+                            <option value="Roteiro Personalizado" class="option-highlight">✨ Preciso de ajuda com o roteiro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Field 2: Passengers -->
+                <div class="booking-field">
+                    <div class="booking-field-icon">👥</div>
+                    <div class="booking-field-body">
+                        <span class="booking-field-label">Passageiros</span>
+                        <div class="passenger-counter">
+                            <button class="pax-btn" id="pax-minus" onclick="changePax(-1)" aria-label="Diminuir passageiros">−</button>
+                            <span class="pax-value" id="pax-display">2</span>
+                            <button class="pax-btn" id="pax-plus" onclick="changePax(1)" aria-label="Aumentar passageiros">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Field 3: Date & Time -->
+                <div class="booking-field" onclick="document.getElementById('booking-datetime').showPicker ? document.getElementById('booking-datetime').showPicker() : document.getElementById('booking-datetime').focus()">
+                    <div class="booking-field-icon">🗓️</div>
+                    <div class="booking-field-body">
+                        <span class="booking-field-label">Data &amp; Hora</span>
+                        <input
+                            type="datetime-local"
+                            id="booking-datetime"
+                            class="booking-datetime"
+                            aria-label="Data e hora do traslado"
+                        >
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <button class="booking-cta" id="booking-submit-btn" onclick="enviarReservaWhatsApp()" aria-label="Consultar disponibilidade via WhatsApp">
+                    <i class="fab fa-whatsapp" style="font-size:1.1rem;"></i>
+                    RESERVAR AGORA
+                </button>
+
             </div>
         </div>
     </section>
@@ -1138,6 +1404,58 @@
     </script>
 
     <script src="script.js"></script>
+
+    <script>
+        /* =========================================
+           BOOKING BAR — Passenger counter & WhatsApp
+           ========================================= */
+        let paxCount = 2;
+        const minPax = 1;
+        const maxPax = 20;
+
+        function changePax(delta) {
+            paxCount = Math.min(maxPax, Math.max(minPax, paxCount + delta));
+            document.getElementById('pax-display').textContent = paxCount;
+        }
+
+        // Pre-fill datetime with tomorrow at 09:00
+        (function setDefaultDatetime() {
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(9, 0, 0, 0);
+            const pad = n => String(n).padStart(2, '0');
+            const val = `${tomorrow.getFullYear()}-${pad(tomorrow.getMonth()+1)}-${pad(tomorrow.getDate())}T09:00`;
+            document.getElementById('booking-datetime').value = val;
+        })();
+
+        function enviarReservaWhatsApp() {
+            const destino  = document.getElementById('booking-destino').value;
+            const pax      = document.getElementById('pax-display').textContent;
+            const dtRaw    = document.getElementById('booking-datetime').value;
+
+            if (!destino) {
+                alert('Por favor, selecione um destino.');
+                document.getElementById('booking-destino').focus();
+                return;
+            }
+            if (!dtRaw) {
+                alert('Por favor, selecione a data e hora.');
+                document.getElementById('booking-datetime').focus();
+                return;
+            }
+
+            // Format: DD/MM HH:MM
+            const dt = new Date(dtRaw);
+            const pad = n => String(n).padStart(2, '0');
+            const dataFmt = `${pad(dt.getDate())}/${pad(dt.getMonth()+1)}`;
+            const horaFmt = `${pad(dt.getHours())}:${pad(dt.getMinutes())}`;
+
+            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${dataFmt}* a las *${horaFmt}*. ¿Me podrías dar más información?`;
+            const phone = '5545933003337';
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank');
+        }
+    </script>
 
 </body>
 
