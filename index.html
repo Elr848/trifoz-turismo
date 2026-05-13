@@ -163,9 +163,7 @@
 
         /* HERO SECTION */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url('images/hero_principal.jpg');
-            background-size: cover;
-            background-position: center;
+            position: relative;
             height: 100vh;
             /* Fallback for older browsers */
             height: 100svh;
@@ -173,9 +171,21 @@
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            position: relative;
             z-index: 1;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url('images/hero_principal.jpg');
+            background-size: cover;
+            background-position: center;
             filter: contrast(1.15) brightness(1.3) saturate(1.1);
+            z-index: -1;
         }
 
         /* LLAMA ROTATIVA */
@@ -693,26 +703,57 @@
            RESPONSIVE — TABLET (≤768px)
            ============================================ */
         @media (max-width: 768px) {
+            /* OPTIMIZACIONES DE RENDIMIENTO EXTREMO PARA MÓVILES */
+            html, body {
+                overflow-x: hidden !important;
+                width: 100%;
+            }
+
+            /* Apagar elementos súper pesados en GPU */
+            .grass-blade, 
+            .gold-lines-overlay,
+            .attractions::before,
+            .btn-libras-premium::before {
+                display: none !important;
+                animation: none !important;
+            }
+
             .hero {
                 align-items: flex-start;
             }
 
-
             .fire-wrapper {
                 margin-top: 20px;
                 width: 97%;
+                animation: none !important; /* Desactivar flotación en móviles */
+                transform: translateZ(0); /* Forzar aceleración por hardware estática */
+            }
+
+            .fire-wrapper::before {
+                animation: none !important; /* Quitar parpadeo por rotación */
+                background: linear-gradient(45deg, #ff4500, #ffd700) !important;
+                will-change: auto !important;
             }
 
             .hero-container {
                 padding: 20px 18px 22px 18px;
                 margin-top: 0;
                 height: auto;
+                backdrop-filter: none !important; /* Filtro blur colapsa celulares */
+                -webkit-backdrop-filter: none !important;
+                background: rgba(0, 0, 0, 0.85) !important;
+                transform: translateZ(0);
             }
 
             .hero-container h1 {
                 font-size: 1.8rem;
                 letter-spacing: 4px;
                 margin-top: 10px;
+                animation: none !important; /* Desactivar brillo de texto */
+                background: linear-gradient(to right, #fff, #ffd700, #ff4500);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
 
             .hero-container h2 {
