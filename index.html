@@ -1108,9 +1108,30 @@
         }
 
         .booking-cta:hover {
-            background: #0ea5b8;
-            transform: scale(1.04);
-            box-shadow: 0 6px 24px rgba(20, 178, 196, 0.75);
+            background: #1ede6f;
+            color: #fff;
+            transform: scale(1.06);
+            box-shadow:
+                0 0 12px #25d366,
+                0 0 28px #1ede6f,
+                0 0 55px rgba(37, 211, 102, 0.7),
+                0 8px 24px rgba(30, 222, 111, 0.5);
+        }
+
+        .booking-cta-phone {
+            display: block;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            opacity: 0.85;
+            text-transform: none;
+            margin-top: 1px;
+        }
+
+        .booking-cta-label {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
         }
 
         .booking-cta:active {
@@ -1259,8 +1280,11 @@
 
                 <!-- CTA Button -->
                 <button class="booking-cta" id="booking-submit-btn" onclick="enviarReservaWhatsApp()" aria-label="Consultar disponibilidade via WhatsApp">
-                    <i class="fab fa-whatsapp" style="font-size:1.1rem;"></i>
-                    RESERVAR AGORA
+                    <i class="fab fa-whatsapp" style="font-size:1.25rem;"></i>
+                    <span class="booking-cta-label">
+                        RESERVAR AGORA
+                        <span class="booking-cta-phone">+55(45)933003337</span>
+                    </span>
                 </button>
 
             </div>
