@@ -1139,43 +1139,175 @@
             transform: scale(0.98);
         }
 
-        /* MOBILE booking bar stacks vertically */
+        /* Tablet */
+        @media (max-width: 1024px) {
+            .booking-bar-wrapper { width: 96%; }
+            .booking-field { padding: 8px 12px; }
+        }
+
+        /* Mobile: oculta barra, muestra botón flotante */
         @media (max-width: 768px) {
-            .booking-bar-wrapper {
-                bottom: 18px;
-                width: 92%;
-            }
+            .booking-bar-wrapper { display: none; }
+            .booking-mobile-btn  { display: flex !important; }
+            .booking-mobile-panel { display: flex !important; }
+        }
 
-            .booking-bar {
-                flex-direction: column;
-                border-radius: 24px;
-                padding: 18px 20px 14px;
-                gap: 0;
-            }
+        /* ---- Botón flotante móvil ---- */
+        .booking-mobile-btn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            background: linear-gradient(135deg, #14b2c4 0%, #0a8a99 100%);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 13px 26px;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 6px 24px rgba(20,178,196,0.6), 0 2px 8px rgba(0,0,0,0.3);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.84rem;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            min-width: 240px;
+            transition: transform 0.2s;
+        }
+        .booking-mobile-btn:active { transform: translateX(-50%) scale(0.96); }
+        .booking-mobile-btn-label {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.3;
+            text-align: left;
+        }
+        .booking-mobile-btn-phone {
+            font-size: 0.75rem;
+            font-weight: 600;
+            opacity: 0.9;
+            text-transform: none;
+        }
 
-            .booking-field {
-                border-right: none;
-                border-bottom: 1px solid rgba(255,255,255,0.18);
-                border-radius: 0;
-                padding: 12px 4px;
-            }
+        /* ---- Overlay ---- */
+        .booking-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 9998;
+        }
+        .booking-overlay.open { display: block; }
 
-            .booking-field:last-of-type {
-                border-bottom: none;
-                padding-bottom: 8px;
-            }
+        /* ---- Panel deslizante ---- */
+        .booking-mobile-panel {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10000;
+            background: rgba(0, 10, 30, 0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255,255,255,0.15);
+            border-radius: 24px 24px 0 0;
+            padding: 14px 22px 36px;
+            flex-direction: column;
+            transform: translateY(100%);
+            transition: transform 0.35s cubic-bezier(0.32,0.72,0,1);
+            box-shadow: 0 -8px 40px rgba(0,0,0,0.5);
+        }
+        .booking-mobile-panel.open { transform: translateY(0); }
 
-            .booking-cta {
-                width: 100%;
-                justify-content: center;
-                margin-top: 10px;
-                padding: 16px;
-                font-size: 0.85rem;
-            }
-
-            .booking-field:hover {
-                background: transparent;
-            }
+        .booking-mobile-panel-handle {
+            width: 40px; height: 4px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+            margin: 0 auto 14px;
+        }
+        .booking-mobile-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .booking-mobile-panel-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 900;
+            color: var(--azul-electrico);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .booking-mobile-close {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #fff;
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .booking-mobile-field {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 13px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.10);
+        }
+        .booking-mobile-field:last-of-type { border-bottom: none; }
+        .booking-mobile-field-icon { font-size: 1.2rem; width: 28px; text-align: center; flex-shrink: 0; }
+        .booking-mobile-field-body { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+        .booking-mobile-label {
+            font-size: 0.65rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px;
+            color: var(--azul-electrico); margin-bottom: 3px;
+        }
+        .booking-mobile-select,
+        .booking-mobile-datetime {
+            background: transparent; border: none; outline: none;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem; font-weight: 700; color: #fff;
+            width: 100%; padding: 0;
+            appearance: none; -webkit-appearance: none;
+        }
+        .booking-mobile-pax {
+            display: flex; align-items: center; gap: 14px;
+        }
+        .booking-mobile-pax-btn {
+            width: 28px; height: 28px; border-radius: 50%;
+            border: 1.5px solid rgba(255,255,255,0.5);
+            background: transparent; color: #fff;
+            font-size: 1.1rem;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+        }
+        .booking-mobile-pax-val {
+            font-size: 1.1rem; font-weight: 700; color: #fff;
+            min-width: 24px; text-align: center;
+        }
+        .booking-mobile-cta {
+            width: 100%; margin-top: 16px;
+            background: linear-gradient(135deg, #14b2c4 0%, #0a8a99 100%);
+            color: #fff; border: none; border-radius: 50px; padding: 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem; font-weight: 900; letter-spacing: 0.5px;
+            text-transform: uppercase; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            box-shadow: 0 4px 18px rgba(20,178,196,0.5);
+        }
+        .booking-mobile-cta:active { background: #0a8a99; }
+        .booking-mobile-cta-phone {
+            display: block; font-size: 0.8rem; font-weight: 600;
+            opacity: 0.9; text-transform: none; letter-spacing: 0.2px; margin-top: 2px;
         }
     </style>
 </head>
@@ -1291,6 +1423,89 @@
             </div>
         </div>
     </section>
+
+    <!-- BOTÃO FLUTUANTE MÓVIL -->
+    <button
+        class="booking-mobile-btn"
+        id="booking-mobile-trigger"
+        onclick="abrirFormularioMovil()"
+        aria-label="Abrir formulário de reserva"
+    >
+        <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
+        <span class="booking-mobile-btn-label">
+            RESERVAR AGORA
+            <span class="booking-mobile-btn-phone">+55(45)933003337</span>
+        </span>
+    </button>
+
+    <!-- OVERLAY -->
+    <div class="booking-overlay" id="booking-overlay" onclick="cerrarFormularioMovil()"></div>
+
+    <!-- PANEL EXPANDIBLE MÓVIL -->
+    <div class="booking-mobile-panel" id="booking-mobile-panel">
+        <div class="booking-mobile-panel-handle"></div>
+        <div class="booking-mobile-panel-header">
+            <span class="booking-mobile-panel-title">📍 Faça sua Reserva</span>
+            <button class="booking-mobile-close" onclick="cerrarFormularioMovil()" aria-label="Fechar">&#x2715;</button>
+        </div>
+
+        <!-- Destino -->
+        <div class="booking-mobile-field">
+            <div class="booking-mobile-field-icon">📍</div>
+            <div class="booking-mobile-field-body">
+                <span class="booking-mobile-label">Destino</span>
+                <select id="booking-destino-m" class="booking-mobile-select" aria-label="Destino">
+                    <option value="">¿A dónde vas?</option>
+                    <option value="Cataratas do Iguaçu (Brasil)">🇧🇷 Cataratas do Iguaçu</option>
+                    <option value="Cataratas del Iguazú (Argentina)">🇦🇷 Cataratas del Iguazú</option>
+                    <option value="Parque das Aves">🦜 Parque das Aves</option>
+                    <option value="Marco das 3 Fronteiras">🏛️ Marco das 3 Fronteiras</option>
+                    <option value="Itaipu Binacional">⚡ Itaipu Binacional</option>
+                    <option value="Macuco Safari">🚤 Macuco Safari</option>
+                    <option value="Roda Gigante Yup Star">🎡 Roda Gigante Yup Star</option>
+                    <option value="Museu de Cera Dreamland">🎭 Museu de Cera Dreamland</option>
+                    <option value="Ciudad del Este (Paraguay)">🇵🇾 Ciudad del Este</option>
+                    <option value="Roteiro Personalizado">✨ Preciso de ajuda com o roteiro</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Passageiros -->
+        <div class="booking-mobile-field">
+            <div class="booking-mobile-field-icon">👥</div>
+            <div class="booking-mobile-field-body">
+                <span class="booking-mobile-label">Passageiros</span>
+                <div class="booking-mobile-pax">
+                    <button class="booking-mobile-pax-btn" onclick="changePaxM(-1)" aria-label="Diminuir">−</button>
+                    <span class="booking-mobile-pax-val" id="pax-display-m">2</span>
+                    <button class="booking-mobile-pax-btn" onclick="changePaxM(1)" aria-label="Aumentar">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data & Hora -->
+        <div class="booking-mobile-field">
+            <div class="booking-mobile-field-icon">🗓️</div>
+            <div class="booking-mobile-field-body">
+                <span class="booking-mobile-label">Data &amp; Hora</span>
+                <input
+                    type="datetime-local"
+                    id="booking-datetime-m"
+                    class="booking-mobile-datetime"
+                    aria-label="Data e hora"
+                >
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <button class="booking-mobile-cta" onclick="enviarReservaMovil()" aria-label="Enviar reserva por WhatsApp">
+            <i class="fab fa-whatsapp" style="font-size:1.3rem;"></i>
+            <span style="display:flex;flex-direction:column;line-height:1.3;">
+                RESERVAR AGORA
+                <span class="booking-mobile-cta-phone">+55(45)933003337</span>
+            </span>
+        </button>
+    </div>
 
     <section class="attractions">
 
@@ -1429,7 +1644,7 @@
 
     <script>
         /* =========================================
-           BOOKING BAR — Passenger counter & WhatsApp
+           BOOKING BAR — Desktop
            ========================================= */
         let paxCount = 2;
         const minPax = 1;
@@ -1440,42 +1655,62 @@
             document.getElementById('pax-display').textContent = paxCount;
         }
 
-        // Pre-fill datetime with tomorrow at 09:00
+        // Pre-fill desktop datetime
         (function setDefaultDatetime() {
             const tomorrow = new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
-            tomorrow.setHours(9, 0, 0, 0);
             const pad = n => String(n).padStart(2, '0');
             const val = `${tomorrow.getFullYear()}-${pad(tomorrow.getMonth()+1)}-${pad(tomorrow.getDate())}T09:00`;
-            document.getElementById('booking-datetime').value = val;
+            const dtEl = document.getElementById('booking-datetime');
+            if (dtEl) dtEl.value = val;
+            const dtElM = document.getElementById('booking-datetime-m');
+            if (dtElM) dtElM.value = val;
         })();
 
         function enviarReservaWhatsApp() {
-            const destino  = document.getElementById('booking-destino').value;
-            const pax      = document.getElementById('pax-display').textContent;
-            const dtRaw    = document.getElementById('booking-datetime').value;
-
-            if (!destino) {
-                alert('Por favor, selecione um destino.');
-                document.getElementById('booking-destino').focus();
-                return;
-            }
-            if (!dtRaw) {
-                alert('Por favor, selecione a data e hora.');
-                document.getElementById('booking-datetime').focus();
-                return;
-            }
-
-            // Format: DD/MM HH:MM
+            const destino = document.getElementById('booking-destino').value;
+            const pax     = document.getElementById('pax-display').textContent;
+            const dtRaw   = document.getElementById('booking-datetime').value;
+            if (!destino) { alert('Por favor, selecione um destino.'); return; }
+            if (!dtRaw)   { alert('Por favor, selecione a data e hora.'); return; }
             const dt = new Date(dtRaw);
             const pad = n => String(n).padStart(2, '0');
-            const dataFmt = `${pad(dt.getDate())}/${pad(dt.getMonth()+1)}`;
-            const horaFmt = `${pad(dt.getHours())}:${pad(dt.getMinutes())}`;
+            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth()+1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
+            window.open(`https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`, '_blank');
+        }
 
-            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${dataFmt}* a las *${horaFmt}*. ¿Me podrías dar más información?`;
-            const phone = '5545933003337';
-            const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-            window.open(url, '_blank');
+        /* =========================================
+           BOOKING MÓVIL — Toggle + WhatsApp
+           ========================================= */
+        let paxCountM = 2;
+
+        function changePaxM(delta) {
+            paxCountM = Math.min(20, Math.max(1, paxCountM + delta));
+            document.getElementById('pax-display-m').textContent = paxCountM;
+        }
+
+        function abrirFormularioMovil() {
+            document.getElementById('booking-mobile-panel').classList.add('open');
+            document.getElementById('booking-overlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function cerrarFormularioMovil() {
+            document.getElementById('booking-mobile-panel').classList.remove('open');
+            document.getElementById('booking-overlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function enviarReservaMovil() {
+            const destino = document.getElementById('booking-destino-m').value;
+            const pax     = document.getElementById('pax-display-m').textContent;
+            const dtRaw   = document.getElementById('booking-datetime-m').value;
+            if (!destino) { alert('Por favor, selecione um destino.'); return; }
+            if (!dtRaw)   { alert('Por favor, selecione a data e hora.'); return; }
+            const dt = new Date(dtRaw);
+            const pad = n => String(n).padStart(2, '0');
+            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth()+1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
+            window.open(`https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`, '_blank');
         }
     </script>
 
