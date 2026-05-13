@@ -117,34 +117,7 @@
             opacity: 0.4;
         }
 
-        /* LÍNEAS DORADAS DIAGONALES EN MOVIMIENTO */
-        .gold-lines-overlay {
-            position: fixed;
-            top: -100%;
-            left: -100%;
-            width: 300%;
-            height: 300%;
-            background: repeating-linear-gradient(135deg,
-                    transparent,
-                    transparent 400px,
-                    rgba(255, 215, 0, 0.08) 400px,
-                    rgba(255, 215, 0, 0.25) 401px,
-                    rgba(255, 215, 0, 0.08) 402px,
-                    transparent 402px);
-            z-index: -1;
-            pointer-events: none;
-            animation: gold-lines-up 10s linear infinite;
-        }
 
-        @keyframes gold-lines-up {
-            0% {
-                transform: translate(20%, 20%);
-            }
-
-            100% {
-                transform: translate(-20%, -20%);
-            }
-        }
 
         @keyframes wave-grass {
             0% {
@@ -711,7 +684,6 @@
 
             /* Apagar elementos súper pesados en GPU */
             .grass-blade, 
-            .gold-lines-overlay,
             .attractions::before,
             .btn-libras-premium::before {
                 display: none !important;
@@ -971,7 +943,6 @@
         <div class="grass-blade"></div>
         <div class="grass-blade"></div>
         <div class="grass-blade"></div>
-        <div class="gold-lines-overlay"></div>
     </div>
 
     <section class="hero">
