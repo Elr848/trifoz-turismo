@@ -1509,96 +1509,132 @@
         }
 
         /* ============================================================
-           ULTRA-MINI MOBILE OVERRIDES (650 TARGET)
+           REDISEÑO TOTAL PANEL MÓVIL (NAVY & CYAN PREMIUM)
            ============================================================ */
         @media screen and (max-width: 768px) {
             .booking-mobile-panel {
                 background: #000a1e !important;
-                padding: 4px 10px 10px !important;
-                max-height: 75vh !important;
+                padding: 20px 24px 30px !important;
+                border-top: 2px solid #14b2c4 !important;
+                border-radius: 30px 30px 0 0 !important;
+                max-height: 90vh !important;
                 overflow-y: auto !important;
-                border-top: 1px solid #14b2c4 !important;
+                box-shadow: 0 -10px 40px rgba(0,0,0,0.8) !important;
+            }
+
+            .booking-mobile-panel-handle {
+                background: rgba(20, 178, 196, 0.4) !important;
+                width: 50px !important;
+                height: 5px !important;
+                margin-bottom: 20px !important;
+            }
+
+            .booking-mobile-panel-header {
+                justify-content: center !important;
+                position: relative !important;
+                margin-bottom: 25px !important;
+            }
+
+            .booking-mobile-panel-title {
+                color: #14b2c4 !important;
+                font-size: 1rem !important;
+                font-weight: 900 !important;
+                letter-spacing: 1.5px !important;
+                display: flex !important;
+                align-items: center !important;
+                gap: 10px !important;
+            }
+
+            .booking-mobile-close {
+                position: absolute !important;
+                right: -10px !important;
+                top: -5px !important;
+                background: rgba(255,255,255,0.05) !important;
+                color: #14b2c4 !important;
             }
 
             .booking-mobile-field {
-                padding: 2px 0 !important;
-                gap: 4px !important;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                gap: 8px !important;
+                padding: 15px 0 !important;
+                border-bottom: 1px solid rgba(20, 178, 196, 0.15) !important;
+            }
+
+            .booking-mobile-field-icon {
+                margin-bottom: 5px !important;
+                font-size: 1.3rem !important;
             }
 
             .booking-mobile-label {
-                font-size: 0.48rem !important;
-                margin-bottom: 0px !important;
-                opacity: 0.7 !important;
-                letter-spacing: 0.2px !important;
+                color: #14b2c4 !important;
+                font-size: 0.75rem !important;
+                font-weight: 800 !important;
+                letter-spacing: 1.2px !important;
+                margin-bottom: 5px !important;
             }
 
             .booking-mobile-select,
             .booking-mobile-datetime {
-                font-size: 0.78rem !important;
-                height: 20px !important;
+                text-align: center !important;
+                text-align-last: center !important;
+                font-size: 1.05rem !important;
+                color: #ffffff !important;
+                font-weight: 600 !important;
+                background: transparent !important;
             }
 
-            .booking-mobile-field-icon {
-                font-size: 0.8rem !important;
-                width: 16px !important;
-            }
-
-            .booking-mobile-cta {
-                padding: 5px 2px !important;
-                font-size: 0.62rem !important;
-                margin-top: 6px !important;
-                border-radius: 30px !important;
-                gap: 4px !important;
-                width: 98% !important;
-                margin-left: auto !important;
-                margin-right: auto !important;
-            }
-
-            .booking-mobile-cta i {
-                font-size: 0.85rem !important;
-            }
-
-            .booking-mobile-cta-phone {
-                font-size: 0.55rem !important;
-                letter-spacing: 0px !important;
+            .booking-mobile-pax {
+                justify-content: center !important;
+                gap: 20px !important;
+                margin-top: 5px !important;
             }
 
             .booking-mobile-pax-btn {
-                width: 20px !important;
-                height: 20px !important;
-                font-size: 0.75rem !important;
+                background: #333333 !important;
+                border: none !important;
+                width: 32px !important;
+                height: 32px !important;
+                font-size: 1.2rem !important;
+                color: #ffffff !important;
             }
 
             .booking-mobile-pax-val {
+                color: #ffffff !important;
+                font-size: 1.2rem !important;
+                text-shadow: none !important;
+            }
+
+            .booking-mobile-cta {
+                background: #14b2c4 !important;
+                border-radius: 15px !important;
+                padding: 16px !important;
+                margin-top: 25px !important;
+                flex-direction: column !important;
+                gap: 5px !important;
+                width: 100% !important;
+                box-shadow: 0 8px 20px rgba(20, 178, 196, 0.3) !important;
+            }
+
+            .booking-mobile-cta i {
+                font-size: 1.5rem !important;
+                color: #ffffff !important;
+            }
+
+            .booking-mobile-cta-phone {
+                color: #ffffff !important;
                 font-size: 0.85rem !important;
-                min-width: 12px !important;
+                opacity: 1 !important;
+                font-weight: 700 !important;
             }
 
-            .booking-mobile-panel-header {
-                margin-bottom: 2px !important;
-                padding-bottom: 2px !important;
-            }
-
-            .booking-mobile-panel-title {
-                font-size: 0.65rem !important;
-            }
-
-            .booking-mobile-close {
-                width: 18px !important;
-                height: 18px !important;
-                font-size: 0.75rem !important;
-            }
-
+            /* Estilo del botón flotante para que combine */
             .booking-mobile-btn {
-                padding: 4px 10px !important;
-                font-size: 0.62rem !important;
-                min-width: 130px !important;
-                bottom: 10px !important;
-            }
-
-            .booking-mobile-btn-phone {
-                font-size: 0.55rem !important;
+                background: #14b2c4 !important;
+                font-size: 0.75rem !important;
+                padding: 10px 20px !important;
+                min-width: 180px !important;
             }
         }
     </style>
@@ -1734,15 +1770,18 @@
     <div class="booking-mobile-panel" id="booking-mobile-panel">
         <div class="booking-mobile-panel-handle"></div>
         <div class="booking-mobile-panel-header">
-            <span class="booking-mobile-panel-title">📍 Faça sua Reserva</span>
+            <span class="booking-mobile-panel-title">
+                <i class="fas fa-map-marker-alt" style="color: #ff4d4d;"></i>
+                FAÇA SUA RESERVA
+            </span>
             <button class="booking-mobile-close" onclick="cerrarFormularioMovil()" aria-label="Fechar">&#x2715;</button>
         </div>
 
         <!-- Destino -->
         <div class="booking-mobile-field">
-            <div class="booking-mobile-field-icon">📍</div>
+            <div class="booking-mobile-field-icon"><i class="fas fa-map-marker-alt" style="color: #ff4d4d;"></i></div>
             <div class="booking-mobile-field-body">
-                <span class="booking-mobile-label">Destino</span>
+                <span class="booking-mobile-label">DESTINO</span>
                 <select id="booking-destino-m" class="booking-mobile-select" aria-label="Destino">
                     <option value="">Para onde vai?</option>
                     <option value="Cataratas do Iguaçu (Brasil)">🇧🇷 Cataratas do Iguaçu</option>
@@ -1761,9 +1800,9 @@
 
         <!-- Passageiros -->
         <div class="booking-mobile-field">
-            <div class="booking-mobile-field-icon" style="color: var(--amarillo);"><i class="fas fa-user-group"></i></div>
+            <div class="booking-mobile-field-icon"><i class="fas fa-user-group" style="color: #ffd700;"></i></div>
             <div class="booking-mobile-field-body">
-                <span class="booking-mobile-label">Passageiros</span>
+                <span class="booking-mobile-label">PASSAGEIROS</span>
                 <div class="booking-mobile-pax">
                     <button class="booking-mobile-pax-btn" onclick="changePaxM(-1)" aria-label="Diminuir">−</button>
                     <span class="booking-mobile-pax-val" id="pax-display-m">2</span>
@@ -1774,9 +1813,9 @@
 
         <!-- Data & Hora -->
         <div class="booking-mobile-field">
-            <div class="booking-mobile-field-icon">🗓️</div>
+            <div class="booking-mobile-field-icon"><i class="fas fa-calendar-alt" style="color: #14b2c4;"></i></div>
             <div class="booking-mobile-field-body">
-                <span class="booking-mobile-label">Data &amp; Hora</span>
+                <span class="booking-mobile-label">DATA & HORA</span>
                 <input type="datetime-local" id="booking-datetime-m" class="booking-mobile-datetime"
                     aria-label="Data e hora">
             </div>
@@ -1784,8 +1823,8 @@
 
         <!-- CTA -->
         <button class="booking-mobile-cta" onclick="enviarReservaMovil()" aria-label="Enviar reserva por WhatsApp">
-            <i class="fab fa-whatsapp" style="font-size:1.3rem;"></i>
-            <span style="display:flex;flex-direction:column;line-height:1.3;">
+            <i class="fab fa-whatsapp"></i>
+            <span style="display:flex;flex-direction:column;line-height:1.2;">
                 MAIS INFORMAÇÕES
                 <span class="booking-mobile-cta-phone">+55(45)933003337</span>
             </span>
