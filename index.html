@@ -771,22 +771,28 @@
 
             .booking-mobile-cta {
                 box-shadow: none !important;
-                padding: 8px !important;
-                font-size: 0.72rem !important;
+                padding: 10px 5px !important;
+                font-size: 0.7rem !important;
                 animation: none !important;
                 border-radius: 40px !important;
+                width: 100% !important;
+                white-space: normal !important; /* Permitir que el texto se ajuste si es necesario */
+                margin-bottom: 5px !important;
+                height: auto !important;
             }
 
             .booking-mobile-cta-phone {
-                font-size: 0.65rem !important;
+                font-size: 0.62rem !important;
+                margin-top: 1px !important;
             }
 
             .booking-mobile-btn {
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
-                padding: 6px 14px !important;
-                font-size: 0.68rem !important;
-                min-width: 160px !important;
-                bottom: 15px !important;
+                padding: 6px 12px !important;
+                font-size: 0.65rem !important;
+                min-width: 150px !important;
+                bottom: 12px !important;
+                white-space: nowrap !important;
             }
 
             .booking-mobile-btn-phone {
@@ -1483,8 +1489,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
             box-shadow: 0 4px 18px rgba(20, 178, 196, 0.5);
+            box-sizing: border-box;
         }
 
         .booking-mobile-cta:active {
