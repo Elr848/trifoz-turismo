@@ -176,7 +176,8 @@
             max-width: 950px;
             width: 95%;
             -webkit-font-smoothing: antialiased;
-            transform: translateZ(0); /* Forzar GPU en el contenedor padre también para evitar parpadeos */
+            transform: translateZ(0);
+            /* Forzar GPU en el contenedor padre también para evitar parpadeos */
         }
 
         .fire-wrapper::before {
@@ -676,14 +677,16 @@
            RESPONSIVE — TABLET (≤768px)
            ============================================ */
         @media (max-width: 768px) {
+
             /* OPTIMIZACIONES DE RENDIMIENTO EXTREMO PARA MÓVILES */
-            html, body {
+            html,
+            body {
                 overflow-x: hidden !important;
                 width: 100%;
             }
 
             /* Apagar elementos súper pesados en GPU */
-            .grass-blade, 
+            .grass-blade,
             .attractions::before,
             .btn-libras-premium::before {
                 display: none !important;
@@ -697,18 +700,21 @@
             .fire-wrapper {
                 margin-top: 20px;
                 width: 97%;
-                animation: none !important; /* Desactivar flotación en móviles */
-                transform: translateZ(0); /* Forzar aceleración por hardware estática */
+                animation: none !important;
+                /* Desactivar flotación en móviles */
+                transform: translateZ(0);
+                /* Forzar aceleración por hardware estática */
             }
 
             .fire-wrapper::before {
-                animation: rotate-fire 3s linear infinite !important; /* MANTENER ESTE EFECTO */
+                animation: rotate-fire 3s linear infinite !important;
+                /* MANTENER ESTE EFECTO */
                 will-change: transform !important;
             }
 
             /* Desactivar todos los demás efectos, transiciones y animaciones en móviles */
-            .guia-box, 
-            .libras-icon-fa, 
+            .guia-box,
+            .libras-icon-fa,
             .whatsapp-lux,
             .card,
             .card:hover,
@@ -734,7 +740,8 @@
                 padding: 20px 18px 22px 18px;
                 margin-top: 0;
                 height: auto;
-                backdrop-filter: none !important; /* Filtro blur colapsa celulares */
+                backdrop-filter: none !important;
+                /* Filtro blur colapsa celulares */
                 -webkit-backdrop-filter: none !important;
                 background: rgba(0, 0, 0, 0.85) !important;
                 transform: translateZ(0);
@@ -744,7 +751,8 @@
                 font-size: 1.8rem;
                 letter-spacing: 4px;
                 margin-top: 10px;
-                animation: none !important; /* Desactivar brillo de texto */
+                animation: none !important;
+                /* Desactivar brillo de texto */
                 background: linear-gradient(to right, #fff, #ffd700, #ff4500);
                 background-clip: text;
                 -webkit-background-clip: text;
@@ -918,7 +926,8 @@
                 font-size: 0.85rem;
             }
 
-            .libras-en, .libras-multi {
+            .libras-en,
+            .libras-multi {
                 font-size: 0.7rem;
             }
 
@@ -988,7 +997,7 @@
             gap: 4px;
             box-shadow:
                 0 8px 32px rgba(0, 0, 0, 0.55),
-                inset 0 1px 0 rgba(255,255,255,0.12);
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
         }
 
         .booking-field {
@@ -998,7 +1007,7 @@
             gap: 10px;
             padding: 8px 18px;
             cursor: pointer;
-            border-right: 1px solid rgba(255,255,255,0.12);
+            border-right: 1px solid rgba(255, 255, 255, 0.12);
             transition: background 0.25s;
             border-radius: 40px;
             min-width: 0;
@@ -1009,12 +1018,12 @@
         }
 
         .booking-field:hover {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .booking-field-icon {
             font-size: 1.1rem;
-            color: rgba(255,255,255,0.75);
+            color: rgba(255, 255, 255, 0.75);
             flex-shrink: 0;
         }
 
@@ -1048,7 +1057,7 @@
             padding: 0;
             appearance: none;
             -webkit-appearance: none;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
         }
 
         .booking-select option {
@@ -1072,7 +1081,7 @@
             width: 24px;
             height: 24px;
             border-radius: 50%;
-            border: 1.5px solid rgba(255,255,255,0.55);
+            border: 1.5px solid rgba(255, 255, 255, 0.55);
             background: transparent;
             color: #fff;
             font-size: 1rem;
@@ -1086,14 +1095,15 @@
         }
 
         .pax-btn:hover {
-            background: rgba(255,255,255,0.25);
+            background: rgba(255, 255, 255, 0.25);
             border-color: #fff;
         }
 
         .pax-value {
             font-size: 0.95rem;
             font-weight: 700;
-            color: #fff;
+            color: var(--amarillo);
+            text-shadow: 0 0 10px rgba(255, 235, 59, 0.4);
             min-width: 22px;
             text-align: center;
         }
@@ -1153,15 +1163,28 @@
 
         /* Tablet */
         @media (max-width: 1024px) {
-            .booking-bar-wrapper { width: 96%; }
-            .booking-field { padding: 8px 12px; }
+            .booking-bar-wrapper {
+                width: 96%;
+            }
+
+            .booking-field {
+                padding: 8px 12px;
+            }
         }
 
         /* Mobile: oculta barra, muestra botón flotante */
         @media (max-width: 768px) {
-            .booking-bar-wrapper { display: none; }
-            .booking-mobile-btn  { display: flex !important; }
-            .booking-mobile-panel { display: flex !important; }
+            .booking-bar-wrapper {
+                display: none;
+            }
+
+            .booking-mobile-btn {
+                display: flex !important;
+            }
+
+            .booking-mobile-panel {
+                display: flex !important;
+            }
         }
 
         /* ---- Botón flotante móvil ---- */
@@ -1176,28 +1199,33 @@
             color: #fff;
             border: none;
             border-radius: 50px;
-            padding: 13px 26px;
-            gap: 10px;
+            padding: 11px 22px;
+            gap: 8px;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 6px 24px rgba(20,178,196,0.6), 0 2px 8px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 24px rgba(20, 178, 196, 0.6), 0 2px 8px rgba(0, 0, 0, 0.3);
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.84rem;
+            font-size: 0.8rem;
             font-weight: 900;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             white-space: nowrap;
-            min-width: 240px;
+            min-width: 200px;
             transition: transform 0.2s;
         }
-        .booking-mobile-btn:active { transform: translateX(-50%) scale(0.96); }
+
+        .booking-mobile-btn:active {
+            transform: translateX(-50%) scale(0.96);
+        }
+
         .booking-mobile-btn-label {
             display: flex;
             flex-direction: column;
             line-height: 1.3;
             text-align: left;
         }
+
         .booking-mobile-btn-phone {
             font-size: 0.75rem;
             font-weight: 600;
@@ -1210,10 +1238,13 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 9998;
         }
-        .booking-overlay.open { display: block; }
+
+        .booking-overlay.open {
+            display: block;
+        }
 
         /* ---- Panel deslizante ---- */
         .booking-mobile-panel {
@@ -1226,28 +1257,34 @@
             background: rgba(0, 10, 30, 0.97);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-top: 1px solid rgba(255,255,255,0.15);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 24px 24px 0 0;
             padding: 14px 22px 36px;
             flex-direction: column;
             transform: translateY(100%);
-            transition: transform 0.35s cubic-bezier(0.32,0.72,0,1);
-            box-shadow: 0 -8px 40px rgba(0,0,0,0.5);
+            transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+            box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.5);
         }
-        .booking-mobile-panel.open { transform: translateY(0); }
+
+        .booking-mobile-panel.open {
+            transform: translateY(0);
+        }
 
         .booking-mobile-panel-handle {
-            width: 40px; height: 4px;
-            background: rgba(255,255,255,0.3);
+            width: 40px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 2px;
             margin: 0 auto 14px;
         }
+
         .booking-mobile-panel-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 12px;
         }
+
         .booking-mobile-panel-title {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.88rem;
@@ -1256,11 +1293,13 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
         .booking-mobile-close {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border: none;
             color: #fff;
-            width: 30px; height: 30px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             font-size: 1.1rem;
             cursor: pointer;
@@ -1268,58 +1307,119 @@
             align-items: center;
             justify-content: center;
         }
+
         .booking-mobile-field {
             display: flex;
             align-items: center;
             gap: 12px;
             padding: 13px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.10);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.10);
         }
-        .booking-mobile-field:last-of-type { border-bottom: none; }
-        .booking-mobile-field-icon { font-size: 1.2rem; width: 28px; text-align: center; flex-shrink: 0; }
-        .booking-mobile-field-body { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+
+        .booking-mobile-field:last-of-type {
+            border-bottom: none;
+        }
+
+        .booking-mobile-field-icon {
+            font-size: 1.2rem;
+            width: 28px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .booking-mobile-field-body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-width: 0;
+        }
+
         .booking-mobile-label {
-            font-size: 0.65rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1px;
-            color: var(--azul-electrico); margin-bottom: 3px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--azul-electrico);
+            margin-bottom: 3px;
         }
+
         .booking-mobile-select,
         .booking-mobile-datetime {
-            background: transparent; border: none; outline: none;
+            background: transparent;
+            border: none;
+            outline: none;
             font-family: 'Open Sans', sans-serif;
-            font-size: 1rem; font-weight: 700; color: #fff;
-            width: 100%; padding: 0;
-            appearance: none; -webkit-appearance: none;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            width: 100%;
+            padding: 0;
+            appearance: none;
+            -webkit-appearance: none;
         }
+
         .booking-mobile-pax {
-            display: flex; align-items: center; gap: 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
         }
+
         .booking-mobile-pax-btn {
-            width: 28px; height: 28px; border-radius: 50%;
-            border: 1.5px solid rgba(255,255,255,0.5);
-            background: transparent; color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
+            background: transparent;
+            color: #fff;
             font-size: 1.1rem;
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
         }
+
         .booking-mobile-pax-val {
-            font-size: 1.1rem; font-weight: 700; color: #fff;
-            min-width: 24px; text-align: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--amarillo);
+            text-shadow: 0 0 10px rgba(255, 235, 59, 0.4);
+            min-width: 24px;
+            text-align: center;
         }
+
         .booking-mobile-cta {
-            width: 100%; margin-top: 16px;
+            width: 100%;
+            margin-top: 16px;
             background: linear-gradient(135deg, #14b2c4 0%, #0a8a99 100%);
-            color: #fff; border: none; border-radius: 50px; padding: 16px;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 12px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem; font-weight: 900; letter-spacing: 0.5px;
-            text-transform: uppercase; cursor: pointer;
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            box-shadow: 0 4px 18px rgba(20,178,196,0.5);
+            font-size: 0.85rem;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 18px rgba(20, 178, 196, 0.5);
         }
-        .booking-mobile-cta:active { background: #0a8a99; }
+
+        .booking-mobile-cta:active {
+            background: #0a8a99;
+        }
+
         .booking-mobile-cta-phone {
-            display: block; font-size: 0.8rem; font-weight: 600;
-            opacity: 0.9; text-transform: none; letter-spacing: 0.2px; margin-top: 2px;
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            opacity: 0.9;
+            text-transform: none;
+            letter-spacing: 0.2px;
+            margin-top: 2px;
         }
     </style>
 </head>
@@ -1391,43 +1491,44 @@
                             <option value="Roda Gigante Yup Star">🎡 Roda Gigante Yup Star</option>
                             <option value="Museu de Cera Dreamland">🎭 Museu de Cera Dreamland</option>
                             <option value="Ciudad del Este (Paraguay)">🇵🇾 Ciudad del Este</option>
-                            <option value="Roteiro Personalizado" class="option-highlight">✨ Preciso de ajuda com o roteiro</option>
+                            <option value="Roteiro Personalizado" class="option-highlight">✨ Preciso de ajuda com o
+                                roteiro</option>
                         </select>
                     </div>
                 </div>
 
                 <!-- Field 2: Passengers -->
                 <div class="booking-field">
-                    <div class="booking-field-icon">👥</div>
+                    <div class="booking-field-icon" style="color: var(--amarillo);">👥</div>
                     <div class="booking-field-body">
                         <span class="booking-field-label">Passageiros</span>
                         <div class="passenger-counter">
-                            <button class="pax-btn" id="pax-minus" onclick="changePax(-1)" aria-label="Diminuir passageiros">−</button>
+                            <button class="pax-btn" id="pax-minus" onclick="changePax(-1)"
+                                aria-label="Diminuir passageiros">−</button>
                             <span class="pax-value" id="pax-display">2</span>
-                            <button class="pax-btn" id="pax-plus" onclick="changePax(1)" aria-label="Aumentar passageiros">+</button>
+                            <button class="pax-btn" id="pax-plus" onclick="changePax(1)"
+                                aria-label="Aumentar passageiros">+</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Field 3: Date & Time -->
-                <div class="booking-field" onclick="document.getElementById('booking-datetime').showPicker ? document.getElementById('booking-datetime').showPicker() : document.getElementById('booking-datetime').focus()">
+                <div class="booking-field"
+                    onclick="document.getElementById('booking-datetime').showPicker ? document.getElementById('booking-datetime').showPicker() : document.getElementById('booking-datetime').focus()">
                     <div class="booking-field-icon">🗓️</div>
                     <div class="booking-field-body">
                         <span class="booking-field-label">Data &amp; Hora</span>
-                        <input
-                            type="datetime-local"
-                            id="booking-datetime"
-                            class="booking-datetime"
-                            aria-label="Data e hora do traslado"
-                        >
+                        <input type="datetime-local" id="booking-datetime" class="booking-datetime"
+                            aria-label="Data e hora do traslado">
                     </div>
                 </div>
 
                 <!-- CTA Button -->
-                <button class="booking-cta" id="booking-submit-btn" onclick="enviarReservaWhatsApp()" aria-label="Consultar disponibilidade via WhatsApp">
+                <button class="booking-cta" id="booking-submit-btn" onclick="enviarReservaWhatsApp()"
+                    aria-label="Consultar disponibilidade via WhatsApp">
                     <i class="fab fa-whatsapp" style="font-size:1.25rem;"></i>
                     <span class="booking-cta-label">
-                        RESERVAR AGORA
+                        MAIS INFORMAÇÕES
                         <span class="booking-cta-phone">+55(45)933003337</span>
                     </span>
                 </button>
@@ -1437,15 +1538,11 @@
     </section>
 
     <!-- BOTÃO FLUTUANTE MÓVIL -->
-    <button
-        class="booking-mobile-btn"
-        id="booking-mobile-trigger"
-        onclick="abrirFormularioMovil()"
-        aria-label="Abrir formulário de reserva"
-    >
+    <button class="booking-mobile-btn" id="booking-mobile-trigger" onclick="abrirFormularioMovil()"
+        aria-label="Abrir formulário de reserva">
         <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
         <span class="booking-mobile-btn-label">
-            RESERVAR AGORA
+            MAIS INFORMAÇÕES
             <span class="booking-mobile-btn-phone">+55(45)933003337</span>
         </span>
     </button>
@@ -1484,7 +1581,7 @@
 
         <!-- Passageiros -->
         <div class="booking-mobile-field">
-            <div class="booking-mobile-field-icon">👥</div>
+            <div class="booking-mobile-field-icon" style="color: var(--amarillo);">👥</div>
             <div class="booking-mobile-field-body">
                 <span class="booking-mobile-label">Passageiros</span>
                 <div class="booking-mobile-pax">
@@ -1500,12 +1597,8 @@
             <div class="booking-mobile-field-icon">🗓️</div>
             <div class="booking-mobile-field-body">
                 <span class="booking-mobile-label">Data &amp; Hora</span>
-                <input
-                    type="datetime-local"
-                    id="booking-datetime-m"
-                    class="booking-mobile-datetime"
-                    aria-label="Data e hora"
-                >
+                <input type="datetime-local" id="booking-datetime-m" class="booking-mobile-datetime"
+                    aria-label="Data e hora">
             </div>
         </div>
 
@@ -1513,7 +1606,7 @@
         <button class="booking-mobile-cta" onclick="enviarReservaMovil()" aria-label="Enviar reserva por WhatsApp">
             <i class="fab fa-whatsapp" style="font-size:1.3rem;"></i>
             <span style="display:flex;flex-direction:column;line-height:1.3;">
-                RESERVAR AGORA
+                MAIS INFORMAÇÕES
                 <span class="booking-mobile-cta-phone">+55(45)933003337</span>
             </span>
         </button>
@@ -1672,7 +1765,7 @@
             const tomorrow = new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
             const pad = n => String(n).padStart(2, '0');
-            const val = `${tomorrow.getFullYear()}-${pad(tomorrow.getMonth()+1)}-${pad(tomorrow.getDate())}T09:00`;
+            const val = `${tomorrow.getFullYear()}-${pad(tomorrow.getMonth() + 1)}-${pad(tomorrow.getDate())}T09:00`;
             const dtEl = document.getElementById('booking-datetime');
             if (dtEl) dtEl.value = val;
             const dtElM = document.getElementById('booking-datetime-m');
@@ -1681,13 +1774,13 @@
 
         function enviarReservaWhatsApp() {
             const destino = document.getElementById('booking-destino').value;
-            const pax     = document.getElementById('pax-display').textContent;
-            const dtRaw   = document.getElementById('booking-datetime').value;
+            const pax = document.getElementById('pax-display').textContent;
+            const dtRaw = document.getElementById('booking-datetime').value;
             if (!destino) { alert('Por favor, selecione um destino.'); return; }
-            if (!dtRaw)   { alert('Por favor, selecione a data e hora.'); return; }
+            if (!dtRaw) { alert('Por favor, selecione a data e hora.'); return; }
             const dt = new Date(dtRaw);
             const pad = n => String(n).padStart(2, '0');
-            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth()+1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
+            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth() + 1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
             window.open(`https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
@@ -1715,13 +1808,13 @@
 
         function enviarReservaMovil() {
             const destino = document.getElementById('booking-destino-m').value;
-            const pax     = document.getElementById('pax-display-m').textContent;
-            const dtRaw   = document.getElementById('booking-datetime-m').value;
+            const pax = document.getElementById('pax-display-m').textContent;
+            const dtRaw = document.getElementById('booking-datetime-m').value;
             if (!destino) { alert('Por favor, selecione um destino.'); return; }
-            if (!dtRaw)   { alert('Por favor, selecione a data e hora.'); return; }
+            if (!dtRaw) { alert('Por favor, selecione a data e hora.'); return; }
             const dt = new Date(dtRaw);
             const pad = n => String(n).padStart(2, '0');
-            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth()+1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
+            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth() + 1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
             window.open(`https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`, '_blank');
         }
     </script>
