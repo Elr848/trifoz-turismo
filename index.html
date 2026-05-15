@@ -747,6 +747,38 @@
                 transform: translateZ(0);
             }
 
+            /* OPTIMIZACIONES PARA EL PANEL DE RESERVA MÓVIL */
+            .booking-mobile-panel {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                background: rgba(0, 10, 30, 0.98) !important;
+                max-height: 85vh;
+                overflow-y: auto;
+                padding: 10px 18px 20px !important;
+            }
+
+            .booking-mobile-cta {
+                box-shadow: none !important;
+                padding: 10px !important;
+                font-size: 0.82rem !important;
+                animation: none !important;
+            }
+
+            .booking-mobile-btn {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+                padding: 9px 18px !important;
+                font-size: 0.75rem !important;
+                min-width: 180px !important;
+            }
+
+            .booking-mobile-field {
+                padding: 8px 0 !important;
+            }
+
+            .booking-mobile-panel-header {
+                margin-bottom: 8px !important;
+            }
+
             .hero-container h1 {
                 font-size: 1.8rem;
                 letter-spacing: 4px;
@@ -1102,8 +1134,7 @@
         .pax-value {
             font-size: 0.95rem;
             font-weight: 700;
-            color: var(--amarillo);
-            text-shadow: 0 0 10px rgba(255, 235, 59, 0.4);
+            color: #fff;
             min-width: 22px;
             text-align: center;
         }
@@ -1381,8 +1412,7 @@
         .booking-mobile-pax-val {
             font-size: 1.1rem;
             font-weight: 700;
-            color: var(--amarillo);
-            text-shadow: 0 0 10px rgba(255, 235, 59, 0.4);
+            color: #fff;
             min-width: 24px;
             text-align: center;
         }
@@ -1499,7 +1529,7 @@
 
                 <!-- Field 2: Passengers -->
                 <div class="booking-field">
-                    <div class="booking-field-icon" style="color: var(--amarillo);">👥</div>
+                    <div class="booking-field-icon" style="color: var(--amarillo);"><i class="fas fa-user-group"></i></div>
                     <div class="booking-field-body">
                         <span class="booking-field-label">Passageiros</span>
                         <div class="passenger-counter">
@@ -1581,7 +1611,7 @@
 
         <!-- Passageiros -->
         <div class="booking-mobile-field">
-            <div class="booking-mobile-field-icon" style="color: var(--amarillo);">👥</div>
+            <div class="booking-mobile-field-icon" style="color: var(--amarillo);"><i class="fas fa-user-group"></i></div>
             <div class="booking-mobile-field-body">
                 <span class="booking-mobile-label">Passageiros</span>
                 <div class="booking-mobile-pax">
