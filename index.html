@@ -460,20 +460,35 @@
         }
 
         .grid-attractions {
-            display: grid;
-            grid-template-columns: repeat(20, 1fr);
+            display: flex;
+            flex-direction: column;
             gap: 20px;
-            max-width: 1300px;
+            max-width: 1200px;
             margin: auto;
         }
 
-        .grid-attractions > div:nth-child(n+1):nth-child(-n+4),
-        .grid-attractions > div:nth-child(n+10):nth-child(-n+13) {
-            grid-column: span 5;
+        .linha-quatro {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
 
-        .grid-attractions > div:nth-child(n+5):nth-child(-n+9) {
-            grid-column: span 4;
+        .secao-macuco-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .sub-coluna-vertical {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .video-card {
+            background: #002366 !important;
+            width: 350px;
         }
 
         .card {
@@ -853,20 +868,21 @@
             }
 
             .grid-attractions {
+                display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 12px;
                 padding: 10px;
             }
 
-            .grid-attractions > div {
-                grid-column: span 1 !important;
-            }
-
-            .grid-attractions > div:nth-child(7) {
-                grid-column: span 2 !important;
+            .linha-quatro,
+            .secao-macuco-container,
+            .sub-coluna-vertical {
+                display: contents;
             }
 
             .video-card {
+                grid-column: span 2 !important;
+                width: 100% !important;
                 max-width: 100% !important;
             }
 
@@ -1796,129 +1812,149 @@
         </div>
 
         <div class="grid-attractions">
-            <div class="card">
-                <div class="card-image"><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/2/2c/For%C3%A7a_que_Encanta.jpg"
-                        alt="Cataratas" loading="lazy"></div>
-                <div class="card-content">
-                    <h3>CATARATAS DO IGUAÇU</h3>
-                    <p>Visita guiada privada.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image"><img
-                        src="https://s2-g1.glbimg.com/l1mp9ZmIQTiO2V8egJB_tOgVnYg=/0x0:5168x2912/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/R/5/3svxyZSVK292Muzew6RA/araras-caninde-1-.jpg"
-                        alt="Parque" loading="lazy"></div>
-                <div class="card-content">
-                    <h3>PARQUE DAS AVES</h3>
-                    <p>Santuário ecológico.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image"><img src="images/marco_real.jpg" alt="Marco" loading="lazy"></div>
-                <div class="card-content">
-                    <h3>MARCO DAS 3 FRONTEIRAS</h3>
-                    <p>Encontro de nações.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image"><img src="images/kattamaram.png" alt="Kattamaram II" loading="lazy"></div>
-                <div class="card-content">
-                    <h3>KATTAMARAM II</h3>
-                    <p>Romantismo no pôr do sol.</p>
-                </div>
-            </div>
-
-            <!-- New Cards (Middle Row) -->
-            <div class="card">
-                <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Templo_Budista_Chen_Yen_Foz_do_Igua%C3%A7u.jpg/1200px-Templo_Budista_Chen_Yen_Foz_do_Igua%C3%A7u.jpg" alt="Templo Budista" loading="lazy"></div>
-                <div class="card-content">
-                    <h3>TEMPLO BUDISTA</h3>
-                    <p>Paz e meditação.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Mesquita_Omar_Ibn_Al-Khattab.jpg/1200px-Mesquita_Omar_Ibn_Al-Khattab.jpg" alt="Mesquita Muçulmana" loading="lazy"></div>
-                <div class="card-content">
-                    <h3>MESQUITA MUÇULMANA</h3>
-                    <p>Arquitetura e cultura.</p>
-                </div>
-            </div>
-
-            <div class="video-card card">
-                <div class="card-image">
-                    <img src="images/macuco_safari_real.jpg" alt="Macuco Safari - Foz do Iguaçu"
-                        style="width: 100%; height: auto; display: block; filter: saturate(1.2) contrast(1.1);" loading="lazy">
-                </div>
-                <div class="card-content"
-                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px 20px; gap: 20px;">
-                    <div style="text-align: center;">
-                        <h3 style="margin: 0; font-size: 1.6rem; color: #ffd700; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);">
-                            MACUCO SAFARI</h3>
-                        <p style="margin: 5px 0 0; font-size: 1rem; color: #fff; opacity: 0.9;">Aventura extrema nas quedas d'água.</p>
+            <div class="linha-quatro">
+                <div class="card">
+                    <div class="card-image"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/2/2c/For%C3%A7a_que_Encanta.jpg"
+                            alt="Cataratas" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3>CATARATAS DO IGUAÇU</h3>
+                        <p>Visita guiada privada.</p>
                     </div>
-                    <a href="https://youtu.be/1dUpxFeU_u4?si=1p_wqlZU0Bks6DNa" target="_blank" class="btn-video-elegant">
-                        <i class="fab fa-youtube"></i> Ver Vídeo
-                    </a>
+                </div>
+
+                <div class="card">
+                    <div class="card-image"><img
+                            src="https://s2-g1.glbimg.com/l1mp9ZmIQTiO2V8egJB_tOgVnYg=/0x0:5168x2912/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/R/5/3svxyZSVK292Muzew6RA/araras-caninde-1-.jpg"
+                            alt="Parque" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3>PARQUE DAS AVES</h3>
+                        <p>Santuário ecológico.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image"><img src="images/marco_real.jpg" alt="Marco" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3>MARCO DAS 3 FRONTEIRAS</h3>
+                        <p>Encontro de nações.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image"><img src="images/kattamaram.png" alt="Kattamaram II" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3>KATTAMARAM II</h3>
+                        <p>Romantismo no pôr do sol.</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Hito_Tres_Fronteras_-_Puerto_Iguazu.jpg/1200px-Hito_Tres_Fronteras_-_Puerto_Iguazu.jpg" alt="Puerto Iguazú" loading="lazy"></div>
-                <div class="card-content">
-                    <h3>PUERTO IGUAZÚ</h3>
-                    <p>Argentina ao seu alcance.</p>
+            <div class="secao-macuco-container">
+                <div class="sub-coluna-vertical">
+                    <div class="card">
+                        <div class="card-image"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Templo_Budista_Chen_Yen_Foz_do_Igua%C3%A7u.jpg/1200px-Templo_Budista_Chen_Yen_Foz_do_Igua%C3%A7u.jpg"
+                                alt="Templo Budista" loading="lazy"></div>
+                        <div class="card-content">
+                            <h3>TEMPLO BUDISTA</h3>
+                            <p>Paz e meditação.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Mesquita_Omar_Ibn_Al-Khattab.jpg/1200px-Mesquita_Omar_Ibn_Al-Khattab.jpg"
+                                alt="Mesquita Muçulmana" loading="lazy"></div>
+                        <div class="card-content">
+                            <h3>MESQUITA MUÇULMANA</h3>
+                            <p>Arquitetura e cultura.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card card">
+                    <div class="card-image">
+                        <img src="images/macuco_safari_real.jpg" alt="Macuco Safari - Foz do Iguaçu"
+                            style="width: 100%; height: auto; display: block; filter: saturate(1.2) contrast(1.1);"
+                            loading="lazy">
+                    </div>
+                    <div class="card-content"
+                        style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px 20px; gap: 20px;">
+                        <div style="text-align: center;">
+                            <h3
+                                style="margin: 0; font-size: 1.6rem; color: #ffd700; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);">
+                                MACUCO SAFARI</h3>
+                            <p style="margin: 5px 0 0; font-size: 1rem; color: #fff; opacity: 0.9;">Aventura extrema nas
+                                quedas d'água.</p>
+                        </div>
+                        <a href="https://youtu.be/1dUpxFeU_u4?si=1p_wqlZU0Bks6DNa" target="_blank"
+                            class="btn-video-elegant">
+                            <i class="fab fa-youtube"></i> Ver Vídeo
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sub-coluna-vertical">
+                    <div class="card">
+                        <div class="card-image"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Hito_Tres_Fronteras_-_Puerto_Iguazu.jpg/1200px-Hito_Tres_Fronteras_-_Puerto_Iguazu.jpg"
+                                alt="Puerto Iguazú" loading="lazy"></div>
+                        <div class="card-content">
+                            <h3>PUERTO IGUAZÚ</h3>
+                            <p>Argentina ao seu alcance.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Bridge_of_Friendship_-_Brazil-Paraguay_border.jpg/1200px-Bridge_of_Friendship_-_Brazil-Paraguay_border.jpg"
+                                alt="Ciudad del Este" loading="lazy"></div>
+                        <div class="card-content">
+                            <h3>CIUDAD DEL ESTE</h3>
+                            <p>Compras e fronteira.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Bridge_of_Friendship_-_Brazil-Paraguay_border.jpg/1200px-Bridge_of_Friendship_-_Brazil-Paraguay_border.jpg" alt="Ciudad del Este" loading="lazy"></div>
-                <div class="card-content">
-                    <h3>CIUDAD DEL ESTE</h3>
-                    <p>Compras e fronteira.</p>
+            <div class="linha-quatro">
+                <div class="card">
+                    <div class="card-image"><img src="images/yup star.jpeg" alt="Roda" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3>RODA GIGANTE</h3>
+                        <p>Vista panorâmica.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Bottom Row -->
-            <div class="card">
-                <div class="card-image"><img src="images/yup star.jpeg" alt="Roda" loading="lazy"></div>
-                <div class="card-content">
-                    <h3>RODA GIGANTE</h3>
-                    <p>Vista panorâmica.</p>
+                <div class="card">
+                    <div class="card-image"><img
+                            src="https://www.umviajante.com.br/wp-content/uploads/2023/09/dreamland-foz-do-iguacu-vale-a-pena-visitar-2.jpg"
+                            alt="Museo" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3>MUSEU DE CERA</h3>
+                        <p>Réplicas perfeitas.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="card-image"><img
-                        src="https://www.umviajante.com.br/wp-content/uploads/2023/09/dreamland-foz-do-iguacu-vale-a-pena-visitar-2.jpg"
-                        alt="Museo" loading="lazy"></div>
-                <div class="card-content">
-                    <h3>MUSEU DE CERA</h3>
-                    <p>Réplicas perfeitas.</p>
+                <div class="card">
+                    <div class="card-image"><img src="images/itaipu_turismo.jpg" alt="Itaipu" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3>ITAIPU BINACIONAL</h3>
+                        <p>Energia limpa.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="card-image"><img src="images/itaipu_turismo.jpg" alt="Itaipu" loading="lazy"></div>
-                <div class="card-content">
-                    <h3>ITAIPU BINACIONAL</h3>
-                    <p>Energia limpa.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image"><img src="images/wonder_park.png" alt="Wonder Park" loading="lazy"></div>
-                <div class="card-content">
-                    <h3>WONDER PARK</h3>
-                    <p style="font-size: 0.75rem; line-height: 1.2; margin-top: 5px;">
-                        SHOW DAS ÁGUAS<br>
-                        MOVIE CARS<br>
-                        LUMINA PARK
-                    </p>
+                <div class="card">
+                    <div class="card-image"><img src="images/wonder_park.png" alt="Wonder Park" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3>WONDER PARK</h3>
+                        <p style="font-size: 0.75rem; line-height: 1.2; margin-top: 5px;">
+                            SHOW DAS ÁGUAS<br>
+                            MOVIE CARS<br>
+                            LUMINA PARK
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
