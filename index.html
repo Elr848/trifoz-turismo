@@ -852,10 +852,16 @@
                 background-color: #141414 !important;
             }
 
-            /* Porto Iguaçu: no cortar cartel blanco */
+            /* Porto Iguaçu: estirar para que no se vea lo negro, manteniendo el borde superior */
             .tarjeta-porto-iguacu img {
-                object-fit: contain !important;
-                background-color: #141414 !important;
+                object-fit: cover !important;
+                object-position: top !important;
+            }
+
+            /* Texto PARAGUAI más pequeño en celular */
+            .card-image-overlay::after {
+                font-size: 1.4rem !important;
+                letter-spacing: 2px !important;
             }
 
             /* Todas las demás (incluyendo Cidade do Leste) ya heredan cover */
