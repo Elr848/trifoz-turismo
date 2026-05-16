@@ -459,26 +459,39 @@
         }
 
         .grid-attractions, .contenedor-catalogo {
-            display: grid !important;
-            grid-template-columns: repeat(4, 1fr) !important;
-            gap: 15px !important;
-            width: 100% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 20px !important;
             max-width: 1200px !important;
             margin: 0 auto !important;
+            width: 100% !important;
         }
 
-        .linha-quatro,
-        .secao-macuco-container,
+        .linha-quatro {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 20px !important;
+        }
+
+        .secao-macuco-container {
+            display: grid !important;
+            grid-template-columns: 1fr 2fr 1fr !important; /* Macuco al centro (2fr) y tarjetas a los lados (1fr) */
+            gap: 20px !important;
+            align-items: stretch !important;
+        }
+
         .sub-coluna-vertical {
-            display: contents !important;
+            display: grid !important;
+            grid-template-rows: repeat(2, 1fr) !important;
+            gap: 20px !important; /* Mismo gap para simetría total */
         }
 
         .video-card {
             background: #141414 !important;
-            grid-column: span 2 !important;
-            grid-row: span 2 !important;
             width: 100% !important;
             height: 100% !important;
+            display: flex !important;
+            flex-direction: column !important;
         }
 
         .card {
