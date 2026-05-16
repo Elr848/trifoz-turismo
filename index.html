@@ -479,7 +479,7 @@
             grid-template-columns: 1fr 2fr 1fr !important;
             /* Macuco al centro (2fr) y tarjetas a los lados (1fr) */
             gap: 20px !important;
-            align-items: stretch !important;
+            align-items: flex-start !important; /* Cambiado de stretch a flex-start para evitar el estiramiento */
         }
 
         .sub-coluna-vertical {
@@ -580,7 +580,7 @@
             }
 
             .video-card .card-image img {
-                height: 100% !important;
+                height: 400px !important; /* Altura reducida para cuadrar con las laterales */
                 width: 100% !important;
                 object-fit: cover !important;
             }
