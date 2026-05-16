@@ -458,7 +458,8 @@
             animation: icon-glow 2s infinite ease-in-out;
         }
 
-        .grid-attractions, .contenedor-catalogo {
+        .grid-attractions,
+        .contenedor-catalogo {
             display: flex !important;
             flex-direction: column !important;
             gap: 20px !important;
@@ -475,14 +476,16 @@
 
         .secao-macuco-container {
             display: grid !important;
-            grid-template-columns: 1fr 2fr 1fr !important; /* Macuco al centro (2fr) y tarjetas a los lados (1fr) */
+            grid-template-columns: 1fr 2fr 1fr !important;
+            /* Macuco al centro (2fr) y tarjetas a los lados (1fr) */
             gap: 20px !important;
             align-items: stretch !important;
         }
 
         .sub-coluna-vertical {
             display: grid !important;
-            grid-template-rows: auto auto !important; /* Tarjetas a su tamaño natural, no estiradas */
+            grid-template-rows: auto auto !important;
+            /* Tarjetas a su tamaño natural, no estiradas */
             gap: 20px !important;
         }
 
@@ -518,7 +521,8 @@
         .card-image img {
             width: 100%;
             height: 180px;
-            object-fit: cover !important; /* Por defecto cover para todas */
+            object-fit: cover !important;
+            /* Por defecto cover para todas */
             display: block;
         }
 
@@ -882,7 +886,8 @@
 
             .video-card {
                 grid-column: span 2 !important;
-                grid-row: span 1 !important; /* En móvil solo una fila */
+                grid-row: span 1 !important;
+                /* En móvil solo una fila */
             }
 
             .video-card .card-image img {
