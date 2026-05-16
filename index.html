@@ -778,98 +778,97 @@
 
 
         /* ============================================
-           RESPONSIVE — TABLET GRANDE (≤1024px)
+           RESPONSIVE — CELULARES Y TABLETS (≤1023px)
            ============================================ */
-        @media (max-width: 1024px) {
-            .grid-attractions {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 15px;
-            }
-
-            .fire-wrapper {
-                width: 96%;
-                margin-top: 20px;
-            }
-
-            .hero-container {
-                padding: 25px 30px;
-            }
-        }
-
-        /* ============================================
-           RESPONSIVE — TABLET (≤768px)
-           ============================================ */
-        @media (max-width: 768px) {
-
-            /* OPTIMIZACIONES DE RENDIMIENTO EXTREMO PARA MÓVILES */
-            html,
-            body {
-                overflow-x: hidden !important;
-                width: 100%;
-            }
-
-            /* Apagar elementos súper pesados en GPU */
-            .grass-blade,
-            .attractions::before,
-            .btn-libras-premium::before {
+        @media (max-width: 1023px) {
+            /* OPTIMIZACIONES DE RENDIMIENTO */
+            .grass-blade, .attractions::before, .btn-libras-premium::before {
                 display: none !important;
                 animation: none !important;
             }
 
-            .hero {
-                align-items: flex-start;
+            /* CATÁLOGO SIMÉTRICO Y CUADRADO */
+            .grid-attractions {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
+                padding: 10px !important;
+                max-width: 100% !important;
             }
 
-            .fire-wrapper {
-                margin-top: 20px;
-                width: 97%;
-                animation: none !important;
-                /* Desactivar flotación en móviles */
-                transform: translateZ(0);
-                /* Forzar aceleración por hardware estática */
+            .linha-quatro, 
+            .secao-macuco-container, 
+            .sub-coluna-vertical {
+                display: contents !important;
             }
 
-            .fire-wrapper::before {
-                animation: rotate-fire 3s linear infinite !important;
-                /* MANTENER ESTE EFECTO */
-                will-change: transform !important;
+            .card {
+                display: flex !important;
+                flex-direction: column !important;
+                height: auto !important;
+                min-height: 0 !important;
+                background: #141414 !important;
+                border-radius: 12px !important;
+                margin: 0 !important;
+                overflow: hidden !important;
+                border: 2px solid var(--dorado) !important;
             }
 
-            /* Desactivar todos los demás efectos, transiciones y animaciones en móviles */
-            .guia-box,
-            .libras-icon-fa,
-            .whatsapp-lux,
-            .card,
-            .card:hover,
-            .flag-icon,
-            .flag-icon:hover,
-            .btn-libras-premium,
-            .btn-libras-premium:hover,
-            .whatsapp-lux:hover,
-            .hero-container h1 {
-                animation: none !important;
-                transform: none !important;
-                box-shadow: none !important;
-                transition: none !important;
+            .card-image {
+                flex: none !important;
+                height: auto !important;
+                width: 100% !important;
             }
 
-            /* Desactivar específicamente el emoji que señala en el video */
-            [style*="animation: pointing-down"] {
-                animation: none !important;
-                transition: none !important;
+            .card-image img {
+                width: 100% !important;
+                aspect-ratio: 1 / 1 !important;
+                object-fit: cover !important;
+                display: block !important;
             }
 
-            .hero-container {
-                padding: 20px 18px 22px 18px;
-                margin-top: 0;
-                height: auto;
-                backdrop-filter: none !important;
-                /* Filtro blur colapsa celulares */
-                -webkit-backdrop-filter: none !important;
-                background: rgba(0, 0, 0, 0.85) !important;
-                transform: translateZ(0);
+            .card-content {
+                padding: 5px 10px !important;
+                background: #141414 !important;
+                height: auto !important;
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                flex-grow: 1 !important;
             }
 
+            .card-content h3 {
+                font-size: 0.8rem !important;
+                margin: 0 !important;
+                line-height: 1.1 !important;
+                color: var(--amarillo) !important;
+            }
+
+            .card-content p {
+                font-size: 0.65rem !important;
+                margin: 2px 0 0 !important;
+                line-height: 1.1 !important;
+                display: none; /* Opcional: ocultar descripción para máxima simetría si es muy largo */
+            }
+
+            /* Macuco Safari (Destaque) */
+            .video-card {
+                grid-column: span 2 !important;
+            }
+            .video-card .card-image img {
+                aspect-ratio: 16 / 9 !important; /* Macuco mantiene formato video */
+            }
+            .video-card .card-content p {
+                display: block !important; /* Mostrar descripción en el destacado */
+            }
+
+            /* Desactivar animaciones pesadas */
+            .hero-container h1 { animation: none !important; }
+            .fire-wrapper { animation: none !important; }
+        }
+
+        @media (max-width: 768px) {
             /* REDISEÑO EXPERTO DEL PANEL DE RESERVA MÓVIL */
             .booking-mobile-panel {
                 display: none;
@@ -922,66 +921,9 @@
                 margin-top: 15px !important;
             }
 
-            /* CATÁLOGO 2000% RESPONSIVO - SOLUCIÓN DEFINITIVA */
-            .grid-attractions {
-                display: grid !important;
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 12px !important;
-                padding: 10px !important;
-                max-width: 100% !important;
-            }
+            /* Mantener el resto de la lógica móvil (botones, panels, etc) */
+            html, body { overflow-x: hidden !important; }
 
-            .linha-quatro, 
-            .secao-macuco-container, 
-            .sub-coluna-vertical {
-                display: contents !important; /* Desactiva contenedores para flujo continuo */
-            }
-
-            .card {
-                display: flex !important;
-                flex-direction: column !important;
-                height: 100% !important;
-                min-height: 260px !important;
-                background: #141414 !important;
-                border-radius: 12px !important;
-                margin: 0 !important;
-            }
-
-            .video-card {
-                grid-column: span 2 !important; /* Macuco Safari 100% ancho */
-                width: 100% !important;
-                min-height: auto !important;
-                background: #141414 !important;
-            }
-
-            .card-image {
-                flex: 1 !important;
-                height: 150px !important;
-                overflow: hidden !important;
-            }
-
-            .card-image img {
-                width: 100% !important;
-                height: 100% !important;
-                object-fit: cover !important;
-                object-position: center !important;
-            }
-
-            .card-content {
-                padding: 5px 10px !important;
-                background: #141414 !important;
-                height: auto !important;
-            }
-
-            .card-content h3 {
-                font-size: 0.9rem !important;
-                margin-bottom: 2px !important;
-            }
-
-            .card-content p {
-                font-size: 0.75rem !important;
-                line-height: 1.2 !important;
-            }
 
             /* Botão LIBRAS compacto em móvil */
             .btn-libras-premium {
