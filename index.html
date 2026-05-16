@@ -506,7 +506,7 @@
 
         .card-image {
             position: relative;
-            flex: 1;
+            flex-shrink: 0;
         }
 
         .card-image img {
@@ -547,6 +547,33 @@
             padding: 5px 10px !important;
             background: #141414 !important;
             height: auto !important;
+            flex-shrink: 0;
+        }
+
+        /* --- ESTILOS EXCLUSIVOS PARA PC Y NOTEBOOK --- */
+        @media (min-width: 1024px) {
+            .card {
+                height: 380px !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+
+            .card-image {
+                height: 75% !important;
+                flex: none !important;
+            }
+
+            .card-content {
+                height: 25% !important;
+                padding: 8px !important;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .video-card {
+                background: #141414 !important;
+            }
         }
 
         .card-content h3 {
