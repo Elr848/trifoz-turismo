@@ -787,13 +787,17 @@
                 animation: none !important;
             }
 
-            /* CATÁLOGO SIMÉTRICO Y CUADRADO */
-            .grid-attractions {
+            /* CENTRAR CATÁLOGO Y AJUSTAR GRID */
+            .contenedor-catalogo {
                 display: grid !important;
                 grid-template-columns: repeat(2, 1fr) !important;
                 gap: 12px !important;
-                padding: 10px !important;
+                padding: 0 10px !important;
+                margin: 0 auto !important;
+                width: 100% !important;
                 max-width: 100% !important;
+                justify-content: center !important;
+                align-items: center !important;
             }
 
             .linha-quatro, 
@@ -827,6 +831,13 @@
                 display: block !important;
             }
 
+            /* AJUSTE ESPECÍFICO: Imágenes que no deben cortarse */
+            .tarjeta-porto-iguacu img,
+            .tarjeta-cidade-leste img {
+                object-fit: contain !important; /* Foto completa sin cortes */
+                background-color: #141414 !important; /* Relleno negro */
+            }
+
             .card-content {
                 padding: 5px 10px !important;
                 background: #141414 !important;
@@ -849,7 +860,7 @@
                 font-size: 0.65rem !important;
                 margin: 2px 0 0 !important;
                 line-height: 1.1 !important;
-                display: none; /* Opcional: ocultar descripción para máxima simetría si es muy largo */
+                display: none;
             }
 
             /* Macuco Safari (Destaque) */
@@ -857,10 +868,10 @@
                 grid-column: span 2 !important;
             }
             .video-card .card-image img {
-                aspect-ratio: 16 / 9 !important; /* Macuco mantiene formato video */
+                aspect-ratio: 16 / 9 !important;
             }
             .video-card .card-content p {
-                display: block !important; /* Mostrar descripción en el destacado */
+                display: block !important;
             }
 
             /* Desactivar animaciones pesadas */
@@ -1765,7 +1776,7 @@
             </p>
         </div>
 
-        <div class="grid-attractions">
+        <div class="grid-attractions contenedor-catalogo">
             <div class="linha-quatro">
                 <div class="card">
                     <div class="card-image"><img
@@ -1848,21 +1859,21 @@
                 </div>
 
                 <div class="sub-coluna-vertical">
-                    <div class="card">
-                        <div class="card-image"><img src="images/Dutty free.jpeg" alt="Puerto Iguazú"
+                    <div class="card tarjeta-porto-iguacu">
+                        <div class="card-image"><img src="images/Dutty free.jpeg" alt="Porto Iguaçu"
                                 loading="lazy"></div>
                         <div class="card-content">
-                            <h3>PUERTO IGUAZÚ</h3>
+                            <h3>PORTO IGUAÇU</h3>
                             <p>Argentina ao seu alcance.</p>
                         </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card tarjeta-cidade-leste">
                         <div class="card-image card-image-overlay" data-overlay="PARAGUAI">
-                            <img src="images/paraguai.jpg" alt="Ciudad del Este - Paraguai" loading="lazy">
+                            <img src="images/paraguai.jpg" alt="Cidade do Leste - Paraguai" loading="lazy">
                         </div>
                         <div class="card-content">
-                            <h3>CIUDAD DEL ESTE</h3>
+                            <h3>CIDADE DO LESTE</h3>
                             <p>Compras e fronteira.</p>
                         </div>
                     </div>
