@@ -509,6 +509,37 @@
             display: block;
         }
 
+        .card-image {
+            position: relative;
+        }
+
+        .card-image-overlay::after {
+            content: attr(data-overlay);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 255, 255, 0.9);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 2.2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+            pointer-events: none;
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .card:hover .card-image-overlay::after {
+            transform: translate(-50%, -50%) scale(1.1);
+            opacity: 1;
+            color: #fff;
+            text-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+        }
+
         .card-content {
             padding: 12px;
         }
@@ -1849,7 +1880,7 @@
                 <div class="sub-coluna-vertical">
                     <div class="card">
                         <div class="card-image"><img
-                                src="images/buda.jpg"
+                                src="images/buda.jpeg"
                                 alt="Templo Budista" loading="lazy"></div>
                         <div class="card-content">
                             <h3>TEMPLO BUDISTA</h3>
@@ -1859,7 +1890,7 @@
 
                     <div class="card">
                         <div class="card-image"><img
-                                src="images/mezquita.jpg"
+                                src="images/mezquita.jpeg"
                                 alt="Mesquita Muçulmana" loading="lazy"></div>
                         <div class="card-content">
                             <h3>MESQUITA MUÇULMANA</h3>
@@ -1893,7 +1924,7 @@
                 <div class="sub-coluna-vertical">
                     <div class="card">
                         <div class="card-image"><img
-                                src="images/dutty_free.jpg"
+                                src="images/Dutty free.jpeg"
                                 alt="Puerto Iguazú" loading="lazy"></div>
                         <div class="card-content">
                             <h3>PUERTO IGUAZÚ</h3>
@@ -1902,9 +1933,9 @@
                     </div>
 
                     <div class="card">
-                        <div class="card-image"><img
-                                src="images/paraguai.jpg"
-                                alt="Ciudad del Este" loading="lazy"></div>
+                        <div class="card-image card-image-overlay" data-overlay="PARAGUAI">
+                            <img src="images/paraguai.jpg" alt="Ciudad del Este - Paraguai" loading="lazy">
+                        </div>
                         <div class="card-content">
                             <h3>CIUDAD DEL ESTE</h3>
                             <p>Compras e fronteira.</p>
@@ -1941,7 +1972,7 @@
                 </div>
 
                 <div class="card">
-                    <div class="card-image"><img src="images/wonder_park.jpg" alt="Wonder Park" loading="lazy"></div>
+                    <div class="card-image"><img src="images/wonder_park.png" alt="Wonder Park" loading="lazy"></div>
                     <div class="card-content">
                         <h3>WONDER PARK</h3>
                         <p style="font-size: 0.75rem; line-height: 1.2; margin-top: 5px;">
