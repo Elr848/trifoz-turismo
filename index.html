@@ -890,76 +890,67 @@
                 margin-top: 15px !important;
             }
 
+            /* CATÁLOGO 2000% RESPONSIVO - SOLUCIÓN DEFINITIVA */
             .grid-attractions {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-                padding: 10px;
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
+                padding: 10px !important;
+                max-width: 100% !important;
+            }
+
+            .linha-quatro, 
+            .secao-macuco-container, 
+            .sub-coluna-vertical {
+                display: contents !important; /* Desactiva contenedores para flujo continuo */
             }
 
             .card {
-                min-height: 280px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                height: 100% !important;
+                min-height: 260px !important;
+                background: #1a1a1a !important;
+                border-radius: 12px !important;
+                margin: 0 !important;
             }
 
-            .card {
-                animation: none !important;
-                box-shadow: none !important;
+            .video-card {
+                grid-column: span 2 !important; /* Macuco Safari 100% ancho */
+                width: 100% !important;
+                min-height: auto !important;
             }
 
-            .booking-mobile-field {
-                padding: 12px 0 !important;
+            .card-image {
+                flex: 1 !important;
+                height: 150px !important;
+                overflow: hidden !important;
             }
 
-            .booking-mobile-field-icon {
-                font-size: 1.1rem !important;
+            .card-image img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                object-position: center !important;
             }
 
-            .booking-mobile-btn {
-                bottom: 20px !important;
-                width: 85% !important;
-                max-width: 300px;
+            .card-content {
+                padding: 10px !important;
+                background: #1a1a1a !important;
+                height: auto !important;
             }
 
-            .hero-container h1 {
-                font-size: 1.8rem;
-                letter-spacing: 4px;
-                margin-top: 10px;
-                animation: none !important;
-                /* Desactivar brillo de texto */
-                background: linear-gradient(to right, #fff, #ffd700, #ff4500);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+            .card-content h3 {
+                font-size: 0.9rem !important;
+                margin-bottom: 2px !important;
             }
 
-            .hero-container h2 {
-                font-size: clamp(0.95rem, 3.5vw, 1.3rem);
-                letter-spacing: 1px;
+            .card-content p {
+                font-size: 0.75rem !important;
+                line-height: 1.2 !important;
             }
 
-            .hero-container h3 {
-                font-size: clamp(0.85rem, 2.5vw, 1.1rem);
-            }
-
-            .flags-container {
-                gap: 14px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .flag-icon {
-                width: 40px;
-                height: 27px;
-            }
-
-            .country-name {
-                font-size: 0.7rem;
-            }
-
-            .attractions {
-                padding: 40px 14px 60px;
-            }
-
-            /* Botão LIBRAS compacto em tablet */
+            /* Botão LIBRAS compacto em móvil */
             .btn-libras-premium {
                 padding: 8px 16px;
                 font-size: 0.78rem;
@@ -967,42 +958,13 @@
                 text-align: center;
                 line-height: 1.4;
                 gap: 12px;
+                width: 95%;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             .libras-icon-img {
-                height: 70px !important;
-            }
-
-            .libras-icon-fa {
-                font-size: 20px;
-                margin-right: 6px;
-            }
-
-            /* Grade em 2 colunas para tablet */
-            .grid-attractions {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 14px;
-                padding: 0 4px;
-            }
-
-            .card {
-                height: 280px !important;
-            }
-
-            .card-image img {
-                height: 100%;
-            }
-
-            .card-content h3 {
-                font-size: 0.95rem;
-            }
-
-            .card-content p {
-                font-size: 0.8rem;
-            }
-
-            .video-card {
-                max-width: 100% !important;
+                height: 60px !important;
             }
 
             footer {
