@@ -458,36 +458,27 @@
             animation: icon-glow 2s infinite ease-in-out;
         }
 
-        .grid-attractions {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 1200px;
-            margin: auto;
+        .grid-attractions, .contenedor-catalogo {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 15px !important;
+            width: 100% !important;
+            max-width: 1200px !important;
+            margin: 0 auto !important;
         }
 
-        .linha-quatro {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .secao-macuco-container {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            gap: 20px;
-            align-items: stretch;
-        }
-
+        .linha-quatro,
+        .secao-macuco-container,
         .sub-coluna-vertical {
-            display: grid;
-            grid-template-rows: repeat(2, 1fr);
-            gap: 15px;
+            display: contents !important;
         }
 
         .video-card {
             background: #141414 !important;
-            width: 350px;
+            grid-column: span 2 !important;
+            grid-row: span 2 !important;
+            width: 100% !important;
+            height: 100% !important;
         }
 
         .card {
@@ -514,9 +505,14 @@
         .card-image img {
             width: 100%;
             height: 180px;
-            /* Restaurado a altura original */
-            object-fit: cover;
+            object-fit: cover !important; /* Por defecto cover para todas */
             display: block;
+        }
+
+        /* Porto Iguaçu específico: no cortar cartel blanco */
+        .tarjeta-porto-iguacu img {
+            object-fit: contain !important;
+            background-color: #141414 !important;
         }
 
         .card-image-overlay::after {
@@ -839,11 +835,13 @@
                 background-color: #141414 !important;
             }
 
-            /* Mantener legibilidad en las de frontera */
-            .tarjeta-porto-iguacu img,
-            .tarjeta-cidade-leste img {
+            /* Porto Iguaçu: no cortar cartel blanco */
+            .tarjeta-porto-iguacu img {
                 object-fit: contain !important;
+                background-color: #141414 !important;
             }
+
+            /* Todas las demás (incluyendo Cidade do Leste) ya heredan cover */
 
             .card-content {
                 padding: 6px 8px !important;
@@ -869,9 +867,9 @@
                 display: none !important;
             }
 
-            /* Macuco Safari (Destaque Central) */
             .video-card {
                 grid-column: span 2 !important;
+                grid-row: span 1 !important; /* En móvil solo una fila */
             }
 
             .video-card .card-image img {
