@@ -548,6 +548,32 @@
             height: auto !important;
         }
 
+        /* --- AJUSTE ESPECÍFICO MACUCO PC --- */
+        @media (min-width: 1024px) {
+            .video-card {
+                background: #141414 !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+
+            .video-card .card-image {
+                flex: 1 !important;
+                display: flex !important;
+            }
+
+            .video-card .card-image img {
+                height: 100% !important;
+                width: 100% !important;
+                object-fit: cover !important;
+            }
+
+            .video-card .card-content {
+                margin-top: auto !important;
+                height: auto !important;
+                padding: 15px !important;
+            }
+        }
+
         .card-content h3 {
             color: var(--amarillo);
             margin: 0 0 4px;
