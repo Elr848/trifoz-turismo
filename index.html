@@ -456,87 +456,104 @@
         }
 
         .grid-attractions {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 20px;
-            width: 100%;
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            margin: auto;
+        }
+
+        .linha-quatro {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .secao-macuco-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .sub-coluna-vertical {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .video-card {
+            background: #1a1a1a !important;
+            width: 350px;
         }
 
         .card {
-            display: flex;
-            flex-direction: column;
-            background: #111111;
-            border-radius: 12px;
+            background: #1a1a1a;
+            border-radius: 15px;
             overflow: hidden;
-            border: 1px solid rgba(255, 215, 0, 0.2);
+            border: 3px solid var(--dorado);
             transition: transform 0.3s ease;
-            height: 100%; /* Permite que el grid controle la altura */
-            min-height: 380px;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 215, 0, 0.6);
-        }
-
-        .card-image {
-            position: relative;
-            flex: 1; /* Ocupa el espacio disponible */
-            overflow: hidden;
-            background: #000;
+            transform: translateY(-10px) scale(1.02);
+            border-color: #ffd700;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+            background: rgba(212, 175, 55, 0.08);
         }
 
         .card-image img {
             width: 100%;
-            height: 100%;
+            height: 180px;
             object-fit: cover;
-            object-position: center;
             display: block;
+        }
+
+        .card-image {
+            position: relative;
         }
 
         .card-image-overlay::after {
             content: attr(data-overlay);
             position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 255, 255, 0.9);
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            font-size: 1.5rem;
-            letter-spacing: 3px;
+            font-size: 2.2rem;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
-            background: rgba(0, 0, 0, 0.3);
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
             pointer-events: none;
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .card:hover .card-image-overlay::after {
+            transform: translate(-50%, -50%) scale(1.1);
+            opacity: 1;
+            color: #fff;
+            text-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
         }
 
         .card-content {
-            padding: 10px 15px;
+            padding: 12px;
             background: #1a1a1a;
-            height: auto;
-            border-top: 1px solid rgba(255, 215, 0, 0.15);
-            flex-shrink: 0;
         }
 
         .card-content h3 {
             color: var(--amarillo);
-            margin: 0;
+            margin: 0 0 4px;
             text-transform: uppercase;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            font-weight: 700;
+            font-size: 1.1rem;
         }
 
-        .card-content p {
-            color: rgba(255, 255, 255, 0.7);
-            margin: 2px 0 0;
-            font-size: 0.78rem;
-            line-height: 1.2;
+        .card:hover .card-content h3 {
+            color: var(--azul-electrico);
         }
 
         /* GUÍA ANIMADO SEÑALANDO */
@@ -1812,153 +1829,148 @@
         </div>
 
         <div class="grid-attractions">
-            <!-- CATARATAS -->
-            <div class="card">
-                <div class="card-image">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/For%C3%A7a_que_Encanta.jpg" alt="Cataratas" loading="lazy">
+            <div class="linha-quatro">
+                <div class="card">
+                    <div class="card-image"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/2/2c/For%C3%A7a_que_Encanta.jpg"
+                            alt="Cataratas" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3>CATARATAS DO IGUAÇU</h3>
+                        <p>Visita guiada privada.</p>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <h3>CATARATAS DO IGUAÇU</h3>
-                    <p>Visita guiada privada.</p>
+
+                <div class="card">
+                    <div class="card-image"><img
+                            src="https://s2-g1.glbimg.com/l1mp9ZmIQTiO2V8egJB_tOgVnYg=/0x0:5168x2912/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/R/5/3svxyZSVK292Muzew6RA/araras-caninde-1-.jpg"
+                            alt="Parque" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3>PARQUE DAS AVES</h3>
+                        <p>Santuário ecológico.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image"><img src="images/marco_real.jpg" alt="Marco" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3>MARCO DAS 3 FRONTEIRAS</h3>
+                        <p>Encontro de nações.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image"><img src="images/kattamaram_v2.jpg" alt="Kattamaram II - Foz do Iguaçu"
+                            loading="lazy"></div>
+                    <div class="card-content">
+                        <h3>KATTAMARAM II</h3>
+                        <p>Romantismo no pôr do sol.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- PARQUE DAS AVES -->
-            <div class="card">
-                <div class="card-image">
-                    <img src="https://s2-g1.glbimg.com/l1mp9ZmIQTiO2V8egJB_tOgVnYg=/0x0:5168x2912/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/R/5/3svxyZSVK292Muzew6RA/araras-caninde-1-.jpg" alt="Parque" loading="lazy">
+            <div class="secao-macuco-container">
+                <div class="sub-coluna-vertical">
+                    <div class="card">
+                        <div class="card-image"><img src="images/buda.jpeg" alt="Templo Budista" loading="lazy"></div>
+                        <div class="card-content">
+                            <h3>TEMPLO BUDISTA</h3>
+                            <p>Paz e meditação.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image"><img src="images/mezquita.jpeg" alt="Mesquita Muçulmana" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>MESQUITA MUÇULMANA</h3>
+                            <p>Arquitetura e cultura.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <h3>PARQUE DAS AVES</h3>
-                    <p>Santuário ecológico.</p>
+
+                <div class="video-card card">
+                    <div class="card-image">
+                        <img src="images/macuco_safari_real.jpg" alt="Macuco Safari - Foz do Iguaçu"
+                            style="width: 100%; height: auto; display: block; filter: saturate(1.2) contrast(1.1);"
+                            loading="lazy">
+                    </div>
+                    <div class="card-content"
+                        style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px 20px; gap: 20px;">
+                        <div style="text-align: center;">
+                            <h3
+                                style="margin: 0; font-size: 1.6rem; color: #ffd700; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);">
+                                MACUCO SAFARI</h3>
+                            <p style="margin: 5px 0 0; font-size: 1rem; color: #fff; opacity: 0.9;">Aventura extrema nas
+                                quedas d'água.</p>
+                        </div>
+                        <a href="https://youtu.be/1dUpxFeU_u4?si=1p_wqlZU0Bks6DNa" target="_blank"
+                            class="btn-video-elegant">
+                            <i class="fab fa-youtube"></i> Ver Vídeo
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sub-coluna-vertical">
+                    <div class="card">
+                        <div class="card-image"><img src="images/Dutty free.jpeg" alt="Puerto Iguazú" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>PUERTO IGUAZÚ</h3>
+                            <p>Argentina ao seu alcance.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image card-image-overlay" data-overlay="PARAGUAI">
+                            <img src="images/paraguai.jpg" alt="Ciudad del Este - Paraguai" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>CIUDAD DEL ESTE</h3>
+                            <p>Compras e fronteira.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- MARCO -->
-            <div class="card">
-                <div class="card-image">
-                    <img src="images/marco_real.jpg" alt="Marco" loading="lazy">
+            <div class="linha-quatro">
+                <div class="card">
+                    <div class="card-image"><img src="images/yup star.jpeg" alt="Roda" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3>RODA GIGANTE</h3>
+                        <p>Vista panorâmica.</p>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <h3>MARCO DAS 3 FRONTEIRAS</h3>
-                    <p>Encontro de nações.</p>
-                </div>
-            </div>
 
-            <!-- KATTAMARAM -->
-            <div class="card">
-                <div class="card-image">
-                    <img src="images/kattamaram_v2.jpg" alt="Kattamaram II - Foz do Iguaçu" loading="lazy">
+                <div class="card">
+                    <div class="card-image"><img
+                            src="https://www.umviajante.com.br/wp-content/uploads/2023/09/dreamland-foz-do-iguacu-vale-a-pena-visitar-2.jpg"
+                            alt="Museo" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3>MUSEU DE CERA</h3>
+                        <p>Réplicas perfeitas.</p>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <h3>KATTAMARAM II</h3>
-                    <p>Romantismo no pôr do sol.</p>
-                </div>
-            </div>
 
-            <!-- TEMPLO BUDISTA -->
-            <div class="card">
-                <div class="card-image">
-                    <img src="images/buda.jpeg" alt="Templo Budista" loading="lazy">
+                <div class="card">
+                    <div class="card-image"><img src="images/itaipu_turismo.jpg" alt="Itaipu" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3>ITAIPU BINACIONAL</h3>
+                        <p>Energia limpa.</p>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <h3>TEMPLO BUDISTA</h3>
-                    <p>Paz e meditação.</p>
-                </div>
-            </div>
 
-            <!-- MESQUITA -->
-            <div class="card">
-                <div class="card-image">
-                    <img src="images/mezquita.jpeg" alt="Mesquita Muçulmana" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>MESQUITA MUÇULMANA</h3>
-                    <p>Arquitetura e cultura.</p>
-                </div>
-            </div>
-
-            <!-- MACUCO SAFARI -->
-            <div class="card">
-                <div class="card-image">
-                    <img src="images/macuco_safari_real.jpg" alt="Macuco Safari - Foz do Iguaçu" loading="lazy">
-                </div>
-                <div class="card-content" style="text-align: center;">
-                    <h3 style="color: #ffd700;">MACUCO SAFARI</h3>
-                    <p>Aventura extrema nas quedas d'água.</p>
-                    <a href="https://youtu.be/1dUpxFeU_u4?si=1p_wqlZU0Bks6DNa" target="_blank" class="btn-video-elegant" style="margin-top: 10px; display: inline-flex;">
-                        <i class="fab fa-youtube"></i> Ver Vídeo
-                    </a>
-                </div>
-            </div>
-
-            <!-- PUERTO IGUAZU -->
-            <div class="card">
-                <div class="card-image">
-                    <img src="images/Dutty free.jpeg" alt="Puerto Iguazú" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>PUERTO IGUAZÚ</h3>
-                    <p>Argentina ao seu alcance.</p>
-                </div>
-            </div>
-
-            <!-- CIUDAD DEL ESTE -->
-            <div class="card">
-                <div class="card-image card-image-overlay" data-overlay="PARAGUAI">
-                    <img src="images/paraguai.jpg" alt="Ciudad del Este - Paraguai" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>CIUDAD DEL ESTE</h3>
-                    <p>Compras e fronteira.</p>
-                </div>
-            </div>
-
-            <!-- YUP STAR -->
-            <div class="card">
-                <div class="card-image">
-                    <img src="images/yup star.jpeg" alt="Roda" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>RODA GIGANTE</h3>
-                    <p>Vista panorâmica.</p>
-                </div>
-            </div>
-
-            <!-- MUSEU DE CERA -->
-            <div class="card">
-                <div class="card-image">
-                    <img src="https://www.umviajante.com.br/wp-content/uploads/2023/09/dreamland-foz-do-iguacu-vale-a-pena-visitar-2.jpg" alt="Museo" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>MUSEU DE CERA</h3>
-                    <p>Réplicas perfeitas.</p>
-                </div>
-            </div>
-
-            <!-- ITAIPU -->
-            <div class="card">
-                <div class="card-image">
-                    <img src="images/itaipu_turismo.jpg" alt="Itaipu" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>ITAIPU BINACIONAL</h3>
-                    <p>Energia limpa.</p>
-                </div>
-            </div>
-
-            <!-- WONDER PARK -->
-            <div class="card">
-                <div class="card-image">
-                    <img src="images/wonder_park_v2.jpg" alt="Wonder Park - Foz do Iguaçu" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>WONDER PARK</h3>
-                    <p style="font-size: 0.75rem; line-height: 1.2; margin-top: 5px;">
-                        SHOW DAS ÁGUAS<br>
-                        MOVIE CARS<br>
-                        LUMINA PARK
-                    </p>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="images/wonder_park_v2.jpg" alt="Wonder Park - Foz do Iguaçu" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>WONDER PARK</h3>
+                        <p style="font-size: 0.75rem; line-height: 1.2; margin-top: 5px;">
+                            SHOW DAS ÁGUAS<br>
+                            MOVIE CARS<br>
+                            LUMINA PARK
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
