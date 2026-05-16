@@ -787,17 +787,17 @@
                 animation: none !important;
             }
 
-            /* CENTRAR CATÁLOGO Y AJUSTAR GRID */
-            .contenedor-catalogo {
+            /* CENTRADO ABSOLUTO Y SIMETRÍA TOTAL */
+            .grid-attractions.contenedor-catalogo {
                 display: grid !important;
                 grid-template-columns: repeat(2, 1fr) !important;
                 gap: 12px !important;
-                padding: 0 10px !important;
+                padding: 0 12px !important;
                 margin: 0 auto !important;
                 width: 100% !important;
                 max-width: 100% !important;
+                box-sizing: border-box !important;
                 justify-content: center !important;
-                align-items: center !important;
             }
 
             .linha-quatro, 
@@ -811,59 +811,58 @@
                 flex-direction: column !important;
                 height: auto !important;
                 min-height: 0 !important;
+                margin: 0 !important;
                 background: #141414 !important;
                 border-radius: 12px !important;
-                margin: 0 !important;
                 overflow: hidden !important;
                 border: 2px solid var(--dorado) !important;
+                box-sizing: border-box !important;
             }
 
             .card-image {
-                flex: none !important;
-                height: auto !important;
                 width: 100% !important;
+                height: auto !important;
+                flex: none !important;
             }
 
             .card-image img {
                 width: 100% !important;
-                aspect-ratio: 1 / 1 !important;
+                aspect-ratio: 1 / 1 !important; /* Cuadrado perfecto para todas */
                 object-fit: cover !important;
                 display: block !important;
+                background-color: #141414 !important;
             }
 
-            /* AJUSTE ESPECÍFICO: Imágenes que no deben cortarse */
+            /* Mantener legibilidad en las de frontera */
             .tarjeta-porto-iguacu img,
             .tarjeta-cidade-leste img {
-                object-fit: contain !important; /* Foto completa sin cortes */
-                background-color: #141414 !important; /* Relleno negro */
+                object-fit: contain !important;
             }
 
             .card-content {
-                padding: 5px 10px !important;
+                padding: 6px 8px !important;
                 background: #141414 !important;
-                height: auto !important;
                 text-align: center !important;
                 display: flex !important;
                 flex-direction: column !important;
                 justify-content: center !important;
                 flex-grow: 1 !important;
+                min-height: 42px !important; /* Igualar altura de franja de texto */
             }
 
             .card-content h3 {
-                font-size: 0.8rem !important;
+                font-size: 0.78rem !important;
                 margin: 0 !important;
                 line-height: 1.1 !important;
                 color: var(--amarillo) !important;
+                text-transform: uppercase !important;
             }
 
             .card-content p {
-                font-size: 0.65rem !important;
-                margin: 2px 0 0 !important;
-                line-height: 1.1 !important;
-                display: none;
+                display: none !important;
             }
 
-            /* Macuco Safari (Destaque) */
+            /* Macuco Safari (Destaque Central) */
             .video-card {
                 grid-column: span 2 !important;
             }
@@ -872,11 +871,12 @@
             }
             .video-card .card-content p {
                 display: block !important;
+                font-size: 0.7rem !important;
+                margin-top: 4px !important;
             }
 
-            /* Desactivar animaciones pesadas */
-            .hero-container h1 { animation: none !important; }
-            .fire-wrapper { animation: none !important; }
+            /* Desactivar animaciones */
+            .hero-container h1, .fire-wrapper { animation: none !important; }
         }
 
         @media (max-width: 768px) {
