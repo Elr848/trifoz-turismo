@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
-    <title>Trifoz Turismo | Guía y Traslados en Foz do Iguaçu | Tours & Transfers</title>
-    <meta name="description" content="Servicios de turismo y traslados privados en Foz do Iguaçu con Ebert. Especialistas en turismo inclusivo (LIBRAS) y atención bilingüe en la Triple Frontera.">
-    <meta name="keywords" content="Trifoz Turismo, Guia de turismo Foz do Iguacu, Traslados Foz, Transfers Foz do Iguaçu, Turismo inclusivo Libras, turismo acessivel foz, Ebert guia turístico">
+    <title>Trifoz Turismo | Guía Turístico Ebert | Traslados y Tours en Foz do Iguaçu</title>
+    <meta name="description" content="Traslados privados y tours con guía turístico en Foz do Iguaçu. Ebert - Especialista en LIBRAS y atención en Español y Portugués en la Triple Frontera.">
+    <meta name="keywords" content="Trifoz Turismo, Ebert guía turístico, traslados Foz do Iguaçu, tours cataratas do Iguaçu, turismo libras, transfers Foz, guia turístico foz">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://www.trifozturismo.com" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -21,14 +21,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.trifozturismo.com/">
     <meta property="og:title" content="Trifoz Turismo | Guía y Traslados en Foz do Iguaçu">
-    <meta property="og:description" content="Traslados privados y tours personalizados en Foz do Iguaçu con Ebert. Especialistas en LIBRAS.">
+    <meta property="og:description" content="Tours y traslados privados con Ebert - Especialista en LIBRAS">
     <meta property="og:image" content="https://www.trifozturismo.com/images/hero_principal.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.trifozturismo.com/">
     <meta property="twitter:title" content="Trifoz Turismo | Guía y Traslados en Foz do Iguaçu">
-    <meta property="twitter:description" content="Traslados privados y tours personalizados en Foz do Iguaçu con Ebert. Especialistas en LIBRAS.">
+    <meta property="twitter:description" content="Tours y traslados privados con Ebert - Especialista en LIBRAS">
     <meta property="twitter:image" content="https://www.trifozturismo.com/images/hero_principal.jpg">
 
     <!-- Geolocalización SEO Avanzada -->
@@ -1641,6 +1641,25 @@
                 font-size: 1.4rem; 
             }
         }
+
+        /* Ajustes de uniformidad de tarjetas */
+        .card {
+            display: flex !important;
+            flex-direction: column !important;
+            height: 100% !important;
+        }
+        
+        .card-image img {
+            width: 100% !important;
+            height: 190px !important;           /* Más uniforme */
+            object-fit: cover !important;
+        }
+        
+        @media (max-width: 768px) {
+            .card-image img {
+                height: 160px !important;
+            }
+        }
     </style>
 </head>
 
@@ -1657,26 +1676,29 @@
     <section class="hero">
         <div class="fire-wrapper">
             <div class="hero-container">
-                <h1 class="titulo-metalico" style="margin: 0; line-height: 1.1; font-size: clamp(1.8rem, 5.5vw, 2.6rem);">
+                <h1 class="titulo-metalico" style="margin:0; line-height:1.1; font-size: clamp(1.9rem, 5.5vw, 2.7rem);">
                     Trifoz Turismo
-                    <span style="font-size: 0.45em; display: block; opacity: 0.9; margin-top: 10px; font-weight: 300; letter-spacing: 2px; -webkit-text-fill-color: white;">Tours & Transfers Privados na Tríplice Fronteira</span>
                 </h1>
-                <h2 class="subtitulo-amarillo" style="margin: 0; line-height: 1.2; font-size: clamp(0.85rem, 2vw, 1.1rem); opacity: 0.9;">Turismo Inclusivo em LIBRAS & Español — Especialistas nas Cataratas do Iguaçu</h2>
-                <h2 style="margin: 0; line-height: 1.2; font-size: clamp(0.85rem, 2vw, 1.1rem); color: #fff; opacity: 0.9; font-weight: 400;">Traslados Privados em Foz do Iguaçu, Puerto Iguazú e Ciudad del Este</h2>
-
+                <p style="font-size: 1.05rem; margin:8px 0 15px; opacity:0.95;">
+                    <strong>Guía Turístico Ebert</strong>
+                </p>
+                <h2 class="subtitulo-amarillo" style="margin:0; font-size: clamp(0.9rem, 2.2vw, 1.15rem);">Tours & Traslados Privados en la Triple Frontera</h2>
+                <h3 style="margin:12px 0 20px; font-size: clamp(0.85rem, 2vw, 1.1rem); color:#fff; opacity:0.9;">
+                    Especialistas en LIBRAS • Español • Portugués
+                </h3>
 
                 <div class="flags-section">
                     <div class="flags-container">
                         <div class="flag-box">
-                            <img src="https://flagcdn.com/w80/br.png" width="80" height="53" class="flag-icon" alt="Bandera de Brasil" loading="lazy" decoding="async">
+                            <img src="https://flagcdn.com/w80/br.png" width="80" height="53" class="flag-icon" alt="Brasil" loading="lazy">
                             <span class="country-name">Brasil</span>
                         </div>
                         <div class="flag-box">
-                            <img src="https://flagcdn.com/w80/ar.png" width="80" height="53" class="flag-icon" alt="Bandera de Argentina" loading="lazy" decoding="async">
+                            <img src="https://flagcdn.com/w80/ar.png" width="80" height="53" class="flag-icon" alt="Argentina" loading="lazy">
                             <span class="country-name">Argentina</span>
                         </div>
                         <div class="flag-box">
-                            <img src="https://flagcdn.com/w80/py.png" width="80" height="53" class="flag-icon" alt="Bandera de Paraguay" loading="lazy" decoding="async">
+                            <img src="https://flagcdn.com/w80/py.png" width="80" height="53" class="flag-icon" alt="Paraguay" loading="lazy">
                             <span class="country-name">Paraguai</span>
                         </div>
                     </div>
@@ -1844,10 +1866,10 @@
     <section class="attractions">
 
         <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" class="btn-libras-premium">
-            <img src="images/una.jpeg" width="220" height="160" alt="Atendimento em LIBRAS - Turismo Inclusivo con Ebert - Trifoz Turismo" class="libras-icon-img" loading="lazy" decoding="async">
+            <img src="images/una.jpeg" width="240" height="170" alt="Atendimento em LIBRAS - Turismo Inclusivo con Ebert" class="libras-icon-img" loading="lazy">
             <div class="libras-text-wrapper">
                 <span class="libras-pt">Atendimento em LIBRAS</span>
-                <span class="libras-en">Linguagem de Sinais / Sign Language</span>
+                <span class="libras-en">Lengua de Señas • Sign Language</span>
             </div>
         </a>
 
@@ -2015,7 +2037,7 @@
     </section>
 
     <footer>
-        <p>© 2026 Trifoz Turismo Foz do Iguaçu - Todos os direitos reservados</p>
+        <p>© 2026 Trifoz Turismo • Guía Turístico Ebert • Foz do Iguaçu - Todos los derechos reservados</p>
     </footer>
 
 
