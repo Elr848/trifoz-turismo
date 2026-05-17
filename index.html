@@ -1780,6 +1780,277 @@
                 transform: translateZ(0);
             }
         }
+
+        /* ========================================================================
+           SECCIÓN DESTINOS - ATRACTIVOS DESTACADOS
+           Responsive Design + SEO Optimizado
+           ======================================================================== */
+        .destinos-seccion {
+            background: linear-gradient(135deg, #001a4d 0%, #003399 25%, #4169E1 50%, #1a53ff 75%, #000d1a 100%);
+            padding: 60px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .destinos-titulo-contenedor {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .destinos-subtitulo {
+            display: block;
+            color: #ffd700;
+            font-size: clamp(0.75rem, 2.5vw, 0.95rem);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+
+        .destinos-titulo-contenedor h2 {
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
+            color: #ffffff;
+            margin: 0 0 20px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .linea-decorativa {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700, #ffed4e, #ffd700);
+            margin: 0 auto;
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .contenedor-tarjetas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tarjeta-destino {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+
+        .tarjeta-destino::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+            pointer-events: none;
+        }
+
+        .tarjeta-destino:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(255, 215, 0, 0.4);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.15);
+        }
+
+        .tarjeta-destino:hover::before {
+            left: 100%;
+        }
+
+        .tarjeta-encabezado {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 18px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .flag-icon {
+            font-size: 2.2rem;
+            line-height: 1;
+            min-width: 2.2rem;
+            text-align: center;
+        }
+
+        .tarjeta-encabezado h3 {
+            margin: 0;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            flex: 1;
+        }
+
+        .tarjeta-atractivo-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 15px 0;
+            font-weight: 400;
+        }
+
+        .tarjeta-descripcion-corta {
+            font-size: 0.85rem;
+            color: #ffd700;
+            font-weight: 600;
+            margin: 10px 0 20px;
+            letter-spacing: 0.3px;
+            opacity: 0.95;
+        }
+
+        .contenido-extra {
+            margin: 20px 0;
+            flex-grow: 1;
+        }
+
+        .lista-atractivos {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .lista-atractivos li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.5;
+        }
+
+        .check-icon {
+            color: #25d366;
+            font-weight: bold;
+            min-width: 20px;
+            text-align: center;
+            margin-top: 2px;
+        }
+
+        .btn-leer-mas {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #001a4d;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: auto;
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-leer-mas:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 18px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(135deg, #ffed4e, #ffd700);
+        }
+
+        .btn-leer-mas:active {
+            transform: scale(0.98);
+        }
+
+        /* Responsive: Tablet */
+        @media (max-width: 768px) {
+            .destinos-seccion {
+                padding: 50px 15px 70px;
+            }
+
+            .destinos-titulo-contenedor {
+                margin-bottom: 40px;
+            }
+
+            .contenedor-tarjetas {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .tarjeta-destino {
+                padding: 20px;
+            }
+
+            .tarjeta-destino:hover {
+                transform: translateY(-5px) scale(1.01);
+            }
+        }
+
+        /* Responsive: Mobile */
+        @media (max-width: 480px) {
+            .destinos-seccion {
+                padding: 40px 12px 60px;
+            }
+
+            .destinos-titulo-contenedor {
+                margin-bottom: 30px;
+            }
+
+            .destinos-subtitulo {
+                font-size: 0.7rem;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+            }
+
+            .destinos-titulo-contenedor h2 {
+                font-size: 1.6rem;
+                margin: 0 0 15px;
+            }
+
+            .contenedor-tarjetas {
+                gap: 20px;
+            }
+
+            .tarjeta-destino {
+                padding: 18px;
+            }
+
+            .tarjeta-encabezado {
+                margin-bottom: 15px;
+                gap: 12px;
+            }
+
+            .flag-icon {
+                font-size: 1.8rem;
+            }
+
+            .tarjeta-encabezado h3 {
+                font-size: 1.1rem;
+            }
+
+            .tarjeta-atractivo-desc {
+                font-size: 0.9rem;
+                margin: 12px 0;
+            }
+
+            .btn-leer-mas {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 
@@ -2158,6 +2429,152 @@
         </div>
     </section>
 
+    <!-- SECCIÓN DESTINOS EXCLUSIVOS -->
+    <section class="destinos-seccion">
+        <div class="destinos-titulo-contenedor">
+            <span class="destinos-subtitulo">TOURS EXCLUSIVOS EN FOZ</span>
+            <h2>Atractivos Destacados</h2>
+            <div class="linea-decorativa"></div>
+        </div>
+
+        <div class="contenedor-tarjetas">
+            
+            <div class="tarjeta-destino">
+                <div class="tarjeta-encabezado">
+                    <span class="flag-icon">🌊</span>
+                    <h3>Cataratas del Iguazú</h3>
+                </div>
+                <p class="tarjeta-atractivo-desc">
+                    Siente la energía ensordecedora de la pasarela que te lleva al corazón del mayor conjunto de caídas de agua del mundo. Un espectáculo de arcoíris y naturaleza pura en su máxima expresión.
+                </p>
+                <p class="tarjeta-descripcion-corta">Traslado privado y guiado directo al parque brasileño.</p>
+                <div class="contenido-extra">
+                    <ul class="lista-atractivos">
+                        <li><span class="check-icon">✓</span> Entrada sin filas ni demoras (asesoría)</li>
+                        <li><span class="check-icon">✓</span> Recorrido completo por el sendero panorámico</li>
+                        <li><span class="check-icon">✓</span> Tiempo libre para fotos en el mirador principal</li>
+                    </ul>
+                </div>
+                <button class="btn-leer-mas" onclick="toggleTarjeta(this)">Ver más atractivos</button>
+            </div>
+
+            <div class="tarjeta-destino">
+                <div class="tarjeta-encabezado">
+                    <span class="flag-icon">🦜</span>
+                    <h3>Parque das Aves</h3>
+                </div>
+                <p class="tarjeta-atractivo-desc">
+                    Camina dentro de inmensos viveros rodeado de tucanes, guacamayos e increíbles especies rescatadas. Una inmersión total en los colores vibrantes de la Mata Atlántica.
+                </p>
+                <p class="tarjeta-descripcion-corta">Un paseo ideal y relajante para toda la familia.</p>
+                <div class="contenido-extra">
+                    <ul class="lista-atractivos">
+                        <li><span class="check-icon">✓</span> Ubicado justo al lado de las Cataratas</li>
+                        <li><span class="check-icon">✓</span> Senderos accesibles para cochecitos y sillas</li>
+                        <li><span class="check-icon">✓</span> Experiencia educativa y de conservación</li>
+                    </ul>
+                </div>
+                <button class="btn-leer-mas" onclick="toggleTarjeta(this)">Ver más atractivos</button>
+            </div>
+
+            <div class="tarjeta-destino">
+                <div class="tarjeta-encabezado">
+                    <span class="flag-icon">🧘‍♂️</span>
+                    <h3>Templo Budista Chen Tien</h3>
+                </div>
+                <p class="tarjeta-atractivo-desc">
+                    Encuentra paz profunda y una vista privilegiada del Río Paraná entre más de 120 estatuas, destacando un Buda gigante de 7 metros de altura. Un rincón místico en Foz.
+                </p>
+                <p class="tarjeta-descripcion-corta">Paseo cultural con paisajes perfectos para fotografías.</p>
+                <div class="contenido-extra">
+                    <ul class="lista-atractivos">
+                        <li><span class="check-icon">✓</span> Entorno tranquilo, jardines de meditación</li>
+                        <li><span class="check-icon">✓</span> Conexión histórica con la comunidad oriental</li>
+                        <li><span class="check-icon">✓</span> Parada ideal en combinación con el City Tour</li>
+                    </ul>
+                </div>
+                <button class="btn-leer-mas" onclick="toggleTarjeta(this)">Ver más atractivos</button>
+            </div>
+
+            <div class="tarjeta-destino">
+                <div class="tarjeta-encabezado">
+                    <span class="flag-icon">🕌</span>
+                    <h3>Mezquita Omar Ibn Al-Khattab</h3>
+                </div>
+                <p class="tarjeta-atractivo-desc">
+                    Admira la deslumbrante arquitectura islámica con sus imponentes minaretes y su cúpula blanca calada. Una puerta abierta a las ricas costumbres orientales en plena frontera.
+                </p>
+                <p class="tarjeta-descripcion-corta">Visita respetuosa con guía y explicación cultural.</p>
+                <div class="contenido-extra">
+                    <ul class="lista-atractivos">
+                        <li><span class="check-icon">✓</span> Conoce el templo islámico más grande de la región</li>
+                        <li><span class="check-icon">✓</span> Acceso gratuito (respetando normas de vestimenta)</li>
+                        <li><span class="check-icon">✓</span> Compra de dulces árabes tradicionales en los alrededores</li>
+                    </ul>
+                </div>
+                <button class="btn-leer-mas" onclick="toggleTarjeta(this)">Ver más atractivos</button>
+            </div>
+
+            <div class="tarjeta-destino">
+                <div class="tarjeta-encabezado">
+                    <span class="flag-icon">📐</span>
+                    <h3>Marco de las Tres Fronteras</h3>
+                </div>
+                <p class="tarjeta-atractivo-desc">
+                    El lugar mágico donde los ríos Iguazú y Paraná se unen, separando las costas de Brasil, Argentina y Paraguay. Disfruta de una puesta de sol única y espectáculos culturales históricos.
+                </p>
+                <p class="tarjeta-descripcion-corta">El destino nocturno perfecto y lleno de magia.</p>
+                <div class="contenido-extra">
+                    <ul class="lista-atractivos">
+                        <li><span class="check-icon">✓</span> Réplica de las misiones jesuíticas iluminadas</li>
+                        <li><span class="check-icon">✓</span> Shows de danza en vivo que celebran los tres países</li>
+                        <li><span class="check-icon">✓</span> Excelente gastronomía y ambiente familiar</li>
+                    </ul>
+                </div>
+                <button class="btn-leer-mas" onclick="toggleTarjeta(this)">Ver más atractivos</button>
+            </div>
+
+            <div class="tarjeta-destino">
+                <div class="tarjeta-encabezado">
+                    <span class="flag-icon">🚢</span>
+                    <h3>Paseo en Kattamaram</h3>
+                </div>
+                <p class="tarjeta-atractivo-desc">
+                    Navega plácidamente por los imponentes ríos fronterizos a bordo de una lujosa embarcación. Vive un atardecer inolvidable en el agua mientras disfrutas de música y un ambiente premium.
+                </p>
+                <p class="tarjeta-descripcion-corta">Navegación confortable con bar y restaurante a bordo.</p>
+                <div class="contenido-extra">
+                    <ul class="lista-atractivos">
+                        <li><span class="check-icon">✓</span> Vistas exclusivas de los puentes internacionales desde el agua</li>
+                        <li><span class="check-icon">✓</span> Cubierta abierta para fotos panorámicas de 360°</li>
+                        <li><span class="check-icon">✓</span> Opción ideal para cerrar un día de tours intensos</li>
+                    </ul>
+                </div>
+                <button class="btn-leer-mas" onclick="toggleTarjeta(this)">Ver más atractivos</button>
+            </div>
+
+            <div class="tarjeta-destino">
+                <div class="tarjeta-encabezado">
+                    <span class="flag-icon">🇦🇷</span>
+                    <h3>Porto Iguaçu (Noche Argentina)</h3>
+                </div>
+                <p class="tarjeta-atractivo-desc">
+                    Cruza la frontera con total comodidad para deleitarte con los mejores cortes de carne argentina, vinos de nivel mundial y el colorido ambiente de La Feirinha.
+                </p>
+                <p class="tarjeta-descripcion-corta">Logística fronteriza ágil sin complicaciones.</p>
+                <div class="contenido-extra">
+                    <ul class="lista-atractivos">
+                        <li><span class="check-icon">✓</span> Parada obligatoria para comprar alfajores, olivas y quesos</li>
+                        <li><span class="check-icon">✓</span> Traslado directo a restaurantes y vinotecas seleccionadas</li>
+                        <li><span class="check-icon">✓</span> Retorno seguro a tu hotel en Foz al finalizar la noche</li>
+                    </ul>
+                </div>
+                <button class="btn-leer-mas" onclick="toggleTarjeta(this)">Ver más atractivos</button>
+            </div>
+
+        </div>
+    </section>
+
     <footer>
         <p>© 2026 Trifoz Turismo • Guía Turístico Ebert • Foz do Iguaçu</p>
     </footer>
@@ -2251,6 +2668,34 @@
             const pad = n => String(n).padStart(2, '0');
             const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth() + 1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
             window.open(`https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        /* =========================================
+           TOGGLE TARJETA - ATRACTIVOS
+           ========================================= */
+        function toggleTarjeta(btn) {
+            const tarjeta = btn.closest('.tarjeta-destino');
+            if (!tarjeta) return;
+            
+            const contenidoExtra = tarjeta.querySelector('.contenido-extra');
+            const esVisible = contenidoExtra.style.display !== 'none';
+            
+            // Cerrar todas las tarjetas primero
+            document.querySelectorAll('.tarjeta-destino .contenido-extra').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('.btn-leer-mas').forEach(b => {
+                b.textContent = 'Ver más atractivos';
+            });
+            
+            // Abrir la actual si estaba cerrada
+            if (esVisible) {
+                contenidoExtra.style.display = 'none';
+                btn.textContent = 'Ver más atractivos';
+            } else {
+                contenidoExtra.style.display = 'block';
+                btn.textContent = 'Ver menos';
+            }
         }
     </script>
 
