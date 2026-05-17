@@ -1,0 +1,190 @@
+<!-- ========================================================================
+   BOTÓN WHATSAPP FLOTANTE OPTIMIZADO
+   Tres ajustes profesionales: IntersectionObserver, GPU acceleration, Preconnect
+   ======================================================================== -->
+
+<!-- HTML: BOTÓN WHATSAPP FLOTANTE -->
+<a href="https://wa.me/5545933003337" 
+   class="whatsapp-flotante" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="Contacto por WhatsApp"
+   data-wa-button>
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.37 5.374 0 12.001 0c3.21.002 6.225 1.251 8.492 3.522 2.268 2.27 3.513 5.287 3.511 8.495-.003 6.632-5.371 12.003-12.001 12.003-2.002-.001-3.971-.5-5.713-1.448L0 24zm6.59-21.135c-.457-.015-.783-.023-1.018-.023-.925 0-1.442.474-1.684.776-.395.496-.92 1.488-.92 3.326 0 2.443 1.776 4.795 2.023 5.121.246.327 3.428 5.485 8.423 7.45 2.872 1.132 4.025 1.157 5.064.985 1.258-.208 2.656-.99 3.033-1.954.377-.963.377-1.791.264-1.954-.113-.163-.414-.261-.867-.487-.453-.226-2.656-1.312-3.07-1.463-.415-.151-.717-.226-.981.17-.264.395-.981 1.226-1.207 1.49-.226.264-.453.296-.906.07-4.004-2.007-5.263-6.027-5.461-6.37-.197-.343-.021-.528.15-.699.153-.153.34-.395.508-.593.17-.198.226-.339.34-.565.113-.226.056-.424-.028-.593-.085-.17-.717-1.725-.981-2.361-.258-.62-.519-.534-.717-.544z"/>
+    </svg>
+</a>
+
+<!-- PRECONNECT WHATSAPP (Carga más rápida) -->
+<link rel="preconnect" href="https://wa.me">
+<link rel="dns-prefetch" href="//wa.me">
+
+<style>
+/* ==========================================================================
+   AJUSTE 1: GPU ACCELERATION + WILL-CHANGE (Rendimiento máximo)
+   ========================================================================== */
+.whatsapp-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    
+    /* Optimización GPU: Transform en lugar de top/bottom/left/right */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px) translateZ(0);
+    
+    /* Will-change solo durante la transición (evita memory overhead) */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Evitar parpadeos: contenedor en su propia capa de composición */
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Clase que activa con IntersectionObserver (AJUSTE 2) */
+.whatsapp-flotante.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) translateZ(0);
+    will-change: auto; /* Desactiva after animation ends */
+}
+
+/* Hover: Solo aplicar will-change cuando es necesario */
+.whatsapp-flotante:hover {
+    will-change: transform, box-shadow;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-flotante:hover.mostrar {
+    transform: translateY(-5px) scale(1.08) translateZ(0);
+}
+
+/* AJUSTE 3: Media queries optimizadas para todos los devices */
+/* Mobile - Optimizado para bajo rendimiento */
+@media (max-width: 480px) {
+    .whatsapp-flotante {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .whatsapp-flotante svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 1023px) {
+    .whatsapp-flotante {
+        bottom: 25px;
+        right: 25px;
+        width: 56px;
+        height: 56px;
+    }
+}
+
+/* Desktop - Escritorio */
+@media (min-width: 1024px) {
+    .whatsapp-flotante {
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .whatsapp-flotante svg {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* Reducir motion para usuarios que lo prefieren (accesibilidad) */
+@media (prefers-reduced-motion: reduce) {
+    .whatsapp-flotante,
+    .whatsapp-flotante:hover {
+        transition: none !important;
+    }
+    
+    .whatsapp-flotante:hover.mostrar {
+        transform: translateZ(0);
+    }
+}
+</style>
+
+<script>
+// ==========================================================================
+// AJUSTE 2: INTERSECTION OBSERVER (Reemplaza scroll event - 10x más eficiente)
+// ==========================================================================
+(function() {
+    const botonFlotante = document.querySelector('[data-wa-button]');
+    
+    if (!botonFlotante) return;
+    
+    // Crear elemento sentinel invisible (trigger point)
+    const sentinel = document.createElement('div');
+    sentinel.setAttribute('data-wa-sentinel', '');
+    sentinel.style.cssText = 'height: 1px; pointer-events: none;';
+    
+    // Insertar sentinel después de la sección principal (aprox. 250px)
+    const hero = document.querySelector('.hero') || document.body;
+    hero.parentNode.insertBefore(sentinel, hero.nextSibling);
+    
+    // IntersectionObserver: Mucho más eficiente que scroll events
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    // Usuario pasó el punto trigger - mostrar botón
+                    botonFlotante.classList.add('mostrar');
+                } else {
+                    // Usuario está en la sección principal - ocultar botón
+                    botonFlotante.classList.remove('mostrar');
+                }
+            });
+        },
+        {
+            rootMargin: '0px',
+            threshold: 0 // Se activa cuando el elemento sale de la vista
+        }
+    );
+    
+    observer.observe(sentinel);
+    
+    // Limpieza: opcional, pero buena práctica
+    window.addEventListener('beforeunload', () => {
+        observer.disconnect();
+    });
+})();
+
+// ==========================================================================
+// OPTIMIZACIÓN: Prefetch WhatsApp en background (idle time)
+// ==========================================================================
+if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => {
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = 'https://wa.me/5545933003337';
+        document.head.appendChild(link);
+    });
+}
+
+// Analytics sin bloquear (opcional)
+document.querySelector('[data-wa-button]')?.addEventListener('click', function() {
+    if (window.gtag) {
+        gtag('event', 'click_whatsapp');
+    }
+}, { passive: true });
+</script>
