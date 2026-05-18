@@ -560,12 +560,10 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.05) !important;
-            background: #ffffff !important;
+            background: #141414 !important;
             border-radius: 15px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            border: 1px solid rgba(0, 0, 0, 0.05) !important;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
@@ -576,10 +574,7 @@
             transform: translateY(-10px) scale(1.02);
             border-color: #ffd700 !important;
             box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-            background: rgba(255, 255, 255, 0.08) !important;
-            border-color: var(--azul-electrico) !important;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            background: #ffffff !important;
+            background: #141414 !important;
         }
 
         .card-image {
@@ -594,10 +589,12 @@
             display: block;
         }
 
-        /* Porto Iguaçu específico: no cortar cartel blanco */
         .tarjeta-porto-iguacu img {
             object-fit: contain !important;
-            background-color: #141414 !important;
+        }
+
+        .tarjeta-porto-iguacu .card-image {
+            background: #141414 !important;
         }
 
         .card-image-overlay::after {
@@ -618,6 +615,7 @@
             text-align: center;
             transition: all 0.3s ease;
             opacity: 0.8;
+            background: #141414;
         }
 
         .card:hover .card-image-overlay::after {
@@ -629,8 +627,7 @@
 
         .card-content {
             padding: 10px 12px !important;
-            /* 10px arriba/abajo */
-            background: rgba(0, 0, 0, 0.92) !important;
+            background: #141414 !important;
             color: #f8fbff !important;
             height: auto !important;
         }
@@ -639,7 +636,6 @@
         @media (min-width: 1024px) {
             .video-card {
                 background: #141414 !important;
-                background: #ffffff !important;
                 display: flex !important;
                 flex-direction: column !important;
             }
@@ -659,6 +655,7 @@
                 margin-top: auto !important;
                 height: auto !important;
                 padding: 15px !important;
+                background: #141414 !important;
             }
         }
 
@@ -707,11 +704,7 @@
             }
         }
 
-        /* VIDEO */
-        .video-card {
-            background: #002366 !important;
-        }
-
+/* VIDEO BTN */
         .btn-video-elegant {
             display: inline-flex;
             align-items: center;
@@ -924,7 +917,6 @@
             .card-image img {
                 width: 100% !important;
                 aspect-ratio: 1 / 1 !important;
-                /* Cuadrado perfecto para todas */
                 object-fit: cover !important;
                 display: block !important;
                 background-color: #141414 !important;
@@ -946,14 +938,13 @@
 
             .card-content {
                 padding: 6px 8px !important;
-                background: rgba(0, 0, 0, 0.92) !important;
+                background: #141414 !important;
                 text-align: center !important;
                 display: flex !important;
                 flex-direction: column !important;
                 justify-content: center !important;
                 flex-grow: 1 !important;
                 min-height: 42px !important;
-                /* Igualar altura de franja de texto */
             }
 
             .card-content h3 {
@@ -971,11 +962,14 @@
             .video-card {
                 grid-column: span 2 !important;
                 grid-row: span 1 !important;
-                /* En móvil solo una fila */
             }
 
             .video-card .card-image img {
                 aspect-ratio: 16 / 9 !important;
+            }
+
+            .video-card .card-content {
+                background: #141414 !important;
             }
 
             .video-card .card-content p {
@@ -1735,7 +1729,7 @@
         
         .card-image img {
             width: 100% !important;
-            height: 195px !important;           /* Más uniforme */
+            height: 195px !important;
             object-fit: cover !important;
         }
         
@@ -2140,11 +2134,10 @@
                 <div class="video-card card">
                     <div class="card-image">
                         <img src="images/macuco_safari_real.jpg" width="800" height="500" alt="Macuco Safari - Aventura de barco nas Cataratas do Iguaçu com Trifoz Turismo"
-                            style="width: 100%; height: auto; display: block; filter: saturate(1.2) contrast(1.1);"
                             loading="lazy" decoding="async">
                     </div>
                     <div class="card-content"
-                        style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px 20px; gap: 20px;">
+                        style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px 20px; gap: 20px; background: #141414;">
                         <div style="text-align: center;">
                             <h3
                                 style="margin: 0; font-size: 1.6rem; color: #ffd700; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);">
