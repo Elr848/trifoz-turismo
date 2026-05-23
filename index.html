@@ -1686,6 +1686,73 @@
                 height: 160px !important;
             }
         }
+        /* ===== Diseño uniforme de tarjetas (override final) ===== */
+        .grid-attractions.contenedor-catalogo {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+            gap: 20px !important;
+            align-items: start !important;
+            grid-auto-rows: 420px !important; /* fila fija para alinear tarjetas */
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            padding: 0 12px !important;
+            box-sizing: border-box !important;
+        }
+
+        .grid-attractions.contenedor-catalogo .card {
+            height: 100% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            background: rgba(0,0,0,0.35) !important;
+        }
+
+        .grid-attractions .card-image {
+            height: 60% !important;
+            overflow: hidden !important;
+        }
+
+        .grid-attractions .card-image img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+        }
+
+        .grid-attractions .card-content {
+            height: 40% !important;
+            padding: 16px !important;
+            box-sizing: border-box !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            gap: 6px !important;
+            text-align: center !important;
+        }
+
+        /* Evitar que el video-card rompa la rejilla */
+        .video-card {
+            grid-column: auto !important;
+            grid-row: auto !important;
+        }
+
+        .video-card .card-image img {
+            height: 100% !important;
+            object-fit: cover !important;
+        }
+
+        @media (max-width: 1023px) {
+            .grid-attractions.contenedor-catalogo {
+                grid-template-columns: repeat(2, 1fr) !important;
+                grid-auto-rows: auto !important;
+            }
+
+            .grid-attractions .card-image { height: auto !important; }
+            .grid-attractions .card-image img { aspect-ratio: 16 / 9 !important; height: auto !important; }
+            .grid-attractions .card-content { height: auto !important; padding: 12px !important; }
+        }
     </style>
 </head>
 
