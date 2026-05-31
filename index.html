@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
+    <!-- SEO Meta Tags -->
     <title>Trifoz Turismo | Guía Turístico Ebert | Tours Privados & Traslados en Foz do Iguaçu</title>
     <meta name="description" content="Tours privados y traslados en Foz do Iguaçu con Guía Turístico Ebert. Especialista en LIBRAS, Cataratas, Macuco Safari, Marco 3 Fronteiras. Atención Español, Portugués, Inglés.">
     <meta name="keywords" content="tours Foz do Iguaçu, traslados privados, cataratas Iguaçu, guía turístico Ebert, LIBRAS Foz, Macuco Safari, Marco 3 Fronteiras, transfers Iguazu, turismo accesible, triple frontera">
     <meta name="author" content="Trifoz Turismo - Ebert">
-    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://www.trifozturismo.com" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta name="theme-color" content="#002366">
+    
+    <!-- Security & Privacy Meta Tags -->
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta name="format-detection" content="telephone=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Etiquetas de idioma para que Google posicione en ambos idiomas sin penalizar -->
     <link rel="alternate" hreflang="es" href="https://www.trifozturismo.com" />
@@ -115,11 +123,14 @@
     }
     </script>
 
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="images/hero_principal.jpg" as="image" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oswald:wght@500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome with SRI (Subresource Integrity) for Security -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <style>
         :root {
@@ -199,13 +210,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* Slightly darker overlay and reduced brightness for a more natural look */
             background: linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)), url('images/hero_principal.jpg');
             background-size: cover;
             background-position: center;
-            /* Aumentado brillo en ~15% relativo al valor previo */
             filter: contrast(1.05) brightness(0.98) saturate(1.05);
             z-index: -1;
+            /* GPU Acceleration for better performance */
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            will-change: transform;
         }
 
         /* LLAMA ROTATIVA */
@@ -829,6 +842,11 @@
                 display: none !important;
                 animation: none !important;
             }
+            
+            /* OPTIMIZACIÓN IMAGEN HERO PARA MÓVILES - Reducir brillo excesivo */
+            .hero::before {
+                filter: contrast(1.15) brightness(0.75) saturate(1.1) !important;
+            }
 
             /* CENTRADO ABSOLUTO Y SIMETRÍA TOTAL */
             .grid-attractions.contenedor-catalogo {
@@ -935,6 +953,15 @@
             .hero-container h1,
             .fire-wrapper {
                 animation: none !important;
+            }
+        }
+
+        /* Optimización para dispositivos de baja potencia */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
 
@@ -1696,7 +1723,12 @@
 
 <body>
 
-
+    <!-- Fallback para usuarios sin JavaScript -->
+    <noscript>
+        <div style="position: fixed; top: 0; left: 0; right: 0; background: #ff4500; color: #fff; padding: 15px; text-align: center; z-index: 99999; font-family: Arial, sans-serif;">
+            <strong>⚠️ JavaScript está deshabilitado.</strong> Para una mejor experiencia, por favor habilite JavaScript en su navegador.
+        </div>
+    </noscript>
 
     <!-- Capa de Luces de fondo -->
     <div class="luces-fondo">
@@ -1707,7 +1739,7 @@
     <section class="hero">
         <div class="fire-wrapper">
             <div class="hero-container">
-                <h1 class="titulo-metalico" style="margin:0; line-height:1.1; font-size: clamp(1.9rem, 5.5vw, 2.7rem);">
+                <h1 class="titulo-metalico" style="margin:0; line-height:1.1; font-size: clamp(1.9rem, 5.5vw, 2.7rem);" role="banner">
                     Trifoz Turismo
                 </h1>
                 <p style="font-size: 1.05rem; margin:8px 0 15px; opacity:0.95;">
@@ -1721,15 +1753,15 @@
                 <div class="flags-section">
                     <div class="flags-container">
                         <div class="flag-box">
-                            <img src="https://flagcdn.com/w80/br.png" width="80" height="53" class="flag-icon" alt="Brasil" loading="lazy">
+                            <img src="https://flagcdn.com/w80/br.png" width="80" height="53" class="flag-icon" alt="Bandera de Brasil - Tours en Foz do Iguaçu" loading="lazy" decoding="async">
                             <span class="country-name">Brasil</span>
                         </div>
                         <div class="flag-box">
-                            <img src="https://flagcdn.com/w80/ar.png" width="80" height="53" class="flag-icon" alt="Argentina" loading="lazy">
+                            <img src="https://flagcdn.com/w80/ar.png" width="80" height="53" class="flag-icon" alt="Bandera de Argentina - Tours en Puerto Iguazú" loading="lazy" decoding="async">
                             <span class="country-name">Argentina</span>
                         </div>
                         <div class="flag-box">
-                            <img src="https://flagcdn.com/w80/py.png" width="80" height="53" class="flag-icon" alt="Paraguay" loading="lazy">
+                            <img src="https://flagcdn.com/w80/py.png" width="80" height="53" class="flag-icon" alt="Bandera de Paraguay - Tours en Ciudad del Este" loading="lazy" decoding="async">
                             <span class="country-name">Paraguai</span>
                         </div>
                     </div>
@@ -1801,9 +1833,9 @@
                 </button>
                 
                 <div class="social-buttons-container">
-                    <a href="mailto:trifozturismo@gmail.com" class="btn-social btn-email" title="Enviar Correo"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="https://www.facebook.com/trifoz-turismo" target="_blank" rel="noopener" class="btn-social btn-facebook" title="Síguenos en Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/trifoz.turismo" target="_blank" rel="noopener" class="btn-social btn-instagram" title="Síguenos en Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:trifozturismo@gmail.com" class="btn-social btn-email" title="Enviar Correo" aria-label="Enviar correo electrónico a Trifoz Turismo"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.facebook.com/trifoz-turismo" target="_blank" rel="noopener noreferrer" class="btn-social btn-facebook" title="Síguenos en Facebook" aria-label="Visitar página de Facebook de Trifoz Turismo"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/trifoz.turismo" target="_blank" rel="noopener noreferrer" class="btn-social btn-instagram" title="Síguenos en Instagram" aria-label="Visitar perfil de Instagram de Trifoz Turismo"><i class="fa-brands fa-instagram"></i></a>
                 </div>
 
             </div>
@@ -1894,10 +1926,10 @@
         </button>
     </div>
 
-    <section class="attractions">
+    <section class="attractions" role="main" aria-label="Atracciones turísticas en Foz do Iguaçu">
 
-        <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" class="btn-libras-premium">
-            <img src="images/una.jpeg" width="240" height="170" alt="Atendimento em LIBRAS - Turismo Inclusivo con Ebert" class="libras-icon-img" loading="lazy">
+        <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer" class="btn-libras-premium" aria-label="Ver video de atendimiento en LIBRAS - Turismo Inclusivo">
+            <img src="images/una.jpeg" width="240" height="170" alt="Atendimento em LIBRAS - Turismo Inclusivo con Ebert - Lengua de Señas Brasileña" class="libras-icon-img" loading="lazy" decoding="async">
             <div class="libras-text-wrapper">
                 <span class="libras-pt">Atendimento em LIBRAS</span>
                 <span class="libras-en">Lengua de Señas • Sign Language</span>
@@ -1905,8 +1937,7 @@
         </a>
 
         <div style="text-align: center; margin-bottom: 40px; padding: 0 20px;">
-            <h2
-                style="color: var(--amarillo); margin: 0; font-size: clamp(1.4rem, 6vw, 2.2rem); text-transform: uppercase; line-height: 1.2;">
+            <h2 style="color: var(--amarillo); margin: 0; font-size: clamp(1.4rem, 6vw, 2.2rem); text-transform: uppercase; line-height: 1.2;" role="heading" aria-level="2">
                 Atrações e Traslados Imperdíveis em Foz do Iguaçu | Tours en Iguazú
             </h2>
             <p
@@ -1993,8 +2024,8 @@
                             <p style="margin: 5px 0 0; font-size: 1rem; color: #fff; opacity: 0.9;">Aventura extrema nas
                                 quedas d'água.</p>
                         </div>
-                        <a href="https://youtu.be/1dUpxFeU_u4?si=1p_wqlZU0Bks6DNa" target="_blank"
-                            class="btn-video-elegant">
+                        <a href="https://youtu.be/1dUpxFeU_u4?si=1p_wqlZU0Bks6DNa" target="_blank" rel="noopener noreferrer"
+                            class="btn-video-elegant" aria-label="Ver video de Macuco Safari en YouTube">
                             <i class="fab fa-youtube"></i> Assistir Aventura Macuco Safari em Foz do Iguaçu | Ver Vídeo
                         </a>
                     </div>
@@ -2067,7 +2098,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer role="contentinfo" aria-label="Información del sitio">
         <p>© 2026 Trifoz Turismo • Guía Turístico Ebert • Foz do Iguaçu - Todos los derechos reservados</p>
     </footer>
 
@@ -2089,7 +2120,7 @@
         }
     </script>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 
     <script>
         /* =========================================
