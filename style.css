@@ -460,3 +460,10 @@ body {
         height: 30px;
     }
 }
+
+/* Este código solo se activa en pantallas de celulares */
+@media (max-width: 768px) {
+    .tu-clase-de-la-imagen {
+        filter: brightness(0.75); /* Baja el brillo al 75% solo en el móvil */
+    }
+}
