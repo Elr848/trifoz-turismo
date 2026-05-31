@@ -246,7 +246,7 @@
             width: 250%;
             height: 250%;
             background: conic-gradient(transparent, #ff4500, #ffd700, transparent 30%);
-            animation: rotate-fire 3s linear infinite;
+            animation: rotate-fire 6s linear infinite;
             will-change: transform;
             transform: translateZ(0);
             backface-visibility: hidden;
@@ -949,10 +949,17 @@
                 margin-top: 4px !important;
             }
 
-            /* Desactivar animaciones */
-            .hero-container h1,
-            .fire-wrapper {
+            /* Optimizar animaciones para móvil */
+            .hero-container h1 {
                 animation: none !important;
+            }
+            
+            .fire-wrapper {
+                animation: floating 4s ease-in-out infinite !important;
+            }
+            
+            .fire-wrapper::before {
+                animation: rotate-fire 8s linear infinite !important;
             }
         }
 
