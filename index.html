@@ -240,20 +240,40 @@
             /* Forzar GPU en el contenedor padre también para evitar parpadeos */
         }
 
-        .fire-wrapper::before {
-            content: "";
+        /* Órbita de la llamarada: elemento real para mejor control y rendimiento */
+        .fire-orbit {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 300px;
-            height: 300px;
-            background: conic-gradient(transparent, #ff4500, #ffd700, transparent 30%);
-            animation: rotate-fire 6s linear infinite;
-            will-change: transform;
-            backface-visibility: hidden;
-            perspective: 1000px;
-            z-index: 1;
+            width: 360px;
+            height: 360px;
+            transform: translate(-50%, -50%);
             pointer-events: none;
+            will-change: transform;
+            z-index: 1;
+        }
+
+        .fire-orbit .flame {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 40px;
+            height: 40px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #fff6d8 0%, #ffd08a 18%, #ff6a00 55%, rgba(255,69,0,0) 75%);
+            filter: blur(6px);
+            box-shadow: 0 0 20px rgba(255,110,40,0.45);
+        }
+
+        /* Animación de rotación que mantiene la posición centrada */
+        @keyframes rotate-orbit {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to   { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .fire-orbit.spin {
+            animation: rotate-orbit 6s linear infinite;
         }
 
         /* CUADRO AERO */
@@ -961,8 +981,8 @@
                 animation: floating 4s ease-in-out infinite !important;
             }
             
-            .fire-wrapper::before {
-                animation: rotate-fire 8s linear infinite !important;
+            .fire-orbit.spin {
+                animation-duration: 8s !important;
             }
         }
 
@@ -1748,6 +1768,7 @@
 
     <section class="hero">
         <div class="fire-wrapper">
+            <div class="fire-orbit spin" aria-hidden="true"><div class="flame"></div></div>
             <div class="hero-container">
                 <h1 class="titulo-metalico" style="margin:0; line-height:1.1; font-size: clamp(1.9rem, 5.5vw, 2.7rem);" role="banner">
                     Trifoz Turismo
