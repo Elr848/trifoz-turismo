@@ -228,7 +228,7 @@
             z-index: 10;
             padding: 4px;
             border-radius: 15px;
-            overflow: hidden;
+            overflow: visible;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -243,14 +243,17 @@
         .fire-wrapper::before {
             content: "";
             position: absolute;
-            width: 250%;
-            height: 250%;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
             background: conic-gradient(transparent, #ff4500, #ffd700, transparent 30%);
             animation: rotate-fire 6s linear infinite;
             will-change: transform;
-            transform: translateZ(0);
             backface-visibility: hidden;
             perspective: 1000px;
+            z-index: 1;
+            pointer-events: none;
         }
 
         /* CUADRO AERO */
@@ -262,7 +265,7 @@
             border-radius: 12px;
             width: 100%;
             text-align: center;
-            z-index: 11;
+            z-index: 2;
         }
 
         .titulo-metalico {
@@ -728,11 +731,11 @@
         /* ANIMACIONES */
         @keyframes rotate-fire {
             from {
-                transform: rotate(0deg) translateZ(0);
+                transform: translate(-50%, -50%) rotate(0deg) translateZ(0);
             }
 
             to {
-                transform: rotate(360deg) translateZ(0);
+                transform: translate(-50%, -50%) rotate(360deg) translateZ(0);
             }
         }
 
