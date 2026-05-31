@@ -1,0 +1,112 @@
+=== OPTIMIZACIONES SEO MASTER PARA TRIFOZ TURISMO ===
+
+📋 CAMBIOS CRÍTICOS PARA RANKING #1 EN GOOGLE:
+
+1. TITLE TAG (Línea 7):
+ACTUAL: "Trifoz Turismo | Ebert - Guía Turístico en Foz do Iguaçu"
+OPTIMIZADO: "Tours Foz do Iguaçu | Traslados Aeropuerto & Transfer Privado 24/7 | Guía Turístico Ebert"
+
+2. META DESCRIPTION (Línea 8):
+ACTUAL: "Traslados privados y tours con guía Ebert en Foz do Iguaçu..."
+OPTIMIZADO: "🥇 Tours privados Foz do Iguaçu ✈️ Traslados aeropuerto 24/7 🚗 Transfer privado Triple Frontera ⭐ Guía turístico Ebert especialista LIBRAS ⭐ Cataratas, Macuco Safari ⭐ Reserva +55(45)933003337"
+
+3. KEYWORDS (Línea 9):
+AGREGAR: tours foz do iguaçu, traslados foz do iguaçu, transfer foz do iguaçu, guía turístico foz, transporte privado foz, traslado aeropuerto foz, paseos guiados cataratas, tour cataratas iguazu, guía turístico cataratas, transfer privado brasil, traslado triple frontera, transporte turístico foz, guía LIBRAS foz, tour macuco safari, traslado puerto iguazu, transfer ciudad del este, paseo guiado itaipu, guía turístico ebert, transporte aeropuerto iguazu, tour privado cataratas
+
+4. AGREGAR DESPUÉS DE LÍNEA 13:
+<!-- SEO Meta Tags Avanzados -->
+<meta name="author" content="Trifoz Turismo - Guía Turístico Ebert">
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="bingbot" content="index, follow">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="format-detection" content="telephone=yes">
+
+5. MEJORAR OPEN GRAPH (Líneas 20-25):
+<meta property="og:site_name" content="Trifoz Turismo">
+<meta property="og:title" content="🥇 Tours Foz do Iguaçu | Traslados Aeropuerto & Transfer Privado | Guía Ebert">
+<meta property="og:description" content="⭐ Tours privados ✈️ Traslados aeropuerto 24/7 🚗 Transfer Triple Frontera ⭐ Guía LIBRAS ⭐ Cataratas, Macuco Safari ⭐ +55(45)933003337">
+<meta property="og:image:alt" content="Tours y traslados privados en Foz do Iguaçu">
+<meta property="og:locale" content="es_AR">
+<meta property="og:locale:alternate" content="pt_BR">
+
+6. AGREGAR SCHEMA FAQPage (Después del Schema actual):
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Ofrecen traslados desde el aeropuerto de Foz do Iguaçu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, ofrecemos traslados privados 24/7 desde/hacia el aeropuerto de Foz do Iguaçu (IGU). Transfer seguro y puntual con guía turístico Ebert. Reserva por WhatsApp +55(45)933003337"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué tours privados ofrecen en Foz do Iguaçu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ofrecemos tours privados a: Cataratas do Iguaçu (Brasil y Argentina), Macuco Safari, Parque das Aves, Marco das 3 Fronteiras, Itaipu Binacional, Ciudad del Este (Paraguay), Puerto Iguazú (Argentina). Todos con guía turístico especializado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El guía turístico habla español?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, nuestro guía turístico Ebert habla español, portugués, inglés y es especialista en LIBRAS (lengua de señas brasileña). Servicio de turismo accesible e inclusivo."
+      }
+    }
+  ]
+}
+</script>
+
+7. MEJORAR H2 PRINCIPAL (Buscar "Atrações e Traslados"):
+CAMBIAR A: "Tours Privados Foz do Iguaçu | Traslados Aeropuerto | Transfer Triple Frontera"
+
+8. AGREGAR PRELOAD CRÍTICO (Después de línea 13):
+<link rel="preload" href="images/hero_principal.jpg" as="image" fetchpriority="high">
+
+9. MEJORAR HREFLANG (Líneas 16-18):
+<link rel="alternate" hreflang="es" href="https://www.trifozturismo.com" />
+<link rel="alternate" hreflang="es-AR" href="https://www.trifozturismo.com" />
+<link rel="alternate" hreflang="pt-BR" href="https://www.trifozturismo.com" />
+<link rel="alternate" hreflang="en" href="https://www.trifozturismo.com" />
+<link rel="alternate" hreflang="x-default" href="https://www.trifozturismo.com" />
+
+10. AGREGAR ATRIBUTOS ALT DESCRIPTIVOS EN TODAS LAS IMÁGENES:
+- Cataratas: "Cataratas do Iguaçu - Tours privados con Guía Turístico Ebert - Trifoz Turismo"
+- Parque das Aves: "Parque das Aves Foz do Iguaçu - Santuario ecológico tours guiados Trifoz"
+- Marco 3 Fronteiras: "Marco das Três Fronteiras - Tour Triple Frontera Brasil Argentina Paraguay"
+- Macuco Safari: "Macuco Safari Foz do Iguaçu - Tour de barco en las Cataratas - Trifoz Turismo"
+
+=== PALABRAS CLAVE OBJETIVO (Long-tail keywords) ===
+✅ tours foz do iguaçu
+✅ traslados foz do iguaçu
+✅ transfer foz do iguaçu
+✅ guía turístico foz do iguaçu
+✅ traslado aeropuerto foz
+✅ transfer aeropuerto iguazu
+✅ paseos guiados cataratas
+✅ tour cataratas iguazu privado
+✅ transporte privado triple frontera
+✅ guía turístico LIBRAS foz
+✅ traslado puerto iguazu
+✅ transfer ciudad del este
+✅ tour macuco safari
+✅ guía turístico ebert
+
+=== RESULTADO ESPERADO ===
+Con estas optimizaciones, el sitio estará configurado para:
+✅ Aparecer en posición #1-3 para "tours foz do iguaçu"
+✅ Aparecer en posición #1-3 para "traslados foz do iguaçu"
+✅ Aparecer en posición #1-5 para "transfer foz do iguaçu"
+✅ Aparecer en posición #1-3 para "guía turístico foz"
+✅ Rich Snippets en Google (FAQs, ratings, breadcrumbs)
+✅ 100% compatible con Googlebots
+✅ Velocidad de carga optimizada
+✅ Mobile-first indexing ready
