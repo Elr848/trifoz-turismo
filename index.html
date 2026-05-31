@@ -250,20 +250,22 @@
             transform: translate(-50%, -50%);
             pointer-events: none;
             will-change: transform;
-            z-index: 1;
+            z-index: 3; /* arriba del contenedor para verse alrededor */
+            transform-origin: center center;
         }
 
         .fire-orbit .flame {
             position: absolute;
             top: 50%;
             left: 100%;
-            width: 40px;
-            height: 40px;
+            width: 46px;
+            height: 46px;
             transform: translate(-50%, -50%);
             border-radius: 50%;
             background: radial-gradient(circle at 35% 35%, #fff6d8 0%, #ffd08a 18%, #ff6a00 55%, rgba(255,69,0,0) 75%);
             filter: blur(6px);
-            box-shadow: 0 0 20px rgba(255,110,40,0.45);
+            box-shadow: 0 0 22px rgba(255,110,40,0.55);
+            mix-blend-mode: screen;
         }
 
         /* Animación de rotación que mantiene la posición centrada */
