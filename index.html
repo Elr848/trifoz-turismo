@@ -939,7 +939,8 @@
         }
 
         .booking-mobile-panel {
-            display: none;
+            display: flex;
+            visibility: hidden;
             position: fixed;
             bottom: 0;
             left: 0;
@@ -953,13 +954,13 @@
             padding: 15px 22px 30px;
             flex-direction: column;
             transform: translateY(100%);
-            transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+            transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1), visibility 0.4s;
             box-sizing: border-box;
         }
 
         .booking-mobile-panel.open {
             transform: translateY(0);
-            display: flex !important;
+            visibility: visible;
         }
 
         .booking-mobile-panel-handle {
@@ -1338,7 +1339,7 @@
                     <option value="Roda Gigante Yup Star">🎡 Roda Gigante Yup Star</option>
                     <option value="Museu de Cera Dreamland">🎭 Museu de Cera Dreamland</option>
                     <option value="Ciudad del Este (Paraguay)">🇵🇾 Ciudad del Este</option>
-                    <option value="Roteiro Personalizado">✨ Preciso de ajuda con el roteiro</option>
+                    <option value="Roteiro Personalizado">✨ Preciso de ajuda com o roteiro</option>
                 </select>
             </div>
         </div>
@@ -1572,6 +1573,17 @@
             overlay?.addEventListener('click', cerrarPanel);
 
             // 5. Envío de Mensajes a WhatsApp
+            
+            // Ayudantes de UX para la barra de reservas de escritorio
+            document.getElementById('booking-destino-wrapper')?.addEventListener('click', function () {
+                document.getElementById('booking-destino')?.focus();
+            });
+            document.getElementById('booking-datetime-wrapper')?.addEventListener('click', function () {
+                const input = document.getElementById('booking-datetime');
+                if (input && input.showPicker) input.showPicker();
+                else if (input) input.focus();
+            });
+
             function enviarWhatsApp(destinoId, paxId, dateId) {
                 const destino = document.getElementById(destinoId)?.value;
                 const pax = document.getElementById(paxId)?.textContent || '2';
