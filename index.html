@@ -2264,7 +2264,7 @@
             <div class="booking-bar">
 
                 <!-- Field 1: Destination -->
-                <div class="booking-field" id="booking-destino-wrapper">
+                <div class="booking-field" id="booking-destino-wrapper" onclick="document.getElementById('booking-destino').focus()">
                     <div class="booking-field-icon">📍</div>
                     <div class="booking-field-body">
                         <span class="booking-field-label">Destino</span>
@@ -2292,15 +2292,15 @@
                     <div class="booking-field-body">
                         <span class="booking-field-label">Passageiros</span>
                         <div class="passenger-counter">
-                            <button type="button" class="pax-btn" id="pax-minus" aria-label="Diminuir passageiros">−</button>
+                            <button type="button" class="pax-btn" id="pax-minus" aria-label="Diminuir passageiros" onclick="changePax(-1)">−</button>
                             <span class="pax-value" id="pax-display">2</span>
-                            <button type="button" class="pax-btn" id="pax-plus" aria-label="Aumentar passageiros">+</button>
+                            <button type="button" class="pax-btn" id="pax-plus" aria-label="Aumentar passageiros" onclick="changePax(1)">+</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Field 3: Date & Time -->
-                <div class="booking-field" id="booking-datetime-wrapper">
+                <div class="booking-field" id="booking-datetime-wrapper" onclick="try{document.getElementById('booking-datetime').showPicker()}catch(e){document.getElementById('booking-datetime').focus()}">
                     <div class="booking-field-icon">🗓️</div>
                     <div class="booking-field-body">
                         <span class="booking-field-label">Data &amp; Hora</span>
@@ -2310,7 +2310,7 @@
                 </div>
 
                 <!-- CTA Button -->
-                <button type="button" class="booking-cta" id="booking-submit-btn" aria-label="Consultar disponibilidade via WhatsApp">
+                <button type="button" class="booking-cta" id="booking-submit-btn" aria-label="Consultar disponibilidade via WhatsApp" onclick="enviarReservaWhatsApp()">
                     <i class="fab fa-whatsapp" style="font-size:1.25rem;"></i>
                     <span class="booking-cta-label">
                         MAIS INFORMAÇÕES
@@ -2334,7 +2334,7 @@
     </section>
 
     <!-- BOTÃO FLUTUANTE MÓVIL -->
-    <button type="button" class="booking-mobile-btn" id="booking-mobile-trigger" aria-label="Abrir formulário de reserva">
+    <button type="button" class="booking-mobile-btn" id="booking-mobile-trigger" aria-label="Abrir formulário de reserva" onclick="abrirFormularioMovil()">
         <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
         <span class="booking-mobile-btn-label">
             MAIS INFORMAÇÕES
@@ -2343,7 +2343,7 @@
     </button>
 
     <!-- OVERLAY -->
-    <div class="booking-overlay" id="booking-overlay"></div>
+    <div class="booking-overlay" id="booking-overlay" onclick="cerrarFormularioMovil()"></div>
 
     <!-- PANEL EXPANDIBLE MÓVIL (REDISEÑO EXPERTO) -->
     <div class="booking-mobile-panel" id="booking-mobile-panel">
@@ -2353,7 +2353,7 @@
                 <i class="fas fa-map-marker-alt" style="color: #ff4500;"></i>
                 Fazer uma simulação
             </span>
-            <button type="button" class="booking-mobile-close" aria-label="Fechar">&#x2715;</button>
+            <button type="button" class="booking-mobile-close" aria-label="Fechar" onclick="cerrarFormularioMovil()">&#x2715;</button>
         </div>
 
         <!-- Destino -->
@@ -2387,9 +2387,9 @@
             <div class="booking-mobile-field-body">
                 <span class="booking-mobile-label">Passageiros</span>
                 <div class="booking-mobile-pax">
-                    <button type="button" class="booking-mobile-pax-btn" data-pax-action="minus" aria-label="Diminuir">−</button>
+                    <button type="button" class="booking-mobile-pax-btn" data-pax-action="minus" aria-label="Diminuir" onclick="changePaxM(-1)">−</button>
                     <span class="booking-mobile-pax-val" id="pax-display-m">2</span>
-                    <button type="button" class="booking-mobile-pax-btn" data-pax-action="plus" aria-label="Aumentar">+</button>
+                    <button type="button" class="booking-mobile-pax-btn" data-pax-action="plus" aria-label="Aumentar" onclick="changePaxM(1)">+</button>
                 </div>
             </div>
         </div>
@@ -2407,7 +2407,7 @@
         </div>
 
         <!-- CTA (WhatsApp Capsule) -->
-        <button type="button" class="booking-mobile-cta" aria-label="Enviar reserva por WhatsApp">
+        <button type="button" class="booking-mobile-cta" aria-label="Enviar reserva por WhatsApp" onclick="enviarReservaMovil()">
             <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
             <span style="display:flex;flex-direction:column;line-height:1.2;text-align:left;">
                 <b>MAIS INFORMAÇÕES</b>
@@ -2676,107 +2676,6 @@
 
     <script>
         /* =========================================
-           EVENT LISTENER INITIALIZATION
-           ========================================= */
-        function initBookingListeners() {
-            // Booking field focus handler
-            const bookingDestino = document.getElementById('booking-destino-wrapper');
-            if (bookingDestino) {
-                bookingDestino.addEventListener('click', function () {
-                    const select = document.getElementById('booking-destino');
-                    if (select) select.focus();
-                });
-            }
-
-            // Passenger counter buttons
-            const paxMinusBtn = document.getElementById('pax-minus');
-            const paxPlusBtn = document.getElementById('pax-plus');
-            if (paxMinusBtn) {
-                paxMinusBtn.addEventListener('click', function () {
-                    changePax(-1);
-                });
-            }
-            if (paxPlusBtn) {
-                paxPlusBtn.addEventListener('click', function () {
-                    changePax(1);
-                });
-            }
-
-            // DateTime picker trigger
-            const bookingDatetimeWrapper = document.getElementById('booking-datetime-wrapper');
-            if (bookingDatetimeWrapper) {
-                bookingDatetimeWrapper.addEventListener('click', function () {
-                    const input = document.getElementById('booking-datetime');
-                    if (input) {
-                        if (input.showPicker) {
-                            try {
-                                input.showPicker();
-                            } catch(e) {
-                                input.focus();
-                            }
-                        } else {
-                            input.focus();
-                        }
-                    }
-                });
-            }
-
-            // Desktop booking submission
-            const bookingSubmitBtn = document.getElementById('booking-submit-btn');
-            if (bookingSubmitBtn) {
-                bookingSubmitBtn.addEventListener('click', function () {
-                    enviarReservaWhatsApp();
-                });
-            }
-
-            // Mobile form trigger
-            const bookingMobileTrigger = document.getElementById('booking-mobile-trigger');
-            if (bookingMobileTrigger) {
-                bookingMobileTrigger.addEventListener('click', function () {
-                    abrirFormularioMovil();
-                });
-            }
-
-            // Mobile overlay close
-            const bookingOverlay = document.getElementById('booking-overlay');
-            if (bookingOverlay) {
-                bookingOverlay.addEventListener('click', function () {
-                    cerrarFormularioMovil();
-                });
-            }
-
-            // Mobile panel close button
-            const bookingMobileClose = document.querySelector('.booking-mobile-close');
-            if (bookingMobileClose) {
-                bookingMobileClose.addEventListener('click', function () {
-                    cerrarFormularioMovil();
-                });
-            }
-
-            // Mobile passenger counter buttons
-            const paxMinusBtnM = document.querySelector('[data-pax-action="minus"]');
-            const paxPlusBtnM = document.querySelector('[data-pax-action="plus"]');
-            if (paxMinusBtnM) {
-                paxMinusBtnM.addEventListener('click', function () {
-                    changePaxM(-1);
-                });
-            }
-            if (paxPlusBtnM) {
-                paxPlusBtnM.addEventListener('click', function () {
-                    changePaxM(1);
-                });
-            }
-
-            // Mobile booking submission
-            const bookingMobileCta = document.querySelector('.booking-mobile-cta');
-            if (bookingMobileCta) {
-                bookingMobileCta.addEventListener('click', function () {
-                    enviarReservaMovil();
-                });
-            }
-        }
-
-        /* =========================================
            BOOKING BAR — Desktop & Mobile (PURIFICADO)
            ========================================= */
 
@@ -2788,7 +2687,6 @@
         // INIT SEGURA: Esperar DOM listo
         function initBooking() {
             setDefaultDatetime();
-            initBookingListeners();
         }
 
         function changePax(delta) {
