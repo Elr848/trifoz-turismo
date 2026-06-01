@@ -134,15 +134,34 @@
             --azul-electrico: #14b2c4;
         }
 
-        /* ==================== FONDO AZUL CIELO + NEGRO ==================== */
+        /* ==================== FONDO DE ALTO RENDIMIENTO DYNAMIC GRADIENT ==================== */
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #0a2a5e 0%, #1e4a8a 40%, #0f1f3d 100%);
+            background: linear-gradient(-45deg, #0a0a0a, #141414, #0f172a, #141414);
+            background-size: 400% 400%;
+            animation: gradientMovement 15s ease infinite;
             color: #ffffff;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
+            /* Optimización de renderizado para GPUs en móviles y PCs */
+            will-change: background-position;
+        }
+
+        @keyframes gradientMovement {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Accesibilidad y ahorro de batería extremo (A11y & Green Coding) */
+        @media (prefers-reduced-motion: reduce) {
+            body {
+                animation: none !important;
+                background-size: cover;
+                will-change: auto;
+            }
         }
 
         /* Brillo sutil dorado en la parte superior */
@@ -158,9 +177,9 @@
             pointer-events: none;
         }
 
-        /* Sección de atracciones con el mismo estilo de fondo */
+        /* Sección de atracciones transparente para lucir el fondo unificado */
         .attractions {
-            background: linear-gradient(135deg, #0a2a5e 0%, #1e4a8a 50%, #0f1f3d 100%) !important;
+            background: transparent !important;
         }
 
         h1,
@@ -414,14 +433,7 @@
             padding: 60px 20px 80px;
             text-align: center;
             overflow: hidden;
-            background:
-                radial-gradient(ellipse 130% 35% at 5% 25%, rgba(65, 105, 225, 0.45) 0%, transparent 60%),
-                radial-gradient(ellipse 110% 28% at 90% 15%, rgba(30, 144, 255, 0.50) 0%, transparent 60%),
-                radial-gradient(ellipse 150% 22% at 50% 60%, rgba(0, 0, 139, 0.55) 0%, transparent 60%),
-                radial-gradient(ellipse 80% 40% at 15% 80%, rgba(0, 191, 255, 0.40) 0%, transparent 65%),
-                radial-gradient(ellipse 100% 30% at 80% 75%, rgba(0, 35, 102, 0.55) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 45% at 98% 50%, rgba(0, 191, 255, 0.25) 0%, transparent 65%),
-                linear-gradient(145deg, #001a4d 0%, #003399 25%, #4169E1 50%, #1a53ff 75%, #000d1a 100%);
+            background: transparent;
         }
 
         /* Pinceladas animadas capa extra — azul flows */
@@ -578,22 +590,36 @@
             flex-direction: column !important;
         }
 
+        /* Transición suave para todas las tarjetas */
         .card {
             background: rgba(255, 255, 255, 0.05) !important;
             border-radius: 15px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
             display: flex;
             flex-direction: column;
             backdrop-filter: blur(5px);
+            cursor: pointer;
         }
 
-        .card:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: #ffd700 !important;
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-            background: rgba(255, 255, 255, 0.08) !important;
+        /* Efecto al pasar el mouse (Hover) - Solo PC/Notebooks de alto rendimiento */
+        @media (min-width: 1024px) {
+            .card:hover {
+                transform: translateY(-5px) !important; /* Eleva la tarjeta */
+                border-color: var(--amarillo) !important; /* Resalta el borde dorado */
+                box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2) !important; /* Brillo sutil abajo */
+                background: rgba(255, 255, 255, 0.08) !important;
+            }
+        }
+
+        /* Desactivar desplazamientos de hover en usuarios con preferencia de movimiento reducido */
+        @media (prefers-reduced-motion: reduce) {
+            @media (min-width: 1024px) {
+                .card:hover {
+                    transform: none !important;
+                }
+            }
         }
 
         .card-image {
@@ -1974,6 +2000,129 @@
                 transform: translateZ(0);
             }
         }
+
+        /* ============================================
+           SECCIÓN DE INFORMACIÓN Y ACORDEÓN PREMIUM (Google standard & ultra responsive)
+           ============================================ */
+        .informacion-turismo {
+            padding: 60px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .informacion-turismo h2 {
+            color: var(--amarillo);
+            font-size: clamp(1.4rem, 4vw, 1.9rem); /* Fluido y responsive nativo */
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitulo-info {
+            color: #cccccc;
+            font-size: clamp(0.85rem, 2.5vw, 1.05rem); /* Responsive sin media queries pesados */
+            margin-bottom: 35px;
+            line-height: 1.4;
+        }
+
+        .acordeon-container {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        details {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        details:hover {
+            border-color: rgba(255, 215, 0, 0.3);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        details[open] {
+            border-color: var(--dorado);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
+        }
+
+        summary {
+            font-weight: 700;
+            color: #ffffff;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            padding-right: 30px;
+            user-select: none;
+            outline: none;
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            transition: color 0.2s ease;
+        }
+
+        details:hover summary {
+            color: var(--amarillo);
+        }
+
+        /* Ocultar flecha por defecto en todos los navegadores (incluyendo Safari) */
+        summary::-webkit-details-marker {
+            display: none !important;
+        }
+
+        /* Flecha Premium Custom */
+        summary::after {
+            content: '▼';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+            color: var(--amarillo);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        details[open] summary::after {
+            transform: translateY(-50%) rotate(180deg);
+            color: var(--dorado);
+        }
+
+        /* Animación fluida de bajo consumo de recursos para expandir el texto */
+        details p {
+            color: #b3b3b3;
+            margin-top: 12px;
+            font-size: clamp(0.85rem, 2.2vw, 0.98rem);
+            line-height: 1.6;
+            margin-bottom: 0;
+            will-change: opacity, transform;
+            animation: detailsFadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes detailsFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Foco accesible para navegación por teclado (Pautas de accesibilidad WCAG) */
+        summary:focus-visible {
+            outline: 2px solid var(--azul-electrico);
+            outline-offset: 8px;
+            border-radius: 4px;
+        }
     </style>
 </head>
 
@@ -2381,6 +2530,30 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE INFORMACIÓN Y ACORDEÓN PREMIUM (Nativo de alto rendimiento) -->
+    <section class="informacion-turismo">
+        <h2>¿Por qué descubrir la Triple Frontera con Trifoz?</h2>
+        <p class="subtitulo-info">Tu aventura en Foz do Iguaçu con total comodidad, seguridad y accesibilidad.</p>
+
+        <!-- Acordeón Nativo (Sin JavaScript - Ultra rápido y accesible) -->
+        <div class="acordeon-container">
+            <details>
+                <summary>🚗 Transporte Privado y Confortable</summary>
+                <p>Olvídate de las esperas. Te busco directamente en tu hotel para realizar los recorridos por Foz do Iguaçu, Puerto Iguazú (Argentina) y Ciudad del Este (Paraguay) con total flexibilidad de horarios.</p>
+            </details>
+
+            <details>
+                <summary>🤟 Turismo Inclusivo y Accesible (LIBRAS)</summary>
+                <p>Ofrecemos una experiencia conectada y adaptada. Comunicación completa en Lengua Brasileña de Señas (LIBRAS), español y portugués para que ningún detalle de la historia de las Cataratas se pierda.</p>
+            </details>
+
+            <details>
+                <summary>🗺️ Asesoría en Aduanas y Entradas</summary>
+                <p>Cruzar la frontera puede ser confuso. Te guío paso a paso en los trámites migratorios y te ayudo a organizar la compra de entradas para evitar filas innecesarias.</p>
+            </details>
         </div>
     </section>
 
