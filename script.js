@@ -1,5 +1,1 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Scripts adicionales pueden ir aquí
-});
-
-
+// Archivo vaciado (scripts migrados a index.html)

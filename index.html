@@ -2669,178 +2669,96 @@
         <p>© 2026 Trifoz Turismo • Guía Turístico Ebert • Foz do Iguaçu</p>
     </footer>
 
-
-
-
-    <script src="script.js"></script>
-
     <script>
         /* =========================================
-           EVENT LISTENER INITIALIZATION - DOMContentLoaded
-           ========================================= */
-        document.addEventListener('DOMContentLoaded', function () {
-            // Booking field focus handler
-            const bookingDestino = document.getElementById('booking-destino-wrapper');
-            if (bookingDestino) {
-                bookingDestino.addEventListener('click', function () {
-                    const select = document.getElementById('booking-destino');
-                    if (select) select.focus();
-                });
-            }
-
-
-            // DateTime picker trigger
-            const bookingDatetimeWrapper = document.getElementById('booking-datetime-wrapper');
-            if (bookingDatetimeWrapper) {
-                bookingDatetimeWrapper.addEventListener('click', function () {
-                    const input = document.getElementById('booking-datetime');
-                    if (input) {
-                        if (input.showPicker) {
-                            input.showPicker();
-                        } else {
-                            input.focus();
-                        }
-                    }
-                });
-            }
-
-            // Desktop booking submission
-            const bookingSubmitBtn = document.getElementById('booking-submit-btn');
-            if (bookingSubmitBtn) {
-                bookingSubmitBtn.addEventListener('click', function () {
-                    enviarReservaWhatsApp();
-                });
-            }
-
-            // Mobile form trigger
-            const bookingMobileTrigger = document.getElementById('booking-mobile-trigger');
-            if (bookingMobileTrigger) {
-                bookingMobileTrigger.addEventListener('click', function () {
-                    abrirFormularioMovil();
-                });
-            }
-
-            // Mobile overlay close
-            const bookingOverlay = document.getElementById('booking-overlay');
-            if (bookingOverlay) {
-                bookingOverlay.addEventListener('click', function () {
-                    cerrarFormularioMovil();
-                });
-            }
-
-            // Mobile panel close button
-            const bookingMobileClose = document.querySelector('.booking-mobile-close');
-            if (bookingMobileClose) {
-                bookingMobileClose.addEventListener('click', function () {
-                    cerrarFormularioMovil();
-                });
-            }
-
-
-            // Mobile booking submission
-            const bookingMobileCta = document.querySelector('.booking-mobile-cta');
-            if (bookingMobileCta) {
-                bookingMobileCta.addEventListener('click', function () {
-                    enviarReservaMovil();
-                });
-            }
-        });
-
-        /* =========================================
-           BOOKING BAR — Desktop & Mobile (PURIFICADO)
+           BOOKING SYSTEM - VERSIÓN CORREGIDA Y ROBUSTA
            ========================================= */
 
         let paxCount = 2;
-        // INIT SEGURA: Esperar DOM listo
-        function initBooking() {
-            setDefaultDatetime();
-        }
 
+        // Función para cambiar pasajeros (Desktop)
         function changePax(delta) {
             const paxDisplay = document.getElementById('pax-display');
             if (!paxDisplay) return;
+            
             let current = parseInt(paxDisplay.textContent) || 2;
             current = Math.min(8, Math.max(1, current + delta));
             paxDisplay.textContent = current;
         }
 
+        // Función para cambiar pasajeros (Mobile)
         function changePaxM(delta) {
             const paxDisplayM = document.getElementById('pax-display-m');
             if (!paxDisplayM) return;
+            
             let current = parseInt(paxDisplayM.textContent) || 2;
             current = Math.min(8, Math.max(1, current + delta));
             paxDisplayM.textContent = current;
         }
 
-        function setDefaultDatetime() {
-            const tomorrow = new Date();
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            const pad = n => String(n).padStart(2, '0');
-            const val = `${tomorrow.getFullYear()}-${pad(tomorrow.getMonth() + 1)}-${pad(tomorrow.getDate())}T09:00`;
-
-            const dtEl = document.getElementById('booking-datetime');
-            if (dtEl && !dtEl.value) dtEl.value = val;
-
-            const dtElM = document.getElementById('booking-datetime-m');
-            if (dtElM && !dtElM.value) dtElM.value = val;
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initBooking);
-        } else {
-            initBooking();
-        }
-
+        // Enviar reserva Desktop
         function enviarReservaWhatsApp() {
-            const destinoEl = document.getElementById('booking-destino');
-            const paxEl = document.getElementById('pax-display');
-            const dtEl = document.getElementById('booking-datetime');
-
-            if (!destinoEl || !paxEl || !dtEl) {
-                console.error('Elementos de formulario no encontrados');
-                alert('Error: Formulario incompleto');
-                return;
-            }
-
-            const destino = destinoEl.value;
-            const pax = paxEl.textContent;
-            const dtRaw = dtEl.value;
+            const destino = document.getElementById('booking-destino')?.value;
+            const pax = document.getElementById('pax-display')?.textContent || '2';
+            const dtRaw = document.getElementById('booking-datetime')?.value;
 
             if (!destino) {
-                alert('Por favor, selecione um destino.');
+                alert('Por favor, seleccione un destino.');
                 return;
             }
             if (!dtRaw) {
-                alert('Por favor, selecione a data e hora.');
+                alert('Por favor, seleccione fecha y hora.');
                 return;
             }
 
             const dt = new Date(dtRaw);
             const pad = n => String(n).padStart(2, '0');
-            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth() + 1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
+            
+            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth()+1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
 
             const url = `https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`;
-            const win = window.open(url, '_blank', 'noopener,noreferrer');
-            if (win) win.opener = null;
+            window.open(url, '_blank', 'noopener,noreferrer');
         }
 
+        // Enviar reserva Mobile
+        function enviarReservaMovil() {
+            const destino = document.getElementById('booking-destino-m')?.value;
+            const pax = document.getElementById('pax-display-m')?.textContent || '2';
+            const dtRaw = document.getElementById('booking-datetime-m')?.value;
+
+            if (!destino) {
+                alert('Por favor, seleccione un destino.');
+                return;
+            }
+            if (!dtRaw) {
+                alert('Por favor, seleccione fecha y hora.');
+                return;
+            }
+
+            const dt = new Date(dtRaw);
+            const pad = n => String(n).padStart(2, '0');
+            
+            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth()+1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
+
+            const url = `https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+
+        // Abrir panel móvil
         function abrirFormularioMovil() {
             const panel = document.getElementById('booking-mobile-panel');
             const overlay = document.getElementById('booking-overlay');
-
             if (panel && overlay) {
                 panel.classList.add('open');
                 overlay.classList.add('open');
                 document.body.style.overflow = 'hidden';
-            } else {
-                console.error('Panel o overlay no encontrado');
             }
         }
 
+        // Cerrar panel móvil
         function cerrarFormularioMovil() {
             const panel = document.getElementById('booking-mobile-panel');
             const overlay = document.getElementById('booking-overlay');
-
             if (panel && overlay) {
                 panel.classList.remove('open');
                 overlay.classList.remove('open');
@@ -2848,113 +2766,77 @@
             }
         }
 
-        function enviarReservaMovil() {
-            const destinoEl = document.getElementById('booking-destino-m');
-            const paxEl = document.getElementById('pax-display-m');
-            const dtEl = document.getElementById('booking-datetime-m');
+        // ====================== INICIALIZACIÓN ======================
+        document.addEventListener('DOMContentLoaded', function () {
 
-            if (!destinoEl || !paxEl || !dtEl) {
-                console.error('Elementos móviles no encontrados');
-                alert('Error: Formulario móvil incompleto');
-                return;
+            // Setear fecha por defecto
+            function setDefaultDatetime() {
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                const pad = n => String(n).padStart(2, '0');
+                const val = `${tomorrow.getFullYear()}-${pad(tomorrow.getMonth() + 1)}-${pad(tomorrow.getDate())}T09:00`;
+
+                const dtEl = document.getElementById('booking-datetime');
+                const dtElM = document.getElementById('booking-datetime-m');
+                
+                if (dtEl && !dtEl.value) dtEl.value = val;
+                if (dtElM && !dtElM.value) dtElM.value = val;
+            }
+            setDefaultDatetime();
+
+            // Botones de pasajeros Desktop
+            document.getElementById('pax-minus')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                changePax(-1);
+            });
+            document.getElementById('pax-plus')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                changePax(1);
+            });
+
+            // Botones de pasajeros Mobile
+            document.querySelectorAll('.booking-mobile-pax-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const action = btn.getAttribute('data-pax-action');
+                    changePaxM(action === 'minus' ? -1 : 1);
+                });
+            });
+
+            // Submit Desktop
+            document.getElementById('booking-submit-btn')?.addEventListener('click', enviarReservaWhatsApp);
+
+            // Submit Mobile
+            document.querySelector('.booking-mobile-cta')?.addEventListener('click', enviarReservaMovil);
+
+            // Abrir panel móvil (botón flotante)
+            const waFlotante = document.querySelector('.whatsapp-flotante');
+            if (waFlotante) {
+                waFlotante.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    abrirFormularioMovil();
+                });
             }
 
-            const destino = destinoEl.value;
-            const pax = paxEl.textContent;
-            const dtRaw = dtEl.value;
+            // Cerrar panel móvil
+            document.querySelector('.booking-mobile-close')?.addEventListener('click', cerrarFormularioMovil);
+            document.getElementById('booking-overlay')?.addEventListener('click', cerrarFormularioMovil);
 
-            if (!destino) {
-                alert('Por favor, selecione um destino.');
-                return;
-            }
-            if (!dtRaw) {
-                alert('Por favor, selecione a data e hora.');
-                return;
-            }
-
-            const dt = new Date(dtRaw);
-            const pad = n => String(n).padStart(2, '0');
-            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth() + 1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
-
-            const url = `https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`;
-            const win = window.open(url, '_blank', 'noopener,noreferrer');
-            if (win) win.opener = null;
-        }
+            // Click en campos del booking bar (desktop)
+            document.getElementById('booking-destino-wrapper')?.addEventListener('click', () => {
+                document.getElementById('booking-destino')?.focus();
+            });
+            document.getElementById('booking-datetime-wrapper')?.addEventListener('click', () => {
+                document.getElementById('booking-datetime')?.showPicker?.() || document.getElementById('booking-datetime')?.focus();
+            });
+        });
     </script>
-
-    <!-- BOTÓN WHATSAPP FLOTANTE OPTIMIZADO -->
-    <a href="https://wa.me/5545933003337" class="whatsapp-flotante" target="_blank" rel="noopener noreferrer"
-        aria-label="Contacto por WhatsApp - Trifoz Turismo" data-wa-button
-        onclick="event.preventDefault(); abrirFormularioMovil();">
+    <a href="#" class="whatsapp-flotante" data-wa-button>
         <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true">
             <path
                 d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.37 5.374 0 12.001 0c3.21.002 6.225 1.251 8.492 3.522 2.268 2.27 3.513 5.287 3.511 8.495-.003 6.632-5.371 12.003-12.001 12.003-2.002-.001-3.971-.5-5.713-1.448L0 24zm6.59-21.135c-.457-.015-.783-.023-1.018-.023-.925 0-1.442.474-1.684.776-.395.496-.92 1.488-.92 3.326 0 2.443 1.776 4.795 2.023 5.121.246.327 3.428 5.485 8.423 7.45 2.872 1.132 4.025 1.157 5.064.985 1.258-.208 2.656-.99 3.033-1.954.377-.963.377-1.791.264-1.954-.113-.163-.414-.261-.867-.487-.453-.226-2.656-1.312-3.07-1.463-.415-.151-.717-.226-.981.17-.264.395-.981 1.226-1.207 1.49-.226.264-.453.296-.906.07-4.004-2.007-5.263-6.027-5.461-6.37-.197-.343-.021-.528.15-.699.153-.153.34-.395.508-.593.17-.198.226-.339.34-.565.113-.226.056-.424-.028-.593-.085-.17-.717-1.725-.981-2.361-.258-.62-.519-.534-.717-.544z" />
         </svg>
     </a>
-
-    <script>
-        // ========================================================================
-        // INTERSECTION OBSERVER - Botón Flotante WhatsApp (PURIFICADO)
-        // ========================================================================
-        document.addEventListener('DOMContentLoaded', function () {
-            try {
-                if (typeof IntersectionObserver === 'undefined') {
-                    console.warn('IntersectionObserver no disponible');
-                    return;
-                }
-
-                const botonFlotante = document.querySelector('[data-wa-button]');
-                if (!botonFlotante) {
-                    console.warn('Botón flotante WhatsApp no encontrado');
-                    return;
-                }
-
-                const sentinel = document.createElement('div');
-                sentinel.setAttribute('data-wa-sentinel', '');
-                sentinel.style.cssText = 'height: 1px; pointer-events: none;';
-
-                const hero = document.querySelector('.hero');
-                const insertTarget = hero ? hero.parentNode : document.body;
-
-                if (insertTarget && hero) {
-                    insertTarget.insertBefore(sentinel, hero.nextSibling);
-                } else if (document.body) {
-                    document.body.appendChild(sentinel);
-                } else {
-                    console.error('No se pudo encontrar punto de inserción');
-                    return;
-                }
-
-                const observer = new IntersectionObserver(
-                    (entries) => {
-                        entries.forEach(entry => {
-                            if (!entry.isIntersecting) {
-                                botonFlotante.classList.add('mostrar');
-                            } else {
-                                botonFlotante.classList.remove('mostrar');
-                            }
-                        });
-                    },
-                    { rootMargin: '0px', threshold: 0 }
-                );
-
-                observer.observe(sentinel);
-
-                window.addEventListener('beforeunload', () => {
-                    observer.disconnect();
-                }, { once: true });
-
-            } catch (error) {
-                console.error('Error en IntersectionObserver:', error);
-            }
-        }, { once: true });
-
-        // ========================================================================
-        // PREFETCH WHATSAPP - ELIMINADO POR PRIVACIDAD
-        // ========================================================================
-        // Los prefetch/dns-prefetch a WhatsApp pueden revelar visitas del usuario
-        // antes de que haga clic, comprometiendo su privacidad. Removido.
-    </script>
 
 </body>
 
