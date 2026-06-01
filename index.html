@@ -2104,7 +2104,42 @@
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 1), -1px -1px 3px rgba(0, 0, 0, 0.9), 0px 0px 10px rgba(0, 0, 0, 0.6) !important;
 }
 
-    </style>
+    /* ==================== AJUSTES SOLICITADOS ==================== */
+.country-name {
+    /* Esto oculta por completo los nombres de los países debajo de las banderas */
+    display: none !important; 
+}  
+
+.flag-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra la bandera verticalmente en la cajita */
+    padding: 10px; /* Relleno parejo para que se vea simétrico */
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 125px !important;
+}  
+
+/* ==================== ARREGLO DE TEXTO INVISIBLE EN TODOS LOS DESPLEGABLES ==================== */
+.attractions .card-content p,
+.attractions div[class*="content"] p,
+.attractions div[class*="accordion"] p,
+.attractions .flag-box + div p {
+    color: #ffffff !important; /* Fuerza el color blanco puro */
+    font-weight: 700 !important; /* Le da más grosor a la letra para que tenga cuerpo */
+    /* Crea un sombreado negro nítido alrededor de cada letra para despegarla del celeste */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9), 
+                -1px -1px 3px rgba(0, 0, 0, 0.9), 
+                 1px -1px 3px rgba(0, 0, 0, 0.9), 
+                -1px 1px 3px rgba(0, 0, 0, 0.9) !important;
+    opacity: 1 !important; /* Elimina cualquier transparencia que intente apagar la letra */
+}
+
+</style>
 </head>
 
 <body>
