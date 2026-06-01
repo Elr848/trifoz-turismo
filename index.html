@@ -1152,46 +1152,11 @@
 
         .info-side-image {
             flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        .imagen-profesional-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 420px;
-            /* Esquina superior izquierda (logo) con borde pequeño, el resto orgánico y redondeado para evitar forma cuadrada */
-            border-radius: 12px 45% 55% 40% / 12px 50% 45% 55%;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 40px rgba(20, 178, 196, 0.3);
-            border: 3px solid rgba(255, 255, 255, 0.15);
-            transition: transform 0.5s ease, border-radius 0.5s ease, box-shadow 0.5s ease;
-            overflow: hidden;
-            background: #001020;
-        }
-
-        .imagen-profesional-wrapper:hover {
-            transform: translateY(-8px) scale(1.02);
-            /* Animación suave de la forma orgánica al pasar el mouse */
-            border-radius: 12px 50% 40% 55% / 12px 45% 55% 40%;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 50px rgba(212, 175, 55, 0.4);
-        }
-
-        .imagen-profesional-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: inherit;
-        }
-
-        /* Efecto difuminado interno para suavizar los bordes de la foto */
-        .imagen-profesional-wrapper::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            box-shadow: inset 0 0 40px rgba(0, 20, 50, 0.8), inset 0 0 15px rgba(255, 255, 255, 0.2);
-            pointer-events: none;
+        .info-side-image img {
+            max-width: 100%;
+            border-radius: 15px;
         }
 
         .acordeon-container {
@@ -1548,9 +1513,7 @@
 
         <div class="info-content-wrapper">
             <div class="info-side-image">
-                <div class="imagen-profesional-wrapper">
-                    <img src="images/1.2.png" alt="Guía Ebert">
-                </div>
+                <img src="images/1.1.jpeg" alt="Guía Ebert">
             </div>
             <div class="acordeon-container">
                 <details>
