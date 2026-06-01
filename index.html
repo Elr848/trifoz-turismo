@@ -1202,6 +1202,17 @@
             }
         }
 
+        /* =======================================================
+           CORRECCIÓN EXCLUSIVA: ANCHO DE BOTONES EN ESCRITORIO
+           ======================================================= */
+        @media (min-width: 1025px) {
+            .acordeon-container {
+                max-width: 650px !important; /* Limita el ancho de las barras para que no se estiren */
+                margin: 0 auto !important;   /* Centra los tres botones en la pantalla de la PC */
+                width: 100% !important;
+            }
+        }
+
         /* Ocultar el botón flotante por defecto de abajo si es que existía */
         .whatsapp-flotante {
             display: none !important;
