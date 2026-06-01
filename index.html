@@ -2076,6 +2076,34 @@
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7) !important;
 }
 
+    /* ==================== AJUSTES DE VISIBILIDAD DE BANDERAS Y SOMBREADOS EXTRA ==================== */
+/* Corrección para que las banderas se vean perfectamente en Notebook/Laptop */
+.flags-section {
+    display: block !important;
+    width: 100% !important;
+}
+
+.flags-container {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+}
+
+/* Sombreado Ultra-Premium para textos amarillos (flotantes y nítidos) */
+.attractions h2,
+.subtitulo-amarillo,
+.hero-container h2 {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1), 0px 0px 12px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Sombreado extra fuerte para textos claros (blancos) para asegurar lectura perfecta */
+.attractions h3 + p, 
+.hero-container h3 + p,
+.attractions p[class*="sub"],
+.descripcion-destacada {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1), -1px -1px 3px rgba(0, 0, 0, 0.9), 0px 0px 10px rgba(0, 0, 0, 0.6) !important;
+}
+
     </style>
 </head>
 
