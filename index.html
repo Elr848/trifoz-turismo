@@ -139,56 +139,19 @@
             --azul-electrico: #14b2c4;
         }
 
-        /* ==================== FONDO DE ALTO RENDIMIENTO DYNAMIC GRADIENT ==================== */
+        /* ==================== FONDO AZUL CLARO METALIZADO SIN EFECTOS COHETES/LUCES ==================== */
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(-45deg, #0a0a0a, #141414, #0f172a, #141414);
-            background-size: 400% 400%;
-            animation: gradientMovement 15s ease infinite;
+            background: linear-gradient(135deg, #7ba1c7, #a3becc, #c1d3de, #a3becc, #7ba1c7);
+            background-size: cover;
             color: #ffffff;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
-            /* Optimización de renderizado para GPUs en móviles y PCs */
-            will-change: background-position;
         }
 
-        @keyframes gradientMovement {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        /* Accesibilidad y ahorro de batería extremo (A11y & Green Coding) */
-        @media (prefers-reduced-motion: reduce) {
-            body {
-                animation: none !important;
-                background-size: cover;
-                will-change: auto;
-            }
-        }
-
-        /* Brillo sutil dorado en la parte superior */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 500px;
-            background: linear-gradient(180deg, rgba(255, 215, 0, 0.08), transparent);
-            z-index: -1;
-            pointer-events: none;
-        }
+        /* Removido el brillo superior dorado (body::before) */
 
         /* Sección de atracciones transparente para lucir el fondo unificado */
         .attractions {
@@ -201,57 +164,9 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* 1. Efecto de Luces de Fondo (Solo PC) */
+        /* Desactivadas por completo las luces de fondo */
         .luces-fondo {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .luz {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.15;
-            animation: flotarLuz 12s infinite alternate ease-in-out;
-        }
-
-        .luz-azul {
-            width: 400px;
-            height: 400px;
-            background: #007bff;
-            top: 10%;
-            left: -10%;
-        }
-
-        .luz-dorada {
-            width: 500px;
-            height: 500px;
-            background: #ffd700;
-            bottom: -10%;
-            right: -10%;
-            animation-delay: -4s;
-        }
-
-        @keyframes flotarLuz {
-            0% {
-                transform: translate(0, 0) scale(1);
-            }
-
-            100% {
-                transform: translate(50px, 40px) scale(1.2);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .luces-fondo {
-                display: none;
-            }
+            display: none !important;
         }
 
 
@@ -440,7 +355,7 @@
             font-weight: 600;
         }
 
-        /* SECCIÓN ATRACCIONES — estilo pinceladas azul */
+        /* SECCIÓN ATRACCIONES */
         .attractions {
             position: relative;
             padding: 60px 20px 80px;
@@ -449,30 +364,26 @@
             background: transparent;
         }
 
-        /* Pinceladas animadas capa extra — azul flows */
-        .attractions::before {
-            display: none;
-        }
-
+        /* ==================== BOTÓN DE LIBRAS REDUCIDO A LA MITAD Y ELEGANTE ==================== */
         .btn-libras-premium {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 10px; /* Reducido de 20px */
             margin-bottom: 45px;
-            padding: 0px 35px;
-            border-radius: 20px;
-            background: #ffffff !important;
-            color: #333;
+            padding: 0px 18px; /* Reducido de 35px */
+            border-radius: 10px; /* Reducido de 20px */
+            background: linear-gradient(145deg, #ffffff, #f0f4f8) !important; /* Toque metálico fino */
+            color: #1a2a3a;
             text-decoration: none;
             font-weight: 900;
-            border: 1px solid #b3b3b3;
-            box-shadow: 3px 3px 6px #c8c8c8, -3px -3px 6px #ffffff;
+            border: 1px solid #c2cbd6;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.7);
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             text-transform: uppercase;
             position: relative;
             overflow: hidden;
-            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.393);
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
         }
 
         .btn-libras-premium::before {
@@ -484,7 +395,7 @@
             height: 100%;
             background: linear-gradient(120deg,
                     transparent,
-                    rgba(255, 255, 255, 0.8),
+                    rgba(255, 255, 255, 0.6),
                     transparent);
             animation: metal-shimmer 4s infinite linear;
             pointer-events: none;
@@ -494,11 +405,9 @@
             0% {
                 left: -150%;
             }
-
             30% {
                 left: 150%;
             }
-
             100% {
                 left: 150%;
             }
@@ -509,10 +418,10 @@
         }
 
         .btn-libras-premium:hover {
-            transform: scale(1.02) translateY(-5px);
-            background: linear-gradient(145deg, #ffffff, #e6e6e6);
-            box-shadow: 5px 5px 12px #c8c8c8, -5px -5px 12px #ffffff;
-            color: #000;
+            transform: scale(1.02) translateY(-3px);
+            background: linear-gradient(145deg, #f0f4f8, #e2eaf0) !important;
+            box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.15), -3px -3px 8px rgba(255, 255, 255, 0.8);
+            color: #002366;
         }
 
         .btn-libras-premium {
@@ -522,12 +431,12 @@
 
         .libras-icon-img {
             width: auto !important;
-            height: 130px !important;
+            height: 65px !important; /* Reducido a la mitad de 130px */
             z-index: 2;
             filter: contrast(1.1) brightness(1.1);
-            background-color: #ffffff !important;
+            background-color: transparent !important;
             mix-blend-mode: multiply;
-            border-radius: 20px 0 0 20px;
+            border-radius: 10px 0 0 10px;
         }
 
         .libras-text-wrapper {
@@ -539,30 +448,31 @@
         }
 
         .libras-pt {
-            font-size: 1.4rem;
+            font-size: 0.7rem; /* Reducido a la mitad de 1.4rem */
             line-height: 1.1;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
             font-weight: 900;
+            color: #002366;
         }
 
         .libras-en,
         .libras-multi {
-            font-size: 0.95rem;
-            opacity: 0.9;
+            font-size: 0.48rem; /* Reducido a la mitad de 0.95rem */
+            opacity: 0.8;
             font-weight: 700;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.2px;
+            color: #4b6584;
         }
 
-        /* ICONO LIBRAS (FONTAWESOME) SIN FONDO */
+        /* ICONO LIBRAS (FONTAWESOME) */
         .libras-icon-fa {
-            font-size: 32px;
+            font-size: 16px; /* Reducido a la mitad de 32px */
             vertical-align: middle;
-            margin-right: 15px;
-            color: #000;
-            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
-            animation: icon-glow 2s infinite ease-in-out;
+            margin-right: 7px; /* Reducido */
+            color: #002366;
         }
 
+        /* TARJETAS Y OTROS ELEMENTOS (SIN TOCAR EFECTOS) */
         .grid-attractions,
         .contenedor-catalogo {
             display: flex !important;
@@ -582,16 +492,13 @@
         .secao-macuco-container {
             display: grid !important;
             grid-template-columns: 1fr 2fr 1fr !important;
-            /* Macuco al centro (2fr) y tarjetas a los lados (1fr) */
             gap: 20px !important;
             align-items: flex-start !important;
-            /* Cambiado de stretch a flex-start para evitar el estiramiento */
         }
 
         .sub-coluna-vertical {
             display: grid !important;
             grid-template-rows: auto auto !important;
-            /* Tarjetas a su tamaño natural, no estiradas */
             gap: 20px !important;
         }
 
@@ -603,7 +510,6 @@
             flex-direction: column !important;
         }
 
-        /* Transición suave para todas las tarjetas */
         .card {
             background: rgba(255, 255, 255, 0.05) !important;
             border-radius: 15px;
@@ -616,20 +522,15 @@
             cursor: pointer;
         }
 
-        /* Efecto al pasar el mouse (Hover) - Solo PC/Notebooks de alto rendimiento */
         @media (min-width: 1024px) {
             .card:hover {
                 transform: translateY(-5px) !important;
-                /* Eleva la tarjeta */
                 border-color: var(--amarillo) !important;
-                /* Resalta el borde dorado */
                 box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2) !important;
-                /* Brillo sutil abajo */
                 background: rgba(255, 255, 255, 0.08) !important;
             }
         }
 
-        /* Desactivar desplazamientos de hover en usuarios con preferencia de movimiento reducido */
         @media (prefers-reduced-motion: reduce) {
             @media (min-width: 1024px) {
                 .card:hover {
@@ -646,11 +547,9 @@
             width: 100%;
             height: 180px;
             object-fit: cover !important;
-            /* Por defecto cover para todas */
             display: block;
         }
 
-        /* Porto Iguaçu específico: no cortar cartel blanco */
         .tarjeta-porto-iguacu img {
             object-fit: contain !important;
             background-color: #141414 !important;
@@ -685,12 +584,10 @@
 
         .card-content {
             padding: 10px 12px !important;
-            /* 10px arriba/abajo */
             background: #141414 !important;
             height: auto !important;
         }
 
-        /* --- AJUSTE ESPECÍFICO MACUCO PC --- */
         @media (min-width: 1024px) {
             .video-card {
                 background: #141414 !important;
@@ -705,7 +602,6 @@
 
             .video-card .card-image img {
                 height: 400px !important;
-                /* Altura reducida para cuadrar con las laterales */
                 width: 100% !important;
                 object-fit: cover !important;
             }
@@ -728,7 +624,6 @@
             color: var(--azul-electrico);
         }
 
-        /* GUÍA ANIMADO SEÑALANDO */
         .guia-turismo-container {
             grid-column: 1 / -1;
             display: flex;
@@ -749,18 +644,14 @@
         }
 
         @keyframes pointing-down {
-
-            0%,
-            100% {
+            0%, 100% {
                 transform: translateY(0);
             }
-
             50% {
                 transform: translateY(15px);
             }
         }
 
-        /* VIDEO */
         .video-card {
             background: #002366 !important;
         }
@@ -816,36 +707,24 @@
             border: 0;
         }
 
-        /* ANIMACIONES */
         @keyframes rotate-fire {
             from {
                 transform: rotate(0deg) translateZ(0);
             }
-
             to {
                 transform: rotate(360deg) translateZ(0);
             }
         }
 
         @keyframes floating {
-
-            0%,
-            100% {
+            0%, 100% {
                 transform: translateY(0px);
             }
-
             50% {
                 transform: translateY(-10px);
             }
         }
 
-        @keyframes shine-text {
-            to {
-                background-position: 200% center;
-            }
-        }
-
-        /* WHATSAPP */
         .whatsapp-lux {
             position: fixed;
             bottom: 40px;
@@ -869,9 +748,7 @@
             font-size: 2.2rem;
         }
 
-        .whatsapp-lux:hover,
-        .booking-cta:hover,
-        .booking-mobile-cta:hover {
+        .whatsapp-lux:hover {
             transform: scale(1.12);
             background: #25d366 !important;
             color: #fff !important;
@@ -931,20 +808,12 @@
 
 
 
-        /* ============================================
-           RESPONSIVE — CELULARES Y TABLETS (≤1023px)
-           ============================================ */
+        /* RESPONSIVE */
         @media (max-width: 1023px) {
-
-            /* OPTIMIZACIONES DE RENDIMIENTO */
-            .grass-blade,
-            .attractions::before,
-            .btn-libras-premium::before {
+            .attractions::before {
                 display: none !important;
-                animation: none !important;
             }
 
-            /* CENTRADO ABSOLUTO Y SIMETRÍA TOTAL */
             .grid-attractions.contenedor-catalogo {
                 display: grid !important;
                 grid-template-columns: repeat(2, 1fr) !important;
@@ -979,7 +848,6 @@
             .card-image {
                 width: 100% !important;
                 height: auto !important;
-                flex: none !important;
             }
 
             .card-image img {
