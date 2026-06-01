@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-CSP_NONCE_PLACEHOLDER'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://wa.me https://fonts.googleapis.com https://fonts.gstatic.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
     <title>Tours Foz do Iguaçu | Traslados Aeropuerto & Transfer Privado 24/7 | Guía Turístico Ebert</title>
@@ -107,11 +108,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oswald:wght@500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-dqIm2PCt9IrvKbzJDN8xOPaaDmVQnMmNyuid8ytwzblMLlT3WiVfbjFJtE69yY3HV+d6WGWBBF9/gChBVs6zHw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
-    <!-- Preconnect WhatsApp para carga más rápida -->
+    <!-- Preconnect WhatsApp para carga más rápida (removido prefetch por privacidad del usuario) -->
     <link rel="preconnect" href="https://wa.me">
-    <link rel="dns-prefetch" href="//wa.me">
 
     <style>
         :root {
@@ -1959,7 +1959,7 @@
             <div class="booking-bar">
 
                 <!-- Field 1: Destination -->
-                <div class="booking-field" onclick="document.getElementById('booking-destino').focus()">
+                <div class="booking-field" id="booking-destino-wrapper">
                     <div class="booking-field-icon">📍</div>
                     <div class="booking-field-body">
                         <span class="booking-field-label">Destino</span>
@@ -1987,18 +1987,17 @@
                     <div class="booking-field-body">
                         <span class="booking-field-label">Passageiros</span>
                         <div class="passenger-counter">
-                            <button class="pax-btn" id="pax-minus" onclick="changePax(-1)"
+                            <button class="pax-btn" id="pax-minus"
                                 aria-label="Diminuir passageiros">−</button>
                             <span class="pax-value" id="pax-display">2</span>
-                            <button class="pax-btn" id="pax-plus" onclick="changePax(1)"
+                            <button class="pax-btn" id="pax-plus"
                                 aria-label="Aumentar passageiros">+</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Field 3: Date & Time -->
-                <div class="booking-field"
-                    onclick="document.getElementById('booking-datetime').showPicker ? document.getElementById('booking-datetime').showPicker() : document.getElementById('booking-datetime').focus()">
+                <div class="booking-field" id="booking-datetime-wrapper">
                     <div class="booking-field-icon">🗓️</div>
                     <div class="booking-field-body">
                         <span class="booking-field-label">Data &amp; Hora</span>
@@ -2008,7 +2007,7 @@
                 </div>
 
                 <!-- CTA Button -->
-                <button class="booking-cta" id="booking-submit-btn" onclick="enviarReservaWhatsApp()"
+                <button class="booking-cta" id="booking-submit-btn"
                     aria-label="Consultar disponibilidade via WhatsApp">
                     <i class="fab fa-whatsapp" style="font-size:1.25rem;"></i>
                     <span class="booking-cta-label">
@@ -2028,7 +2027,7 @@
     </section>
 
     <!-- BOTÃO FLUTUANTE MÓVIL -->
-    <button class="booking-mobile-btn" id="booking-mobile-trigger" onclick="abrirFormularioMovil()"
+    <button class="booking-mobile-btn" id="booking-mobile-trigger"
         aria-label="Abrir formulário de reserva">
         <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
         <span class="booking-mobile-btn-label">
@@ -2038,7 +2037,7 @@
     </button>
 
     <!-- OVERLAY -->
-    <div class="booking-overlay" id="booking-overlay" onclick="cerrarFormularioMovil()"></div>
+    <div class="booking-overlay" id="booking-overlay"></div>
 
     <!-- PANEL EXPANDIBLE MÓVIL (REDISEÑO EXPERTO) -->
     <div class="booking-mobile-panel" id="booking-mobile-panel">
@@ -2048,7 +2047,7 @@
                 <i class="fas fa-map-marker-alt" style="color: #ff4500;"></i>
                 Fazer uma simulação
             </span>
-            <button class="booking-mobile-close" onclick="cerrarFormularioMovil()" aria-label="Fechar">&#x2715;</button>
+            <button class="booking-mobile-close" aria-label="Fechar">&#x2715;</button>
         </div>
 
         <!-- Destino -->
@@ -2082,9 +2081,9 @@
             <div class="booking-mobile-field-body">
                 <span class="booking-mobile-label">Passageiros</span>
                 <div class="booking-mobile-pax">
-                    <button class="booking-mobile-pax-btn" onclick="changePaxM(-1)" aria-label="Diminuir">−</button>
+                    <button class="booking-mobile-pax-btn" data-pax-action="minus" aria-label="Diminuir">−</button>
                     <span class="booking-mobile-pax-val" id="pax-display-m">2</span>
-                    <button class="booking-mobile-pax-btn" onclick="changePaxM(1)" aria-label="Aumentar">+</button>
+                    <button class="booking-mobile-pax-btn" data-pax-action="plus" aria-label="Aumentar">+</button>
                 </div>
             </div>
         </div>
@@ -2102,7 +2101,7 @@
         </div>
 
         <!-- CTA (WhatsApp Capsule) -->
-        <button class="booking-mobile-cta" onclick="enviarReservaMovil()" aria-label="Enviar reserva por WhatsApp">
+        <button class="booking-mobile-cta" aria-label="Enviar reserva por WhatsApp">
             <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
             <span style="display:flex;flex-direction:column;line-height:1.2;text-align:left;">
                 <b>MAIS INFORMAÇÕES</b>
@@ -2297,6 +2296,103 @@
 
     <script>
         /* =========================================
+           EVENT LISTENER INITIALIZATION - DOMContentLoaded
+           ========================================= */
+        document.addEventListener('DOMContentLoaded', function() {
+            // Booking field focus handler
+            const bookingDestino = document.getElementById('booking-destino-wrapper');
+            if (bookingDestino) {
+                bookingDestino.addEventListener('click', function() {
+                    const select = document.getElementById('booking-destino');
+                    if (select) select.focus();
+                });
+            }
+
+            // Passenger counter buttons
+            const paxMinusBtn = document.getElementById('pax-minus');
+            const paxPlusBtn = document.getElementById('pax-plus');
+            if (paxMinusBtn) {
+                paxMinusBtn.addEventListener('click', function() {
+                    changePax(-1);
+                });
+            }
+            if (paxPlusBtn) {
+                paxPlusBtn.addEventListener('click', function() {
+                    changePax(1);
+                });
+            }
+
+            // DateTime picker trigger
+            const bookingDatetimeWrapper = document.getElementById('booking-datetime-wrapper');
+            if (bookingDatetimeWrapper) {
+                bookingDatetimeWrapper.addEventListener('click', function() {
+                    const input = document.getElementById('booking-datetime');
+                    if (input) {
+                        if (input.showPicker) {
+                            input.showPicker();
+                        } else {
+                            input.focus();
+                        }
+                    }
+                });
+            }
+
+            // Desktop booking submission
+            const bookingSubmitBtn = document.getElementById('booking-submit-btn');
+            if (bookingSubmitBtn) {
+                bookingSubmitBtn.addEventListener('click', function() {
+                    enviarReservaWhatsApp();
+                });
+            }
+
+            // Mobile form trigger
+            const bookingMobileTrigger = document.getElementById('booking-mobile-trigger');
+            if (bookingMobileTrigger) {
+                bookingMobileTrigger.addEventListener('click', function() {
+                    abrirFormularioMovil();
+                });
+            }
+
+            // Mobile overlay close
+            const bookingOverlay = document.getElementById('booking-overlay');
+            if (bookingOverlay) {
+                bookingOverlay.addEventListener('click', function() {
+                    cerrarFormularioMovil();
+                });
+            }
+
+            // Mobile panel close button
+            const bookingMobileClose = document.querySelector('.booking-mobile-close');
+            if (bookingMobileClose) {
+                bookingMobileClose.addEventListener('click', function() {
+                    cerrarFormularioMovil();
+                });
+            }
+
+            // Mobile passenger counter buttons
+            const paxMinusBtnM = document.querySelector('[data-pax-action="minus"]');
+            const paxPlusBtnM = document.querySelector('[data-pax-action="plus"]');
+            if (paxMinusBtnM) {
+                paxMinusBtnM.addEventListener('click', function() {
+                    changePaxM(-1);
+                });
+            }
+            if (paxPlusBtnM) {
+                paxPlusBtnM.addEventListener('click', function() {
+                    changePaxM(1);
+                });
+            }
+
+            // Mobile booking submission
+            const bookingMobileCta = document.querySelector('.booking-mobile-cta');
+            if (bookingMobileCta) {
+                bookingMobileCta.addEventListener('click', function() {
+                    enviarReservaMovil();
+                });
+            }
+        });
+
+        /* =========================================
            BOOKING BAR — Desktop & Mobile (PURIFICADO)
            ========================================= */
         
@@ -2371,7 +2467,9 @@
             const pad = n => String(n).padStart(2, '0');
             const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth() + 1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
             
-            window.open(`https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`, '_blank');
+            const url = `https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`;
+            const win = window.open(url, '_blank', 'noopener,noreferrer');
+            if (win) win.opener = null;
         }
 
         function abrirFormularioMovil() {
@@ -2426,7 +2524,9 @@
             const pad = n => String(n).padStart(2, '0');
             const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth() + 1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
             
-            window.open(`https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`, '_blank');
+            const url = `https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`;
+            const win = window.open(url, '_blank', 'noopener,noreferrer');
+            if (win) win.opener = null;
         }
     </script>
 
@@ -2500,20 +2600,10 @@
     }, { once: true });
 
     // ========================================================================
-    // PREFETCH WHATSAPP - SEGURO
+    // PREFETCH WHATSAPP - ELIMINADO POR PRIVACIDAD
     // ========================================================================
-    if (typeof requestIdleCallback !== 'undefined' && document.head) {
-        requestIdleCallback(() => {
-            try {
-                const link = document.createElement('link');
-                link.rel = 'prefetch';
-                link.href = 'https://wa.me/5545933003337';
-                document.head.appendChild(link);
-            } catch (e) {
-                console.warn('No se pudo hacer prefetch de WhatsApp');
-            }
-        });
-    }
+    // Los prefetch/dns-prefetch a WhatsApp pueden revelar visitas del usuario
+    // antes de que haga clic, comprometiendo su privacidad. Removido.
     </script>
 
 </body>
