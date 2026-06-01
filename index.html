@@ -2292,9 +2292,9 @@
                     <div class="booking-field-body">
                         <span class="booking-field-label">Passageiros</span>
                         <div class="passenger-counter">
-                            <button class="pax-btn" id="pax-minus" aria-label="Diminuir passageiros">−</button>
+                            <button type="button" class="pax-btn" id="pax-minus" aria-label="Diminuir passageiros" onclick="event.preventDefault(); changePax(-1)">−</button>
                             <span class="pax-value" id="pax-display">2</span>
-                            <button class="pax-btn" id="pax-plus" aria-label="Aumentar passageiros">+</button>
+                            <button type="button" class="pax-btn" id="pax-plus" aria-label="Aumentar passageiros" onclick="event.preventDefault(); changePax(1)">+</button>
                         </div>
                     </div>
                 </div>
@@ -2387,9 +2387,9 @@
             <div class="booking-mobile-field-body">
                 <span class="booking-mobile-label">Passageiros</span>
                 <div class="booking-mobile-pax">
-                    <button class="booking-mobile-pax-btn" data-pax-action="minus" aria-label="Diminuir">−</button>
+                    <button type="button" class="booking-mobile-pax-btn" data-pax-action="minus" aria-label="Diminuir" onclick="event.preventDefault(); changePaxM(-1)">−</button>
                     <span class="booking-mobile-pax-val" id="pax-display-m">2</span>
-                    <button class="booking-mobile-pax-btn" data-pax-action="plus" aria-label="Aumentar">+</button>
+                    <button type="button" class="booking-mobile-pax-btn" data-pax-action="plus" aria-label="Aumentar" onclick="event.preventDefault(); changePaxM(1)">+</button>
                 </div>
             </div>
         </div>
@@ -2688,19 +2688,6 @@
                 });
             }
 
-            // Passenger counter buttons
-            const paxMinusBtn = document.getElementById('pax-minus');
-            const paxPlusBtn = document.getElementById('pax-plus');
-            if (paxMinusBtn) {
-                paxMinusBtn.addEventListener('click', function () {
-                    changePax(-1);
-                });
-            }
-            if (paxPlusBtn) {
-                paxPlusBtn.addEventListener('click', function () {
-                    changePax(1);
-                });
-            }
 
             // DateTime picker trigger
             const bookingDatetimeWrapper = document.getElementById('booking-datetime-wrapper');
@@ -2749,19 +2736,6 @@
                 });
             }
 
-            // Mobile passenger counter buttons
-            const paxMinusBtnM = document.querySelector('[data-pax-action="minus"]');
-            const paxPlusBtnM = document.querySelector('[data-pax-action="plus"]');
-            if (paxMinusBtnM) {
-                paxMinusBtnM.addEventListener('click', function () {
-                    changePaxM(-1);
-                });
-            }
-            if (paxPlusBtnM) {
-                paxPlusBtnM.addEventListener('click', function () {
-                    changePaxM(1);
-                });
-            }
 
             // Mobile booking submission
             const bookingMobileCta = document.querySelector('.booking-mobile-cta');
