@@ -1199,6 +1199,9 @@
 
             .acordeon-container {
                 order: 1;
+                width: 90% !important;
+                max-width: 450px !important;
+                margin: 0 auto; /* Ajusta al tamaño de la pantalla en celular */
             }
         }
 
@@ -1207,9 +1210,13 @@
            ======================================================= */
         @media (min-width: 1025px) {
             .acordeon-container {
-                max-width: 650px !important; /* Limita el ancho de las barras para que no se estiren */
+                max-width: 480px !important; /* Recorta los botones que estaban infinitos */
                 margin: 0 auto !important;   /* Centra los tres botones en la pantalla de la PC */
                 width: 100% !important;
+            }
+            .acordeon-container summary,
+            .acordeon-container p {
+                text-align: center; /* Centra el texto dentro de cada botón en escritorio */
             }
         }
 
