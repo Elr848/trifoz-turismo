@@ -2043,6 +2043,39 @@
             outline-offset: 8px;
             border-radius: 4px;
         }
+    /* ==================== MEJORAS DE SOMBREADOS Y TEXTOS (NUEVAS) ==================== */
+.attractions h3 + p, 
+.hero-container h3 + p,
+.attractions p[class*="sub"] {
+    color: #ffffff !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8), -1px -1px 3px rgba(0, 0, 0, 0.8) !important;
+}
+
+.descripcion-destacada {
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 15px auto 30px auto;
+    background: rgba(0, 35, 102, 0.35) !important; 
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 15px 25px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.attractions h2,
+.subtitulo-amarillo,
+.hero-container h2 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7) !important;
+}
+
     </style>
 </head>
 
