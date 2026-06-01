@@ -1152,11 +1152,51 @@
 
         .info-side-image {
             flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
 
-        .info-side-image img {
-            max-width: 100%;
-            border-radius: 15px;
+        .imagen-efecto-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+            aspect-ratio: 4/5;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            overflow: hidden;
+            animation: blobMorph 12s ease-in-out infinite alternate;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 40px rgba(20, 178, 196, 0.5);
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            background: #000;
+        }
+
+        .imagen-efecto-wrapper .foto-guia {
+            width: 135%;
+            height: 135%;
+            object-fit: cover;
+            /* Desplazamos la imagen para ocultar el logo de la esquina superior izquierda */
+            object-position: 70% 30%;
+            position: absolute;
+            top: -15%;
+            left: -15%;
+            transition: all 0.5s ease;
+        }
+
+        .borde-difuminado {
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            box-shadow: inset 0 0 50px rgba(0, 20, 50, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.2);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        @keyframes blobMorph {
+            0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+            33% { border-radius: 50% 50% 30% 70% / 60% 30% 70% 40%; }
+            66% { border-radius: 30% 70% 50% 50% / 50% 40% 60% 50%; }
+            100% { border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%; }
         }
 
         .acordeon-container {
@@ -1513,7 +1553,11 @@
 
         <div class="info-content-wrapper">
             <div class="info-side-image">
-                <img src="images/1.1.jpeg" alt="Guía Ebert">
+                <div class="imagen-efecto-wrapper">
+                    <!-- Asumimos que "images/1.1.jpeg" o el nombre que elijas es la imagen con banderas -->
+                    <img src="images/1.1.jpeg" alt="Guía Ebert con Banderas" class="foto-guia">
+                    <div class="borde-difuminado"></div>
+                </div>
             </div>
             <div class="acordeon-container">
                 <details>
