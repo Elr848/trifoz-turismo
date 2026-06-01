@@ -150,9 +150,17 @@
         }
 
         @keyframes gradientMovement {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* Accesibilidad y ahorro de batería extremo (A11y & Green Coding) */
@@ -606,9 +614,12 @@
         /* Efecto al pasar el mouse (Hover) - Solo PC/Notebooks de alto rendimiento */
         @media (min-width: 1024px) {
             .card:hover {
-                transform: translateY(-5px) !important; /* Eleva la tarjeta */
-                border-color: var(--amarillo) !important; /* Resalta el borde dorado */
-                box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2) !important; /* Brillo sutil abajo */
+                transform: translateY(-5px) !important;
+                /* Eleva la tarjeta */
+                border-color: var(--amarillo) !important;
+                /* Resalta el borde dorado */
+                box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2) !important;
+                /* Brillo sutil abajo */
                 background: rgba(255, 255, 255, 0.08) !important;
             }
         }
@@ -2013,7 +2024,8 @@
 
         .informacion-turismo h2 {
             color: var(--amarillo);
-            font-size: clamp(1.4rem, 4vw, 1.9rem); /* Fluido y responsive nativo */
+            font-size: clamp(1.4rem, 4vw, 1.9rem);
+            /* Fluido y responsive nativo */
             text-transform: uppercase;
             margin-bottom: 12px;
             letter-spacing: 0.5px;
@@ -2021,7 +2033,8 @@
 
         .subtitulo-info {
             color: #cccccc;
-            font-size: clamp(0.85rem, 2.5vw, 1.05rem); /* Responsive sin media queries pesados */
+            font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+            /* Responsive sin media queries pesados */
             margin-bottom: 35px;
             line-height: 1.4;
         }
@@ -2111,6 +2124,7 @@
                 opacity: 0;
                 transform: translateY(-8px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -2542,17 +2556,21 @@
         <div class="acordeon-container">
             <details>
                 <summary>🚗 Transporte Privado y Confortable</summary>
-                <p>Olvídate de las esperas. Te busco directamente en tu hotel para realizar los recorridos por Foz do Iguaçu, Puerto Iguazú (Argentina) y Ciudad del Este (Paraguay) con total flexibilidad de horarios.</p>
+                <p>Olvídate de las esperas. Te busco directamente en tu hotel para realizar los recorridos por Foz do
+                    Iguaçu, Puerto Iguazú (Argentina) y Ciudad del Este (Paraguay) con total flexibilidad de horarios.
+                </p>
             </details>
 
             <details>
                 <summary>🤟 Turismo Inclusivo y Accesible (LIBRAS)</summary>
-                <p>Ofrecemos una experiencia conectada y adaptada. Comunicación completa en Lengua Brasileña de Señas (LIBRAS), español y portugués para que ningún detalle de la historia de las Cataratas se pierda.</p>
+                <p>Ofrecemos una experiencia conectada y adaptada. Comunicación completa en Lengua Brasileña de Señas
+                    (LIBRAS), español y portugués para que ningún detalle de la historia de las Cataratas se pierda.</p>
             </details>
 
             <details>
                 <summary>🗺️ Asesoría en Aduanas y Entradas</summary>
-                <p>Cruzar la frontera puede ser confuso. Te guío paso a paso en los trámites migratorios y te ayudo a organizar la compra de entradas para evitar filas innecesarias.</p>
+                <p>Cruzar la frontera puede ser confuso. Te guío paso a paso en los trámites migratorios y te ayudo a
+                    organizar la compra de entradas para evitar filas innecesarias.</p>
             </details>
         </div>
     </section>
