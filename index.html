@@ -1152,42 +1152,11 @@
 
         .info-side-image {
             flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .info-side-image::before {
-            content: '';
-            position: absolute;
-            width: 80%;
-            height: 80%;
-            background: radial-gradient(circle, rgba(20, 178, 196, 0.4) 0%, transparent 70%);
-            z-index: 0;
-            animation: pulse-glow 4s infinite alternate ease-in-out;
         }
 
         .info-side-image img {
             max-width: 100%;
-            position: relative;
-            z-index: 1;
-            /* Máscara radial que difumina los bordes y oculta el logo en la esquina superior izquierda (moviendo el centro al 60% 60%) */
-            -webkit-mask-image: radial-gradient(ellipse 90% 90% at 60% 60%, black 45%, transparent 100%);
-            mask-image: radial-gradient(ellipse 90% 90% at 60% 60%, black 45%, transparent 100%);
-            animation: float-img 6s ease-in-out infinite;
-            filter: drop-shadow(0px 15px 25px rgba(0, 0, 0, 0.4));
-        }
-
-        @keyframes float-img {
-            0% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-12px) scale(1.02); }
-            100% { transform: translateY(0px) scale(1); }
-        }
-
-        @keyframes pulse-glow {
-            0% { opacity: 0.4; transform: scale(0.95); }
-            100% { opacity: 0.8; transform: scale(1.1); }
+            border-radius: 15px;
         }
 
         .acordeon-container {
@@ -1232,7 +1201,8 @@
                 order: 1;
                 width: 90% !important;
                 max-width: 450px !important;
-                margin: 0 auto; /* Ajusta al tamaño de la pantalla en celular */
+                margin: 0 auto;
+                /* Ajusta al tamaño de la pantalla en celular */
             }
         }
 
@@ -1241,13 +1211,17 @@
            ======================================================= */
         @media (min-width: 1025px) {
             .acordeon-container {
-                max-width: 480px !important; /* Recorta los botones que estaban infinitos */
-                margin: 0 auto !important;   /* Centra los tres botones en la pantalla de la PC */
+                max-width: 480px !important;
+                /* Recorta los botones que estaban infinitos */
+                margin: 0 auto !important;
+                /* Centra los tres botones en la pantalla de la PC */
                 width: 100% !important;
             }
+
             .acordeon-container summary,
             .acordeon-container p {
-                text-align: center; /* Centra el texto dentro de cada botón en escritorio */
+                text-align: center;
+                /* Centra el texto dentro de cada botón en escritorio */
             }
         }
 
@@ -1554,7 +1528,8 @@
                 </details>
                 <details>
                     <summary>Asesoría en Aduanas y Entradas</summary>
-                    <p>Brindamos orientación para cruzar las fronteras de manera ágil y te ayudamos con la compra de entradas para las principales atracciones.</p>
+                    <p>Brindamos orientación para cruzar las fronteras de manera ágil y te ayudamos con la compra de
+                        entradas para las principales atracciones.</p>
                 </details>
             </div>
         </div>
@@ -1629,7 +1604,7 @@
             overlay?.addEventListener('click', cerrarPanel);
 
             // 5. Envío de Mensajes a WhatsApp
-            
+
             // Ayudantes de UX para la barra de reservas de escritorio
             document.getElementById('booking-destino-wrapper')?.addEventListener('click', function () {
                 document.getElementById('booking-destino')?.focus();
