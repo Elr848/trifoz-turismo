@@ -266,6 +266,7 @@
             letter-spacing: 4px;
             background: linear-gradient(90deg, #eaeaea, #ffffff, #8a8a8a, #ffffff, #eaeaea);
             background-size: 200% auto;
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: brilloMetal 4s linear infinite;
@@ -2205,72 +2206,135 @@
 
     <script>
         /* =========================================
-           BOOKING BAR — Desktop
+           BOOKING BAR — Desktop & Mobile (PURIFICADO)
            ========================================= */
+        
         let paxCount = 2;
+        let paxCountM = 2;
         const minPax = 1;
         const maxPax = 20;
 
-        function changePax(delta) {
-            paxCount = Math.min(maxPax, Math.max(minPax, paxCount + delta));
-            document.getElementById('pax-display').textContent = paxCount;
+        // INIT SEGURA: Esperar DOM listo
+        function initBooking() {
+            setDefaultDatetime();
         }
 
-        // Pre-fill desktop datetime
-        (function setDefaultDatetime() {
+        function changePax(delta) {
+            const paxDisplay = document.getElementById('pax-display');
+            if (!paxDisplay) return;
+            paxCount = Math.min(maxPax, Math.max(minPax, paxCount + delta));
+            paxDisplay.textContent = paxCount;
+        }
+
+        function changePaxM(delta) {
+            const paxDisplayM = document.getElementById('pax-display-m');
+            if (!paxDisplayM) return;
+            paxCountM = Math.min(20, Math.max(1, paxCountM + delta));
+            paxDisplayM.textContent = paxCountM;
+        }
+
+        function setDefaultDatetime() {
             const tomorrow = new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
             const pad = n => String(n).padStart(2, '0');
             const val = `${tomorrow.getFullYear()}-${pad(tomorrow.getMonth() + 1)}-${pad(tomorrow.getDate())}T09:00`;
+            
             const dtEl = document.getElementById('booking-datetime');
-            if (dtEl) dtEl.value = val;
+            if (dtEl && !dtEl.value) dtEl.value = val;
+            
             const dtElM = document.getElementById('booking-datetime-m');
-            if (dtElM) dtElM.value = val;
-        })();
+            if (dtElM && !dtElM.value) dtElM.value = val;
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initBooking);
+        } else {
+            initBooking();
+        }
 
         function enviarReservaWhatsApp() {
-            const destino = document.getElementById('booking-destino').value;
-            const pax = document.getElementById('pax-display').textContent;
-            const dtRaw = document.getElementById('booking-datetime').value;
-            if (!destino) { alert('Por favor, selecione um destino.'); return; }
-            if (!dtRaw) { alert('Por favor, selecione a data e hora.'); return; }
+            const destinoEl = document.getElementById('booking-destino');
+            const paxEl = document.getElementById('pax-display');
+            const dtEl = document.getElementById('booking-datetime');
+            
+            if (!destinoEl || !paxEl || !dtEl) {
+                console.error('Elementos de formulario no encontrados');
+                alert('Error: Formulario incompleto');
+                return;
+            }
+            
+            const destino = destinoEl.value;
+            const pax = paxEl.textContent;
+            const dtRaw = dtEl.value;
+            
+            if (!destino) { 
+                alert('Por favor, selecione um destino.'); 
+                return; 
+            }
+            if (!dtRaw) { 
+                alert('Por favor, selecione a data e hora.'); 
+                return; 
+            }
+            
             const dt = new Date(dtRaw);
             const pad = n => String(n).padStart(2, '0');
             const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth() + 1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
+            
             window.open(`https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-        /* =========================================
-           BOOKING MÓVIL — Toggle + WhatsApp
-           ========================================= */
-        let paxCountM = 2;
-
-        function changePaxM(delta) {
-            paxCountM = Math.min(20, Math.max(1, paxCountM + delta));
-            document.getElementById('pax-display-m').textContent = paxCountM;
-        }
-
         function abrirFormularioMovil() {
-            document.getElementById('booking-mobile-panel').classList.add('open');
-            document.getElementById('booking-overlay').classList.add('open');
-            document.body.style.overflow = 'hidden';
+            const panel = document.getElementById('booking-mobile-panel');
+            const overlay = document.getElementById('booking-overlay');
+            
+            if (panel && overlay) {
+                panel.classList.add('open');
+                overlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            } else {
+                console.error('Panel o overlay no encontrado');
+            }
         }
 
         function cerrarFormularioMovil() {
-            document.getElementById('booking-mobile-panel').classList.remove('open');
-            document.getElementById('booking-overlay').classList.remove('open');
-            document.body.style.overflow = '';
+            const panel = document.getElementById('booking-mobile-panel');
+            const overlay = document.getElementById('booking-overlay');
+            
+            if (panel && overlay) {
+                panel.classList.remove('open');
+                overlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
         }
 
         function enviarReservaMovil() {
-            const destino = document.getElementById('booking-destino-m').value;
-            const pax = document.getElementById('pax-display-m').textContent;
-            const dtRaw = document.getElementById('booking-datetime-m').value;
-            if (!destino) { alert('Por favor, selecione um destino.'); return; }
-            if (!dtRaw) { alert('Por favor, selecione a data e hora.'); return; }
+            const destinoEl = document.getElementById('booking-destino-m');
+            const paxEl = document.getElementById('pax-display-m');
+            const dtEl = document.getElementById('booking-datetime-m');
+            
+            if (!destinoEl || !paxEl || !dtEl) {
+                console.error('Elementos móviles no encontrados');
+                alert('Error: Formulario móvil incompleto');
+                return;
+            }
+            
+            const destino = destinoEl.value;
+            const pax = paxEl.textContent;
+            const dtRaw = dtEl.value;
+            
+            if (!destino) { 
+                alert('Por favor, selecione um destino.'); 
+                return; 
+            }
+            if (!dtRaw) { 
+                alert('Por favor, selecione a data e hora.'); 
+                return; 
+            }
+            
             const dt = new Date(dtRaw);
             const pad = n => String(n).padStart(2, '0');
             const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth() + 1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
+            
             window.open(`https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`, '_blank');
         }
     </script>
@@ -2289,58 +2353,74 @@
 
     <script>
     // ========================================================================
-    // INTERSECTION OBSERVER - Reemplaza scroll event (10x más eficiente)
+    // INTERSECTION OBSERVER - Botón Flotante WhatsApp (PURIFICADO)
     // ========================================================================
-    (function() {
-        const botonFlotante = document.querySelector('[data-wa-button]');
-        
-        if (!botonFlotante) return;
-        
-        // Crear elemento sentinel invisible (trigger point)
-        const sentinel = document.createElement('div');
-        sentinel.setAttribute('data-wa-sentinel', '');
-        sentinel.style.cssText = 'height: 1px; pointer-events: none;';
-        
-        // Insertar sentinel después de la sección principal (aprox. 250px)
-        const hero = document.querySelector('.hero') || document.body;
-        hero.parentNode.insertBefore(sentinel, hero.nextSibling);
-        
-        // IntersectionObserver: Mucho más eficiente que scroll events
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) {
-                        // Usuario pasó el punto trigger - mostrar botón
-                        botonFlotante.classList.add('mostrar');
-                    } else {
-                        // Usuario está en la sección principal - ocultar botón
-                        botonFlotante.classList.remove('mostrar');
-                    }
-                });
-            },
-            {
-                rootMargin: '0px',
-                threshold: 0 // Se activa cuando el elemento sale de la vista
+    document.addEventListener('DOMContentLoaded', function() {
+        try {
+            if (typeof IntersectionObserver === 'undefined') {
+                console.warn('IntersectionObserver no disponible');
+                return;
             }
-        );
-        
-        observer.observe(sentinel);
-        
-        // Limpieza: buena práctica
-        window.addEventListener('beforeunload', () => {
-            observer.disconnect();
-        });
-    })();
+            
+            const botonFlotante = document.querySelector('[data-wa-button]');
+            if (!botonFlotante) {
+                console.warn('Botón flotante WhatsApp no encontrado');
+                return;
+            }
+            
+            const sentinel = document.createElement('div');
+            sentinel.setAttribute('data-wa-sentinel', '');
+            sentinel.style.cssText = 'height: 1px; pointer-events: none;';
+            
+            const hero = document.querySelector('.hero');
+            const insertTarget = hero ? hero.parentNode : document.body;
+            
+            if (insertTarget && hero) {
+                insertTarget.insertBefore(sentinel, hero.nextSibling);
+            } else if (document.body) {
+                document.body.appendChild(sentinel);
+            } else {
+                console.error('No se pudo encontrar punto de inserción');
+                return;
+            }
+            
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting) {
+                            botonFlotante.classList.add('mostrar');
+                        } else {
+                            botonFlotante.classList.remove('mostrar');
+                        }
+                    });
+                },
+                { rootMargin: '0px', threshold: 0 }
+            );
+            
+            observer.observe(sentinel);
+            
+            window.addEventListener('beforeunload', () => {
+                observer.disconnect();
+            }, { once: true });
+            
+        } catch (error) {
+            console.error('Error en IntersectionObserver:', error);
+        }
+    }, { once: true });
 
     // ========================================================================
-    // PREFETCH WHATSAPP EN BACKGROUND (Idle time)
+    // PREFETCH WHATSAPP - SEGURO
     // ========================================================================
-    if ('requestIdleCallback' in window) {
+    if (typeof requestIdleCallback !== 'undefined' && document.head) {
         requestIdleCallback(() => {
-            const link = document.createElement('link');
-            link.rel = 'prefetch';
-            link.href = 'https://wa.me/5545933003337';
-            document.head.appendChild(link);
+            try {
+                const link = document.createElement('link');
+                link.rel = 'prefetch';
+                link.href = 'https://wa.me/5545933003337';
+                document.head.appendChild(link);
+            } catch (e) {
+                console.warn('No se pudo hacer prefetch de WhatsApp');
+            }
         });
     }
     </script>
