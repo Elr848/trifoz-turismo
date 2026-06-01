@@ -553,7 +553,8 @@
         }
 
         .card {
-            background: rgba(75, 83, 88, 0.95) !important; /* Gris metalizado tipo plomo */
+            background: rgba(75, 83, 88, 0.95) !important;
+            /* Gris metalizado tipo plomo */
             /* Mantiene el contraste oscuro de las tarjetas */
             border-radius: 15px;
             overflow: hidden;
@@ -2043,164 +2044,172 @@
             outline-offset: 8px;
             border-radius: 4px;
         }
-    /* ==================== MEJORAS DE SOMBREADOS Y TEXTOS (NUEVAS) ==================== */
-.attractions h3 + p, 
-.hero-container h3 + p,
-.attractions p[class*="sub"] {
-    color: #ffffff !important;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8), -1px -1px 3px rgba(0, 0, 0, 0.8) !important;
-}
 
-.descripcion-destacada {
-    color: #ffffff !important;
-    font-weight: 600;
-    font-size: 1.05rem;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 15px auto 30px auto;
-    background: rgba(0, 35, 102, 0.35) !important; 
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    padding: 15px 25px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-}
+        /* ==================== MEJORAS DE SOMBREADOS Y TEXTOS (NUEVAS) ==================== */
+        .attractions h3+p,
+        .hero-container h3+p,
+        .attractions p[class*="sub"] {
+            color: #ffffff !important;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8), -1px -1px 3px rgba(0, 0, 0, 0.8) !important;
+        }
 
-.attractions h2,
-.subtitulo-amarillo,
-.hero-container h2 {
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7) !important;
-}
+        .descripcion-destacada {
+            color: #ffffff !important;
+            font-weight: 600;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 15px auto 30px auto;
+            background: rgba(0, 35, 102, 0.35) !important;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+        }
 
-    /* ==================== AJUSTES DE VISIBILIDAD DE BANDERAS Y SOMBREADOS EXTRA ==================== */
-/* Corrección para que las banderas se vean perfectamente en Notebook/Laptop */
-.flags-section {
-    display: block !important;
-    width: 100% !important;
-}
+        .attractions h2,
+        .subtitulo-amarillo,
+        .hero-container h2 {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7) !important;
+        }
 
-.flags-container {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    width: 100% !important;
-}
+        /* ==================== AJUSTES DE VISIBILIDAD DE BANDERAS Y SOMBREADOS EXTRA ==================== */
+        /* Corrección para que las banderas se vean perfectamente en Notebook/Laptop */
+        .flags-section {
+            display: block !important;
+            width: 100% !important;
+        }
 
-/* Sombreado Ultra-Premium para textos amarillos (flotantes y nítidos) */
-.attractions h2,
-.subtitulo-amarillo,
-.hero-container h2 {
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1), 0px 0px 12px rgba(0, 0, 0, 0.8) !important;
-}
+        .flags-container {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            width: 100% !important;
+        }
 
-/* Sombreado extra fuerte para textos claros (blancos) para asegurar lectura perfecta */
-.attractions h3 + p, 
-.hero-container h3 + p,
-.attractions p[class*="sub"],
-.descripcion-destacada {
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1), -1px -1px 3px rgba(0, 0, 0, 0.9), 0px 0px 10px rgba(0, 0, 0, 0.6) !important;
-}
+        /* Sombreado Ultra-Premium para textos amarillos (flotantes y nítidos) */
+        .attractions h2,
+        .subtitulo-amarillo,
+        .hero-container h2 {
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 1), 0px 0px 12px rgba(0, 0, 0, 0.8) !important;
+        }
 
-    /* ==================== AJUSTES SOLICITADOS ==================== */
-.country-name {
-    /* Esto oculta por completo los nombres de los países debajo de las banderas */
-    display: none !important; 
-}  
+        /* Sombreado extra fuerte para textos claros (blancos) para asegurar lectura perfecta */
+        .attractions h3+p,
+        .hero-container h3+p,
+        .attractions p[class*="sub"],
+        .descripcion-destacada {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 1), -1px -1px 3px rgba(0, 0, 0, 0.9), 0px 0px 10px rgba(0, 0, 0, 0.6) !important;
+        }
 
-.flag-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Centra la bandera verticalmente en la cajita */
-    padding: 10px; /* Relleno parejo para que se vea simétrico */
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    width: 125px !important;
-}  
+        /* ==================== AJUSTES SOLICITADOS ==================== */
+        .country-name {
+            /* Esto oculta por completo los nombres de los países debajo de las banderas */
+            display: none !important;
+        }
 
-/* ==================== ARREGLO DE TEXTO INVISIBLE EN TODOS LOS DESPLEGABLES ==================== */
-.attractions .card-content p,
-.attractions div[class*="content"] p,
-.attractions div[class*="accordion"] p,
-.attractions .flag-box + div p {
-    color: #ffffff !important; /* Fuerza el color blanco puro */
-    font-weight: 700 !important; /* Le da más grosor a la letra para que tenga cuerpo */
-    /* Crea un sombreado negro nítido alrededor de cada letra para despegarla del celeste */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9), 
-                -1px -1px 3px rgba(0, 0, 0, 0.9), 
-                 1px -1px 3px rgba(0, 0, 0, 0.9), 
+        .flag-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* Centra la bandera verticalmente en la cajita */
+            padding: 10px;
+            /* Relleno parejo para que se vea simétrico */
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            width: 125px !important;
+        }
+
+        /* ==================== ARREGLO DE TEXTO INVISIBLE EN TODOS LOS DESPLEGABLES ==================== */
+        .attractions .card-content p,
+        .attractions div[class*="content"] p,
+        .attractions div[class*="accordion"] p,
+        .attractions .flag-box+div p {
+            color: #ffffff !important;
+            /* Fuerza el color blanco puro */
+            font-weight: 700 !important;
+            /* Le da más grosor a la letra para que tenga cuerpo */
+            /* Crea un sombreado negro nítido alrededor de cada letra para despegarla del celeste */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9),
+                -1px -1px 3px rgba(0, 0, 0, 0.9),
+                1px -1px 3px rgba(0, 0, 0, 0.9),
                 -1px 1px 3px rgba(0, 0, 0, 0.9) !important;
-    opacity: 1 !important; /* Elimina cualquier transparencia que intente apagar la letra */
-}
+            opacity: 1 !important;
+            /* Elimina cualquier transparencia que intente apagar la letra */
+        }
 
-/* ==================== INFO WRAPPER RESPONSIVE & ACORDEON TEXT FIX ==================== */
-.info-content-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-}
+        /* ==================== INFO WRAPPER RESPONSIVE & ACORDEON TEXT FIX ==================== */
+        .info-content-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
 
-.info-side-image {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        .info-side-image {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.info-side-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-    object-fit: cover;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-}
+        .info-side-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
 
-.acordeon-container {
-    flex: 2;
-    width: 100%;
-}
+        .acordeon-container {
+            flex: 2;
+            width: 100%;
+        }
 
-/* Corrección de textos de acordeón */
-.acordeon-container details p,
-.acordeon-container details summary {
-    color: #ffffff !important;
-    text-shadow: 2px 2px 6px rgba(0,0,0,1), -1px -1px 3px rgba(0,0,0,0.9), 0px 0px 10px rgba(0,0,0,0.7) !important;
-}
-.acordeon-container details p {
-    font-weight: 600 !important;
-    opacity: 1 !important;
-}
+        /* Corrección de textos de acordeón */
+        .acordeon-container details p,
+        .acordeon-container details summary {
+            color: #ffffff !important;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 1), -1px -1px 3px rgba(0, 0, 0, 0.9), 0px 0px 10px rgba(0, 0, 0, 0.7) !important;
+        }
 
-@media (max-width: 1024px) {
-    .info-content-wrapper {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    
-    .info-side-image {
-        width: 100%;
-        max-width: 500px;
-        order: 2; /* Imágenes debajo del acordeón en móviles */
-    }
-    
-    .acordeon-container {
-        order: 1; /* Acordeón arriba en móviles */
-    }
-}
+        .acordeon-container details p {
+            font-weight: 600 !important;
+            opacity: 1 !important;
+        }
 
-</style>
+        @media (max-width: 1024px) {
+            .info-content-wrapper {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .info-side-image {
+                width: 100%;
+                max-width: 500px;
+                order: 2;
+                /* Imágenes debajo del acordeón en móviles */
+            }
+
+            .acordeon-container {
+                order: 1;
+                /* Acordeón arriba en móviles */
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -2427,9 +2436,15 @@
             </h2>
             <p
                 style="color: #ffffff; font-size: clamp(0.75rem, 3.5vw, 1rem); text-transform: uppercase; margin-top: 12px; letter-spacing: 1px; line-height: 1.8; text-shadow: 2px 2px 6px rgba(0,0,0,1), -1px -1px 3px rgba(0,0,0,0.9), 0px 0px 10px rgba(0,0,0,0.6); font-weight: 700;">
-                <img src="https://flagcdn.com/w40/es.png" width="20" height="15" alt="ES" style="vertical-align: -2px; margin-right: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.6); border-radius: 2px;"> Destinos Imperdibles en Foz de Iguazú & Transfers<br>
-                <img src="https://flagcdn.com/w40/us.png" width="20" height="15" alt="US" style="vertical-align: -2px; margin-right: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.6); border-radius: 2px; margin-top: 4px;"> Must-See Destinations & Private Transfers<br>
-                <img src="https://flagcdn.com/w40/fr.png" width="20" height="15" alt="FR" style="vertical-align: -2px; margin-right: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.6); border-radius: 2px; margin-top: 4px;"> Destinations Incontournables
+                <img src="https://flagcdn.com/w40/es.png" width="20" height="15" alt="ES"
+                    style="vertical-align: -2px; margin-right: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.6); border-radius: 2px;">
+                Destinos Imperdibles en Foz de Iguazú & Transfers<br>
+                <img src="https://flagcdn.com/w40/us.png" width="20" height="15" alt="US"
+                    style="vertical-align: -2px; margin-right: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.6); border-radius: 2px; margin-top: 4px;">
+                Must-See Destinations & Private Transfers<br>
+                <img src="https://flagcdn.com/w40/fr.png" width="20" height="15" alt="FR"
+                    style="vertical-align: -2px; margin-right: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.6); border-radius: 2px; margin-top: 4px;">
+                Destinations Incontournables
             </p>
         </div>
 
@@ -2612,8 +2627,11 @@
 
     <!-- SECCIÓN DE INFORMACIÓN Y ACORDEÓN PREMIUM (Nativo de alto rendimiento) -->
     <section class="informacion-turismo">
-        <h2 style="text-shadow: 3px 3px 6px rgba(0, 0, 0, 1), 0px 0px 12px rgba(0, 0, 0, 0.8) !important;">¿Por qué descubrir la Triple Frontera con Trifoz?</h2>
-        <p class="subtitulo-info" style="color: #ffffff; font-weight: 700; text-shadow: 2px 2px 6px rgba(0, 0, 0, 1), -1px -1px 3px rgba(0, 0, 0, 0.9), 0px 0px 10px rgba(0, 0, 0, 0.6) !important;">Tu aventura en Foz do Iguaçu con total comodidad, seguridad y accesibilidad.</p>
+        <h2 style="text-shadow: 3px 3px 6px rgba(0, 0, 0, 1), 0px 0px 12px rgba(0, 0, 0, 0.8) !important;">¿Por qué
+            descubrir la Triple Frontera con Trifoz?</h2>
+        <p class="subtitulo-info"
+            style="color: #ffffff; font-weight: 700; text-shadow: 2px 2px 6px rgba(0, 0, 0, 1), -1px -1px 3px rgba(0, 0, 0, 0.9), 0px 0px 10px rgba(0, 0, 0, 0.6) !important;">
+            Tu aventura en Foz do Iguaçu con total comodidad, seguridad y accesibilidad.</p>
 
         <!-- Acordeón Nativo (Sin JavaScript - Ultra rápido y accesible) -->
         <div class="info-content-wrapper">
@@ -2624,18 +2642,24 @@
             <div class="acordeon-container">
                 <details>
                     <summary>Transporte Privado y Confortable</summary>
-                    <p>Le buscamos directamente en su hotel para realizar los recorridos por Foz do Iguaçu, Puerto Iguazú (Argentina) y Ciudad del Este (Paraguay) con total flexibilidad de horarios, o esperamos en el aeropuerto para trasladar al hotel.</p>
+                    <p>Le buscamos directamente en su hotel para realizar los recorridos por Foz do Iguaçu, Puerto
+                        Iguazú (Argentina) y Ciudad del Este (Paraguay) con total flexibilidad de horarios, o esperamos
+                        en el aeropuerto para trasladar al hotel.</p>
                 </details>
 
                 <details>
                     <summary>Turismo Inclusivo y Accesible (LIBRAS)</summary>
-                    <p>Ofrecemos una experiencia conectada y adaptada. Comunicación completa en Lengua Brasileña de Señas
-                        (LIBRAS), español y portugués para que ningún detalle de la historia de las Cataratas se pierda.</p>
+                    <p>Ofrecemos una experiencia conectada y adaptada. Comunicación completa en Lengua Brasileña de
+                        Señas
+                        (LIBRAS), español y portugués para que ningún detalle de la historia de las Cataratas se pierda.
+                    </p>
                 </details>
 
                 <details>
                     <summary>Asesoría en Aduanas y Entradas</summary>
-                    <p>Cruzar la frontera puede ser confuso. Tendría guía personalizada y certificada por el ministerio de turismo, será paso a paso en los trámites migratorios y le ayudamos a organizar la compra de entradas para evitar filas innecesarias.</p>
+                    <p>Cruzar la frontera puede ser confuso. Tendría guía personalizada y certificada por el ministerio
+                        de turismo, será paso a paso en los trámites migratorios y le ayudamos a organizar la compra de
+                        entradas para evitar filas innecesarias.</p>
                 </details>
             </div>
         </div>
