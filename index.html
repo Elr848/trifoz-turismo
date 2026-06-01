@@ -2139,6 +2139,67 @@
     opacity: 1 !important; /* Elimina cualquier transparencia que intente apagar la letra */
 }
 
+/* ==================== INFO WRAPPER RESPONSIVE & ACORDEON TEXT FIX ==================== */
+.info-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.info-side-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-side-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.acordeon-container {
+    flex: 2;
+    width: 100%;
+}
+
+/* Corrección de textos de acordeón */
+.acordeon-container details p,
+.acordeon-container details summary {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 6px rgba(0,0,0,1), -1px -1px 3px rgba(0,0,0,0.9), 0px 0px 10px rgba(0,0,0,0.7) !important;
+}
+.acordeon-container details p {
+    font-weight: 600 !important;
+    opacity: 1 !important;
+}
+
+@media (max-width: 1024px) {
+    .info-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .info-side-image {
+        width: 100%;
+        max-width: 500px;
+        order: 2; /* Imágenes debajo del acordeón en móviles */
+    }
+    
+    .acordeon-container {
+        order: 1; /* Acordeón arriba en móviles */
+    }
+}
+
 </style>
 </head>
 
@@ -2555,25 +2616,35 @@
         <p class="subtitulo-info" style="color: #ffffff; font-weight: 700; text-shadow: 2px 2px 6px rgba(0, 0, 0, 1), -1px -1px 3px rgba(0, 0, 0, 0.9), 0px 0px 10px rgba(0, 0, 0, 0.6) !important;">Tu aventura en Foz do Iguaçu con total comodidad, seguridad y accesibilidad.</p>
 
         <!-- Acordeón Nativo (Sin JavaScript - Ultra rápido y accesible) -->
-        <div class="acordeon-container">
-            <details>
-                <summary>🚗 Transporte Privado y Confortable</summary>
-                <p>Olvídate de las esperas. Te busco directamente en tu hotel para realizar los recorridos por Foz do
-                    Iguaçu, Puerto Iguazú (Argentina) y Ciudad del Este (Paraguay) con total flexibilidad de horarios.
-                </p>
-            </details>
+        <div class="info-content-wrapper">
+            <div class="info-side-image">
+                <img src="images/car.1.jpeg" alt="Transporte Trifoz" loading="lazy">
+            </div>
 
-            <details>
-                <summary>🤟 Turismo Inclusivo y Accesible (LIBRAS)</summary>
-                <p>Ofrecemos una experiencia conectada y adaptada. Comunicación completa en Lengua Brasileña de Señas
-                    (LIBRAS), español y portugués para que ningún detalle de la historia de las Cataratas se pierda.</p>
-            </details>
+            <div class="acordeon-container">
+                <details>
+                    <summary>🚗 Transporte Privado y Confortable</summary>
+                    <p>Olvídate de las esperas. Te busco directamente en tu hotel para realizar los recorridos por Foz do
+                        Iguaçu, Puerto Iguazú (Argentina) y Ciudad del Este (Paraguay) con total flexibilidad de horarios.
+                    </p>
+                </details>
 
-            <details>
-                <summary>🗺️ Asesoría en Aduanas y Entradas</summary>
-                <p>Cruzar la frontera puede ser confuso. Te guío paso a paso en los trámites migratorios y te ayudo a
-                    organizar la compra de entradas para evitar filas innecesarias.</p>
-            </details>
+                <details>
+                    <summary>🤟 Turismo Inclusivo y Accesible (LIBRAS)</summary>
+                    <p>Ofrecemos una experiencia conectada y adaptada. Comunicación completa en Lengua Brasileña de Señas
+                        (LIBRAS), español y portugués para que ningún detalle de la historia de las Cataratas se pierda.</p>
+                </details>
+
+                <details>
+                    <summary>🗺️ Asesoría en Aduanas y Entradas</summary>
+                    <p>Cruzar la frontera puede ser confuso. Te guío paso a paso en los trámites migratorios y te ayudo a
+                        organizar la compra de entradas para evitar filas innecesarias.</p>
+                </details>
+            </div>
+
+            <div class="info-side-image">
+                <img src="images/1.1.jpeg" alt="Guía Ebert Trifoz" loading="lazy">
+            </div>
         </div>
     </section>
 
