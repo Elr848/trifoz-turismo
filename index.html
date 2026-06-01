@@ -2665,7 +2665,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer style="padding-bottom: 120px;">
         <p>© 2026 Trifoz Turismo • Guía Turístico Ebert • Foz do Iguaçu</p>
     </footer>
 
@@ -2826,7 +2826,6 @@
 
             if (!destinoEl || !paxEl || !dtEl) {
                 console.error('Elementos de formulario no encontrados');
-                alert('Error: Formulario incompleto');
                 return;
             }
 
@@ -2838,18 +2837,23 @@
                 alert('Por favor, selecione um destino.');
                 return;
             }
-            if (!dtRaw) {
-                alert('Por favor, selecione a data e hora.');
-                return;
+
+            let dtStr = "A coordinar";
+            if (dtRaw) {
+                const dt = new Date(dtRaw);
+                const pad = n => String(n).padStart(2, '0');
+                dtStr = `el día ${pad(dt.getDate())}/${pad(dt.getMonth() + 1)} a las ${pad(dt.getHours())}:${pad(dt.getMinutes())}`;
             }
 
-            const dt = new Date(dtRaw);
-            const pad = n => String(n).padStart(2, '0');
-            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth() + 1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
+            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* ${dtStr}. ¿Me podrías dar más información?`;
 
             const url = `https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`;
             const win = window.open(url, '_blank', 'noopener,noreferrer');
-            if (win) win.opener = null;
+            if (!win) {
+                window.location.href = url;
+            } else {
+                win.opener = null;
+            }
         }
 
         function abrirFormularioMovil() {
@@ -2883,7 +2887,6 @@
 
             if (!destinoEl || !paxEl || !dtEl) {
                 console.error('Elementos móviles no encontrados');
-                alert('Error: Formulario móvil incompleto');
                 return;
             }
 
@@ -2895,18 +2898,23 @@
                 alert('Por favor, selecione um destino.');
                 return;
             }
-            if (!dtRaw) {
-                alert('Por favor, selecione a data e hora.');
-                return;
+
+            let dtStr = "A coordinar";
+            if (dtRaw) {
+                const dt = new Date(dtRaw);
+                const pad = n => String(n).padStart(2, '0');
+                dtStr = `el día ${pad(dt.getDate())}/${pad(dt.getMonth() + 1)} a las ${pad(dt.getHours())}:${pad(dt.getMinutes())}`;
             }
 
-            const dt = new Date(dtRaw);
-            const pad = n => String(n).padStart(2, '0');
-            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth() + 1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
+            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* ${dtStr}. ¿Me podrías dar más información?`;
 
             const url = `https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`;
             const win = window.open(url, '_blank', 'noopener,noreferrer');
-            if (win) win.opener = null;
+            if (!win) {
+                window.location.href = url;
+            } else {
+                win.opener = null;
+            }
         }
     </script>
 
