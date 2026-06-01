@@ -2209,27 +2209,6 @@
                 /* Acordeón arriba en móviles */
             }
         }
-        @media (max-width: 768px) {
-            /* REDISEÑO EXPERTO DEL PANEL DE RESERVA MÓVIL */
-            .booking-mobile-panel {
-                display: flex;
-                flex-direction: column;
-                position: relative;
-                margin: 20px auto;
-                width: 90%;
-                z-index: 999;
-            }
-            /* Desplazamos el botón flotante para que no tape el footer en móvil */
-            .whatsapp-lux {
-                bottom: 20px;
-                right: 20px;
-                padding: 12px 25px;
-                font-size: 1.1rem;
-            }
-            .whatsapp-lux i {
-                font-size: 1.6rem;
-            }
-        }
     </style>
 </head>
 
@@ -2244,44 +2223,110 @@
     </div>
 
     <section class="hero">
-        <div class="fire-wrapper">
+        <div class="fire-wrapper" aria-hidden="true">
             <div class="hero-container">
-                <h1 class="titulo-metalico">Trifoz Turismo</h1>
-                <h2 class="subtitulo-amarillo">Guía de Turismo & Motorista Privado</h2>
-                
-                <div style="background: rgba(30, 39, 46, 0.9); padding: 15px; border-radius: 50px; display: flex; align-items: center; justify-content: space-between; margin-top: 20px; flex-wrap: wrap; gap: 15px;">
-                    
-                    <div style="display: flex; align-items: center; gap: 10px; margin-left: 15px;">
-                        <i class="fas fa-map-marker-alt" style="color: var(--azul-electrico);"></i>
-                        <div style="text-align: left;">
-                            <small style="color: var(--azul-electrico); display: block; font-size: 0.7rem; font-weight: bold;">DESTINO</small>
-                            <span style="font-size: 0.9rem; font-weight: bold;">Para onde vai?</span>
+                <h1 class="titulo-metalico" style="margin:0; line-height:1.1; font-size: clamp(1.9rem, 5.5vw, 2.7rem);">
+                    Trifoz Turismo
+                </h1>
+                <p style="font-size: 1.05rem; margin:8px 0 15px; opacity:0.95;">
+                    <strong>Guía Turístico Ebert</strong>
+                </p>
+                <h2 class="subtitulo-amarillo" style="margin:0; font-size: clamp(0.9rem, 2.2vw, 1.15rem);">Tours &
+                    Traslados Privados en la Triple Frontera</h2>
+                <h3 style="margin:12px 0 20px; font-size: clamp(0.85rem, 2vw, 1.1rem); color:#fff; opacity:0.9;">
+                    Especialistas en LIBRAS • Español • Portugués
+                </h3>
+
+                <div class="flags-section">
+                    <div class="flags-container">
+                        <div class="flag-box">
+                            <img src="https://flagcdn.com/w80/br.png" width="80" height="53" class="flag-icon"
+                                alt="Brasil" loading="lazy">
+                            <span class="country-name">Brasil</span>
+                        </div>
+                        <div class="flag-box">
+                            <img src="https://flagcdn.com/w80/ar.png" width="80" height="53" class="flag-icon"
+                                alt="Argentina" loading="lazy">
+                            <span class="country-name">Argentina</span>
+                        </div>
+                        <div class="flag-box">
+                            <img src="https://flagcdn.com/w80/py.png" width="80" height="53" class="flag-icon"
+                                alt="Paraguay" loading="lazy">
+                            <span class="country-name">Paraguai</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
 
-                    <div style="display: flex; align-items: center; gap: 10px; border-left: 1px solid rgba(255,255,255,0.2); border-right: 1px solid rgba(255,255,255,0.2); padding: 0 20px;">
-                        <i class="fas fa-users" style="color: var(--amarillo);"></i>
-                        <div style="text-align: left;">
-                            <small style="color: var(--azul-electrico); display: block; font-size: 0.7rem; font-weight: bold;">PASSAGEIROS</small>
-                            <div style="display: flex; align-items: center; gap: 10px; margin-top: 2px;">
-                                <button id="btn-menos" type="button" style="background: rgba(255,255,255,0.2); border: none; color: white; width: 22px; height: 22px; border-radius: 50%; cursor: pointer; font-weight: bold; display: flex; align-items: center; justify-content: center;">-</button>
-                                <span id="cant-pasajeros" style="font-size: 0.9rem; font-weight: bold; min-width: 15px; text-align: center;">2</span>
-                                <button id="btn-mas" type="button" style="background: rgba(255,255,255,0.2); border: none; color: white; width: 22px; height: 22px; border-radius: 50%; cursor: pointer; font-weight: bold; display: flex; align-items: center; justify-content: center;">+</button>
-                            </div>
+        <!-- LUXURY BOOKING BAR -->
+        <div class="booking-bar-wrapper">
+            <div class="booking-bar">
+
+                <!-- Field 1: Destination -->
+                <div class="booking-field" id="booking-destino-wrapper">
+                    <div class="booking-field-icon">📍</div>
+                    <div class="booking-field-body">
+                        <span class="booking-field-label">Destino</span>
+                        <select id="booking-destino" class="booking-select" aria-label="Selecionar destino">
+                            <option value="">Para onde vai?</option>
+                            <option value="Cataratas do Iguaçu (Brasil)">🇧🇷 Cataratas do Iguaçu</option>
+                            <option value="Cataratas del Iguazú (Argentina)">🇦🇷 Cataratas del Iguazú</option>
+                            <option value="Parque das Aves">🦜 Parque das Aves</option>
+                            <option value="Marco das 3 Fronteiras">🏛️ Marco das 3 Fronteiras</option>
+                            <option value="Itaipu Binacional">⚡ Itaipu Binacional</option>
+                            <option value="Macuco Safari">🚤 Macuco Safari</option>
+                            <option value="Roda Gigante Yup Star">🎡 Roda Gigante Yup Star</option>
+                            <option value="Museu de Cera Dreamland">🎭 Museu de Cera Dreamland</option>
+                            <option value="Ciudad del Este (Paraguay)">🇵🇾 Ciudad del Este</option>
+                            <option value="Roteiro Personalizado" class="option-highlight">✨ Preciso de ajuda com o
+                                roteiro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Field 2: Passengers -->
+                <div class="booking-field">
+                    <div class="booking-field-icon" style="color: var(--amarillo);"><i class="fas fa-user-group"></i>
+                    </div>
+                    <div class="booking-field-body">
+                        <span class="booking-field-label">Passageiros</span>
+                        <div class="passenger-counter">
+                            <button class="pax-btn" id="pax-minus" aria-label="Diminuir passageiros">−</button>
+                            <span class="pax-value" id="pax-display">2</span>
+                            <button class="pax-btn" id="pax-plus" aria-label="Aumentar passageiros">+</button>
                         </div>
                     </div>
+                </div>
 
-                    <div style="display: flex; align-items: center; gap: 10px; margin-right: 15px;">
-                        <i class="fas fa-calendar-alt" style="color: rgba(255,255,255,0.6);"></i>
-                        <div style="text-align: left;">
-                            <small style="color: var(--azul-electrico); display: block; font-size: 0.7rem; font-weight: bold;">DATA & HORA</small>
-                            <span style="font-size: 0.9rem; font-weight: bold;">02/06/2026 05:03 p.</span>
-                        </div>
+                <!-- Field 3: Date & Time -->
+                <div class="booking-field" id="booking-datetime-wrapper">
+                    <div class="booking-field-icon">🗓️</div>
+                    <div class="booking-field-body">
+                        <span class="booking-field-label">Data &amp; Hora</span>
+                        <input type="datetime-local" id="booking-datetime" class="booking-datetime"
+                            aria-label="Data e hora do traslado">
                     </div>
+                </div>
 
-                    <a href="https://wa.me/5545933003337" target="_blank" rel="noopener noreferrer" style="background: var(--azul-electrico); color: white; padding: 10px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
-                        <i class="fab fa-whatsapp"></i> MAIS INFORMAÇÕES <span style="font-size: 0.75rem;">+55(45)933003337</span>
-                    </a>
+                <!-- CTA Button -->
+                <button class="booking-cta" id="booking-submit-btn" aria-label="Consultar disponibilidade via WhatsApp">
+                    <i class="fab fa-whatsapp" style="font-size:1.25rem;"></i>
+                    <span class="booking-cta-label">
+                        MAIS INFORMAÇÕES
+                        <span class="booking-cta-phone">+55(45)933003337</span>
+                    </span>
+                </button>
+
+                <div class="social-buttons-container">
+                    <a href="mailto:trifozturismo@gmail.com" class="btn-social btn-email" title="Enviar Correo"><i
+                            class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.facebook.com/trifoz-turismo" target="_blank" rel="noopener noreferrer"
+                        class="btn-social btn-facebook" title="Síguenos en Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/trifoz.turismo" target="_blank" rel="noopener noreferrer"
+                        class="btn-social btn-instagram" title="Síguenos en Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
                 </div>
 
             </div>
@@ -2289,7 +2334,7 @@
     </section>
 
     <!-- BOTÃO FLUTUANTE MÓVIL -->
-    <button type="button" class="booking-mobile-btn" id="booking-mobile-trigger" aria-label="Abrir formulário de reserva" onclick="abrirFormularioMovil()">
+    <button class="booking-mobile-btn" id="booking-mobile-trigger" aria-label="Abrir formulário de reserva">
         <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
         <span class="booking-mobile-btn-label">
             MAIS INFORMAÇÕES
@@ -2298,7 +2343,7 @@
     </button>
 
     <!-- OVERLAY -->
-    <div class="booking-overlay" id="booking-overlay" onclick="cerrarFormularioMovil()"></div>
+    <div class="booking-overlay" id="booking-overlay"></div>
 
     <!-- PANEL EXPANDIBLE MÓVIL (REDISEÑO EXPERTO) -->
     <div class="booking-mobile-panel" id="booking-mobile-panel">
@@ -2308,7 +2353,7 @@
                 <i class="fas fa-map-marker-alt" style="color: #ff4500;"></i>
                 Fazer uma simulação
             </span>
-            <button type="button" class="booking-mobile-close" aria-label="Fechar" onclick="cerrarFormularioMovil()">&#x2715;</button>
+            <button class="booking-mobile-close" aria-label="Fechar">&#x2715;</button>
         </div>
 
         <!-- Destino -->
@@ -2342,9 +2387,9 @@
             <div class="booking-mobile-field-body">
                 <span class="booking-mobile-label">Passageiros</span>
                 <div class="booking-mobile-pax">
-                    <button type="button" class="booking-mobile-pax-btn" data-pax-action="minus" aria-label="Diminuir" onclick="changePaxM(-1)">−</button>
+                    <button class="booking-mobile-pax-btn" data-pax-action="minus" aria-label="Diminuir">−</button>
                     <span class="booking-mobile-pax-val" id="pax-display-m">2</span>
-                    <button type="button" class="booking-mobile-pax-btn" data-pax-action="plus" aria-label="Aumentar" onclick="changePaxM(1)">+</button>
+                    <button class="booking-mobile-pax-btn" data-pax-action="plus" aria-label="Aumentar">+</button>
                 </div>
             </div>
         </div>
@@ -2362,7 +2407,7 @@
         </div>
 
         <!-- CTA (WhatsApp Capsule) -->
-        <button type="button" class="booking-mobile-cta" aria-label="Enviar reserva por WhatsApp" onclick="enviarReservaMovil()">
+        <button class="booking-mobile-cta" aria-label="Enviar reserva por WhatsApp">
             <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
             <span style="display:flex;flex-direction:column;line-height:1.2;text-align:left;">
                 <b>MAIS INFORMAÇÕES</b>
@@ -2620,7 +2665,7 @@
         </div>
     </section>
 
-    <footer style="padding-bottom: 120px;">
+    <footer>
         <p>© 2026 Trifoz Turismo • Guía Turístico Ebert • Foz do Iguaçu</p>
     </footer>
 
@@ -2630,6 +2675,103 @@
     <script src="script.js"></script>
 
     <script>
+        /* =========================================
+           EVENT LISTENER INITIALIZATION - DOMContentLoaded
+           ========================================= */
+        document.addEventListener('DOMContentLoaded', function () {
+            // Booking field focus handler
+            const bookingDestino = document.getElementById('booking-destino-wrapper');
+            if (bookingDestino) {
+                bookingDestino.addEventListener('click', function () {
+                    const select = document.getElementById('booking-destino');
+                    if (select) select.focus();
+                });
+            }
+
+            // Passenger counter buttons
+            const paxMinusBtn = document.getElementById('pax-minus');
+            const paxPlusBtn = document.getElementById('pax-plus');
+            if (paxMinusBtn) {
+                paxMinusBtn.addEventListener('click', function () {
+                    changePax(-1);
+                });
+            }
+            if (paxPlusBtn) {
+                paxPlusBtn.addEventListener('click', function () {
+                    changePax(1);
+                });
+            }
+
+            // DateTime picker trigger
+            const bookingDatetimeWrapper = document.getElementById('booking-datetime-wrapper');
+            if (bookingDatetimeWrapper) {
+                bookingDatetimeWrapper.addEventListener('click', function () {
+                    const input = document.getElementById('booking-datetime');
+                    if (input) {
+                        if (input.showPicker) {
+                            input.showPicker();
+                        } else {
+                            input.focus();
+                        }
+                    }
+                });
+            }
+
+            // Desktop booking submission
+            const bookingSubmitBtn = document.getElementById('booking-submit-btn');
+            if (bookingSubmitBtn) {
+                bookingSubmitBtn.addEventListener('click', function () {
+                    enviarReservaWhatsApp();
+                });
+            }
+
+            // Mobile form trigger
+            const bookingMobileTrigger = document.getElementById('booking-mobile-trigger');
+            if (bookingMobileTrigger) {
+                bookingMobileTrigger.addEventListener('click', function () {
+                    abrirFormularioMovil();
+                });
+            }
+
+            // Mobile overlay close
+            const bookingOverlay = document.getElementById('booking-overlay');
+            if (bookingOverlay) {
+                bookingOverlay.addEventListener('click', function () {
+                    cerrarFormularioMovil();
+                });
+            }
+
+            // Mobile panel close button
+            const bookingMobileClose = document.querySelector('.booking-mobile-close');
+            if (bookingMobileClose) {
+                bookingMobileClose.addEventListener('click', function () {
+                    cerrarFormularioMovil();
+                });
+            }
+
+            // Mobile passenger counter buttons
+            const paxMinusBtnM = document.querySelector('[data-pax-action="minus"]');
+            const paxPlusBtnM = document.querySelector('[data-pax-action="plus"]');
+            if (paxMinusBtnM) {
+                paxMinusBtnM.addEventListener('click', function () {
+                    changePaxM(-1);
+                });
+            }
+            if (paxPlusBtnM) {
+                paxPlusBtnM.addEventListener('click', function () {
+                    changePaxM(1);
+                });
+            }
+
+            // Mobile booking submission
+            const bookingMobileCta = document.querySelector('.booking-mobile-cta');
+            if (bookingMobileCta) {
+                bookingMobileCta.addEventListener('click', function () {
+                    enviarReservaMovil();
+                });
+            }
+        });
+
         /* =========================================
            BOOKING BAR — Desktop & Mobile (PURIFICADO)
            ========================================= */
@@ -2684,6 +2826,7 @@
 
             if (!destinoEl || !paxEl || !dtEl) {
                 console.error('Elementos de formulario no encontrados');
+                alert('Error: Formulario incompleto');
                 return;
             }
 
@@ -2695,23 +2838,18 @@
                 alert('Por favor, selecione um destino.');
                 return;
             }
-
-            let dtStr = "A coordinar";
-            if (dtRaw) {
-                const dt = new Date(dtRaw);
-                const pad = n => String(n).padStart(2, '0');
-                dtStr = `el día ${pad(dt.getDate())}/${pad(dt.getMonth() + 1)} a las ${pad(dt.getHours())}:${pad(dt.getMinutes())}`;
+            if (!dtRaw) {
+                alert('Por favor, selecione a data e hora.');
+                return;
             }
 
-            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* ${dtStr}. ¿Me podrías dar más información?`;
+            const dt = new Date(dtRaw);
+            const pad = n => String(n).padStart(2, '0');
+            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth() + 1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
 
             const url = `https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`;
             const win = window.open(url, '_blank', 'noopener,noreferrer');
-            if (!win) {
-                window.location.href = url;
-            } else {
-                win.opener = null;
-            }
+            if (win) win.opener = null;
         }
 
         function abrirFormularioMovil() {
@@ -2745,6 +2883,7 @@
 
             if (!destinoEl || !paxEl || !dtEl) {
                 console.error('Elementos móviles no encontrados');
+                alert('Error: Formulario móvil incompleto');
                 return;
             }
 
@@ -2756,59 +2895,29 @@
                 alert('Por favor, selecione um destino.');
                 return;
             }
-
-            let dtStr = "A coordinar";
-            if (dtRaw) {
-                const dt = new Date(dtRaw);
-                const pad = n => String(n).padStart(2, '0');
-                dtStr = `el día ${pad(dt.getDate())}/${pad(dt.getMonth() + 1)} a las ${pad(dt.getHours())}:${pad(dt.getMinutes())}`;
+            if (!dtRaw) {
+                alert('Por favor, selecione a data e hora.');
+                return;
             }
 
-            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* ${dtStr}. ¿Me podrías dar más información?`;
+            const dt = new Date(dtRaw);
+            const pad = n => String(n).padStart(2, '0');
+            const msg = `¡Hola! Me interesa un traslado para *${destino}* para *${pax} personas* el día *${pad(dt.getDate())}/${pad(dt.getMonth() + 1)}* a las *${pad(dt.getHours())}:${pad(dt.getMinutes())}*. ¿Me podrías dar más información?`;
 
             const url = `https://wa.me/5545933003337?text=${encodeURIComponent(msg)}`;
             const win = window.open(url, '_blank', 'noopener,noreferrer');
-            if (!win) {
-                window.location.href = url;
-            } else {
-                win.opener = null;
-            }
+            if (win) win.opener = null;
         }
     </script>
 
-    <a href="https://wa.me/5545933003337" target="_blank" rel="noopener noreferrer" class="whatsapp-lux" style="pointer-events: auto !important;">
-        <i class="fab fa-whatsapp"></i>
-        <span class="btn-text">MAIS INFORMAÇÕES <br><small style="font-size: 0.75rem; font-weight: normal;">+55(45)933003337</small></span>
+    <!-- BOTÓN WHATSAPP FLOTANTE OPTIMIZADO -->
+    <a href="https://wa.me/5545933003337" class="whatsapp-flotante" target="_blank" rel="noopener noreferrer"
+        aria-label="Contacto por WhatsApp - Trifoz Turismo" data-wa-button>
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true">
+            <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.37 5.374 0 12.001 0c3.21.002 6.225 1.251 8.492 3.522 2.268 2.27 3.513 5.287 3.511 8.495-.003 6.632-5.371 12.003-12.001 12.003-2.002-.001-3.971-.5-5.713-1.448L0 24zm6.59-21.135c-.457-.015-.783-.023-1.018-.023-.925 0-1.442.474-1.684.776-.395.496-.92 1.488-.92 3.326 0 2.443 1.776 4.795 2.023 5.121.246.327 3.428 5.485 8.423 7.45 2.872 1.132 4.025 1.157 5.064.985 1.258-.208 2.656-.99 3.033-1.954.377-.963.377-1.791.264-1.954-.113-.163-.414-.261-.867-.487-.453-.226-2.656-1.312-3.07-1.463-.415-.151-.717-.226-.981.17-.264.395-.981 1.226-1.207 1.49-.226.264-.453.296-.906.07-4.004-2.007-5.263-6.027-5.461-6.37-.197-.343-.021-.528.15-.699.153-.153.34-.395.508-.593.17-.198.226-.339.34-.565.113-.226.056-.424-.028-.593-.085-.17-.717-1.725-.981-2.361-.258-.62-.519-.534-.717-.544z" />
+        </svg>
     </a>
-
-    <script nonce="CSP_NONCE_PLACEHOLDER">
-        document.addEventListener("DOMContentLoaded", function() {
-            const btnMenos = document.getElementById("btn-menos");
-            const btnMas = document.getElementById("btn-mas");
-            const cantPasajeros = document.getElementById("cant-pasajeros");
-
-            if (btnMenos && btnMas && cantPasajeros) {
-                const minPasajeros = 1;
-                const maxPasajeros = 7; // Ajustable a la capacidad del Nissan Versa
-
-                btnMenos.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    let actual = parseInt(cantPasajeros.textContent);
-                    if (actual > minPasajeros) {
-                        cantPasajeros.textContent = actual - 1;
-                    }
-                });
-
-                btnMas.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    let actual = parseInt(cantPasajeros.textContent);
-                    if (actual < maxPasajeros) {
-                        cantPasajeros.textContent = actual + 1;
-                    }
-                });
-            }
-        });
-    </script>
 
     <script>
         // ========================================================================
