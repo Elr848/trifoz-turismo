@@ -1484,8 +1484,21 @@
             width: max-content;
             min-width: 250px;
             max-width: 350px;
+            max-height: 280px; /* Límite de altura para activar scroll */
+            overflow-y: auto; /* Habilitar scroll interno */
             font-family: sans-serif;
             box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+        }
+
+        /* Ajustes de Dropdown para pantallas móviles */
+        @media (max-width: 768px) {
+            .dropdown-menu {
+                margin: 8px 0 0 0; /* Quitar margen negativo que lo saca de pantalla */
+                min-width: 100%; /* Adaptar al ancho del contenedor */
+                width: 100%;
+                max-width: none;
+                max-height: 220px; /* Más compacto en celulares */
+            }
         }
 
         .dropdown-menu.show {
