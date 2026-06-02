@@ -1446,6 +1446,98 @@
             }
         }
 
+        /* =========================================
+           CUSTOM DROPDOWN
+           ========================================= */
+        .dropdown-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .custom-select-trigger {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0;
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            background-color: #0b1d28; /* Azul oscuro idéntico al de la imagen */
+            list-style: none;
+            padding: 8px 0;
+            margin: 12px 0 0 -20px; /* Ajuste para alinear con el icono */
+            border-radius: 4px;
+            width: max-content;
+            min-width: 250px;
+            max-width: 350px;
+            font-family: sans-serif;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        .dropdown-item {
+            color: #ffffff;
+            padding: 10px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            transition: background-color 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #163247;
+        }
+
+        .help-option {
+            font-weight: 600;
+            color: #ffd700;
+            background-color: rgba(255, 215, 0, 0.04);
+        }
+
+        .help-option:hover {
+            background-color: rgba(255, 215, 0, 0.15);
+        }
+
+        .country-tag {
+            font-size: 11px;
+            font-weight: bold;
+            color: #a0b0b8;
+            margin-right: 8px;
+            text-transform: uppercase;
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 6px 0;
+        }
+
+        .dropdown-header {
+            color: #5f7583;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            padding: 6px 16px 4px 16px;
+        }
+
         /* Ocultar el botón flotante por defecto de abajo si es que existía */
         .whatsapp-flotante {
             display: none !important;
@@ -1495,19 +1587,31 @@
                     <div class="booking-field-icon">📍</div>
                     <div class="booking-field-body">
                         <span class="booking-field-label">Destino</span>
-                        <select id="booking-destino" class="booking-select" aria-label="Selecionar destino">
-                            <option value="">Para onde vai?</option>
-                            <option value="Cataratas do Iguaçu (Brasil)">🇧🇷 Cataratas do Iguaçu</option>
-                            <option value="Cataratas del Iguazú (Argentina)">🇦🇷 Cataratas del Iguazú</option>
-                            <option value="Parque das Aves">🦜 Parque das Aves</option>
-                            <option value="Marco das 3 Fronteiras">🏛️ Marco das 3 Fronteiras</option>
-                            <option value="Itaipu Binacional">⚡ Itaipu Binacional</option>
-                            <option value="Macuco Safari">🚤 Macuco Safari</option>
-                            <option value="Roda Gigante Yup Star">🎡 Roda Gigante Yup Star</option>
-                            <option value="Museu de Cera Dreamland">🎭 Museu de Cera Dreamland</option>
-                            <option value="Ciudad del Este (Paraguay)">🇵🇾 Ciudad del Este</option>
-                            <option value="Roteiro Personalizado">✨ Preciso de ajuda com o roteiro</option>
-                        </select>
+                        <div class="dropdown-container">
+                            <div class="custom-select-trigger" id="trigger-destino">
+                                <span>Para onde vai?</span> <i class="fas fa-chevron-down" style="font-size:0.8em;"></i>
+                            </div>
+                            <input type="hidden" id="booking-destino" value="">
+                            <ul class="dropdown-menu" id="menu-destino">
+                                <li class="dropdown-item help-option" data-value="Roteiro Personalizado">✨ Preciso de ajuda com o roteiro, não conheço</li>
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-item" data-value="Cataratas do Iguaçu (Brasil)"><span class="country-tag">BR</span> Cataratas do Iguaçu</li>
+                                <li class="dropdown-item" data-value="Cataratas del Iguazú (Argentina)"><span class="country-tag">AR</span> Cataratas del Iguazú</li>
+                                <li class="dropdown-item" data-value="Parque das Aves">🦜 Parque das Aves</li>
+                                <li class="dropdown-item" data-value="Marco das 3 Fronteiras">🏛️ Marco das 3 Fronteiras</li>
+                                <li class="dropdown-item" data-value="Itaipu Binacional">⚡ Itaipu Binacional</li>
+                                <li class="dropdown-item" data-value="Macuco Safari">🚤 Macuco Safari</li>
+                                <li class="dropdown-item" data-value="Roda Gigante Yup Star">🎡 Roda Gigante Yup Star</li>
+                                <li class="dropdown-item" data-value="Museu de Cera Dreamland">🎭 Museu de Cera Dreamland</li>
+                                <li class="dropdown-item" data-value="Ciudad del Este (Paraguay)"><span class="country-tag">PY</span> Ciudad del Este</li>
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-header">TRASLADOS & HOTÉIS</li>
+                                <li class="dropdown-item" data-value="Aeroporto de Foz do Iguaçu">✈️ <span class="country-tag">BR</span> Aeroporto de Foz do Iguaçu</li>
+                                <li class="dropdown-item" data-value="Aeroporto de Puerto Iguazú">✈️ <span class="country-tag">AR</span> Aeroporto de Puerto Iguazú</li>
+                                <li class="dropdown-item" data-value="Aeroporto de Ciudad del Este">✈️ <span class="country-tag">PY</span> Aeroporto de Ciudad del Este</li>
+                                <li class="dropdown-item" data-value="Traslado para Hotéis">🏨 Traslado para Hotéis (BR / AR / PY)</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -1575,19 +1679,31 @@
         <div class="booking-mobile-field">
             <div class="booking-mobile-field-body">
                 <span class="booking-mobile-label">Destino</span>
-                <select id="booking-destino-m" class="booking-mobile-select">
-                    <option value="">Para onde vai?</option>
-                    <option value="Cataratas do Iguaçu (Brasil)">🇧🇷 Cataratas do Iguaçu</option>
-                    <option value="Cataratas del Iguazú (Argentina)">🇦🇷 Cataratas del Iguazú</option>
-                    <option value="Parque das Aves">🦜 Parque das Aves</option>
-                    <option value="Marco das 3 Fronteiras">🏛️ Marco das 3 Fronteiras</option>
-                    <option value="Itaipu Binacional">⚡ Itaipu Binacional</option>
-                    <option value="Macuco Safari">🚤 Macuco Safari</option>
-                    <option value="Roda Gigante Yup Star">🎡 Roda Gigante Yup Star</option>
-                    <option value="Museu de Cera Dreamland">🎭 Museu de Cera Dreamland</option>
-                    <option value="Ciudad del Este (Paraguay)">🇵🇾 Ciudad del Este</option>
-                    <option value="Roteiro Personalizado">✨ Preciso de ajuda com o roteiro</option>
-                </select>
+                <div class="dropdown-container">
+                    <div class="custom-select-trigger" id="trigger-destino-m">
+                        <span>Para onde vai?</span> <i class="fas fa-chevron-down" style="font-size:0.8em;"></i>
+                    </div>
+                    <input type="hidden" id="booking-destino-m" value="">
+                    <ul class="dropdown-menu" id="menu-destino-m">
+                        <li class="dropdown-item help-option" data-value="Roteiro Personalizado">✨ Preciso de ajuda com o roteiro, não conheço</li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-item" data-value="Cataratas do Iguaçu (Brasil)"><span class="country-tag">BR</span> Cataratas do Iguaçu</li>
+                        <li class="dropdown-item" data-value="Cataratas del Iguazú (Argentina)"><span class="country-tag">AR</span> Cataratas del Iguazú</li>
+                        <li class="dropdown-item" data-value="Parque das Aves">🦜 Parque das Aves</li>
+                        <li class="dropdown-item" data-value="Marco das 3 Fronteiras">🏛️ Marco das 3 Fronteiras</li>
+                        <li class="dropdown-item" data-value="Itaipu Binacional">⚡ Itaipu Binacional</li>
+                        <li class="dropdown-item" data-value="Macuco Safari">🚤 Macuco Safari</li>
+                        <li class="dropdown-item" data-value="Roda Gigante Yup Star">🎡 Roda Gigante Yup Star</li>
+                        <li class="dropdown-item" data-value="Museu de Cera Dreamland">🎭 Museu de Cera Dreamland</li>
+                        <li class="dropdown-item" data-value="Ciudad del Este (Paraguay)"><span class="country-tag">PY</span> Ciudad del Este</li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-header">TRASLADOS & HOTÉIS</li>
+                        <li class="dropdown-item" data-value="Aeroporto de Foz do Iguaçu">✈️ <span class="country-tag">BR</span> Aeroporto de Foz do Iguaçu</li>
+                        <li class="dropdown-item" data-value="Aeroporto de Puerto Iguazú">✈️ <span class="country-tag">AR</span> Aeroporto de Puerto Iguazú</li>
+                        <li class="dropdown-item" data-value="Aeroporto de Ciudad del Este">✈️ <span class="country-tag">PY</span> Aeroporto de Ciudad del Este</li>
+                        <li class="dropdown-item" data-value="Traslado para Hotéis">🏨 Traslado para Hotéis (BR / AR / PY)</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -1834,9 +1950,48 @@
 
             // 5. Envío de Mensajes a WhatsApp
 
+            // Configuración del Dropdown Customizado
+            function setupCustomDropdown(triggerId, menuId, inputId) {
+                const trigger = document.getElementById(triggerId);
+                const menu = document.getElementById(menuId);
+                const input = document.getElementById(inputId);
+                if(!trigger || !menu || !input) return;
+
+                const triggerText = trigger.querySelector('span');
+
+                trigger.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    document.querySelectorAll('.dropdown-menu').forEach(m => {
+                        if (m !== menu) m.classList.remove('show');
+                    });
+                    menu.classList.toggle('show');
+                });
+
+                menu.addEventListener('click', function(e) {
+                    const item = e.target.closest('.dropdown-item');
+                    if (item) {
+                        input.value = item.getAttribute('data-value');
+                        // Extraemos el texto visual omitiendo las etiquetas BR, AR, PY para que se vea elegante en el trigger
+                        let cleanText = item.textContent.replace(/BR|AR|PY/g, '').trim();
+                        triggerText.textContent = cleanText;
+                        menu.classList.remove('show');
+                    }
+                });
+            }
+
+            setupCustomDropdown('trigger-destino', 'menu-destino', 'booking-destino');
+            setupCustomDropdown('trigger-destino-m', 'menu-destino-m', 'booking-destino-m');
+
+            document.addEventListener('click', function() {
+                document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
+            });
+
             // Ayudantes de UX para la barra de reservas de escritorio
-            document.getElementById('booking-destino-wrapper')?.addEventListener('click', function () {
-                document.getElementById('booking-destino')?.focus();
+            document.getElementById('booking-destino-wrapper')?.addEventListener('click', function (e) {
+                // Al hacer clic en cualquier parte del wrapper, activamos el dropdown
+                if (!e.target.closest('.dropdown-container')) {
+                    document.getElementById('trigger-destino')?.click();
+                }
             });
             document.getElementById('booking-datetime-wrapper')?.addEventListener('click', function () {
                 const input = document.getElementById('booking-datetime');
