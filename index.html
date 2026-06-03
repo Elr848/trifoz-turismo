@@ -1430,14 +1430,16 @@
         }
 
         .btn-acordeon {
-            width: 100%;
+            width: fit-content;
+            margin: 0 auto;
             background: linear-gradient(135deg, #064e82, #002366);
             border: 2px solid #d4af37;
             border-radius: 60px;
-            padding: 16px 24px;
+            padding: 16px 35px;
             cursor: pointer;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 15px;
             align-items: center;
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
@@ -1492,6 +1494,9 @@
             text-align: center;
             transition: transform 0.3s ease;
             border: 1px solid rgba(255, 215, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .extra-card:hover {
@@ -1501,22 +1506,23 @@
 
         .extra-card img {
             width: 100%;
-            height: 140px;
+            height: 160px;
             object-fit: cover;
         }
 
         .extra-card h4 {
             color: #ffeb3b;
-            margin: 10px 0 5px;
-            font-size: 0.9rem;
+            margin: 15px 10px 5px;
+            font-size: 0.95rem;
             text-transform: uppercase;
         }
 
         .extra-card p {
             color: #f0f0f0;
-            font-size: 0.7rem;
-            padding: 0 8px 12px;
+            font-size: 0.8rem;
+            padding: 0 10px 15px;
             margin: 0;
+            flex-grow: 1;
         }
 
         @media (max-width: 1024px) {
@@ -1536,11 +1542,17 @@
 
             .btn-acordeon {
                 font-size: 0.9rem;
-                padding: 12px 15px;
+                padding: 12px 20px;
                 flex-direction: column;
                 gap: 8px;
                 text-align: center;
                 border-radius: 30px;
+                width: 90%; /* On mobile, give it some nice breathing room */
+                max-width: 320px;
+            }
+
+            .extra-card img {
+                height: 120px;
             }
 
             .extra-card h4 {
