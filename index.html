@@ -666,6 +666,8 @@
         .btn-facebook { background-color: #1877f2; }
         .btn-instagram { background: linear-gradient(45deg, #f09433, #bc1888); }
 
+        .social-buttons-footer { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; }
+
         @media (max-width: 1023px) {
             .social-buttons-container { display: flex; justify-content: center; margin-left: 0; margin-top: 15px; }
         }
@@ -921,7 +923,7 @@
 
                 <div class="social-buttons-container">
                     <a href="mailto:trifozturismo@gmail.com" class="btn-social btn-email" aria-label="Enviar Email"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="https://www.facebook.com/trifoz-turismo" target="_blank" rel="noopener noreferrer" class="btn-social btn-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/trifozturismo" target="_blank" rel="noopener noreferrer" class="btn-social btn-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/trifoz.turismo" target="_blank" rel="noopener noreferrer" class="btn-social btn-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
@@ -965,6 +967,12 @@
                         <li class="dropdown-item" data-value="Itaipú Binacional">Itaipú Binacional</li>
                         <li class="dropdown-item" data-value="Macuco Safari">Macuco Safari</li>
                         <li class="dropdown-item" data-value="Ciudad del Este">Ciudad del Este (Paraguay)</li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-header">TRASLADOS &amp; HOTELES</li>
+                        <li class="dropdown-item" data-value="Aeropuerto de Foz de Iguazú">✈️ <span class="country-tag">BR</span> Aeropuerto de Foz de Iguazú</li>
+                        <li class="dropdown-item" data-value="Aeropuerto de Puerto Iguazú">✈️ <span class="country-tag">AR</span> Aeropuerto de Puerto Iguazú</li>
+                        <li class="dropdown-item" data-value="Aeropuerto de Ciudad del Este">✈️ <span class="country-tag">PY</span> Aeropuerto de Ciudad del Este</li>
+                        <li class="dropdown-item" data-value="Traslado para Hoteles">🏨 Traslado para Hoteles (BR / AR / PY)</li>
                     </ul>
                 </div>
             </div>
@@ -1125,6 +1133,11 @@
     </section>
 
     <footer>
+        <div class="social-buttons-footer">
+            <a href="mailto:trifozturismo@gmail.com" class="btn-social btn-email" aria-label="Enviar Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.facebook.com/trifozturismo" target="_blank" rel="noopener noreferrer" class="btn-social btn-facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/trifoz.turismo" target="_blank" rel="noopener noreferrer" class="btn-social btn-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
         <p>© 2026 Trifoz Turismo • Guía Turístico Ebert • Foz de Iguazú</p>
     </footer>
 
@@ -1139,6 +1152,12 @@
                 const dtElM = document.getElementById('booking-datetime-m');
                 if (dtEl && !dtEl.value) dtEl.value = val;
                 if (dtElM && !dtElM.value) dtElM.value = val;
+                
+                function openPicker() {
+                    try { if (typeof this.showPicker === 'function') this.showPicker(); } catch (e) {}
+                }
+                dtEl?.addEventListener('click', openPicker);
+                dtElM?.addEventListener('click', openPicker);
             }
             setDefaultDatetime();
 
