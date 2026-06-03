@@ -131,7 +131,7 @@
       "name": "Cataratas do Iguaçu",
       "description": "Uma das maiores quedas d'água do mundo, Patrimônio Natural da Humanidade pela UNESCO. Visita guiada privada com transporte incluso.",
       "url": "https://trifoz-turismo.com/index-pt.html",
-      "image": "https://trifoz-turismo.com/images/cataratas%20mejorada.jpg",
+      "image": "https://trifoz-turismo.com/images/cataratas mejorada.jpg",
       "touristType": ["Nature lovers", "Families", "Adventure seekers"],
       "availableLanguage": [
         { "@type": "Language", "name": "Spanish" },
@@ -561,7 +561,9 @@
             .card-content h3 { font-size: 0.78rem !important; margin: 0 !important; line-height: 1.1 !important; }
             .card-content p { display: none !important; }
 
-            .video-card { grid-column: span 2 !important; }
+            .video-card { grid-column: span 2 !important; order: 1 !important; }
+            .secao-macuco-container > .sub-coluna-vertical:first-child .card { order: 2 !important; }
+            .secao-macuco-container > .sub-coluna-vertical:last-child .card { order: 3 !important; }
             .video-card .card-image img { aspect-ratio: 16 / 9 !important; }
             .video-card .card-content p { display: block !important; font-size: 0.7rem !important; }
             .fire-wrapper { animation: none !important; }
@@ -1035,7 +1037,7 @@
         <div class="grid-attractions contenedor-catalogo">
             <div class="linha-quatro">
                 <div class="card">
-                    <div class="card-image"><img src="images/cataratas%20mejorada.jpg" alt="Cataratas do Iguaçu" width="600" height="400"></div>
+                    <div class="card-image"><img src="images/cataratas mejorada.jpg" alt="Cataratas do Iguaçu" width="600" height="400"></div>
                     <div class="card-content">
                         <h3>CATARATAS DO IGUAÇU</h3>
                         <p>Visita guiada privada.</p>
