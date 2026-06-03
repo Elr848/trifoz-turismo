@@ -526,20 +526,33 @@
             z-index: 10;
         }
 
-        .card:hover .card-overlay,
-        .card:active .card-overlay,
+        .card-overlay-text {
+            font-size: 1.4rem;
+            line-height: 1.35;
+            font-weight: 600;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+            transform: translateY(15px);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            width: 100%;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .card:hover .card-overlay {
+                opacity: 1;
+                visibility: visible;
+            }
+            .card:hover .card-overlay-text {
+                transform: translateY(0);
+            }
+        }
+
         .card.touch-active .card-overlay {
             opacity: 1;
             visibility: visible;
         }
 
-        .card-overlay-text {
-            font-size: 1.05rem;
-            line-height: 1.5;
-            font-weight: 600;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
-            transform: translateY(15px);
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        .card.touch-active .card-overlay-text {
+            transform: translateY(0);
         }
 
         @media (max-width: 768px) {
@@ -552,11 +565,6 @@
             }
         }
 
-        .card:hover .card-overlay-text,
-        .card:active .card-overlay-text,
-        .card.touch-active .card-overlay-text {
-            transform: translateY(0);
-        }
         .card:hover .card-content h3 { color: var(--azul-electrico); }
 
         .video-card { background: #4b5358 !important; width: 100% !important; height: 100% !important; display: flex !important; flex-direction: column !important; }
