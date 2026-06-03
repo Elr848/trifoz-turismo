@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -409,7 +409,7 @@
             font-size: 0.95rem;
             line-height: 1.4;
             font-weight: 600;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
             transform: translateY(15px);
             transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             width: 100%;
@@ -428,6 +428,7 @@
                 opacity: 1;
                 visibility: visible;
             }
+
             .card:hover .card-overlay-text {
                 transform: translateY(0);
             }
@@ -447,6 +448,7 @@
                 font-size: 0.78rem;
                 line-height: 1.3;
             }
+
             .card-overlay {
                 padding: 10px;
             }
@@ -1419,123 +1421,6 @@
                 text-align: center;
             }
         }
-        /* BOTÓN ACORDEÓN OTRAS ATRACCIONES */
-        .otras-atracciones-wrapper {
-            max-width: 1200px;
-            margin: 40px auto 0 auto;
-            padding: 0 20px;
-        }
-
-        .btn-acordeon {
-            width: 100%;
-            background: linear-gradient(135deg, #064e82, #002366);
-            border: 2px solid #d4af37;
-            border-radius: 60px;
-            padding: 16px 24px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            color: #ffeb3b;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn-acordeon:hover {
-            background: linear-gradient(135deg, #002366, #064e82);
-            transform: scale(1.02);
-            border-color: #ffeb3b;
-        }
-
-        .btn-acordeon i {
-            transition: transform 0.3s ease;
-            font-size: 1.2rem;
-        }
-
-        .btn-acordeon.active i {
-            transform: rotate(180deg);
-        }
-
-        .acordeon-contenido {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            margin-top: 10px;
-        }
-
-        .acordeon-contenido.open {
-            max-height: 1000px;
-            transition: max-height 0.5s ease-in;
-        }
-
-        .grid-extra {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 15px;
-            padding: 25px;
-        }
-
-        .extra-card {
-            background: rgba(30, 35, 40, 0.9);
-            border-radius: 12px;
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s ease;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-
-        .extra-card:hover {
-            transform: translateY(-5px);
-            border-color: #ffeb3b;
-        }
-
-        .extra-card img {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
-        }
-
-        .extra-card h4 {
-            color: #ffeb3b;
-            margin: 10px 0 5px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-
-        .extra-card p {
-            color: #f0f0f0;
-            font-size: 0.7rem;
-            padding: 0 8px 12px;
-            margin: 0;
-        }
-
-        @media (max-width: 1024px) {
-            .grid-extra {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 12px;
-                padding: 15px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .grid-extra {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .btn-acordeon {
-                font-size: 0.85rem;
-                padding: 12px 18px;
-            }
-            .extra-card h4 {
-                font-size: 0.75rem;
-            }
-        }
     </style>
 </head>
 
@@ -1772,19 +1657,21 @@
                         <p>Visita guiada privada.</p>
                     </div>
                     <div class="card-overlay">
-                        <div class="card-overlay-text">Siente la fuerza imponente de la naturaleza en una de las Siete Maravillas Naturales del Mundo. Un recorrido privado para conectar con la energía pura del agua.</div>
+                        <div class="card-overlay-text">Siente la fuerza imponente de la naturaleza en una de las Siete
+                            Maravillas Naturales del Mundo. Un recorrido privado para conectar con la energía pura del
+                            agua.</div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-image"><img
-                            src="images/pda.png"
-                            alt="Parque de las Aves" width="600" height="400"></div>
+                    <div class="card-image"><img src="images/pda.png" alt="Parque de las Aves" width="600" height="400">
+                    </div>
                     <div class="card-content">
                         <h3>PARQUE DE LAS AVES</h3>
                         <p>Santuario ecológico.</p>
                     </div>
                     <div class="card-overlay">
-                        <div class="card-overlay-text">Sumérgete en un santuario ecológico único. Camina entre tucanes y guacamayos en una experiencia inmersiva de preservación y colores vibrantes.</div>
+                        <div class="card-overlay-text">Sumérgete en un santuario ecológico único. Camina entre tucanes y
+                            guacamayos en una experiencia inmersiva de preservación y colores vibrantes.</div>
                     </div>
                 </div>
                 <div class="card">
@@ -1795,7 +1682,8 @@
                         <p>Encuentro de naciones.</p>
                     </div>
                     <div class="card-overlay">
-                        <div class="card-overlay-text">El único lugar en el mundo donde tres países se abrazan. Disfruta de un atardecer mágico, shows culturales y una vista panorámica espectacular.</div>
+                        <div class="card-overlay-text">El único lugar en el mundo donde tres países se abrazan. Disfruta
+                            de un atardecer mágico, shows culturales y una vista panorámica espectacular.</div>
                     </div>
                 </div>
                 <div class="card">
@@ -1806,7 +1694,8 @@
                         <p>Romanticismo al amanecer o atardecer.</p>
                     </div>
                     <div class="card-overlay">
-                        <div class="card-overlay-text">Navega por las aguas donde se unen los ríos Paraná e Iguazú. Un viaje romántico y exclusivo ideal para brindar mientras el sol se esconde.</div>
+                        <div class="card-overlay-text">Navega por las aguas donde se unen los ríos Paraná e Iguazú. Un
+                            viaje romántico y exclusivo ideal para brindar mientras el sol se esconde.</div>
                     </div>
                 </div>
             </div>
@@ -1821,7 +1710,9 @@
                             <p>Paz y meditación.</p>
                         </div>
                         <div class="card-overlay">
-                            <div class="card-overlay-text">Encuentra la paz interior en uno de los templos budistas más grandes de América Latina. Arquitectura majestuosa, jardines zen y una vista inigualable de la ciudad.</div>
+                            <div class="card-overlay-text">Encuentra la paz interior en uno de los templos budistas más
+                                grandes de América Latina. Arquitectura majestuosa, jardines zen y una vista inigualable
+                                de la ciudad.</div>
                         </div>
                     </div>
                     <div class="card">
@@ -1832,7 +1723,9 @@
                             <p>Arquitectura y cultura.</p>
                         </div>
                         <div class="card-overlay">
-                            <div class="card-overlay-text">Viaja a la cultura árabe sin salir de la frontera. Descubre detalles arquitectónicos deslumbrantes en un espacio de profundo respeto y belleza.</div>
+                            <div class="card-overlay-text">Viaja a la cultura árabe sin salir de la frontera. Descubre
+                                detalles arquitectónicos deslumbrantes en un espacio de profundo respeto y belleza.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1855,56 +1748,6 @@
                     </div>
                 </div>
 
-                <!-- OTRAS ATRACCIONES (ACORDEÓN) -->
-                <div class="otras-atracciones-wrapper">
-                    <button class="btn-acordeon" id="btnOtrasAtracciones">
-                        <span><i class="fas fa-star"></i> Otras Atracciones Imperdibles <i class="fas fa-star"></i></span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    
-                    <div class="acordeon-contenido" id="acordeonContenido">
-                        <div class="grid-extra">
-                            
-                            <div class="extra-card">
-                                <img src="images/itaipu.jpg" alt="Itaipú Binacional" loading="lazy">
-                                <h4>ITAIPÚ BINACIONAL</h4>
-                                <p>La hidroeléctrica más grande del mundo. Visita nocturna con espectáculo de luces.</p>
-                            </div>
-                            
-                            <div class="extra-card">
-                                <img src="images/catedral-foz.jpg" alt="Catedral de Foz do Iguaçu" loading="lazy">
-                                <h4>CATEDRAL DE FOZ</h4>
-                                <p>Arquitectura imponente en forma de arcoíris. Misa y visita cultural.</p>
-                            </div>
-                            
-                            <div class="extra-card">
-                                <img src="images/gramado-foz.jpg" alt="Gramado Foz" loading="lazy">
-                                <h4>GRAMADO (FOZ)</h4>
-                                <p>Arquitectura europea, chocolate artesanal y clima de montaña en la frontera.</p>
-                            </div>
-                            
-                            <div class="extra-card">
-                                <img src="images/rafain-show.jpg" alt="Rafain Show" loading="lazy">
-                                <h4>RAFAIN SHOW</h4>
-                                <p>Cena espectáculo con danzas típicas de América Latina. Tradición y folclore.</p>
-                            </div>
-                            
-                            <div class="extra-card">
-                                <img src="images/yup-star.jpg" alt="Rueda Gigante Yup Star" loading="lazy">
-                                <h4>YUP STAR</h4>
-                                <p>Rueda gigante con vista 360° de la Triple Frontera. Experiencia única.</p>
-                            </div>
-                            
-                            <div class="extra-card">
-                                <img src="images/minas-wanda.jpg" alt="Minas de Wanda, gemas y piedras preciosas en Argentina" loading="lazy">
-                                <h4>MINAS DE WANDA</h4>
-                                <p>Minas de piedras preciosas en Misiones, Argentina. Recorrido guiado y búsqueda de cristales.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-
                 <div class="sub-coluna-vertical">
                     <div class="card">
                         <div class="card-image"><img src="images/dutty.jpeg" alt="Puerto Iguazú" width="600"
@@ -1914,7 +1757,9 @@
                             <p>Argentina a tu alcance.</p>
                         </div>
                         <div class="card-overlay">
-                            <div class="card-overlay-text">Cruza la frontera para deleitarte con la mejor gastronomía. Vinos de primera, las famosas parrilladas argentinas y un ambiente nocturno inigualable.</div>
+                            <div class="card-overlay-text">Cruza la frontera para deleitarte con la mejor gastronomía.
+                                Vinos de primera, las famosas parrilladas argentinas y un ambiente nocturno inigualable.
+                            </div>
                         </div>
                     </div>
                     <div class="card">
@@ -1925,7 +1770,9 @@
                             <p>Compras y frontera.</p>
                         </div>
                         <div class="card-overlay">
-                            <div class="card-overlay-text">El paraíso de las compras a tu alcance. Te guiamos de forma segura a los mejores centros comerciales para conseguir tecnología y marcas a precios increíbles.</div>
+                            <div class="card-overlay-text">El paraíso de las compras a tu alcance. Te guiamos de forma
+                                segura a los mejores centros comerciales para conseguir tecnología y marcas a precios
+                                increíbles.</div>
                         </div>
                     </div>
                 </div>
@@ -2129,17 +1976,6 @@
                     });
                 }
             });
-
-            // ACORDEÓN OTRAS ATRACCIONES
-            const btnAcordeon = document.getElementById('btnOtrasAtracciones');
-            const acordeonContenido = document.getElementById('acordeonContenido');
-            
-            if (btnAcordeon && acordeonContenido) {
-                btnAcordeon.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    acordeonContenido.classList.toggle('open');
-                });
-            }
         });
     </script>
 </body>
