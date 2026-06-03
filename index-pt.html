@@ -768,13 +768,13 @@
         .dropdown-menu {
             display: none;
             position: absolute;
-            top: 100%;
+            bottom: 100%;
             left: 0;
             z-index: 1000;
             background-color: #0b1d28;
             list-style: none;
             padding: 8px 0;
-            margin: 12px 0 0 -20px;
+            margin: 0 0 12px -20px;
             border-radius: 4px;
             width: max-content;
             min-width: 250px;
@@ -785,7 +785,7 @@
         }
 
         @media (max-width: 768px) {
-            .dropdown-menu { margin: 8px 0 0 0; min-width: 100%; width: 100%; max-width: none; max-height: 220px; }
+            .dropdown-menu { margin: 0 0 8px 0; min-width: 100%; width: 100%; max-width: none; max-height: 220px; }
         }
 
         .dropdown-menu.show { display: block; }
@@ -1003,7 +1003,7 @@
             <div class="libras-text-wrapper">
                 <span class="libras-pt" style="color: #002366;">Atendimento em LIBRAS</span>
                 <span class="libras-en">Língua Brasileira de Sinais • Sign Language</span>
-                <span class="libras-video-text"><i class="fas fa-play-circle"></i> Ver vídeo</span>
+                <span class="libras-video-text"><i class="fas fa-play-circle"></i> Assistir vídeo</span>
             </div>
         </a>
 
@@ -1182,7 +1182,11 @@
                 const menu = document.getElementById(menuId);
                 const input = document.getElementById(inputId);
                 if(!trigger || !menu || !input) return;
-                trigger.addEventListener('click', function(e) { e.stopPropagation(); menu.classList.toggle('show'); });
+                trigger.addEventListener('click', function(e) { 
+                    e.stopPropagation(); 
+                    document.querySelectorAll('.dropdown-menu').forEach(m => { if(m !== menu) m.classList.remove('show'); });
+                    menu.classList.toggle('show'); 
+                });
                 menu.addEventListener('click', function(e) {
                     const item = e.target.closest('.dropdown-item');
                     if (item) {
@@ -1194,6 +1198,50 @@
             }
             setupCustomDropdown('trigger-destino', 'menu-destino', 'booking-destino');
             setupCustomDropdown('trigger-destino-m', 'menu-destino-m', 'booking-destino-m');
+
+            document.addEventListener('click', function() {
+                document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
+            });
+
+            function enviarWhatsApp(isMobile) {
+                let destino = document.getElementById(isMobile ? 'booking-destino-m' : 'booking-destino').value;
+                let pax = document.getElementById(isMobile ? 'pax-display-m' : 'pax-display').textContent;
+                let fechaRaw = document.getElementById(isMobile ? 'booking-datetime-m' : 'booking-datetime').value;
+
+                if(!destino) {
+                    alert("Por favor, selecione um destino da lista.");
+                    return;
+                }
+
+                let fechaObj = new Date(fechaRaw);
+                let dia = String(fechaObj.getDate()).padStart(2, '0');
+                let mes = String(fechaObj.getMonth() + 1).padStart(2, '0');
+                let anio = fechaObj.getFullYear();
+                let hora = String(fechaObj.getHours()).padStart(2, '0');
+                let min = String(fechaObj.getMinutes()).padStart(2, '0');
+                let fechaFormateada = `${dia}/${mes}/${anio} às ${hora}:${min}`;
+
+                let mensagem = "";
+                if(destino === 'Roteiro Personalizado') {
+                    mensagem = `Olá! Gostaria de ajuda para montar um roteiro personalizado.\n\n*Detalhes iniciais:*\n👥 Passageiros: ${pax}\n📅 Data de chegada: ${fechaFormateada}`;
+                } else {
+                    mensagem = `Olá! Gostaria de solicitar um orçamento para o seguinte passeio/traslado:\n\n📍 Destino: ${destino}\n👥 Passageiros: ${pax}\n📅 Data e Hora: ${fechaFormateada}`;
+                }
+
+                let numero = "5545933003337";
+                let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+                window.open(url, '_blank');
+            }
+
+            document.getElementById('booking-submit-btn')?.addEventListener('click', function(e){
+                e.preventDefault();
+                enviarWhatsApp(false);
+            });
+
+            document.getElementById('booking-submit-btn-m')?.addEventListener('click', function(e){
+                e.preventDefault();
+                enviarWhatsApp(true);
+            });
         });
     </script>
 </body>
