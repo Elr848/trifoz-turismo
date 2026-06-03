@@ -1212,17 +1212,38 @@
                 const menu = document.getElementById(menuId);
                 const input = document.getElementById(inputId);
                 if(!trigger || !menu || !input) return;
+                
+                // Hacer focusable con teclado
+                trigger.setAttribute('tabindex', '0');
+                trigger.setAttribute('role', 'button');
+                trigger.setAttribute('aria-haspopup', 'listbox');
+                
+                // Clic del mouse
                 trigger.addEventListener('click', function(e) { 
                     e.stopPropagation(); 
                     document.querySelectorAll('.dropdown-menu').forEach(m => { if(m !== menu) m.classList.remove('show'); });
                     menu.classList.toggle('show'); 
                 });
+                
+                // Teclado (ENTER o ESPACIO)
+                trigger.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        trigger.click();
+                    }
+                });
+                
+                // Clic en items del menú
                 menu.addEventListener('click', function(e) {
                     const item = e.target.closest('.dropdown-item');
                     if (item) {
                         input.value = item.getAttribute('data-value');
-                        trigger.querySelector('span').textContent = item.textContent.replace(/BR|AR|PY/g, '').trim();
+                        const span = trigger.querySelector('span');
+                        if (span) {
+                            span.textContent = item.textContent.replace(/BR|AR|PY/g, '').trim();
+                        }
                         menu.classList.remove('show');
+                        trigger.focus();
                     }
                 });
             }
