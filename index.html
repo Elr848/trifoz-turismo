@@ -1419,6 +1419,123 @@
                 text-align: center;
             }
         }
+        /* BOTÓN ACORDEÓN OTRAS ATRACCIONES */
+        .otras-atracciones-wrapper {
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn-acordeon {
+            width: 100%;
+            background: linear-gradient(135deg, #064e82, #002366);
+            border: 2px solid #d4af37;
+            border-radius: 60px;
+            padding: 16px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            color: #ffeb3b;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-acordeon:hover {
+            background: linear-gradient(135deg, #002366, #064e82);
+            transform: scale(1.02);
+            border-color: #ffeb3b;
+        }
+
+        .btn-acordeon i {
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .btn-acordeon.active i {
+            transform: rotate(180deg);
+        }
+
+        .acordeon-contenido {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        .acordeon-contenido.open {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        .grid-extra {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            padding: 25px;
+        }
+
+        .extra-card {
+            background: rgba(30, 35, 40, 0.9);
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .extra-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffeb3b;
+        }
+
+        .extra-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+        }
+
+        .extra-card h4 {
+            color: #ffeb3b;
+            margin: 10px 0 5px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .extra-card p {
+            color: #f0f0f0;
+            font-size: 0.7rem;
+            padding: 0 8px 12px;
+            margin: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-extra {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .grid-extra {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .btn-acordeon {
+                font-size: 0.85rem;
+                padding: 12px 18px;
+            }
+            .extra-card h4 {
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 
