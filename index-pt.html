@@ -1307,6 +1307,56 @@
                     </div>
                 </div>
 
+                <!-- OTRAS ATRACCIONES (ACORDEÓN) -->
+                <div class="otras-atracciones-wrapper">
+                    <button class="btn-acordeon" id="btnOtrasAtracciones">
+                        <span><i class="fas fa-star"></i> Outras Atrações Imperdíveis <i class="fas fa-star"></i></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="acordeon-contenido" id="acordeonContenido">
+                        <div class="grid-extra">
+                            
+                            <div class="extra-card">
+                                <img src="images/itaipu.jpg" alt="Itaipu Binacional" loading="lazy">
+                                <h4>ITAIPU BINACIONAL</h4>
+                                <p>A maior hidrelétrica do mundo. Visita noturna com espetáculo de luzes.</p>
+                            </div>
+                            
+                            <div class="extra-card">
+                                <img src="images/catedral-foz.jpg" alt="Catedral de Foz do Iguaçu" loading="lazy">
+                                <h4>CATEDRAL DE FOZ</h4>
+                                <p>Arquitetura imponente em forma de arco-íris. Missa e visita cultural.</p>
+                            </div>
+                            
+                            <div class="extra-card">
+                                <img src="images/gramado-foz.jpg" alt="Gramado Foz" loading="lazy">
+                                <h4>GRAMADO (FOZ)</h4>
+                                <p>Arquitetura europeia, chocolate artesanal e clima de montanha na fronteira.</p>
+                            </div>
+                            
+                            <div class="extra-card">
+                                <img src="images/rafain-show.jpg" alt="Rafain Show" loading="lazy">
+                                <h4>RAFAIN SHOW</h4>
+                                <p>Jantar com espetáculo de danças típicas da América Latina. Tradição e folclore.</p>
+                            </div>
+                            
+                            <div class="extra-card">
+                                <img src="images/yup-star.jpg" alt="Roda Gigante Yup Star" loading="lazy">
+                                <h4>YUP STAR</h4>
+                                <p>Roda gigante com vista 360° da Tríplice Fronteira. Experiência única.</p>
+                            </div>
+                            
+                            <div class="extra-card">
+                                <img src="images/minas-wanda.jpg" alt="Minas de Wanda, pedras preciosas na Argentina" loading="lazy">
+                                <h4>MINAS DE WANDA</h4>
+                                <p>Minas de pedras preciosas em Misiones, Argentina. Passeio guiado e busca de cristais.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
                 <div class="sub-coluna-vertical">
                     <div class="card">
                         <div class="card-image"><img src="images/dutty.jpeg" alt="Puerto Iguazú" width="600" height="400"></div>
@@ -1496,33 +1546,6 @@
                 }
 
                 let numero = "5545933003337";
-                let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-                window.open(url, '_blank');
-            }
-
-            document.getElementById('booking-submit-btn')?.addEventListener('click', function(e){
-                e.preventDefault();
-                enviarWhatsApp(false);
-            });
-
-            document.getElementById('booking-submit-btn-m')?.addEventListener('click', function (e) {
-                e.preventDefault();
-                enviarWhatsApp(true);
-            });
-
-            // Lógica Touch para tarjetas (Mostrar/Ocultar texto ao tocar)
-            document.querySelectorAll('.card').forEach(card => {
-                if (!card.classList.contains('video-card')) {
-                    card.addEventListener('click', function (e) {
-                        // Ocultamos nas outras
-                        document.querySelectorAll('.card').forEach(c => {
-                            if (c !== card) c.classList.remove('touch-active');
-                        });
-                        // Alternamos na atual
-                        card.classList.toggle('touch-active');
-                    });
-                }
-            });
         });
     </script>
 </body>
