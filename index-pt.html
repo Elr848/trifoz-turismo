@@ -480,15 +480,26 @@
         .card-image img { width: 100% !important; height: 195px !important; object-fit: cover !important; display: block; }
         
         .card-content {
-            padding: 15px 18px !important;
-            background: #232b30 !important; /* Mejora de contraste de accesibilidad (WCAG) */
+            padding: 10px 12px !important;
+            background: #1a1f22 !important;
             display: flex !important;
             flex-direction: column !important;
             justify-content: center !important;
             flex-grow: 1 !important;
         }
 
-        .card-content h3 { color: var(--amarillo); margin: 0 0 6px; text-transform: uppercase; font-size: 1.15rem; font-weight: 800; letter-spacing: 0.5px; }
+        .card-content h3 { 
+            color: var(--amarillo); 
+            margin: 0 0 4px; 
+            text-transform: uppercase; 
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .card-content p {
+            color: #f0f0f0;
+            font-weight: 500;
+        }
         .card:hover .card-content h3 { color: var(--azul-electrico); }
 
         .video-card { background: #4b5358 !important; width: 100% !important; height: 100% !important; display: flex !important; flex-direction: column !important; }
