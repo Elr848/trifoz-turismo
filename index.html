@@ -503,32 +503,13 @@
 
         .grid-attractions,
         .contenedor-catalogo {
-            display: flex !important;
-            flex-direction: column !important;
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
             gap: 20px !important;
-            max-width: 1200px !important;
+            max-width: 1000px !important;
             margin: 0 auto !important;
             width: 100% !important;
             box-sizing: border-box !important;
-        }
-
-        .linha-quatro {
-            display: grid !important;
-            grid-template-columns: repeat(4, 1fr) !important;
-            gap: 20px !important;
-        }
-
-        .secao-macuco-container {
-            display: grid !important;
-            grid-template-columns: 1fr 2fr 1fr !important;
-            gap: 20px !important;
-            align-items: stretch !important;
-        }
-
-        .sub-coluna-vertical {
-            display: grid !important;
-            grid-template-rows: 1fr 1fr !important;
-            gap: 20px !important;
         }
 
         .card {
@@ -675,17 +656,8 @@
             }
 
             .grid-attractions.contenedor-catalogo {
-                display: grid !important;
-                grid-template-columns: repeat(2, 1fr) !important;
                 gap: 12px !important;
                 padding: 0 12px !important;
-                width: 100% !important;
-            }
-
-            .linha-quatro,
-            .secao-macuco-container,
-            .sub-coluna-vertical {
-                display: contents !important;
             }
 
             .card {
@@ -719,15 +691,6 @@
 
             .video-card {
                 grid-column: span 2 !important;
-                order: 1 !important;
-            }
-
-            .secao-macuco-container > .sub-coluna-vertical:first-child .card {
-                order: 2 !important;
-            }
-
-            .secao-macuco-container > .sub-coluna-vertical:last-child .card {
-                order: 3 !important;
             }
 
             .video-card .card-image img {
@@ -1571,97 +1534,77 @@
         </div>
 
         <div class="grid-attractions contenedor-catalogo">
-            <div class="linha-quatro">
-                <div class="card">
-                    <div class="card-image"><img src="images/cataratas mejorada.jpg" alt="Cataratas del Iguazú"
-                            width="600" height="400"></div>
-                    <div class="card-content">
-                        <h3>CATARATAS DE IGUAZÚ</h3>
-                        <p>Visita guiada privada.</p>
-                    </div>
+            <div class="card">
+                <div class="card-image"><img src="images/cataratas mejorada.jpg" alt="Cataratas del Iguazú" width="600" height="400"></div>
+                <div class="card-content">
+                    <h3>CATARATAS DE IGUAZÚ</h3>
+                    <p>Visita guiada privada.</p>
                 </div>
-                <div class="card">
-                    <div class="card-image"><img
-                            src="https://s2-g1.glbimg.com/l1mp9ZmIQTiO2V8egJB_tOgVnYg=/0x0:5168x2912/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/R/5/3svxyZSVK292Muzew6RA/araras-caninde-1-.jpg"
-                            alt="Parque de las Aves" width="600" height="400"></div>
-                    <div class="card-content">
-                        <h3>PARQUE DE LAS AVES</h3>
-                        <p>Santuario ecológico.</p>
-                    </div>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="https://s2-g1.glbimg.com/l1mp9ZmIQTiO2V8egJB_tOgVnYg=/0x0:5168x2912/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/R/5/3svxyZSVK292Muzew6RA/araras-caninde-1-.jpg" alt="Parque de las Aves" width="600" height="400"></div>
+                <div class="card-content">
+                    <h3>PARQUE DE LAS AVES</h3>
+                    <p>Santuario ecológico.</p>
                 </div>
-                <div class="card">
-                    <div class="card-image"><img src="images/marco_real.jpg" alt="Hito de las Tres Fronteras"
-                            width="600" height="400"></div>
-                    <div class="card-content">
-                        <h3>HITO DE LAS 3 FRONTERAS</h3>
-                        <p>Encuentro de naciones.</p>
-                    </div>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="images/marco_real.jpg" alt="Hito de las Tres Fronteras" width="600" height="400"></div>
+                <div class="card-content">
+                    <h3>HITO DE LAS 3 FRONTERAS</h3>
+                    <p>Encuentro de naciones.</p>
                 </div>
-                <div class="card">
-                    <div class="card-image"><img src="images/kattamaram_v2.jpg" alt="Kattamaram II" width="600"
-                            height="400"></div>
-                    <div class="card-content">
-                        <h3>KATTAMARAM II</h3>
-                        <p>Romanticismo al amanecer o atardecer.</p>
-                    </div>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="images/kattamaram_v2.jpg" alt="Kattamaram II" width="600" height="400"></div>
+                <div class="card-content">
+                    <h3>KATTAMARAM II</h3>
+                    <p>Romanticismo al amanecer o atardecer.</p>
                 </div>
             </div>
 
-            <div class="secao-macuco-container">
-                <div class="sub-coluna-vertical">
-                    <div class="card">
-                        <div class="card-image"><img src="images/buda.jpeg" alt="Templo Budista" width="600"
-                                height="400"></div>
-                        <div class="card-content">
-                            <h3>TEMPLO BUDISTA</h3>
-                            <p>Paz y meditación.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-image"><img src="images/mezquita.jpeg" alt="Mezquita Musulmana" width="600"
-                                height="400"></div>
-                        <div class="card-content">
-                            <h3>MEZQUITA MUSULMANA</h3>
-                            <p>Arquitectura y cultura.</p>
-                        </div>
-                    </div>
+            <div class="video-card card">
+                <div class="card-image">
+                    <img src="images/macuco_safari_real.jpg" alt="Macuco Safari" width="800" height="500" style="width: 100%; height: auto; display: block;">
                 </div>
-
-                <div class="video-card card">
-                    <div class="card-image">
-                        <img src="images/macuco_safari_real.jpg" alt="Macuco Safari" width="800" height="500"
-                            style="width: 100%; height: auto; display: block;">
+                <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px 20px; gap: 20px;">
+                    <div style="text-align: center;">
+                        <h3>MACUCO SAFARI</h3>
+                        <p style="color: #fff;">Aventura extrema en las caídas de agua.</p>
                     </div>
-                    <div class="card-content"
-                        style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px 20px; gap: 20px;">
-                        <div style="text-align: center;">
-                            <h3>MACUCO SAFARI</h3>
-                            <p style="color: #fff;">Aventura extrema en las caídas de agua.</p>
-                        </div>
-                        <a href="https://youtu.be/1dUpxFeU_u4?si=1p_wqlZU0Bks6DNa" target="_blank"
-                            rel="noopener noreferrer" class="btn-video-elegant">
-                            <i class="fab fa-youtube" style="color: #ff0000;"></i> Ver Aventura Macuco Safari
-                        </a>
-                    </div>
+                    <a href="https://youtu.be/1dUpxFeU_u4?si=1p_wqlZU0Bks6DNa" target="_blank" rel="noopener noreferrer" class="btn-video-elegant">
+                        <i class="fab fa-youtube" style="color: #ff0000;"></i> Ver Aventura Macuco Safari
+                    </a>
                 </div>
+            </div>
 
-                <div class="sub-coluna-vertical">
-                    <div class="card">
-                        <div class="card-image"><img src="images/dutty.jpeg" alt="Puerto Iguazú" width="600"
-                                height="400"></div>
-                        <div class="card-content">
-                            <h3>PUERTO IGUAZÚ</h3>
-                            <p>Argentina a tu alcance.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-image"><img src="images/paraguai.jpg" alt="Ciudad del Este" width="600"
-                                height="400"></div>
-                        <div class="card-content">
-                            <h3>CIUDAD DEL ESTE</h3>
-                            <p>Compras y frontera.</p>
-                        </div>
-                    </div>
+            <div class="card">
+                <div class="card-image"><img src="images/buda.jpeg" alt="Templo Budista" width="600" height="400"></div>
+                <div class="card-content">
+                    <h3>TEMPLO BUDISTA</h3>
+                    <p>Paz y meditación.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="images/mezquita.jpeg" alt="Mezquita Musulmana" width="600" height="400"></div>
+                <div class="card-content">
+                    <h3>MEZQUITA MUSULMANA</h3>
+                    <p>Arquitectura y cultura.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image"><img src="images/dutty.jpeg" alt="Puerto Iguazú" width="600" height="400"></div>
+                <div class="card-content">
+                    <h3>PUERTO IGUAZÚ</h3>
+                    <p>Argentina a tu alcance.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="images/paraguai.jpg" alt="Ciudad del Este" width="600" height="400"></div>
+                <div class="card-content">
+                    <h3>CIUDAD DEL ESTE</h3>
+                    <p>Compras y frontera.</p>
                 </div>
             </div>
         </div>
