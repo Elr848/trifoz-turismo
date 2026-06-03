@@ -1546,6 +1546,44 @@
                 }
 
                 let numero = "5545933003337";
+                let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+                window.open(url, '_blank');
+            }
+
+            document.getElementById('booking-submit-btn')?.addEventListener('click', function(e){
+                e.preventDefault();
+                enviarWhatsApp(false);
+            });
+
+            document.getElementById('booking-submit-btn-m')?.addEventListener('click', function (e) {
+                e.preventDefault();
+                enviarWhatsApp(true);
+            });
+
+            // Lógica Touch para tarjetas (Mostrar/Ocultar texto ao tocar)
+            document.querySelectorAll('.card').forEach(card => {
+                if (!card.classList.contains('video-card')) {
+                    card.addEventListener('click', function (e) {
+                        // Ocultamos nas outras
+                        document.querySelectorAll('.card').forEach(c => {
+                            if (c !== card) c.classList.remove('touch-active');
+                        });
+                        // Alternamos na atual
+                        card.classList.toggle('touch-active');
+                    });
+                }
+            });
+
+            // ACORDEÓN OTRAS ATRACCIONES
+            const btnAcordeon = document.getElementById('btnOtrasAtracciones');
+            const acordeonContenido = document.getElementById('acordeonContenido');
+            
+            if (btnAcordeon && acordeonContenido) {
+                btnAcordeon.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    acordeonContenido.classList.toggle('open');
+                });
+            }
         });
     </script>
 </body>

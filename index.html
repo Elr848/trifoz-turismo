@@ -2129,6 +2129,17 @@
                     });
                 }
             });
+
+            // ACORDEÓN OTRAS ATRACCIONES
+            const btnAcordeon = document.getElementById('btnOtrasAtracciones');
+            const acordeonContenido = document.getElementById('acordeonContenido');
+            
+            if (btnAcordeon && acordeonContenido) {
+                btnAcordeon.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    acordeonContenido.classList.toggle('open');
+                });
+            }
         });
     </script>
 </body>
