@@ -467,6 +467,8 @@
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
             cursor: pointer;
+            position: relative;
+            -webkit-tap-highlight-color: transparent;
         }
 
         @media (min-width: 1024px) {
@@ -499,6 +501,49 @@
         .card-content p {
             color: #f0f0f0;
             font-weight: 500;
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* OVERLAY PROFESIONAL (HOVER / TOUCH) */
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 15, 35, 0.95) 0%, rgba(0, 15, 35, 0.3) 100%);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            color: #fff;
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            z-index: 10;
+        }
+
+        .card:hover .card-overlay,
+        .card:active .card-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .card-overlay-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            font-weight: 600;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+            transform: translateY(15px);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .card:hover .card-overlay-text,
+        .card:active .card-overlay-text {
+            transform: translateY(0);
         }
         .card:hover .card-content h3 { color: var(--azul-electrico); }
 
@@ -1042,12 +1087,18 @@
                         <h3>CATARATAS DO IGUAÇU</h3>
                         <p>Visita guiada privada.</p>
                     </div>
+                    <div class="card-overlay">
+                        <div class="card-overlay-text">Sinta a força imponente da natureza em uma das Sete Maravilhas Naturais do Mundo. Um passeio privado para se conectar com a energia pura das águas.</div>
+                    </div>
                 </div>
                 <div class="card">
                     <div class="card-image"><img src="https://s2-g1.glbimg.com/l1mp9ZmIQTiO2V8egJB_tOgVnYg=/0x0:5168x2912/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/R/5/3svxyZSVK292Muzew6RA/araras-caninde-1-.jpg" alt="Parque das Aves" width="600" height="400"></div>
                     <div class="card-content">
                         <h3>PARQUE DAS AVES</h3>
                         <p>Santuário ecológico.</p>
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-overlay-text">Mergulhe em um santuário ecológico único. Caminhe entre tucanos e araras em uma experiência imersiva de preservação e cores vibrantes.</div>
                     </div>
                 </div>
                 <div class="card">
@@ -1056,12 +1107,18 @@
                         <h3>MARCO DAS 3 FRONTEIRAS</h3>
                         <p>Encontro de nações.</p>
                     </div>
+                    <div class="card-overlay">
+                        <div class="card-overlay-text">O único lugar no mundo onde três países se abraçam. Desfrute de um pôr do sol mágico, shows culturais e uma vista panorâmica espetacular.</div>
+                    </div>
                 </div>
                 <div class="card">
                     <div class="card-image"><img src="images/kattamaram_v2.jpg" alt="Kattamaram II" width="600" height="400"></div>
                     <div class="card-content">
                         <h3>KATTAMARAM II</h3>
                         <p>Romantismo ao amanhecer ou entardecer.</p>
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-overlay-text">Navegue pelas águas onde os rios Paraná e Iguaçu se encontram. Um passeio romântico e exclusivo ideal para brindar enquanto o sol se põe.</div>
                     </div>
                 </div>
             </div>
@@ -1074,12 +1131,18 @@
                             <h3>TEMPLO BUDISTA</h3>
                             <p>Paz e meditação.</p>
                         </div>
+                        <div class="card-overlay">
+                            <div class="card-overlay-text">Encontre a paz interior em um dos maiores templos budistas da América Latina. Arquitetura majestosa, jardins zen e uma vista inigualável da cidade.</div>
+                        </div>
                     </div>
                     <div class="card">
                         <div class="card-image"><img src="images/mezquita.jpeg" alt="Mesquita Muçulmana" width="600" height="400"></div>
                         <div class="card-content">
                             <h3>MESQUITA MUÇULMANA</h3>
                             <p>Arquitetura e cultura.</p>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-overlay-text">Viaje para a cultura árabe sem sair da fronteira. Descubra detalhes arquitetônicos deslumbrantes em um espaço de profundo respeito e beleza.</div>
                         </div>
                     </div>
                 </div>
@@ -1106,12 +1169,18 @@
                             <h3>PUERTO IGUAZÚ</h3>
                             <p>Argentina ao seu alcance.</p>
                         </div>
+                        <div class="card-overlay">
+                            <div class="card-overlay-text">Cruze a fronteira para se deliciar com a melhor gastronomia. Vinhos premium, o famoso churrasco argentino e uma vida noturna incomparável.</div>
+                        </div>
                     </div>
                     <div class="card">
                         <div class="card-image"><img src="images/paraguai.jpg" alt="Ciudad del Este" width="600" height="400"></div>
                         <div class="card-content">
                             <h3>CIUDAD DEL ESTE</h3>
                             <p>Compras e fronteira.</p>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-overlay-text">O paraíso das compras ao seu alcance. Guiamos você com segurança aos melhores shoppings para encontrar tecnologia e grandes marcas a preços incríveis.</div>
                         </div>
                     </div>
                 </div>

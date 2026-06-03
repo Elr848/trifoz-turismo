@@ -379,6 +379,53 @@
             margin: 15px 0 5px;
         }
 
+        .card-content p {
+            color: #f0f0f0;
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* OVERLAY PROFESIONAL (HOVER / TOUCH) */
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 15, 35, 0.95) 0%, rgba(0, 15, 35, 0.3) 100%);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            color: #fff;
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            z-index: 10;
+        }
+
+        .card:hover .card-overlay,
+        .card:active .card-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .card-overlay-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            font-weight: 600;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+            transform: translateY(15px);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .card:hover .card-overlay-text,
+        .card:active .card-overlay-text {
+            transform: translateY(0);
+        }
+
         .hero-container h3 {
             color: #fff;
             margin: 0 0 5px;
@@ -543,6 +590,7 @@
             -webkit-backdrop-filter: blur(5px);
             cursor: pointer;
             position: relative;
+            -webkit-tap-highlight-color: transparent;
         }
 
         @media (min-width: 1024px) {
@@ -1579,10 +1627,8 @@
                     <div class="card-content">
                         <h3>CATARATAS DE IGUAZÚ</h3>
                         <p>Visita guiada privada.</p>
-                        <span class="btn-discover">✨ Saber más</span>
                     </div>
                     <div class="card-overlay">
-                        <div class="card-overlay-close">✖</div>
                         <div class="card-overlay-text">Siente la fuerza imponente de la naturaleza en una de las Siete Maravillas Naturales del Mundo. Un recorrido privado para conectar con la energía pura del agua.</div>
                     </div>
                 </div>
@@ -1593,10 +1639,8 @@
                     <div class="card-content">
                         <h3>PARQUE DE LAS AVES</h3>
                         <p>Santuario ecológico.</p>
-                        <span class="btn-discover">✨ Saber más</span>
                     </div>
                     <div class="card-overlay">
-                        <div class="card-overlay-close">✖</div>
                         <div class="card-overlay-text">Sumérgete en un santuario ecológico único. Camina entre tucanes y guacamayos en una experiencia inmersiva de preservación y colores vibrantes.</div>
                     </div>
                 </div>
@@ -1606,10 +1650,8 @@
                     <div class="card-content">
                         <h3>HITO DE LAS 3 FRONTERAS</h3>
                         <p>Encuentro de naciones.</p>
-                        <span class="btn-discover">✨ Saber más</span>
                     </div>
                     <div class="card-overlay">
-                        <div class="card-overlay-close">✖</div>
                         <div class="card-overlay-text">El único lugar en el mundo donde tres países se abrazan. Disfruta de un atardecer mágico, shows culturales y una vista panorámica espectacular.</div>
                     </div>
                 </div>
@@ -1619,10 +1661,8 @@
                     <div class="card-content">
                         <h3>KATTAMARAM II</h3>
                         <p>Romanticismo al amanecer o atardecer.</p>
-                        <span class="btn-discover">✨ Saber más</span>
                     </div>
                     <div class="card-overlay">
-                        <div class="card-overlay-close">✖</div>
                         <div class="card-overlay-text">Navega por las aguas donde se unen los ríos Paraná e Iguazú. Un viaje romántico y exclusivo ideal para brindar mientras el sol se esconde.</div>
                     </div>
                 </div>
@@ -1636,10 +1676,8 @@
                         <div class="card-content">
                             <h3>TEMPLO BUDISTA</h3>
                             <p>Paz y meditación.</p>
-                            <span class="btn-discover">✨ Saber más</span>
                         </div>
                         <div class="card-overlay">
-                            <div class="card-overlay-close">✖</div>
                             <div class="card-overlay-text">Encuentra la paz interior en uno de los templos budistas más grandes de América Latina. Arquitectura majestuosa, jardines zen y una vista inigualable de la ciudad.</div>
                         </div>
                     </div>
@@ -1649,10 +1687,8 @@
                         <div class="card-content">
                             <h3>MEZQUITA MUSULMANA</h3>
                             <p>Arquitectura y cultura.</p>
-                            <span class="btn-discover">✨ Saber más</span>
                         </div>
                         <div class="card-overlay">
-                            <div class="card-overlay-close">✖</div>
                             <div class="card-overlay-text">Viaja a la cultura árabe sin salir de la frontera. Descubre detalles arquitectónicos deslumbrantes en un espacio de profundo respeto y belleza.</div>
                         </div>
                     </div>
@@ -1683,10 +1719,8 @@
                         <div class="card-content">
                             <h3>PUERTO IGUAZÚ</h3>
                             <p>Argentina a tu alcance.</p>
-                            <span class="btn-discover">✨ Saber más</span>
                         </div>
                         <div class="card-overlay">
-                            <div class="card-overlay-close">✖</div>
                             <div class="card-overlay-text">Cruza la frontera para deleitarte con la mejor gastronomía. Vinos de primera, las famosas parrilladas argentinas y un ambiente nocturno inigualable.</div>
                         </div>
                     </div>
@@ -1696,10 +1730,8 @@
                         <div class="card-content">
                             <h3>CIUDAD DEL ESTE</h3>
                             <p>Compras y frontera.</p>
-                            <span class="btn-discover">✨ Saber más</span>
                         </div>
                         <div class="card-overlay">
-                            <div class="card-overlay-close">✖</div>
                             <div class="card-overlay-text">El paraíso de las compras a tu alcance. Te guiamos de forma segura a los mejores centros comerciales para conseguir tecnología y marcas a precios increíbles.</div>
                         </div>
                     </div>
@@ -1889,24 +1921,6 @@
             document.getElementById('booking-submit-btn-m')?.addEventListener('click', function (e) {
                 e.preventDefault();
                 enviarWhatsApp(true);
-            });
-
-            // Card Overlay Logic
-            document.querySelectorAll('.card').forEach(card => {
-                const overlay = card.querySelector('.card-overlay');
-                if (overlay) {
-                    card.addEventListener('click', function (e) {
-                        if (e.target.classList.contains('card-overlay-close')) {
-                            card.classList.remove('active');
-                            e.stopPropagation();
-                        } else {
-                            document.querySelectorAll('.card').forEach(c => {
-                                if (c !== card) c.classList.remove('active');
-                            });
-                            card.classList.toggle('active');
-                        }
-                    });
-                }
             });
         });
     </script>
