@@ -1,0 +1,25 @@
+# IDEs and editors
+.vs/
+.vscode/
+*.suo
+*.user
+*.userossc
+*.sln.docstates
+
+# Python virtual environment
+.venv/
+venv/
+ENV/
+
+# Executables (installers, compiled binaries)
+*.exe
+*.msi
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Other tools
+.sixth/
+.antigravityrules

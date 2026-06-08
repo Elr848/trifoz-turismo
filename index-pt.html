@@ -914,6 +914,8 @@
             max-width: 1200px;
             margin: 40px auto 0 auto;
             padding: 0 20px;
+            display: flex;
+            justify-content: center;
         }
 
         .btn-acordeon {
@@ -922,26 +924,44 @@
             border: 2px solid #d4af37;
             border-radius: 60px;
             padding: 16px 24px;
+            background: rgba(0, 15, 35, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 14px 32px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 12px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-size: 1.1rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             color: #ffeb3b;
+            color: #f0f0f0;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .btn-acordeon:hover {
             background: linear-gradient(135deg, #002366, #064e82);
             transform: scale(1.02);
             border-color: #ffeb3b;
+            background: rgba(0, 25, 65, 0.95);
+            border-color: #d4af37;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+            color: #fff;
         }
 
         .btn-acordeon i {
+            color: #d4af37;
             transition: transform 0.3s ease;
             font-size: 1.2rem;
         }
@@ -1146,6 +1166,7 @@
 
             .btn-acordeon {
                 font-size: 0.9rem;
+                font-size: 0.75rem;
                 padding: 12px 20px;
                 flex-direction: column;
                 gap: 8px;
@@ -1153,6 +1174,14 @@
                 border-radius: 30px;
                 width: 90%; /* On mobile, give it some nice breathing room */
                 max-width: 320px;
+                width: 100%;
+                max-width: 260px;
+                letter-spacing: 1px;
+                gap: 10px;
+            }
+
+            .btn-acordeon i {
+                font-size: 0.9rem;
             }
 
             .extra-card img {
@@ -1478,6 +1507,7 @@
     <div class="otras-atracciones-wrapper">
         <button class="btn-acordeon" id="btnOtrasAtracciones">
             <span><i class="fas fa-star"></i> Outras Atrações Imperdíveis <i class="fas fa-star"></i></span>
+            <span>Ver Outras Atrações</span>
             <i class="fas fa-chevron-down"></i>
         </button>
         
