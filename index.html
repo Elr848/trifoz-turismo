@@ -2429,19 +2429,19 @@
                 if (w < 480) {
                     cardWidth = 140;
                     cardHeight = 220;
-                    radius = 150;
+                    radius = 165;
                 } else if (w < 768) {
                     cardWidth = 170;
                     cardHeight = 260;
-                    radius = 195;
+                    radius = 210;
                 } else if (w < 1024) {
                     cardWidth = 190;
                     cardHeight = 290;
-                    radius = 235;
+                    radius = 255;
                 } else {
                     cardWidth = 210;
                     cardHeight = 320;
-                    radius = 270;
+                    radius = 290;
                 }
                 
                 carousel.style.setProperty('--card-width', `${cardWidth}px`);
@@ -2451,7 +2451,6 @@
                     const angle = index * angleIncrement3D;
                     gsap.set(card, {
                         rotationY: angle,
-                        z: radius,
                         transformPerspective: 1200
                     });
                 });
@@ -2582,18 +2581,29 @@
                     while (diff > 180) diff -= 360;
                     
                     const dist = Math.abs(diff);
-                    const normalizedDist = dist / 180;
+                    const normalizedDist = dist / 180; // 0 en el frente, 1 en la parte trasera
                     
-                    const opacity = 0.15 + (0.85 * (1 - normalizedDist));
-                    const scale = 0.85 + (0.15 * (1 - normalizedDist));
-                    const blurAmt = normalizedDist * 4;
+                    // 1. Opacidad con caída no lineal rápida: frente = 1.0, lados = 0.35, atrás = 0.0
+                    const opacity = Math.max(0, Math.pow(1 - normalizedDist, 2.2));
+                    
+                    // 2. Escala: frente = 1.08, lados = 0.82
+                    const scale = 0.82 + (0.26 * Math.pow(1 - normalizedDist, 2.2));
+                    
+                    // 3. Foco progresivo con difuminación (Blur) para aislar el fondo
+                    const blurAmt = normalizedDist * 6;
+                    
+                    // 4. zIndex para forzar el apilamiento correcto
                     const zIndexValue = Math.round((1 - normalizedDist) * 100);
+                    
+                    // 5. Profundidad dinámica (Z-Offset) para un efecto pop-out (acerca la activa al usuario)
+                    const zOffset = currentRadius3D + (70 * Math.pow(1 - normalizedDist, 2.2));
                     
                     gsap.set(card, {
                         opacity: opacity,
                         scale: scale,
                         filter: `blur(${blurAmt}px)`,
-                        zIndex: zIndexValue
+                        zIndex: zIndexValue,
+                        z: zOffset
                     });
                     
                     if (dist < angleIncrement3D / 2) {
