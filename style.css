@@ -467,3 +467,206 @@ body {
         filter: brightness(0.75); /* Baja el brillo al 75% solo en el móvil */
     }
 }
+
+/* ==========================================================================
+   CARRUSEL 3D TRIFOZ TURISMO 
+   ========================================================================== */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px; /* Controla el efecto 3D */
+}
+
+.carousel-3d {
+    position: relative;
+    width: 200px;
+    height: 320px;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.card-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: grab;
+    -webkit-box-reflect: below 15px linear-gradient(transparent, transparent, rgba(0,0,0,0.2));
+}
+
+.card-item:active {
+    cursor: grabbing;
+}
+
+.card-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    text-align: center;
+}
+
+.card-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+/* ==========================================================================
+   ESTILOS PREMIUM DE SOPORTE PARA EL CARRUSEL 3D (OPCIONALES)
+   ========================================================================== */
+.card-item.is-active {
+    border-color: rgba(201, 169, 97, 0.5);
+    box-shadow: 0 20px 45px rgba(201, 169, 97, 0.25), 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.card-item.is-active:hover {
+    border-color: #c9a961;
+    box-shadow: 0 25px 50px rgba(201, 169, 97, 0.35), 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+.card-item.is-active:hover img {
+    transform: scale(1.08);
+}
+
+.card-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c9a961;
+    background: rgba(10, 37, 64, 0.8);
+    border: 1px solid rgba(201, 169, 97, 0.3);
+    padding: 4px 10px;
+    border-radius: 6px;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+}
+
+.card-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #d4af37;
+    margin-top: 6px;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card-cta svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    transition: transform 0.3s ease;
+}
+
+.card-item.is-active:hover .card-cta {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card-item.is-active:hover .card-cta svg {
+    transform: translateX(4px);
+}
+
+.navigation-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    z-index: 10;
+    margin-top: 20px;
+}
+
+.nav-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(10, 37, 64, 0.6);
+    border: 1px solid rgba(201, 169, 97, 0.25);
+    color: #c9a961;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-btn:hover {
+    background: #c9a961;
+    color: #0a2540;
+    border-color: #c9a961;
+    box-shadow: 0 0 20px rgba(201, 169, 97, 0.4);
+    transform: scale(1.08);
+}
+
+.nav-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.drag-instruction {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    z-index: 10;
+}
+
+.drag-instruction::before,
+.drag-instruction::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.bg-glow-1 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(201, 169, 97, 0.08) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+}
+
