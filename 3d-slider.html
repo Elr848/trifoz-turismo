@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trifoz Turismo - 3D Carousel Slider</title>
+    
+    <!-- Google Fonts para tipografía premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CDNs de GSAP y Draggable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+
+    <style>
+        :root {
+            --primary-dark: #0a2540;
+            --primary-light: #1a3a52;
+            --accent-green: #2d8659;
+            --gold: #c9a961;
+            --gold-light: #d4af37;
+            --white: #ffffff;
+            --card-width: 250px;
+            --card-height: 370px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        body {
+            background: radial-gradient(circle at center, #0f2a4a 0%, #051329 100%);
+            color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow: hidden;
+            position: relative;
+            padding: 40px 20px;
+        }
+
+        /* Orbes de luz decorativos de fondo (Glow Effect) */
+        .bg-glow-1 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201, 169, 97, 0.08) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-glow-2 {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(45, 134, 89, 0.1) 0%, transparent 70%);
+            bottom: 10%;
+            right: 10%;
+            filter: blur(40px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Encabezado */
+        header {
+            text-align: center;
+            z-index: 10;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        header .badge {
+            display: inline-block;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            padding: 6px 16px;
+            border-radius: 50px;
+            background: rgba(10, 37, 64, 0.6);
+            backdrop-filter: blur(10px);
+            margin-bottom: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #ffe6c2 0%, #cba054 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        /* Contenedor del Carrusel con perspectiva 3D */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 55vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px;
+            z-index: 5;
+            cursor: grab;
+        }
+
+        .slider-container:active {
+            cursor: grabbing;
+        }
+
+        /* El cilindro invisible que rotará */
+        .carousel-3d {
+            position: relative;
+            width: var(--card-width);
+            height: var(--card-height);
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        /* Estilo de cada tarjeta */
+        .card-item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #0f2a4a;
+            border: 1px solid rgba(201, 169, 97, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            transform-style: preserve-3d;
+            will-change: transform, opacity, filter;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+            -webkit-box-reflect: below 15px linear-gradient(transparent, transparent, rgba(0,0,0,0.15));
+        }
+
+        .card-item.is-active {
+            border-color: rgba(201, 169, 97, 0.5);
+            box-shadow: 0 20px 45px rgba(201, 169, 97, 0.25), 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Efecto Hover sobre la tarjeta activa */
+        .card-item.is-active:hover {
+            border-color: var(--gold);
+            box-shadow: 0 25px 50px rgba(201, 169, 97, 0.35), 0 15px 40px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Imagen */
+        .card-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .card-item.is-active:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Badge flotante de la tarjeta */
+        .card-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            background: rgba(10, 37, 64, 0.8);
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            padding: 4px 10px;
+            border-radius: 6px;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Degradado y Contenido de Texto */
+        .card-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 20px 20px 20px;
+            background: linear-gradient(to top, rgba(5, 14, 20, 0.95) 0%, rgba(5, 14, 20, 0.4) 60%, transparent 100%);
+            color: var(--white);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            transform: translateZ(20px); /* Efecto Parallax en 3D */
+        }
+
+        .card-info h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+
+        .card-item.is-active:hover .card-info h3 {
+            color: var(--gold-light);
+        }
+
+        .card-info p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.4s ease;
+        }
+
+        /* Mostrar descripción al hacer hover en la tarjeta activa */
+        .card-item.is-active:hover .card-info p {
+            max-height: 50px;
+            opacity: 1;
+        }
+
+        /* Botón de acción dentro de la tarjeta */
+        .card-cta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-top: 4px;
+            opacity: 0.8;
+            transform: translateY(5px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .card-cta svg {
+            width: 14px;
+            height: 14px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            transition: transform 0.3s ease;
+        }
+
+        .card-item.is-active:hover .card-cta {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .card-item.is-active:hover .card-cta svg {
+            transform: translateX(4px);
+        }
+
+        /* Controles de Navegación */
+        .navigation-controls {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            z-index: 10;
+            margin-top: 10px;
+        }
+
+        .nav-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(10, 37, 64, 0.6);
+            border: 1px solid rgba(201, 169, 97, 0.25);
+            color: var(--gold);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-btn:hover {
+            background: var(--gold);
+            color: var(--primary-dark);
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(201, 169, 97, 0.4);
+            transform: scale(1.08);
+        }
+
+        .nav-btn:active {
+            transform: scale(0.95);
+        }
+
+        .nav-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Indicador de Swipe para móviles */
+        .drag-instruction {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .drag-instruction::before,
+        .drag-instruction::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 1024px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            header p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 15px;
+            }
+            header h1 {
+                font-size: 1.8rem;
+            }
+            .slider-container {
+                height: 50vh;
+            }
+            .nav-btn {
+                width: 44px;
+                height: 44px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            header p {
+                font-size: 0.8rem;
+            }
+            header .badge {
+                font-size: 0.7rem;
+                padding: 4px 12px;
+            }
+            .slider-container {
+                height: 48vh;
+            }
+            .navigation-controls {
+                gap: 20px;
+            }
+            .card-info {
+                padding: 15px;
+            }
+            .card-info h3 {
+                font-size: 1.1rem;
+            }
+            .card-tag {
+                top: 10px;
+                left: 10px;
+                font-size: 0.6rem;
+                padding: 3px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Orbes decorativos del fondo -->
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- Encabezado del Sitio -->
+    <header>
+        <span class="badge">Experiencias Exclusivas</span>
+        <h1>Explora Foz do Iguaçu</h1>
+        <p>Arrastra el carrusel o haz clic en cualquier destino para centrarlo en tu pantalla.</p>
+    </header>
+
+    <!-- Contenedor del Slider 3D -->
+    <div class="slider-container">
+        <div class="carousel-3d" id="carousel">
+            
+            <!-- Tarjeta 1 -->
+            <div class="card-item">
+                <span class="card-tag">Naturaleza</span>
+                <!-- Reemplazar src por tu imagen local cuando esté lista -->
+                <img src="https://images.unsplash.com/photo-1548811579-017cf2a4268b?q=80&w=600&auto=format&fit=crop" alt="Cataratas del Iguazú">
+                <div class="card-info">
+                    <h3>Cataratas del Iguazú</h3>
+                    <p>Siente la imponente fuerza del agua en una de las maravillas del mundo.</p>
+                    <div class="card-cta">
+                        <span>Ver Paquetes</span>
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="card-item">
+                <span class="card-tag">Aventura</span>
+                <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?q=80&w=600&auto=format&fit=crop" alt="Aventura Extrema">
+                <div class="card-info">
+                    <h3>Aventura Extrema</h3>
+                    <p>Paseos en gomón a toda velocidad y senderos llenos de adrenalina.</p>
+                    <div class="card-cta">
+                        <span>Ver Paquetes</span>
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="card-item">
+                <span class="card-tag">Ciudad</span>
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop" alt="City Tour Foz">
+                <div class="card-info">
+                    <h3>City Tour Foz</h3>
+                    <p>Descubre la cultura local, templos icónicos y la gastronomía de Foz.</p>
+                    <div class="card-cta">
+                        <span>Ver Paquetes</span>
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4 -->
+            <div class="card-item">
+                <span class="card-tag">Premium</span>
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=600&auto=format&fit=crop" alt="Hotelería Premium">
+                <div class="card-info">
+                    <h3>Hotelería Premium</h3>
+                    <p>Disfruta de resorts lujosos con servicios exclusivos y vistas inigualables.</p>
+                    <div class="card-cta">
+                        <span>Ver Paquetes</span>
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 5 -->
+            <div class="card-item">
+                <span class="card-tag">Familiar</span>
+                <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=600&auto=format&fit=crop" alt="Paquetes Familiares">
+                <div class="card-info">
+                    <h3>Paquetes Familiares</h3>
+                    <p>Diversión y comodidad garantizada para todas las edades.</p>
+                    <div class="card-cta">
+                        <span>Ver Paquetes</span>
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 6 -->
+            <div class="card-item">
+                <span class="card-tag">Ecología</span>
+                <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=600&auto=format&fit=crop" alt="Ecoturismo">
+                <div class="card-info">
+                    <h3>Ecoturismo</h3>
+                    <p>Conéctate con la fauna y flora nativas en reservas protegidas.</p>
+                    <div class="card-cta">
+                        <span>Ver Paquetes</span>
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Controles inferiores -->
+    <div class="navigation-controls">
+        <button class="nav-btn" id="prevBtn" aria-label="Anterior">
+            <svg viewBox="0 0 24 24">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+            </svg>
+        </button>
+        <button class="nav-btn" id="nextBtn" aria-label="Siguiente">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Indicador de Swipe móvil -->
+    <div class="drag-instruction">Desliza para girar</div>
+
+    <script>
+        // Registrar el plugin Draggable de GSAP
+        gsap.registerPlugin(Draggable);
+
+        const carousel = document.getElementById('carousel');
+        const cards = document.querySelectorAll('.card-item');
+        const numCards = cards.length;
+        
+        // Ángulo de separación entre tarjetas (360 grados / cantidad de tarjetas)
+        const angleIncrement = 360 / numCards; 
+        
+        let targetRotation = 0;
+        let currentRadius = 350;
+        let autoplayTimeout = null;
+
+        // Dummy proxy para arrastrar cómodamente con Draggable
+        const dragProxy = document.createElement("div");
+
+        /**
+         * Ajusta el tamaño y el radio de profundidad en base al ancho de pantalla
+         * Logra que el carrusel sea 100% responsivo sin romper el efecto 3D
+         */
+        function updateLayout() {
+            const w = window.innerWidth;
+            let cardWidth, cardHeight, radius;
+            
+            // Puntos de quiebre responsivos
+            if (w < 480) {
+                // Celulares chicos (e.g. iPhone SE, Moto G)
+                cardWidth = 140;
+                cardHeight = 220;
+                radius = 160;
+            } else if (w < 768) {
+                // Celulares medianos/grandes
+                cardWidth = 175;
+                cardHeight = 270;
+                radius = 210;
+            } else if (w < 1024) {
+                // Tablets
+                cardWidth = 210;
+                cardHeight = 310;
+                radius = 270;
+            } else {
+                // Pantallas de Escritorio (Desktop)
+                cardWidth = 240;
+                cardHeight = 350;
+                radius = 330;
+            }
+            
+            // Aplicar las medidas por variables CSS
+            carousel.style.setProperty('--card-width', `${cardWidth}px`);
+            carousel.style.setProperty('--card-height', `${cardHeight}px`);
+            
+            // Reposicionar las tarjetas en el espacio 3D
+            cards.forEach((card, index) => {
+                const angle = index * angleIncrement;
+                gsap.set(card, {
+                    rotationY: angle,
+                    z: radius,
+                    transformPerspective: 1200
+                });
+            });
+            
+            currentRadius = radius;
+            
+            // Refrescar rotación actual con el nuevo layout
+            gsap.set(carousel, { rotationY: targetRotation });
+        }
+
+        /**
+         * Inicialización de GSAP Draggable en un proxy invisible
+         */
+        Draggable.create(dragProxy, {
+            trigger: ".slider-container",
+            type: "x",
+            allowContextMenu: true,
+            onDragStart: function() {
+                stopAutoplay();
+                // Almacena la rotación inicial del carrusel al empezar a arrastrar
+                this.startRotation = targetRotation;
+            },
+            onDrag: function() {
+                // Convierte la distancia del arrastre en grados de rotación (1px = 0.25 grados)
+                targetRotation = this.startRotation + this.x * 0.25;
+                
+                gsap.to(carousel, {
+                    rotationY: targetRotation,
+                    duration: 0.5,
+                    ease: "power2.out",
+                    overwrite: "auto"
+                });
+            },
+            onDragEnd: function() {
+                // Calcula inercia basada en la velocidad de arrastre física del usuario
+                const velocity = typeof this.getVelocity === "function" ? this.getVelocity("x") : 0;
+                const inertiaDeg = (velocity * 0.05) * 0.4;
+                
+                targetRotation += inertiaDeg;
+                
+                // Alineación inteligente al destino más cercano (Snapping)
+                const snappedRotation = Math.round(targetRotation / angleIncrement) * angleIncrement;
+                targetRotation = snappedRotation;
+                
+                gsap.to(carousel, {
+                    rotationY: targetRotation,
+                    duration: 1.2,
+                    ease: "power3.out",
+                    overwrite: "auto",
+                    onComplete: () => {
+                        // Resetea la posición del proxy para el siguiente ciclo
+                        gsap.set(dragProxy, { x: 0 });
+                        startAutoplay();
+                    }
+                });
+            }
+        });
+
+        /**
+         * Permite hacer clic en cualquier tarjeta para centrarla al frente
+         */
+        cards.forEach((card, index) => {
+            card.addEventListener('click', () => {
+                // Si la tarjeta ya está al frente o se está animando, no interferir
+                if (gsap.isTweening(carousel)) return;
+                
+                stopAutoplay();
+                
+                const cardAngle = index * angleIncrement;
+                
+                // Hallar la vuelta entera actual para evitar giros bruscos de 360 grados
+                const currentTurn = Math.round(targetRotation / 360) * 360;
+                let newTarget = currentTurn - cardAngle;
+                
+                // Buscar el camino de rotación más corto (sentido horario o antihorario)
+                let diff = newTarget - targetRotation;
+                diff = ((diff + 180) % 360 + 360) % 360 - 180;
+                targetRotation += diff;
+                
+                gsap.to(carousel, {
+                    rotationY: targetRotation,
+                    duration: 1.2,
+                    ease: "power3.out",
+                    overwrite: "auto",
+                    onComplete: startAutoplay
+                });
+            });
+        });
+
+        /**
+         * Botones de navegación (Anterior / Siguiente)
+         */
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            rotateCarousel(1);
+        });
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            rotateCarousel(-1);
+        });
+
+        function rotateCarousel(direction) {
+            stopAutoplay();
+            targetRotation += direction * angleIncrement;
+            
+            // Snapping matemático exacto
+            targetRotation = Math.round(targetRotation / angleIncrement) * angleIncrement;
+            
+            gsap.to(carousel, {
+                rotationY: targetRotation,
+                duration: 1.2,
+                ease: "power3.out",
+                overwrite: "auto",
+                onComplete: startAutoplay
+            });
+        }
+
+        /**
+         * Interactividad premium con la rueda del Mouse (Wheel)
+         */
+        const container = document.querySelector('.slider-container');
+        container.addEventListener('wheel', (e) => {
+            if (Math.abs(e.deltaY) > 5) {
+                e.preventDefault();
+                
+                // Previene acumulaciones molestas mientras corre el giro
+                if (gsap.isTweening(carousel)) return;
+                
+                const direction = e.deltaY > 0 ? -1 : 1;
+                rotateCarousel(direction);
+            }
+        }, { passive: false });
+
+        /**
+         * Autoplay / Auto-giro temporizado
+         */
+        function startAutoplay() {
+            stopAutoplay();
+            autoplayTimeout = setTimeout(() => {
+                targetRotation -= angleIncrement;
+                gsap.to(carousel, {
+                    rotationY: targetRotation,
+                    duration: 1.5,
+                    ease: "power3.inOut",
+                    onComplete: startAutoplay
+                });
+            }, 5000); // Rota automáticamente cada 5 segundos
+        }
+
+        function stopAutoplay() {
+            clearTimeout(autoplayTimeout);
+        }
+
+        /**
+         * Efecto Depth-of-Field (Profundidad de Campo) en tiempo real
+         * Modifica opacidad, escala, difuminación (Blur) y zIndex
+         * sincronizado por cuadro con el Ticker de GSAP para máximo rendimiento.
+         */
+        function updateCardStates() {
+            const currentRot = gsap.getProperty(carousel, "rotationY");
+            
+            cards.forEach((card, index) => {
+                const cardAngle = index * angleIncrement;
+                const totalAngle = (cardAngle + currentRot) % 360;
+                
+                // Normaliza la diferencia angular al rango [-180, 180]
+                let diff = totalAngle;
+                while (diff < -180) diff += 360;
+                while (diff > 180) diff -= 360;
+                
+                const dist = Math.abs(diff);
+                const normalizedDist = dist / 180; // 0 en el frente exacto, 1 en la parte posterior
+                
+                // Calcular efectos visuales basados en la proximidad al frente
+                const opacity = 0.15 + (0.85 * (1 - normalizedDist));
+                const scale = 0.85 + (0.2 * (1 - normalizedDist));
+                const blurAmt = normalizedDist * 4; // Hasta 4px de blur atrás
+                
+                // Ordenar capas: las tarjetas del frente deben pisar a las de atrás
+                const zIndexValue = Math.round((1 - normalizedDist) * 100);
+                
+                gsap.set(card, {
+                    opacity: opacity,
+                    scale: scale,
+                    filter: `blur(${blurAmt}px)`,
+                    zIndex: zIndexValue
+                });
+                
+                // Asignar clase activa si se ubica en el centro visual
+                if (dist < angleIncrement / 2) {
+                    card.classList.add('is-active');
+                } else {
+                    card.classList.remove('is-active');
+                }
+            });
+        }
+
+        // Inicializar el sistema responsivo y añadir listeners
+        updateLayout();
+        window.addEventListener('resize', updateLayout);
+        
+        // El Ticker ejecuta la actualización visual alineada con los refrescos de pantalla
+        gsap.ticker.add(updateCardStates);
+        
+        // Comenzar auto-giro
+        startAutoplay();
+    </script>
+</body>
+</html>
