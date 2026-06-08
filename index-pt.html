@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: https://flagcdn.com https://upload.wikimedia.org; connect-src 'self' https://wa.me; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: https://flagcdn.com https://upload.wikimedia.org; connect-src 'self' https://wa.me; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content;">
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
@@ -1197,6 +1197,166 @@
                 padding-bottom: 8px;
             }
         }
+
+        /* ==========================================================================
+           CARRUSEL 3D TRIFOZ TURISMO 
+           ========================================================================== */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px;
+            margin: 20px 0 40px 0;
+            z-index: 5;
+        }
+
+        .carousel-3d {
+            position: relative;
+            width: var(--card-width, 200px);
+            height: var(--card-height, 320px);
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        .card-item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            cursor: grab;
+            will-change: transform, opacity, filter;
+            -webkit-box-reflect: below 12px linear-gradient(transparent, transparent, rgba(0,0,0,0.15));
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-item:active {
+            cursor: grabbing;
+        }
+
+        .card-item.is-active {
+            border-color: var(--dorado, #d4af37);
+            box-shadow: 0 20px 45px rgba(212, 175, 55, 0.3), 0 15px 35px rgba(0, 0, 0, 0.6);
+        }
+
+        .card-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .card-item.is-active:hover img {
+            transform: scale(1.08);
+        }
+
+        .card-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 15px;
+            background: linear-gradient(to top, rgba(0, 15, 35, 0.95) 0%, rgba(0, 15, 35, 0.4) 60%, transparent 100%);
+            color: white;
+            text-align: center;
+            transform: translateZ(15px); /* Efecto parallax sutil */
+        }
+
+        .card-info h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .card-item.is-active:hover .card-info h3 {
+            color: var(--amarillo, #ffeb3b);
+        }
+
+        .card-info p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.4s ease;
+        }
+
+        .card-item.is-active:hover .card-info p {
+            max-height: 50px;
+            opacity: 1;
+            margin-top: 5px;
+        }
+
+        .drag-instruction {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .drag-instruction::before,
+        .drag-instruction::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .navigation-controls-3d {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .nav-btn-3d {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(0, 15, 35, 0.75);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--dorado, #d4af37);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-btn-3d:hover {
+            background: var(--dorado, #d4af37);
+            color: var(--azul-rey, #002366);
+            border-color: var(--dorado, #d4af37);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+            transform: scale(1.05);
+        }
+
+        .nav-btn-3d svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
     </style>
 </head>
 
@@ -1395,6 +1555,64 @@
             </h2>
         </div>
 
+        <!-- CARRUSEL 3D EXCLUSIVO COM IMÁGENES REALES (PT) -->
+        <div class="slider-container">
+            <div class="carousel-3d" id="carousel">
+                
+                <div class="card-item">
+                    <img src="images/cataratas mejorada.jpg" alt="Cataratas do Iguaçu">
+                    <div class="card-info">
+                        <h3>Cataratas do Iguaçu</h3>
+                        <p>Visita guiada pela maior maravilha natural.</p>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <img src="images/macuco_safari_real.jpg" alt="Aventura Extrema">
+                    <div class="card-info">
+                        <h3>Aventura Extrema</h3>
+                        <p>Adrenalina de barco sob as quedas gigantes.</p>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <img src="images/marco_real.jpg" alt="City Tour Foz">
+                    <div class="card-info">
+                        <h3>City Tour Foz</h3>
+                        <p>O ponto mágico onde três nações se encontram.</p>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <img src="images/dutty.jpeg" alt="Hotéis Premium">
+                    <div class="card-info">
+                        <h3>Hotéis Premium</h3>
+                        <p>Hospedagem de luxo e traslados confortáveis.</p>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <img src="images/kattamaram2.jpeg" alt="Pacotes Familiares">
+                    <div class="card-info">
+                        <h3>Pacotes Familiares</h3>
+                        <p>A experiência perfeita para compartilhar juntos.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Botões de Navegação 3D e Guia de Uso (PT) -->
+        <div class="navigation-controls-3d">
+            <button class="nav-btn-3d" id="prevBtn3D" aria-label="Anterior">
+                <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            <button class="nav-btn-3d" id="nextBtn3D" aria-label="Seguinte">
+                <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
+        </div>
+        <div class="drag-instruction">Arraste para girar ou clique em um cartão</div>
+
         <div class="grid-attractions contenedor-catalogo">
             <div class="linha-quatro">
                 <div class="card">
@@ -1589,6 +1807,10 @@
         <p>© 2026 Trifoz Turismo • Guia de Turismo Ebert • Foz do Iguaçu</p>
     </footer>
 
+    <!-- Librerías de animación GSAP y Draggable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             function setDefaultDatetime() {
@@ -1755,6 +1977,208 @@
                     acordeonContenido.classList.toggle('open');
                 });
             }
+
+            // ==========================================================================
+            // LOGICA DEL CARRUSEL 3D (OPTIMIZADA Y RESPONSIVA)
+            // ==========================================================================
+            gsap.registerPlugin(Draggable);
+
+            const carousel = document.getElementById('carousel');
+            const cards3D = document.querySelectorAll('.card-item');
+            const numCards3D = cards3D.length;
+            const angleIncrement3D = 360 / numCards3D;
+            
+            let targetRotation3D = 0;
+            let currentRadius3D = 300;
+            let autoplayTimeout3D = null;
+            const dragProxy3D = document.createElement("div");
+
+            function updateLayout3D() {
+                const w = window.innerWidth;
+                let cardWidth, cardHeight, radius;
+                
+                if (w < 480) {
+                    cardWidth = 140;
+                    cardHeight = 220;
+                    radius = 150;
+                } else if (w < 768) {
+                    cardWidth = 170;
+                    cardHeight = 260;
+                    radius = 195;
+                } else if (w < 1024) {
+                    cardWidth = 190;
+                    cardHeight = 290;
+                    radius = 235;
+                } else {
+                    cardWidth = 210;
+                    cardHeight = 320;
+                    radius = 270;
+                }
+                
+                carousel.style.setProperty('--card-width', `${cardWidth}px`);
+                carousel.style.setProperty('--card-height', `${cardHeight}px`);
+                
+                cards3D.forEach((card, index) => {
+                    const angle = index * angleIncrement3D;
+                    gsap.set(card, {
+                        rotationY: angle,
+                        z: radius,
+                        transformPerspective: 1200
+                    });
+                });
+                
+                currentRadius3D = radius;
+                gsap.set(carousel, { rotationY: targetRotation3D });
+            }
+
+            Draggable.create(dragProxy3D, {
+                trigger: ".slider-container",
+                type: "x",
+                allowContextMenu: true,
+                onDragStart: function() {
+                    stopAutoplay3D();
+                    this.startRotation = targetRotation3D;
+                },
+                onDrag: function() {
+                    // Mapeo preciso de píxeles a grados (1px = 0.3 grados para mejor control táctil)
+                    targetRotation3D = this.startRotation + this.x * 0.3;
+                    gsap.to(carousel, {
+                        rotationY: targetRotation3D,
+                        duration: 0.5,
+                        ease: "power2.out",
+                        overwrite: "auto"
+                    });
+                },
+                onDragEnd: function() {
+                    const velocity = typeof this.getVelocity === "function" ? this.getVelocity("x") : 0;
+                    const inertiaDeg = (velocity * 0.05) * 0.35;
+                    
+                    targetRotation3D += inertiaDeg;
+                    const snappedRotation = Math.round(targetRotation3D / angleIncrement3D) * angleIncrement3D;
+                    targetRotation3D = snappedRotation;
+                    
+                    gsap.to(carousel, {
+                        rotationY: targetRotation3D,
+                        duration: 1.0,
+                        ease: "power3.out",
+                        overwrite: "auto",
+                        onComplete: () => {
+                            gsap.set(dragProxy3D, { x: 0 });
+                            startAutoplay3D();
+                        }
+                    });
+                }
+            });
+
+            cards3D.forEach((card, index) => {
+                card.addEventListener('click', () => {
+                    if (gsap.isTweening(carousel)) return;
+                    stopAutoplay3D();
+                    
+                    const cardAngle = index * angleIncrement3D;
+                    const currentTurn = Math.round(targetRotation3D / 360) * 360;
+                    let newTarget = currentTurn - cardAngle;
+                    
+                    let diff = newTarget - targetRotation3D;
+                    diff = ((diff + 180) % 360 + 360) % 360 - 180;
+                    targetRotation3D += diff;
+                    
+                    gsap.to(carousel, {
+                        rotationY: targetRotation3D,
+                        duration: 1.0,
+                        ease: "power3.out",
+                        overwrite: "auto",
+                        onComplete: startAutoplay3D
+                    });
+                });
+            });
+
+            document.getElementById('prevBtn3D')?.addEventListener('click', () => {
+                rotateCarousel3D(1);
+            });
+            document.getElementById('nextBtn3D')?.addEventListener('click', () => {
+                rotateCarousel3D(-1);
+            });
+
+            function rotateCarousel3D(direction) {
+                stopAutoplay3D();
+                targetRotation3D += direction * angleIncrement3D;
+                targetRotation3D = Math.round(targetRotation3D / angleIncrement3D) * angleIncrement3D;
+                
+                gsap.to(carousel, {
+                    rotationY: targetRotation3D,
+                    duration: 1.0,
+                    ease: "power3.out",
+                    overwrite: "auto",
+                    onComplete: startAutoplay3D
+                });
+            }
+
+            const sliderContainer = document.querySelector('.slider-container');
+            sliderContainer?.addEventListener('wheel', (e) => {
+                if (Math.abs(e.deltaY) > 5) {
+                    e.preventDefault();
+                    if (gsap.isTweening(carousel)) return;
+                    const direction = e.deltaY > 0 ? -1 : 1;
+                    rotateCarousel3D(direction);
+                }
+            }, { passive: false });
+
+            function startAutoplay3D() {
+                stopAutoplay3D();
+                autoplayTimeout3D = setTimeout(() => {
+                    targetRotation3D -= angleIncrement3D;
+                    gsap.to(carousel, {
+                        rotationY: targetRotation3D,
+                        duration: 1.5,
+                        ease: "power3.inOut",
+                        onComplete: startAutoplay3D
+                    });
+                }, 5000);
+            }
+
+            function stopAutoplay3D() {
+                clearTimeout(autoplayTimeout3D);
+            }
+
+            function updateCardStates3D() {
+                const currentRot = gsap.getProperty(carousel, "rotationY");
+                
+                cards3D.forEach((card, index) => {
+                    const cardAngle = index * angleIncrement3D;
+                    const totalAngle = (cardAngle + currentRot) % 360;
+                    
+                    let diff = totalAngle;
+                    while (diff < -180) diff += 360;
+                    while (diff > 180) diff -= 360;
+                    
+                    const dist = Math.abs(diff);
+                    const normalizedDist = dist / 180;
+                    
+                    const opacity = 0.15 + (0.85 * (1 - normalizedDist));
+                    const scale = 0.85 + (0.15 * (1 - normalizedDist));
+                    const blurAmt = normalizedDist * 4;
+                    const zIndexValue = Math.round((1 - normalizedDist) * 100);
+                    
+                    gsap.set(card, {
+                        opacity: opacity,
+                        scale: scale,
+                        filter: `blur(${blurAmt}px)`,
+                        zIndex: zIndexValue
+                    });
+                    
+                    if (dist < angleIncrement3D / 2) {
+                        card.classList.add('is-active');
+                    } else {
+                        card.classList.remove('is-active');
+                    }
+                });
+            }
+
+            updateLayout3D();
+            window.addEventListener('resize', updateLayout3D);
+            gsap.ticker.add(updateCardStates3D);
+            startAutoplay3D();
         });
     </script>
 </body>
