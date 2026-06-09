@@ -1624,38 +1624,136 @@
                 width: 100%;
             }
         }
-
-        /* NUEVOS ESTILOS PARA EL CARRUSEL INFINITO */
-        .slider-container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            overflow: hidden; /* Oculta las tarjetas que quedan fuera de la pantalla */
+        
+        /* Ken Burns Gallery Styles */
+        .galeria-franja {
             position: relative;
-            padding: 20px 0;
+            width: 100%;
+            height: 520px; /* Incrementado para melhor proporção em notebooks/computadores */
+            overflow: hidden;
+            background: #050510;
+            border-top: 2px solid rgba(0, 210, 255, 0.3);
+            border-bottom: 2px solid rgba(0, 210, 255, 0.3);
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.5);
         }
-
-        .slider-track {
-            display: flex; /* Alinea las tarjetas en una fila horizontal */
-            gap: 20px;
-            width: max-content;
-            transition: transform 0.5s ease-in-out; /* Suaviza el movimiento manual o automático */
+        .galeria-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1.5s ease-in-out, visibility 1.5s;
+            z-index: 1;
         }
-
-        /* Forzamos a que las tarjetas mantengan su tamaño idóneo dentro del carrusel */
-        .slider-track .card {
-            width: 280px; 
-            flex-shrink: 0; /* Evita que las tarjetas se aplasten */
+        .galeria-slide.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 2;
         }
-
-        /* Adaptación para pantallas móviles */
-        @media (max-width: 1023px) {
-            .slider-track .card {
-                width: 160px; /* Tamaño compacto para celulares */
-            }
-            .slider-track {
-                gap: 12px;
-            }
+        .galeria-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1);
+        }
+        .galeria-slide.active .galeria-img {
+            animation: kenBurnsAnimation 7s forwards ease-out;
+        }
+        @keyframes kenBurnsAnimation {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.12); }
+        }
+        .galeria-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(12, 10, 26, 0.5) 0%, transparent 40%, rgba(12, 10, 26, 0.2) 100%);
+            z-index: 3;
+            pointer-events: none;
+        }
+        .galeria-content {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            z-index: 4;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            pointer-events: none;
+        }
+        .galeria-title {
+            color: #00d2ff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 10px rgba(0, 210, 255, 0.5);
+        }
+        .galeria-subtitle {
+            color: #fff;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        .galeria-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(12, 10, 26, 0.6);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .galeria-nav-btn:hover {
+            background: rgba(0, 210, 255, 0.4);
+            border-color: #00d2ff;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+            color: #fff;
+        }
+        .galeria-nav-btn.prev { left: 25px; }
+        .galeria-nav-btn.next { right: 25px; }
+        
+        .galeria-dots {
+            position: absolute;
+            bottom: 25px;
+            right: 30px;
+            z-index: 5;
+            display: flex;
+            gap: 8px;
+        }
+        .galeria-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .galeria-dot.active {
+            background: #00d2ff;
+            transform: scale(1.3);
+            box-shadow: 0 0 8px rgba(0, 210, 255, 0.8);
+        }
+        @media (max-width: 768px) {
+            .galeria-franja { height: 300px; }
+            .galeria-nav-btn { width: 40px; height: 40px; font-size: 1rem; }
+            .galeria-nav-btn.prev { left: 15px; }
+            .galeria-nav-btn.next { right: 15px; }
+            .galeria-content { bottom: 20px; left: 20px; }
+            .galeria-dots { bottom: 15px; right: 20px; }
         }
     
     
@@ -2089,105 +2187,124 @@
 
     
     <!-- SECCIÓN GALERÍA DE FOTOS -->
-    <section id="galeria" style="padding: 60px 0; background: rgba(0, 10, 30, 0.45);">
-        <div style="text-align: center; margin-bottom: 30px; padding: 0 20px;">
-            <h2 class="subtitulo-amarillo" style="font-size: clamp(1.4rem, 6vw, 2.2rem); margin-bottom: 5px;">
-                Galeria de Fotos
-            </h2>
-        </div>
-        <!-- CONTENEDOR PRINCIPAL DE LA GALERÍA -->
-        <div class="slider-container">
-            <div class="slider-track" id="galleryTrack">
-                
-                <!-- Tarjeta 1 -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Iguazu_001.jpg" alt="Cataratas">
-                    </div>
-                    <div class="card-content">
-                        <h3>Cataratas do Iguaçu</h3>
-                        <p>Visitação guiada ao lado brasileiro e argentino.</p>
-                    </div>
+    <section id="galeria" class="galeria-franja">
+        <div class="galeria-overlay"></div>
+        <div class="galeria-slides-container" style="width: 100%; height: 100%; position: relative;">
+            <div class="galeria-slide active">
+                <img src="images/cataratas.jpg" alt="Cataratas do Iguaçu" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Cataratas do Iguaçu</span>
+                    <span class="galeria-subtitle">Uma das sete maravilhas naturais do mundo</span>
                 </div>
-
-                <!-- Tarjeta 2 -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Macuco_Safari.jpg" alt="Macuco">
-                    </div>
-                    <div class="card-content">
-                        <h3>Macuco Safari</h3>
-                        <p>Aventura de barco sob as quedas d'água.</p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 3 -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Parque_das_Aves.jpg" alt="Parque Aves">
-                    </div>
-                    <div class="card-content">
-                        <h3>Parque das Aves</h3>
-                        <p>Contato direto com o ecossistema local.</p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 4 -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Itaipu_Dam_2005.jpg" alt="Itaipu">
-                    </div>
-                    <div class="card-content">
-                        <h3>Usina de Itaipu</h3>
-                        <p>Uma de las maiores obras de engenharia do mundo.</p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 1 (Duplicada para bucle infinito) -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Iguazu_001.jpg" alt="Cataratas">
-                    </div>
-                    <div class="card-content">
-                        <h3>Cataratas do Iguaçu</h3>
-                        <p>Visitação guiada ao lado brasileiro e argentino.</p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 2 (Duplicada para bucle infinito) -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Macuco_Safari.jpg" alt="Macuco">
-                    </div>
-                    <div class="card-content">
-                        <h3>Macuco Safari</h3>
-                        <p>Aventura de barco sob as quedas d'água.</p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 3 (Duplicada para bucle infinito) -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Parque_das_Aves.jpg" alt="Parque Aves">
-                    </div>
-                    <div class="card-content">
-                        <h3>Parque das Aves</h3>
-                        <p>Contato direto com o ecossistema local.</p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 4 (Duplicada para bucle infinito) -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Itaipu_Dam_2005.jpg" alt="Itaipu">
-                    </div>
-                    <div class="card-content">
-                        <h3>Usina de Itaipu</h3>
-                        <p>Uma de las maiores obras de engenharia do mundo.</p>
-                    </div>
-                </div>
-
             </div>
+            <div class="galeria-slide">
+                <img src="images/aeroporto.jpg" alt="Translados ao Aeroporto" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Translados ao Aeroporto</span>
+                    <span class="galeria-subtitle">Pontualidade e conforto 24/7 na Tríplice Fronteira</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/templo budista 1.png" alt="Templo Budista Chen Tien" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Templo Budista Chen Tien</span>
+                    <span class="galeria-subtitle">Paz, meditação e espetaculares esculturas em Foz</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/mezquita 1.png" alt="Mesquita Omar Ibn Al-Khattab" class="galeria-img" style="object-fit: contain; background-color: #050510;">
+                <div class="galeria-content">
+                    <span class="galeria-title">Mesquita Omar Ibn Al-Khattab</span>
+                    <span class="galeria-subtitle">Arquitetura islâmica e riqueza cultural no coração de Foz</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/cataratas_panorama.png" alt="Vistas Panorâmicas" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Vistas Panorâmicas</span>
+                    <span class="galeria-subtitle">Paisagens únicas e inesquecíveis da mata</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/china 1.png" alt="Cultura e Sabores" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Cultura e Sabores</span>
+                    <span class="galeria-subtitle">Experiências gastronômicas e multiculturais locais</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/dutty.jpeg" alt="Duty Free Shop" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Duty Free Shop</span>
+                    <span class="galeria-subtitle">Compras internacionais exclusivas livre de impostos</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/feirinha argentina.jpeg" alt="Feirinha de Puerto Iguazú" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Feirinha de Puerto Iguazú</span>
+                    <span class="galeria-subtitle">Sabores locais, azeitonas e queijos tradicionais</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/Kattamaram (2).jpeg" alt="Passeio de Kattamaram" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Passeio de Kattamaram</span>
+                    <span class="galeria-subtitle">Navegação inesquecível no encontro dos rios</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/museo de cera.png" alt="Dreamland Museu de Cera" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Dreamland Museu de Cera</span>
+                    <span class="galeria-subtitle">Diversão para toda a família com réplicas perfeitas</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/pda.png" alt="Parque das Aves" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Parque das Aves</span>
+                    <span class="galeria-subtitle">Contato direto com a fauna e aves resgatadas</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/usina hidrelectrica.jpeg" alt="Itaipu Binacional" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Itaipu Binacional</span>
+                    <span class="galeria-subtitle">Uma das maiores obras de engenharia do planeta</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/wonder_park_v2.jpg" alt="Wonder Park Show" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Wonder Park Show</span>
+                    <span class="galeria-subtitle">Espetáculos de luzes e atrações interativas</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/yup star.jpeg" alt="Yup Star Foz" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Yup Star Foz</span>
+                    <span class="galeria-subtitle">Uma das maiores rodas-gigantes de toda a América Latina</span>
+                </div>
+            </div>
+        </div>
+        <button class="galeria-nav-btn prev" aria-label="Anterior">&#x276E;</button>
+        <button class="galeria-nav-btn next" aria-label="Siguiente">&#x276F;</button>
+        <div class="galeria-dots">
+            <span class="galeria-dot active" data-index="0"></span>
+            <span class="galeria-dot" data-index="1"></span>
+            <span class="galeria-dot" data-index="2"></span>
+            <span class="galeria-dot" data-index="3"></span>
+            <span class="galeria-dot" data-index="4"></span>
+            <span class="galeria-dot" data-index="5"></span>
+            <span class="galeria-dot" data-index="6"></span>
+            <span class="galeria-dot" data-index="7"></span>
+            <span class="galeria-dot" data-index="8"></span>
+            <span class="galeria-dot" data-index="9"></span>
+            <span class="galeria-dot" data-index="10"></span>
+            <span class="galeria-dot" data-index="11"></span>
+            <span class="galeria-dot" data-index="12"></span>
         </div>
     </section>
 
@@ -2692,73 +2809,100 @@
         });
     
 
-            // Lógica de Galería Cíclica Infinita (Bucle infinito)
-            (function () {
-                const track = document.getElementById("galleryTrack");
-                if (!track) return;
+            // Lógica de la Galería Ken Burns
+            (function() {
+                const slides = document.querySelectorAll('.galeria-slide');
+                const dots = document.querySelectorAll('.galeria-dot');
+                const prevBtn = document.querySelector('.galeria-nav-btn.prev');
+                const nextBtn = document.querySelector('.galeria-nav-btn.next');
+                let currentIdx = 0;
+                let slideInterval;
                 
-                const intervaloTiempo = 3000; 
-
-                function moverCarrusel() {
-                    const primeraCard = track.querySelector(".card");
-                    if(!primeraCard) return;
-
-                    const cardAncho = primeraCard.offsetWidth;
-                    const gap = parseInt(window.getComputedStyle(track).gap) || 0;
-                    const desplazamiento = cardAncho + gap;
-
-                    track.style.transition = "transform 0.5s ease-in-out";
-                    track.style.transform = `translateX(-${desplazamiento}px)`;
-
-                    setTimeout(() => {
-                        track.style.transition = "none";
-                        track.appendChild(primeraCard);
-                        track.style.transform = "translateX(0)";
-                    }, 500);
+                function showSlide(index) {
+                    if (!slides.length) return;
+                    slides[currentIdx].classList.remove('active');
+                    dots[currentIdx].classList.remove('active');
+                    
+                    currentIdx = (index + slides.length) % slides.length;
+                    
+                    slides[currentIdx].classList.add('active');
+                    dots[currentIdx].classList.add('active');
                 }
-
-                let carruselIntervalo = setInterval(moverCarrusel, intervaloTiempo);
-
-                track.addEventListener("mouseenter", () => clearInterval(carruselIntervalo));
-                track.addEventListener("mouseleave", () => carruselIntervalo = setInterval(moverCarrusel, intervaloTiempo));
                 
-                // Soporte para gestos táctiles (deslizar)
-                let touchStartX = 0;
-                let touchEndX = 0;
+                function nextSlide() {
+                    showSlide(currentIdx + 1);
+                }
                 
-                track.addEventListener('touchstart', (e) => {
-                    touchStartX = e.changedTouches[0].screenX;
-                    clearInterval(carruselIntervalo);
-                }, { passive: true });
+                function prevSlide() {
+                    showSlide(currentIdx - 1);
+                }
                 
-                track.addEventListener('touchend', (e) => {
-                    touchEndX = e.changedTouches[0].screenX;
-                    const diffX = touchEndX - touchStartX;
-                    if (Math.abs(diffX) > 50) {
-                        if (diffX < 0) {
-                            moverCarrusel();
-                        } else {
-                            const cards = track.querySelectorAll(".card");
-                            const ultimaCard = cards[cards.length - 1];
-                            if (ultimaCard) {
-                                const cardAncho = ultimaCard.offsetWidth;
-                                const gap = parseInt(window.getComputedStyle(track).gap) || 0;
-                                const desplazamiento = cardAncho + gap;
-                                
-                                track.style.transition = "none";
-                                track.style.transform = `translateX(-${desplazamiento}px)`;
-                                track.insertBefore(ultimaCard, track.firstChild);
-                                
-                                track.offsetHeight; 
-                                
-                                track.style.transition = "transform 0.5s ease-in-out";
-                                track.style.transform = "translateX(0)";
+                function startAutoplay() {
+                    stopAutoplay();
+                    slideInterval = setInterval(nextSlide, 6000);
+                }
+                
+                function stopAutoplay() {
+                    clearInterval(slideInterval);
+                }
+                
+                if (prevBtn && nextBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        prevSlide();
+                        startAutoplay();
+                    });
+                    nextBtn.addEventListener('click', () => {
+                        nextSlide();
+                        startAutoplay();
+                    });
+                }
+                
+                dots.forEach((dot, idx) => {
+                    dot.addEventListener('click', () => {
+                        showSlide(idx);
+                        startAutoplay();
+                    });
+                });
+                
+                startAutoplay();
+                
+                // Soporte para gestos swipe táctiles en móviles para cambiar imágenes
+                const galeriaFranja = document.querySelector('.galeria-franja');
+                if (galeriaFranja) {
+                    let touchStartX = 0;
+                    let touchEndX = 0;
+                    
+                    galeriaFranja.addEventListener('touchstart', (e) => {
+                        touchStartX = e.changedTouches[0].screenX;
+                    }, { passive: true });
+                    
+                    galeriaFranja.addEventListener('touchend', (e) => {
+                        touchEndX = e.changedTouches[0].screenX;
+                        const diffX = touchEndX - touchStartX;
+                        if (Math.abs(diffX) > 50) { // Sensibilidad del swipe
+                            if (diffX < 0) {
+                                nextSlide(); // Deslizar a la izquierda: siguiente
+                            } else {
+                                prevSlide(); // Deslizar a la derecha: anterior
                             }
+                            startAutoplay();
                         }
-                    }
-                    carruselIntervalo = setInterval(moverCarrusel, intervaloTiempo);
-                }, { passive: true });
+                    }, { passive: true });
+                }
+                
+                // Desplazamiento suave para enlaces de anclaje
+                document.querySelectorAll('a[href^="#galeria"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    });
+                });
             })();
+    
+        
 
             // Lógica de transición para la tarjeta de vehículos
             (function() {
