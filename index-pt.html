@@ -2812,21 +2812,38 @@
             // Lógica de la Galería Ken Burns
             (function() {
                 const slides = document.querySelectorAll('.galeria-slide');
-                const dots = document.querySelectorAll('.galeria-dot');
+                const dotsContainer = document.querySelector('.galeria-dots');
                 const prevBtn = document.querySelector('.galeria-nav-btn.prev');
                 const nextBtn = document.querySelector('.galeria-nav-btn.next');
                 let currentIdx = 0;
                 let slideInterval;
                 
+                // Generar los puntos de navegación (dots) dinámicamente según la cantidad real de slides
+                if (dotsContainer && slides.length) {
+                    dotsContainer.innerHTML = '';
+                    slides.forEach((_, idx) => {
+                        const dot = document.createElement('span');
+                        dot.className = `galeria-dot ${idx === 0 ? 'active' : ''}`;
+                        dot.setAttribute('data-index', idx);
+                        dot.addEventListener('click', () => {
+                            showSlide(idx);
+                            startAutoplay();
+                        });
+                        dotsContainer.appendChild(dot);
+                    });
+                }
+                
                 function showSlide(index) {
                     if (!slides.length) return;
+                    const activeDots = document.querySelectorAll('.galeria-dot');
+                    
                     slides[currentIdx].classList.remove('active');
-                    dots[currentIdx].classList.remove('active');
+                    if (activeDots[currentIdx]) activeDots[currentIdx].classList.remove('active');
                     
                     currentIdx = (index + slides.length) % slides.length;
                     
                     slides[currentIdx].classList.add('active');
-                    dots[currentIdx].classList.add('active');
+                    if (activeDots[currentIdx]) activeDots[currentIdx].classList.add('active');
                 }
                 
                 function nextSlide() {
@@ -2856,13 +2873,6 @@
                         startAutoplay();
                     });
                 }
-                
-                dots.forEach((dot, idx) => {
-                    dot.addEventListener('click', () => {
-                        showSlide(idx);
-                        startAutoplay();
-                    });
-                });
                 
                 startAutoplay();
                 
@@ -2901,8 +2911,6 @@
                     });
                 });
             })();
-    
-        
 
             // Lógica de transición para la tarjeta de vehículos
             (function() {
