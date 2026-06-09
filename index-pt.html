@@ -1547,14 +1547,20 @@
             }
         }
     
-        /* GALLERY SECTION STYLES */
-        .btn-galeria-fijo {
+        /* GALLERY SECTION STYLES & FLOATING TOOLBAR */
+        .floating-toolbar {
             position: fixed;
             top: 15px;
             left: 15px;
             z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .btn-floating-bar {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             background: rgba(12, 10, 26, 0.75);
             backdrop-filter: blur(10px);
@@ -1571,20 +1577,29 @@
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
+            cursor: pointer;
+            outline: none;
         }
-        .btn-galeria-fijo:hover {
+        .btn-floating-bar i {
+            color: #00d2ff;
+            font-size: 0.95rem;
+        }
+        .btn-floating-bar:hover {
             background: rgba(0, 210, 255, 0.35);
             border-color: rgba(224, 160, 255, 0.8);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 210, 255, 0.4);
         }
         @media (max-width: 480px) {
-            .btn-galeria-fijo .btn-galeria-texto {
+            .btn-floating-bar .btn-floating-text {
                 display: none;
             }
-            .btn-galeria-fijo {
-                padding: 10px;
+            .btn-floating-bar {
+                padding: 12px;
                 border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                box-sizing: border-box;
             }
         }
         
@@ -1784,10 +1799,24 @@
 </head>
 
 <body>
-    <a href="#galeria" class="btn-galeria-fijo" aria-label="Galeria de Fotos">
-        <i class="fas fa-images" style="color: #00d2ff;"></i>
-        <span class="btn-galeria-texto">Galeria de Fotos</span>
-    </a>
+    <div class="floating-toolbar">
+        <a href="#galeria" class="btn-floating-bar" aria-label="Galeria de Fotos">
+            <i class="fas fa-images"></i>
+            <span class="btn-floating-text">Galeria</span>
+        </a>
+        <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer" class="btn-floating-bar" aria-label="Atendimento em LIBRAS">
+            <i class="fas fa-hands-sign"></i>
+            <span class="btn-floating-text">LIBRAS</span>
+        </a>
+        <button class="btn-floating-bar" id="btn-ingresos" aria-label="Compra de Ingressos">
+            <i class="fas fa-ticket-alt"></i>
+            <span class="btn-floating-text">Ingressos</span>
+        </button>
+        <button class="btn-floating-bar" id="btn-videos" aria-label="Vídeos da Trifoz">
+            <i class="fas fa-video"></i>
+            <span class="btn-floating-text">Vídeos</span>
+        </button>
+    </div>
 
     <div class="header-idioma-container">
         <span class="label-idioma-fijo">Idioma:</span>
@@ -1967,14 +1996,7 @@
     </div>
 
     <section class="attractions">
-        <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer" class="btn-libras-premium">
-            <img src="images/una.jpeg" width="240" height="170" alt="Atendimento em LIBRAS" class="libras-icon-img" loading="lazy">
-            <div class="libras-text-wrapper">
-                <span class="libras-pt" style="color: #002366;">Atendimento em LIBRAS</span>
-                <span class="libras-en">Língua Brasileira de Sinais • Sign Language</span>
-                <span class="libras-video-text"><i class="fas fa-play-circle"></i> Assistir vídeo</span>
-            </div>
-        </a>
+
 
         <div style="text-align: center; margin-bottom: 40px; padding: 0 20px;">
             <h2 class="subtitulo-amarillo" style="font-size: clamp(1.4rem, 6vw, 2.2rem); margin-bottom: 5px;">
@@ -2967,13 +2989,50 @@
                         if (e.key === 'ArrowLeft') prevImage();
                     }
                 });
+                // Modales de la Barra Flotante
+                (function() {
+                    const modalIngresos = document.getElementById('modalIngresos');
+                    const modalVideos = document.getElementById('modalVideos');
+                    const btnIngresos = document.getElementById('btn-ingresos');
+                    const btnVideos = document.getElementById('btn-videos');
+                    const closeIngresos = document.getElementById('closeIngresos');
+                    const closeVideos = document.getElementById('closeVideos');
+
+                    if (btnIngresos && modalIngresos) {
+                        btnIngresos.addEventListener('click', () => {
+                            modalIngresos.style.display = 'flex';
+                            setTimeout(() => modalIngresos.style.opacity = '1', 50);
+                        });
+                    }
+                    if (btnVideos && modalVideos) {
+                        btnVideos.addEventListener('click', () => {
+                            modalVideos.style.display = 'flex';
+                            setTimeout(() => modalVideos.style.opacity = '1', 50);
+                        });
+                    }
+
+                    function closeModal(modal) {
+                        if (!modal) return;
+                        modal.style.opacity = '0';
+                        setTimeout(() => modal.style.display = 'none', 400);
+                    }
+
+                    closeIngresos?.addEventListener('click', () => closeModal(modalIngresos));
+                    closeVideos?.addEventListener('click', () => closeModal(modalVideos));
+
+                    modalIngresos?.addEventListener('click', (e) => {
+                        if (e.target === modalIngresos) closeModal(modalIngresos);
+                    });
+                    modalVideos?.addEventListener('click', (e) => {
+                        if (e.target === modalVideos) closeModal(modalVideos);
+                    });
+                })();
             })();
+        </script>
     
         
 
-
     
-        </script>
 
     <!-- Lightbox Modal -->
     <div id="lightboxModal" style="display: none; position: fixed; inset: 0; background: rgba(5, 5, 15, 0.95); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); z-index: 99999; justify-content: center; align-items: center; cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
@@ -2986,5 +3045,37 @@
         </div>
     </div>
     
+    <!-- Modal Ingresos -->
+    <div id="modalIngresos" style="display: none; position: fixed; inset: 0; background: rgba(5, 5, 15, 0.85); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); z-index: 99999; justify-content: center; align-items: center; cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
+        <div style="background: rgba(12, 10, 26, 0.95); border: 2px solid rgba(0, 210, 255, 0.4); box-shadow: 0 0 30px rgba(0, 210, 255, 0.25); border-radius: 20px; max-width: 500px; width: 90%; padding: 30px; position: relative; cursor: default; color: #fff; font-family: 'Open Sans', sans-serif;">
+            <div style="position: absolute; top: 15px; right: 20px; font-size: 1.8rem; cursor: pointer; color: #fff;" id="closeIngresos">&times;</div>
+            <h3 style="color: #00d2ff; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.4rem; margin-top: 0; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Assessoria na Compra de Ingressos</h3>
+            <p style="line-height: 1.6; font-size: 1rem; color: #ccd1e0; margin-bottom: 15px;">
+                Ajudamos e orientamos você de forma personalizada na compra de seus ingressos para todas as atrações de Foz do Iguaçu (Cataratas, Macuco Safari, Parque das Aves, Itaipu, etc.).
+            </p>
+            <h4 style="color: #ffd700; font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 10px; font-size: 1.05rem;">Como ajudamos você?</h4>
+            <ul style="padding-left: 20px; line-height: 1.6; color: #ccd1e0; margin-bottom: 25px;">
+                <li style="margin-bottom: 8px;"><b>Evite golpes:</b> Indicamos os canais oficiais e sites seguros para a compra.</li>
+                <li style="margin-bottom: 8px;"><b>Sincronização de horários:</b> Orientamos na escolha de datas e horários para que coincidam perfeitamente com os seus traslados privados.</li>
+                <li style="margin-bottom: 8px;"><b>Suporte do Ebert:</b> Seu guia Ebert ajuda você diretamente com qualquer dúvida sobre os ingressos.</li>
+            </ul>
+            <a href="https://wa.me/5545933003337?text=Olá%20Ebert,%20gostaria%20de%20ajuda%20com%20a%20compra%20dos%20ingressos%20para%20as%20atrações." target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; background: #25d366; color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 0.85rem; text-transform: uppercase; padding: 12px; border-radius: 30px; box-shadow: 0 4px 15px rgba(37,211,102,0.4); transition: all 0.3s;" onmouseover="this.style.background='#20ba5a'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='#25d366'; this.style.transform='translateY(0)';">
+                <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Consultar por WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Videos -->
+    <div id="modalVideos" style="display: none; position: fixed; inset: 0; background: rgba(5, 5, 15, 0.85); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); z-index: 99999; justify-content: center; align-items: center; cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
+        <div style="background: rgba(12, 10, 26, 0.95); border: 2px solid rgba(0, 210, 255, 0.4); box-shadow: 0 0 30px rgba(0, 210, 255, 0.25); border-radius: 20px; max-width: 500px; width: 90%; padding: 30px; position: relative; cursor: default; color: #fff; font-family: 'Open Sans', sans-serif; text-align: center;">
+            <div style="position: absolute; top: 15px; right: 20px; font-size: 1.8rem; cursor: pointer; color: #fff;" id="closeVideos">&times;</div>
+            <i class="fas fa-play-circle" style="color: #00d2ff; font-size: 3.5rem; margin-bottom: 20px; text-shadow: 0 0 15px rgba(0,210,255,0.4);"></i>
+            <h3 style="color: #00d2ff; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.4rem; margin-top: 0; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">Galeria de Vídeos</h3>
+            <p style="line-height: 1.6; font-size: 1rem; color: #ccd1e0; margin-bottom: 25px;">
+                Em breve! Estamos preparando uma coleção exclusiva de vídeos e shorts de nossas aventuras, passeios turísticos e traslados privados na Tríplice Fronteira.
+            </p>
+            <button onclick="document.getElementById('modalVideos').style.opacity='0'; setTimeout(()=>document.getElementById('modalVideos').style.display='none',400)" style="background: linear-gradient(135deg, #00d2ff 0%, #e0a0ff 100%); border: none; color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; padding: 10px 24px; border-radius: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,210,255,0.3);">Entendido</button>
+        </div>
+    </div>
 </body>
 </html>
