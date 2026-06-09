@@ -2243,6 +2243,70 @@
                         </div>
                     </div>
 
+                    <div class="card-item-3d" data-index="5">
+                        <div class="card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-header">
+                                    <h4>Puerto Iguazú</h4>
+                                    <span class="card-tag-back">Argentina</span>
+                                </div>
+                                <p class="card-back-desc">Cruza la frontera y disfruta de la mejor gastronomía argentina: parrilladas, vinos selectos y compras premium.</p>
+                                <div class="card-back-footer">
+                                    <span class="console-text">console: ~<span class="console-time">19:30:00</span></span>
+                                    <button class="card-btn-action" data-dest="Paseo Puerto Iguazú">RESERVAR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-item-3d" data-index="6">
+                        <div class="card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-header">
+                                    <h4>Ciudad del Este</h4>
+                                    <span class="card-tag-back">Compras</span>
+                                </div>
+                                <p class="card-back-desc">Tu guía de compras seguro en Paraguay. Encuentra tecnología, perfumes y marcas exclusivas a precios increíbles.</p>
+                                <div class="card-back-footer">
+                                    <span class="console-text">console: ~<span class="console-time">10:00:00</span></span>
+                                    <button class="card-btn-action" data-dest="Compras Ciudad del Este">RESERVAR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-item-3d" data-index="7">
+                        <div class="card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-header">
+                                    <h4>Tour Paraguay</h4>
+                                    <span class="card-tag-back">Frontera</span>
+                                </div>
+                                <p class="card-back-desc">Visita el Hito de las Tres Fronteras en Paraguay, la imponente represa de Itaipú y conoce la historia local de la frontera.</p>
+                                <div class="card-back-footer">
+                                    <span class="console-text">console: ~<span class="console-time">13:00:00</span></span>
+                                    <button class="card-btn-action" data-dest="Paseo Paraguay">RESERVAR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-item-3d" data-index="8">
+                        <div class="card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-header">
+                                    <h4>Parque de Aves</h4>
+                                    <span class="card-tag-back">Naturaleza</span>
+                                </div>
+                                <p class="card-back-desc">Camina entre tucanes, guacamayos y especies exóticas en un santuario ecológico único integrado en la selva subtropical.</p>
+                                <div class="card-back-footer">
+                                    <span class="console-text">console: ~<span class="console-time">08:30:00</span></span>
+                                    <button class="card-btn-action" data-dest="Parque de las Aves">RESERVAR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -2665,7 +2729,7 @@
             const dotsContainer = document.getElementById('dotsContainer3D');
             const numCards3D = cards3D.length;
             
-            let currentIndex = 2; // Iniciar al centro (tercera tarjeta)
+            let currentIndex = 4; // Iniciar al centro (quinta tarjeta de nueve)
             let autoplayTimeout3D = null;
             let lastActiveIndex = -1;
             const dragProxy3D = document.createElement("div");
@@ -2676,7 +2740,11 @@
                 { title: "Aventura Extrema", subtitle: "Macuco Safari • Adrenalina en Bote", bgTitle: "AVENTURA" },
                 { title: "City Tour Foz", subtitle: "Tres Fronteras • Cultura y Templos", bgTitle: "CITY TOUR" },
                 { title: "Hotelería Premium", subtitle: "Resorts de Lujo • Traslados Confort", bgTitle: "HOTEL" },
-                { title: "Paquetes Familiares", subtitle: "Diversión y Confort para Todos", bgTitle: "FAMILIA" }
+                { title: "Paquetes Familiares", subtitle: "Diversión y Confort para Todos", bgTitle: "FAMILIA" },
+                { title: "Puerto de Iguazú", subtitle: "Gastronomía, Vinos y Noche Argentina", bgTitle: "ARGENTINA" },
+                { title: "Ciudad del Este", subtitle: "El Paraíso de las Compras en Paraguay", bgTitle: "COMPRAS" },
+                { title: "Tour Paraguay", subtitle: "Itaipú Binacional y Hito Fronterizo", bgTitle: "PARAGUAY" },
+                { title: "Parque de las Aves", subtitle: "Contacto Directo con la Fauna de la Selva", bgTitle: "AVES" }
             ];
 
             // Generar puntos de navegación (dots)
