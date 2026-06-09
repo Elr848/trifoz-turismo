@@ -1995,12 +1995,25 @@
         }
         @media (max-width: 580px) {
             .horizontal-button-bar {
-                flex-direction: column;
-                gap: 12px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
                 width: 95%;
             }
             .btn-horizontal-bar {
                 width: 100%;
+                min-width: 0;
+                padding: 6px 10px;
+                font-size: 0.68rem;
+                border-radius: 20px;
+                gap: 5px;
+            }
+            .btn-horizontal-bar i {
+                font-size: 0.85rem;
+            }
+            .btn-horizontal-bar img {
+                width: 16px !important;
+                height: 16px !important;
             }
         }
         
