@@ -1266,7 +1266,6 @@
             background: transparent;
             -webkit-box-reflect: below 8px linear-gradient(transparent 30%, rgba(255, 255, 255, 0.25));
             perspective: 1000px;
-            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), z-index 0.6s, filter 0.6s, opacity 0.6s;
         }
 
         /* Cara del carrusel 3D (Estilo consola del mockup) */
@@ -2218,7 +2217,16 @@
 
             // ACORDEÓN OTRAS ATRACCIONES
             const btnAcordeon = document.getElementById('btnOtrasAtracciones');
-            const acordeonContenido = document.getEle            // ==========================================================================
+            const acordeonContenido = document.getElementById('acordeonContenido');
+            
+            if (btnAcordeon && acordeonContenido) {
+                btnAcordeon.addEventListener('click', function () {
+                    this.classList.toggle('active');
+                    acordeonContenido.classList.toggle('open');
+                });
+            }
+
+            // ==========================================================================
             // LOGICA DEL CARRUSEL 3D COVERFLOW (ESPEJO & RESPONSIVE) (PT)
             // ==========================================================================
             gsap.registerPlugin(Draggable);
@@ -2302,7 +2310,14 @@
 
                     if (diff === 0) {
                         // AL CENTRO: Plana e de frente
-                        card.style.transform = `translateX(0px) translateZ(0px) rotateY(0deg)`;
+                        gsap.to(card, {
+                            x: 0,
+                            z: 0,
+                            rotationY: 0,
+                            duration: 0.6,
+                            ease: "power2.out",
+                            overwrite: "auto"
+                        });
                         card.style.zIndex = 10;
                         card.style.filter = "brightness(100%)";
                         card.style.opacity = "1";
@@ -2315,7 +2330,14 @@
                     } 
                     else if (diff > 0) {
                         // À DIREITA: Dobrada para dentro
-                        card.style.transform = `translateX(${diff * xOffset}px) translateZ(${zDepth}px) rotateY(-${yRotation}deg)`;
+                        gsap.to(card, {
+                            x: diff * xOffset,
+                            z: zDepth,
+                            rotationY: -yRotation,
+                            duration: 0.6,
+                            ease: "power2.out",
+                            overwrite: "auto"
+                        });
                         card.style.zIndex = 10 - diff;
                         card.style.filter = "brightness(45%)"; // Mais escuras ao fundo
                         card.style.opacity = diff > 2 ? "0" : "1";
@@ -2323,7 +2345,14 @@
                     } 
                     else {
                         // À ESQUERDA: Dobra inversa
-                        card.style.transform = `translateX(${diff * xOffset}px) translateZ(${zDepth}px) rotateY(${yRotation}deg)`;
+                        gsap.to(card, {
+                            x: diff * xOffset,
+                            z: zDepth,
+                            rotationY: yRotation,
+                            duration: 0.6,
+                            ease: "power2.out",
+                            overwrite: "auto"
+                        });
                         card.style.zIndex = 10 + diff;
                         card.style.filter = "brightness(45%)";
                         card.style.opacity = diff < -2 ? "0" : "1";
