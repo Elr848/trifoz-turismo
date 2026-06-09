@@ -1729,7 +1729,7 @@
 
         .card-back-footer {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding-top: clamp(6px, 1.5vw, 10px);
@@ -2128,20 +2128,16 @@
     </div>
 
     <section class="attractions">
-        <div class="libras-section-wrapper" style="display: flex; align-items: center; justify-content: center; gap: clamp(25px, 6vw, 45px); flex-wrap: wrap; margin-bottom: 40px; padding: 0 15px; width: 100%;">
-            <img src="images/banderas.png" alt="Triple Frontera: Argentina, Brasil, Paraguay" style="height: clamp(90px, 18vw, 140px); width: auto; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.35)); transform: rotate(-3deg); transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);" onmouseover="this.style.transform='scale(1.08) rotate(0deg)'; this.style.filter='drop-shadow(0px 12px 24px rgba(0,0,0,0.55))';" onmouseout="this.style.transform='scale(1) rotate(-3deg)'; this.style.filter='drop-shadow(0px 8px 16px rgba(0,0,0,0.35))';">
-            
-            <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer"
-                class="btn-libras-premium" style="margin-bottom: 0;">
-                <img src="images/una.jpeg" width="240" height="170" alt="Atendemos en LIBRAS" class="libras-icon-img"
-                    loading="lazy">
-                <div class="libras-text-wrapper">
-                    <span class="libras-pt" style="color: #002366;">Atendemos en LIBRAS</span>
-                    <span class="libras-en">Lengua de Señas • Sign Language</span>
-                    <span class="libras-video-text"><i class="fas fa-play-circle"></i> Ver video</span>
-                </div>
-            </a>
-        </div>
+        <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer"
+            class="btn-libras-premium">
+            <img src="images/una.jpeg" width="240" height="170" alt="Atendemos en LIBRAS" class="libras-icon-img"
+                loading="lazy">
+            <div class="libras-text-wrapper">
+                <span class="libras-pt" style="color: #002366;">Atendemos en LIBRAS</span>
+                <span class="libras-en">Lengua de Señas • Sign Language</span>
+                <span class="libras-video-text"><i class="fas fa-play-circle"></i> Ver video</span>
+            </div>
+        </a>
 
         <div style="text-align: center; margin-bottom: 40px; padding: 0 20px;">
             <h2 class="subtitulo-amarillo" style="font-size: clamp(1.4rem, 6vw, 2.2rem); margin-bottom: 5px;">
@@ -2177,7 +2173,6 @@
                                 </div>
                                 <p class="card-back-desc">Siente la fuerza de las Siete Maravillas Naturales en un recorrido privado y exclusivo en la selva.</p>
                                 <div class="card-back-footer">
-                                    <span class="console-text">console: ~<span class="console-time">09:00:00</span></span>
                                     <button class="card-btn-action" data-dest="Cataratas del Iguazú (Argentina)">CONSULTAR</button>
                                 </div>
                             </div>
@@ -2193,7 +2188,6 @@
                                 </div>
                                 <p class="card-back-desc">Navegación extrema en bote bimotor hasta el corazón de las caídas de agua. Emoción y adrenalina pura.</p>
                                 <div class="card-back-footer">
-                                    <span class="console-text">console: ~<span class="console-time">11:30:00</span></span>
                                     <button class="card-btn-action" data-dest="Macuco Safari">CONSULTAR</button>
                                 </div>
                             </div>
@@ -2209,7 +2203,6 @@
                                 </div>
                                 <p class="card-back-desc">Descubre la diversidad de la Triple Frontera: el Templo Budista, la Mezquita y el Hito de las 3 Fronteras.</p>
                                 <div class="card-back-footer">
-                                    <span class="console-text">console: ~<span class="console-time">14:00:00</span></span>
                                     <button class="card-btn-action" data-dest="Hito de las 3 Fronteras">CONSULTAR</button>
                                 </div>
                             </div>
@@ -2225,7 +2218,6 @@
                                 </div>
                                 <p class="card-back-desc">Traslados exclusivos a los mejores resorts, hoteles y paseos de compras libres de impuestos (Duty Free).</p>
                                 <div class="card-back-footer">
-                                    <span class="console-text">console: ~<span class="console-time">16:30:00</span></span>
                                     <button class="card-btn-action" data-dest="Traslado para Hoteles">CONSULTAR</button>
                                 </div>
                             </div>
@@ -2241,7 +2233,6 @@
                                 </div>
                                 <p class="card-back-desc">Navegación familiar premium y confortable. Disfruta del atardecer donde se unen los ríos Paraná e Iguazú.</p>
                                 <div class="card-back-footer">
-                                    <span class="console-text">console: ~<span class="console-time">19:00:00</span></span>
                                     <button class="card-btn-action" data-dest="Kattamaram II">CONSULTAR</button>
                                 </div>
                             </div>
@@ -2257,7 +2248,6 @@
                                 </div>
                                 <p class="card-back-desc">Cruza la frontera y disfruta de la mejor gastronomía argentina: parrilladas, vinos selectos y compras premium.</p>
                                 <div class="card-back-footer">
-                                    <span class="console-text">console: ~<span class="console-time">19:30:00</span></span>
                                     <button class="card-btn-action" data-dest="Paseo Puerto Iguazú">CONSULTAR</button>
                                 </div>
                             </div>
@@ -2273,7 +2263,6 @@
                                 </div>
                                 <p class="card-back-desc">Tu guía de compras seguro en Paraguay. Encuentra tecnología, perfumes y marcas exclusivas a precios increíbles.</p>
                                 <div class="card-back-footer">
-                                    <span class="console-text">console: ~<span class="console-time">10:00:00</span></span>
                                     <button class="card-btn-action" data-dest="Compras Ciudad del Este">CONSULTAR</button>
                                 </div>
                             </div>
@@ -2289,7 +2278,6 @@
                                 </div>
                                 <p class="card-back-desc">Visita el Hito de las Tres Fronteras en Paraguay, la imponente represa de Itaipú y conoce la historia local de la frontera.</p>
                                 <div class="card-back-footer">
-                                    <span class="console-text">console: ~<span class="console-time">13:00:00</span></span>
                                     <button class="card-btn-action" data-dest="Paseo Paraguay">CONSULTAR</button>
                                 </div>
                             </div>
@@ -2305,7 +2293,6 @@
                                 </div>
                                 <p class="card-back-desc">Camina entre tucanes, guacamayos y especies exóticas en un santuario ecológico único integrado en la selva subtropical.</p>
                                 <div class="card-back-footer">
-                                    <span class="console-text">console: ~<span class="console-time">08:30:00</span></span>
                                     <button class="card-btn-action" data-dest="Parque de las Aves">CONSULTAR</button>
                                 </div>
                             </div>
