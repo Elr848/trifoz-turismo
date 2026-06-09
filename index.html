@@ -607,17 +607,18 @@
         }
 
         .card {
-            background: rgba(75, 83, 88, 0.95) !important;
+            background: rgba(255, 255, 255, 0.8) !important; /* Ligeras y luminosas */
             border-radius: 15px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border: 1px solid rgba(255, 255, 255, 0.4) !important;
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
             display: flex;
             flex-direction: column;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             cursor: pointer;
             position: relative;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08) !important; /* Sombras muy suaves y claras */
             -webkit-tap-highlight-color: transparent;
         }
 
@@ -638,7 +639,7 @@
 
         .card-content {
             padding: 10px 12px !important;
-            background: #1a1f22 !important;
+            background: rgba(255, 255, 255, 0.92) !important; /* Fondo claro */
             display: flex !important;
             flex-direction: column !important;
             justify-content: center !important;
@@ -646,20 +647,20 @@
         }
 
         .card-content h3 {
-            color: var(--amarillo);
+            color: #002366 !important; /* Azul rey para legibilidad excelente */
             margin: 0 0 4px;
             text-transform: uppercase;
             font-size: 1.1rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            text-shadow: none !important; /* Quitar sombra oscura */
         }
 
         .card-content p {
-            color: #f0f0f0;
+            color: #333333 !important; /* Texto oscuro */
             font-weight: 500;
         }
 
         .card:hover .card-content h3 {
-            color: var(--azul-electrico);
+            color: var(--azul-electrico) !important;
         }
 
         .video-card {
@@ -1586,11 +1587,11 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            background: radial-gradient(circle at center, rgba(0, 210, 255, 0.06) 0%, rgba(10, 12, 22, 0.4) 60%, rgba(5, 6, 10, 0.8) 100%); /* Efecto metalizado con halo cian central */
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.25) 0%, rgba(240, 248, 255, 0.4) 60%, rgba(220, 235, 245, 0.5) 100%); /* Fondo metalizado claro y brillante */
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1.5px solid rgba(0, 210, 255, 0.15); /* Borde difuminado cian completo */
-            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6), 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 210, 255, 0.05); /* Difumina los bordes exteriores con sombras suaves */
+            border: 1.5px solid rgba(255, 255, 255, 0.45); /* Borde claro brillante */
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4), 0 15px 35px rgba(0, 35, 102, 0.08); /* Sombras sumamente suaves y claras */
             z-index: 5;
             padding: 20px 0 40px 0;
         }
@@ -2493,16 +2494,16 @@
         </div>
 
                 <div class="contenedor-catalogo" style="display: flex; justify-content: center; align-items: center; padding: 40px 15px; width: 100%;">
-            <div class="video-card card" style="max-width: 650px; width: 100%; margin: 0 auto; box-shadow: 0 15px 35px rgba(0, 210, 255, 0.25); background: rgba(12, 10, 26, 0.85); border-radius: 16px; border: 1.5px solid rgba(0, 210, 255, 0.3); overflow: hidden; display: flex; flex-direction: column;">
+            <div class="video-card card" style="max-width: 650px; width: 100%; margin: 0 auto; box-shadow: 0 15px 35px rgba(0, 35, 102, 0.1); background: rgba(255, 255, 255, 0.85); border-radius: 16px; border: 1.5px solid rgba(255, 255, 255, 0.4); overflow: hidden; display: flex; flex-direction: column;">
                 <div class="card-image" style="width: 100%; overflow: hidden;">
                     <img src="images/macuco_safari_real.jpg" alt="Macuco Safari" width="800" height="500"
                         style="width: 100%; height: auto; display: block; transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
                 </div>
                 <div class="card-content"
-                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 35px 25px; gap: 20px; text-align: center; background: rgba(12, 10, 26, 0.9);">
+                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 35px 25px; gap: 20px; text-align: center; background: rgba(255, 255, 255, 0.95);">
                     <div style="text-align: center;">
-                        <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 900; letter-spacing: 2px; font-size: clamp(1.4rem, 4vw, 1.85rem); margin: 0 0 10px 0; color: #ffd700; text-transform: uppercase;">MACUCO SAFARI</h3>
-                        <p style="color: #ccd1e0; font-size: clamp(0.9rem, 2vw, 1.05rem); margin: 0; line-height: 1.5; max-width: 600px;">Aventura extrema en las caídas de agua. Navegación extrema en bote bimotor hasta el corazón de las Cataratas.</p>
+                        <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 900; letter-spacing: 2px; font-size: clamp(1.4rem, 4vw, 1.85rem); margin: 0 0 10px 0; color: #002366; text-transform: uppercase;">MACUCO SAFARI</h3>
+                        <p style="color: #333333; font-size: clamp(0.9rem, 2vw, 1.05rem); margin: 0; line-height: 1.5; max-width: 600px;">Aventura extrema en las caídas de agua. Navegación extrema en bote bimotor hasta el corazón de las Cataratas.</p>
                     </div>
                     <a href="https://youtu.be/1dUpxFeU_u4?si=1p_wqlZU0Bks6DNa" target="_blank"
                         rel="noopener noreferrer" class="btn-video-elegant" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-family: 'Montserrat', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; color: #fff; background: rgba(255, 0, 0, 0.85); padding: 12px 25px; border-radius: 30px; box-shadow: 0 4px 15px rgba(255,0,0,0.4); transition: all 0.3s;" onmouseover="this.style.background='#ff0000'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(255, 0, 0, 0.85)'; this.style.transform='translateY(0)';">
