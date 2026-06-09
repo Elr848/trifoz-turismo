@@ -1534,7 +1534,22 @@
                 padding-top: 15px;
             }
             .nav-btn-container-3d {
-                display: none; /* Ocultar setas em dispositivos móveis */
+                display: flex; /* Mostrar setas em dispositivos móveis */
+                width: 100%;
+                max-width: 100%;
+                top: 35%; /* Centrado com relação aos cartões */
+                transform: translateY(-50%);
+                padding: 0 10px;
+                box-sizing: border-box;
+            }
+            .nav-btn-3d-cf {
+                width: 42px;
+                height: 42px;
+                background: rgba(12, 10, 26, 0.9); /* Mais opaco para melhor visibilidade */
+            }
+            .nav-btn-3d-cf svg {
+                width: 16px;
+                height: 16px;
             }
             .active-info-container {
                 margin-top: 20px;
@@ -2231,7 +2246,7 @@
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/museo1.jpg" alt="Dreamland Museu de Cera" class="galeria-img">
+                <img src="images/museo de cera.png" alt="Dreamland Museu de Cera" class="galeria-img">
                 <div class="galeria-content">
                     <span class="galeria-title">Dreamland Museu de Cera</span>
                     <span class="galeria-subtitle">Diversão para toda a família com réplicas perfeitas</span>
