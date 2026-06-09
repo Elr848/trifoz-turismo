@@ -1203,7 +1203,10 @@
            ========================================================================== */
         .slider-container-3d {
             position: relative;
-            width: 100%;
+            width: 95%;
+            max-width: 1200px;
+            margin: 40px auto;
+            border-radius: 24px; /* Redondea las puntas */
             min-height: 600px;
             display: flex;
             flex-direction: column;
@@ -1213,10 +1216,8 @@
             background: radial-gradient(circle at center, rgba(0, 210, 255, 0.06) 0%, rgba(10, 12, 22, 0.4) 60%, rgba(5, 6, 10, 0.8) 100%); /* Efecto metalizado con halo cian central */
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border-top: 1.5px solid rgba(0, 210, 255, 0.15); /* Borde de luz cian */
-            border-bottom: 1.5px solid rgba(0, 210, 255, 0.15);
-            box-shadow: inset 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 -20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 210, 255, 0.05);
-            margin: 40px 0;
+            border: 1.5px solid rgba(0, 210, 255, 0.15); /* Borde difuminado cian completo */
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6), 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 210, 255, 0.05); /* Difumina los bordes exteriores con sombras suaves */
             z-index: 5;
             padding: 20px 0 40px 0;
         }
@@ -1525,7 +1526,7 @@
         @media (max-width: 768px) {
             .slider-container-3d {
                 min-height: 480px;
-                margin: 20px 0;
+                margin: 20px auto;
                 padding: 10px 0 20px 0;
             }
             .carousel-viewport-3d {
