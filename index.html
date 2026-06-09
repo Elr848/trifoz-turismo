@@ -1641,24 +1641,24 @@
             perspective: 1000px;
         }
 
-        /* Cara del carrusel 3D (Estilo consola del mockup) */
+        /* Cara del carrusel 3D (Estilo oscuro metalizado profesional) */
         .card-back {
             width: 100%;
             height: 100%;
             border-radius: 20px;
             overflow: hidden;
-            background: rgba(12, 10, 26, 0.85); /* Fondo oscuro translúcido */
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            background: linear-gradient(135deg, #0f111a 0%, #07080f 100%) !important; /* Más oscuro y elegante */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             padding: clamp(16px, 4vw, 24px) clamp(14px, 3.5vw, 20px);
-            border: 1.5px solid rgba(0, 210, 255, 0.35); /* Borde cian sutil por defecto */
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.1), inset 0 0 20px rgba(186, 104, 200, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.15) !important; /* Borde metálico sutil */
+            box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1), inset 0 -2px 5px rgba(0, 0, 0, 0.8), 0 10px 25px rgba(0, 0, 0, 0.75) !important; /* Bisel e iluminación metálica */
             color: #fff;
             text-align: left;
-            transition: border-color 0.4s, box-shadow 0.4s;
+            transition: all 0.4s ease;
         }
 
         /* Resplandor especial para la tarjeta central activa */
@@ -1667,8 +1667,8 @@
         }
 
         .card-item-3d.is-active .card-back {
-            border-color: rgba(224, 160, 255, 0.95); /* Borde morado brillante para la tarjeta activa - más vivo */
-            box-shadow: 0 0 30px rgba(224, 160, 255, 0.5), 0 15px 45px rgba(0, 0, 0, 0.5);
+            border-color: #00d2ff !important; /* Borde cian neón metálico */
+            box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.25), inset 0 -2px 8px rgba(0, 210, 255, 0.4), 0 0 30px rgba(0, 210, 255, 0.6), 0 15px 45px rgba(0, 0, 0, 0.7) !important;
         }
 
         /* Estilo del contenido trasero de la tarjeta */
@@ -2021,7 +2021,7 @@
         .galeria-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(12, 10, 26, 0.85) 0%, rgba(12, 10, 26, 0.2) 50%, rgba(12, 10, 26, 0.5) 100%);
+            background: linear-gradient(to top, rgba(12, 10, 26, 0.5) 0%, transparent 40%, rgba(12, 10, 26, 0.2) 100%);
             z-index: 3;
             pointer-events: none;
         }
