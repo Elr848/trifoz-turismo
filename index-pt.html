@@ -1565,12 +1565,9 @@
         <img src="images/plataforma.jpeg" alt="Passeios privados em Foz do Iguaçu com Guia Ebert" class="hero-background" width="1920" height="1080">
         <div class="fire-wrapper" aria-hidden="true">
             <div class="hero-container">
-                <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 5px; flex-wrap: wrap;">
-                    <img src="images/banderas.png" alt="Trifoz Turismo Banderas" style="height: clamp(1.8rem, 4.5vw, 2.5rem); width: auto; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));">
-                    <h1 class="titulo-metalico" style="margin:0; line-height:1.1; font-size: clamp(1.9rem, 5.5vw, 2.7rem);">
-                        Trifoz Turismo
-                    </h1>
-                </div>
+                <h1 class="titulo-metalico" style="margin:0; line-height:1.1; font-size: clamp(1.9rem, 5.5vw, 2.7rem);">
+                    Trifoz Turismo
+                </h1>
                 <p style="font-size: 1.05rem; margin:8px 0 15px; opacity:0.95;">
                     <strong>Guia de Turismo Ebert</strong>
                 </p>
@@ -1730,14 +1727,20 @@
     </div>
 
     <section class="attractions">
-        <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer" class="btn-libras-premium">
-            <img src="images/una.jpeg" width="240" height="170" alt="Atendimento em LIBRAS" class="libras-icon-img" loading="lazy">
-            <div class="libras-text-wrapper">
-                <span class="libras-pt" style="color: #002366;">Atendimento em LIBRAS</span>
-                <span class="libras-en">Língua Brasileira de Sinais • Sign Language</span>
-                <span class="libras-video-text"><i class="fas fa-play-circle"></i> Assistir vídeo</span>
-            </div>
-        </a>
+        <div class="libras-section-wrapper" style="display: flex; align-items: center; justify-content: center; gap: clamp(25px, 6vw, 45px); flex-wrap: wrap; margin-bottom: 40px; padding: 0 15px; width: 100%;">
+            <img src="images/banderas.png" alt="Tríplice Fronteira: Argentina, Brasil, Paraguai" style="height: clamp(90px, 18vw, 140px); width: auto; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.35)); transform: rotate(-3deg); transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);" onmouseover="this.style.transform='scale(1.08) rotate(0deg)'; this.style.filter='drop-shadow(0px 12px 24px rgba(0,0,0,0.55))';" onmouseout="this.style.transform='scale(1) rotate(-3deg)'; this.style.filter='drop-shadow(0px 8px 16px rgba(0,0,0,0.35))';">
+            
+            <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer"
+                class="btn-libras-premium" style="margin-bottom: 0;">
+                <img src="images/una.jpeg" width="240" height="170" alt="Atendimento em LIBRAS" class="libras-icon-img"
+                    loading="lazy">
+                <div class="libras-text-wrapper">
+                    <span class="libras-pt" style="color: #002366;">Atendimento em LIBRAS</span>
+                    <span class="libras-en">Língua Brasileira de Sinais • Sign Language</span>
+                    <span class="libras-video-text"><i class="fas fa-play-circle"></i> Assistir vídeo</span>
+                </div>
+            </a>
+        </div>
 
         <div style="text-align: center; margin-bottom: 40px; padding: 0 20px;">
             <h2 class="subtitulo-amarillo" style="font-size: clamp(1.4rem, 6vw, 2.2rem); margin-bottom: 5px;">
