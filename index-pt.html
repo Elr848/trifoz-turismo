@@ -1816,6 +1816,46 @@
         .car-slide.active img, .car-slide2.active img {
             transform: scale(1.08) !important;
         }
+
+        /* Botón LIBRAS circular interactivo */
+        .libras-round-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 2px solid #00d2ff;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            animation: pulse-libras 2s infinite;
+        }
+
+        .libras-round-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.8);
+            border-color: #ffd700;
+        }
+
+        .libras-btn-img {
+            width: 145%;
+            height: 145%;
+            object-fit: cover;
+        }
+
+        @keyframes pulse-libras {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.6);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 210, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 210, 255, 0);
+            }
+        }
     
     </style>
 </head>
@@ -1842,13 +1882,14 @@
                     Trifoz Turismo
                 </h1>
                 <p style="font-size: 1.05rem; margin:8px 0 15px; opacity:0.95;">
-                    <strong>Guia de Turismo Ebert</strong>
+                    <strong>Ebert</strong>
                 </p>
                 <h2 class="subtitulo-amarillo" style="margin:0; font-size: clamp(0.9rem, 2.2vw, 1.15rem);">
                     Passeios &amp; Traslados Privados na Tríplice Fronteira
                 </h2>
                 <h3 style="margin:12px 0 20px; font-size: clamp(0.85rem, 2vw, 1.1rem); color:#fff; opacity:0.9;">
-                    Especialistas em LIBRAS • Espanhol • Português
+                    Especialistas em LIBRAS • Espanhol • Português<br>
+                    Inclui passeios guiados com guias credenciados
                 </h3>
             </div>
         </div>
@@ -2002,6 +2043,11 @@
     <section class="attractions">
 
 
+        <div style="display: flex; justify-content: center; margin-bottom: 12px;">
+            <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer" class="libras-round-button" aria-label="Vídeo LIBRAS">
+                <img src="images/una.jpeg" alt="LIBRAS" class="libras-btn-img">
+            </a>
+        </div>
         <div style="text-align: center; margin-bottom: 15px; padding: 0 20px;">
             <h2 class="subtitulo-amarillo" style="font-size: clamp(1.4rem, 6vw, 2.2rem); margin-bottom: 5px;">
                 Passeios Imperdíveis em Foz do Iguaçu
