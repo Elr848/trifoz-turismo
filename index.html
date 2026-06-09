@@ -1920,59 +1920,61 @@
             }
         }
     
-        /* GALLERY SECTION STYLES & FLOATING TOOLBAR */
-        .floating-toolbar {
-            position: fixed;
-            top: 15px;
-            left: 15px;
-            z-index: 10000;
+        /* BARRA DE BOTONES HORIZONTAL */
+        .horizontal-button-bar {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            width: 90%;
+            max-width: 850px;
+            margin: 30px auto 40px auto;
+            flex-wrap: wrap;
         }
-        .btn-floating-bar {
+        .btn-horizontal-bar {
+            flex: 1;
+            min-width: 150px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
             background: rgba(12, 10, 26, 0.75);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 210, 255, 0.4);
+            border: 1.5px solid rgba(0, 210, 255, 0.4);
             color: #fff;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 12px 24px;
+            border-radius: 30px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
             cursor: pointer;
             outline: none;
+            box-sizing: border-box;
         }
-        .btn-floating-bar i {
+        .btn-horizontal-bar i {
             color: #00d2ff;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
         }
-        .btn-floating-bar:hover {
+        .btn-horizontal-bar:hover {
             background: rgba(0, 210, 255, 0.35);
             border-color: rgba(224, 160, 255, 0.8);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0, 210, 255, 0.4);
         }
-        @media (max-width: 480px) {
-            .btn-floating-bar .btn-floating-text {
-                display: none;
+        @media (max-width: 580px) {
+            .horizontal-button-bar {
+                flex-direction: column;
+                gap: 12px;
+                width: 95%;
             }
-            .btn-floating-bar {
-                padding: 12px;
-                border-radius: 50%;
-                width: 40px;
-                height: 40px;
-                box-sizing: border-box;
+            .btn-horizontal-bar {
+                width: 100%;
             }
         }
         
@@ -2172,24 +2174,7 @@
 </head>
 
 <body>
-    <div class="floating-toolbar">
-        <a href="#galeria" class="btn-floating-bar" aria-label="Galería de Fotos">
-            <i class="fas fa-images"></i>
-            <span class="btn-floating-text">Galería</span>
-        </a>
-        <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer" class="btn-floating-bar" aria-label="Atendemos en LIBRAS">
-            <i class="fas fa-hands-sign"></i>
-            <span class="btn-floating-text">LIBRAS</span>
-        </a>
-        <button class="btn-floating-bar" id="btn-ingresos" aria-label="Compra de Ingresos">
-            <i class="fas fa-ticket-alt"></i>
-            <span class="btn-floating-text">Ingresos</span>
-        </button>
-        <button class="btn-floating-bar" id="btn-videos" aria-label="Videos de Trifoz">
-            <i class="fas fa-video"></i>
-            <span class="btn-floating-text">Videos</span>
-        </button>
-    </div>
+
 
 
     <div class="header-idioma-container">
@@ -2509,6 +2494,26 @@
     </section>
 
     
+    </div>
+
+    <!-- Barra de botones horizontal -->
+    <div class="horizontal-button-bar">
+        <a href="#galeria" class="btn-horizontal-bar" aria-label="Galería de Fotos">
+            <i class="fas fa-images"></i>
+            <span>Galería</span>
+        </a>
+        <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer" class="btn-horizontal-bar" aria-label="Atendemos en LIBRAS">
+            <i class="fas fa-hands-sign"></i>
+            <span>LIBRAS</span>
+        </a>
+        <button class="btn-horizontal-bar" id="btn-ingresos" aria-label="Compra de Ingresos">
+            <i class="fas fa-ticket-alt"></i>
+            <span>Ingresos</span>
+        </button>
+        <button class="btn-horizontal-bar" id="btn-videos" aria-label="Videos de Trifoz">
+            <i class="fas fa-video"></i>
+            <span>Videos</span>
+        </button>
     </div>
 
         <section class="informacion-turismo" style="max-width: 1200px; padding: 80px 20px; margin: 0 auto; text-align: center;">
