@@ -1,28 +1,106 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
+    <!-- PÁGINA PRINCIPAL (ESPAÑOL) -->
+    <url>
+        <loc>https://trifoz-turismo.com/</loc>
+        <lastmod>2026-06-09T18:30:00Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <mobile:mobile/>
+        
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/plataforma.jpeg</image:loc>
+            <image:title>Tours privados en Foz de Iguazú</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/cataratas mejorada.jpg</image:loc>
+            <image:title>Cataratas de Iguazú</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/macuco_safari_real.jpg</image:loc>
+            <image:title>Macuco Safari</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/pda.png</image:loc>
+            <image:title>Parque de las Aves</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/buda.jpeg</image:loc>
+            <image:title>Templo Budista Chen Tien</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/marco_real.jpg</image:loc>
+            <image:title>Hito de las 3 Fronteras</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/usina hidrelectrica.jpeg</image:loc>
+            <image:title>Itaipú Binacional</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/yup star.jpeg</image:loc>
+            <image:title>Yup Star - Rueda Gigante</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/museo de cera.png</image:loc>
+            <image:title>Dreamland Museo de Cera</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/china 1.png</image:loc>
+            <image:title>Gastronomía China</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/feirinha argentina.jpeg</image:loc>
+            <image:title>Feirinha de Puerto Iguazú</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/aeroporto.jpg</image:loc>
+            <image:title>Traslados al Aeropuerto de Foz</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/1.1.jpeg</image:loc>
+            <image:title>Traslados Premium para Hoteles</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/libras_hd.png</image:loc>
+            <image:title>Atendemos en LIBRAS - Turismo Inclusivo</image:title>
+        </image:image>
 
-<url>
-  <loc>https://trifoz-turismo.com/</loc>
-  <lastmod>2026-06-02T03:23:29+00:00</lastmod>
-</url>
+        <video:video>
+            <video:thumbnail_loc>https://i.ytimg.com/vi/Ulz_WJArmqA/default.jpg</video:thumbnail_loc>
+            <video:title>Atendemos en LIBRAS - Video</video:title>
+            <video:description>Invitación a turismo inclusivo con atención en LIBRAS</video:description>
+            <video:content_loc>https://www.youtube.com/watch?v=Ulz_WJArmqA</video:content_loc>
+        </video:video>
 
+        <video:video>
+            <video:thumbnail_loc>https://i.ytimg.com/vi/1dUpxFeU_u4/default.jpg</video:thumbnail_loc>
+            <video:title>Macuco Safari Video</video:title>
+            <video:description>Navegación en bote bimotor hacia el corazón de las Cataratas</video:description>
+            <video:content_loc>https://www.youtube.com/watch?v=1dUpxFeU_u4</video:content_loc>
+            <video:duration>332</video:duration>
+        </video:video>
+    </url>
+
+    <!-- PÁGINA PRINCIPAL (PORTUGUÉS) -->
+    <url>
+        <loc>https://trifoz-turismo.com/index-pt.html</loc>
+        <lastmod>2026-06-09T18:30:00Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+        <mobile:mobile/>
+        
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/plataforma.jpeg</image:loc>
+            <image:title>Tours privados em Foz do Iguaçu</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/cataratas mejorada.jpg</image:loc>
+            <image:title>Cataratas do Iguaçu</image:title>
+        </image:image>
+    </url>
 
 </urlset>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://trifoz-turismo.com/</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-</urlset>
->>>>>>> e4c2223 (SEO: Unificar dominio a trifoz-turismo.com sin www - Google Search Console)
