@@ -1577,7 +1577,7 @@
         .slider-container-3d {
             position: relative;
             width: 100%;
-            height: 65vh;
+            min-height: 600px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -1586,6 +1586,7 @@
             background: radial-gradient(circle at center, rgba(12, 10, 26, 0.6) 0%, transparent 80%);
             margin: 40px 0;
             z-index: 5;
+            padding: 20px 0 40px 0;
         }
 
         /* Texto gigante en el fondo */
@@ -1608,11 +1609,12 @@
         .carousel-viewport-3d {
             position: relative;
             width: 100%;
-            height: 380px;
+            height: 450px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            perspective: 1200px;
+            align-items: flex-start; /* Alinear arriba para dejar espacio al espejo abajo */
+            padding-top: 20px;
+            perspective: 800px; /* Perspectiva ajustada para el quiebre exacto */
             transform-style: preserve-3d;
             z-index: 2;
         }
@@ -1635,8 +1637,9 @@
             will-change: transform, filter, opacity;
             transform-style: preserve-3d;
             background: transparent;
-            -webkit-box-reflect: below 12px linear-gradient(transparent, transparent 75%, rgba(0, 0, 0, 0.12));
+            -webkit-box-reflect: below 8px linear-gradient(transparent 30%, rgba(255, 255, 255, 0.25));
             perspective: 1000px;
+            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), z-index 0.6s, filter 0.6s, opacity 0.6s;
         }
 
         /* Cara del carrusel 3D (Estilo consola del mockup) */
@@ -1891,11 +1894,13 @@
         /* --- RESPONSIVE OVERRIDES --- */
         @media (max-width: 768px) {
             .slider-container-3d {
-                height: 55vh;
+                min-height: 480px;
                 margin: 20px 0;
+                padding: 10px 0 20px 0;
             }
             .carousel-viewport-3d {
-                height: 290px;
+                height: 350px;
+                padding-top: 15px;
             }
             .nav-btn-container-3d {
                 display: none; /* Ocultar flechas en móvil para dar espacio al gesto swipe */
@@ -1903,6 +1908,15 @@
             .active-info-container {
                 margin-top: 20px;
                 min-height: 70px;
+            }
+        }
+        @media (max-width: 480px) {
+            .slider-container-3d {
+                min-height: 400px;
+            }
+            .carousel-viewport-3d {
+                height: 290px;
+                padding-top: 10px;
             }
         }
     </style>
@@ -2643,7 +2657,7 @@
             }
 
             // ==========================================================================
-            // LOGICA DEL CARRUSEL 3D CILINDRO (CIRCULAR)
+            // LOGICA DEL CARRUSEL 3D COVERFLOW (ESPEJO & RESPONSIVE)
             // ==========================================================================
             gsap.registerPlugin(Draggable);
 
@@ -2651,11 +2665,8 @@
             const cards3D = document.querySelectorAll('.card-item-3d');
             const dotsContainer = document.getElementById('dotsContainer3D');
             const numCards3D = cards3D.length;
-            const angleIncrement = 360 / numCards3D;
             
-            let activeIndex = 0;
-            let targetRotation = 0;
-            let currentRadius3D = 330;
+            let currentIndex = 2; // Iniciar al centro (tercera tarjeta)
             let autoplayTimeout3D = null;
             let lastActiveIndex = -1;
             const dragProxy3D = document.createElement("div");
@@ -2673,100 +2684,94 @@
             dotsContainer.innerHTML = '';
             for (let i = 0; i < numCards3D; i++) {
                 const dot = document.createElement('span');
-                dot.className = `dot-3d ${i === 0 ? 'is-active' : ''}`;
+                dot.className = `dot-3d ${i === currentIndex ? 'is-active' : ''}`;
                 dot.setAttribute('data-index', i);
                 dot.addEventListener('click', () => {
-                    if (i === activeIndex || gsap.isTweening(carousel)) return;
-                    goToCard(i);
+                    if (i === currentIndex) return;
+                    currentIndex = i;
+                    updateLayout();
+                    stopAutoplay3D();
+                    startAutoplay3D();
                 });
                 dotsContainer.appendChild(dot);
             }
 
-            // Actualizar dimensiones físicas en base al responsive
-            let cardWidth = 210;
-            let cardHeight = 320;
+            // Parámetros responsive de Coverflow
+            let cardWidth, cardHeight, xOffset, zDepth, yRotation;
 
             function updateLayoutParameters() {
                 const w = window.innerWidth;
                 
                 if (w < 480) {
-                    cardWidth = 140;
-                    cardHeight = 220;
-                    currentRadius3D = 160;
+                    cardWidth = 130;
+                    cardHeight = 200;
+                    xOffset = 70;
+                    zDepth = -120;
+                    yRotation = 45;
                 } else if (w < 768) {
-                    cardWidth = 175;
-                    cardHeight = 270;
-                    currentRadius3D = 210;
+                    cardWidth = 160;
+                    cardHeight = 250;
+                    xOffset = 100;
+                    zDepth = -140;
+                    yRotation = 50;
                 } else if (w < 1024) {
                     cardWidth = 195;
                     cardHeight = 295;
-                    currentRadius3D = 270;
+                    xOffset = 125;
+                    zDepth = -160;
+                    yRotation = 55;
                 } else {
                     cardWidth = 220;
                     cardHeight = 330;
-                    currentRadius3D = 330;
+                    xOffset = 150;
+                    zDepth = -180;
+                    yRotation = 55;
                 }
                 
                 carousel.style.setProperty('--card-width', `${cardWidth}px`);
                 carousel.style.setProperty('--card-height', `${cardHeight}px`);
                 
-                // Distribución radial estática de las tarjetas en 3D
-                cards3D.forEach((card, index) => {
-                    const angle = index * angleIncrement;
-                    gsap.set(card, {
-                        rotationY: angle,
-                        z: currentRadius3D,
-                        transformPerspective: 1200
-                    });
-                });
-                
-                gsap.set(carousel, { rotationY: targetRotation });
+                updateLayout();
             }
 
-            // Actualización por cuadro para el efecto de profundidad y desenfoque
-            function updateCardStates() {
-                const currentRot = gsap.getProperty(carousel, "rotationY");
-                
+            function updateLayout() {
                 cards3D.forEach((card, index) => {
-                    const cardAngle = index * angleIncrement;
-                    const totalAngle = (cardAngle + currentRot) % 360;
-                    
-                    let diff = totalAngle;
-                    while (diff < -180) diff += 360;
-                    while (diff > 180) diff -= 360;
-                    
-                    const dist = Math.abs(diff);
-                    const normalizedDist = dist / 180;
-                    
-                    // Ocultamos por completo las tarjetas traseras para evitar superposiciones (dist > 110)
-                    const opacity = dist > 110 ? 0 : (0.15 + (0.85 * (1 - normalizedDist)));
-                    const scale = 0.85 + (0.15 * (1 - normalizedDist));
-                    const blurAmt = normalizedDist * 4;
-                    const zIndexValue = Math.round((1 - normalizedDist) * 100);
-                    
-                    gsap.set(card, {
-                        opacity: opacity,
-                        scale: scale,
-                        filter: `blur(${blurAmt}px)`,
-                        zIndex: zIndexValue
-                    });
-                    
-                    if (dist < angleIncrement / 2) {
+                    const diff = index - currentIndex;
+
+                    if (diff === 0) {
+                        // AL CENTRO: Plana y enfrente
+                        card.style.transform = `translateX(0px) translateZ(0px) rotateY(0deg)`;
+                        card.style.zIndex = 10;
+                        card.style.filter = "brightness(100%)";
+                        card.style.opacity = "1";
                         card.classList.add('is-active');
+                        
                         if (index !== lastActiveIndex) {
                             lastActiveIndex = index;
                             updateActiveInfoText(index);
                         }
-                    } else {
+                    } 
+                    else if (diff > 0) {
+                        // A LA DERECHA: Quiebre hacia adentro
+                        card.style.transform = `translateX(${diff * xOffset}px) translateZ(${zDepth}px) rotateY(-${yRotation}deg)`;
+                        card.style.zIndex = 10 - diff;
+                        card.style.filter = "brightness(45%)"; // Más oscuras las del fondo
+                        card.style.opacity = diff > 2 ? "0" : "1";
+                        card.classList.remove('is-active');
+                    } 
+                    else {
+                        // A LA IZQUIERDA: Quiebre inverso
+                        card.style.transform = `translateX(${diff * xOffset}px) translateZ(${zDepth}px) rotateY(${yRotation}deg)`;
+                        card.style.zIndex = 10 + diff;
+                        card.style.filter = "brightness(45%)";
+                        card.style.opacity = diff < -2 ? "0" : "1";
                         card.classList.remove('is-active');
                     }
                 });
             }
 
-            // Actualiza la info textual cuando cambia la tarjeta central activa
+            // Actualiza la info de texto y dots
             function updateActiveInfoText(index) {
-                activeIndex = index;
-                
                 // Actualizar clases de los puntos de navegación
                 document.querySelectorAll('.dot-3d').forEach((dot, idx) => {
                     if (idx === index) {
@@ -2811,51 +2816,22 @@
                 });
             }
 
-            // Cambiar de tarjeta con animación y transiciones de texto
-            function goToCard(index) {
-                stopAutoplay3D();
-                
-                const cardAngle = index * angleIncrement;
-                
-                // Encontrar el camino más corto de rotación cilíndrica
-                const currentTurn = Math.round(targetRotation / 360) * 360;
-                let newTarget = currentTurn - cardAngle;
-                
-                let diff = newTarget - targetRotation;
-                diff = ((diff + 180) % 360 + 360) % 360 - 180;
-                targetRotation += diff;
-                
-                gsap.to(carousel, {
-                    rotationY: targetRotation,
-                    duration: 1.2,
-                    ease: "power3.out",
-                    overwrite: "auto",
-                    onComplete: startAutoplay3D
-                });
-            }
-
-            // Rotar el carrusel de forma secuencial (+1 o -1 unidades angulares)
-            function rotateCarousel(direction) {
-                stopAutoplay3D();
-                
-                targetRotation += direction * angleIncrement;
-                targetRotation = Math.round(targetRotation / angleIncrement) * angleIncrement;
-                
-                gsap.to(carousel, {
-                    rotationY: targetRotation,
-                    duration: 1.2,
-                    ease: "power3.out",
-                    overwrite: "auto",
-                    onComplete: startAutoplay3D
-                });
-            }
-
             // Botones de Navegación anterior / siguiente
             document.getElementById('prevBtn3D')?.addEventListener('click', () => {
-                rotateCarousel(1);
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateLayout();
+                    stopAutoplay3D();
+                    startAutoplay3D();
+                }
             });
             document.getElementById('nextBtn3D')?.addEventListener('click', () => {
-                rotateCarousel(-1);
+                if (currentIndex < numCards3D - 1) {
+                    currentIndex++;
+                    updateLayout();
+                    stopAutoplay3D();
+                    startAutoplay3D();
+                }
             });
 
             // Registrar eventos para click en tarjetas
@@ -2863,8 +2839,11 @@
                 card.addEventListener('click', (e) => {
                     if (e.target.closest('.card-btn-action') || e.target.closest('a')) return;
 
-                    if (!card.classList.contains('is-active')) {
-                        goToCard(index);
+                    if (index !== currentIndex) {
+                        currentIndex = index;
+                        updateLayout();
+                        stopAutoplay3D();
+                        startAutoplay3D();
                     }
                 });
             });
@@ -2888,6 +2867,17 @@
                     const bookingSection = document.querySelector('.booking-bar-wrapper') || document.querySelector('.booking-bar');
                     if (bookingSection) bookingSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     
+                    const bookingBar = document.querySelector('.booking-bar');
+                    if (bookingBar) {
+                        bookingBar.style.transition = 'all 0.5s ease';
+                        bookingBar.style.transform = 'scale(1.03)';
+                        bookingBar.style.boxShadow = '0 0 30px rgba(0, 210, 255, 0.5)';
+                        setTimeout(() => {
+                            bookingBar.style.transform = '';
+                            bookingBar.style.boxShadow = '';
+                        }, 1500);
+                    }
+                    
                     if (isMobile) {
                         const mobPanel = document.getElementById('booking-mobile-panel');
                         const mobOverlay = document.getElementById('booking-overlay');
@@ -2899,41 +2889,28 @@
                 });
             });
 
-            // Registrar eventos de arrastre
+            // Registrar eventos de arrastre virtual proxy
+            let startDragX = 0;
             Draggable.create(dragProxy3D, {
                 trigger: ".carousel-viewport-3d",
                 type: "x",
                 allowContextMenu: true,
                 onDragStart: function() {
                     stopAutoplay3D();
-                    this.startRotation = targetRotation;
-                },
-                onDrag: function() {
-                    targetRotation = this.startRotation + this.x * 0.25;
-                    gsap.to(carousel, {
-                        rotationY: targetRotation,
-                        duration: 0.5,
-                        ease: "power2.out",
-                        overwrite: "auto"
-                    });
+                    startDragX = this.x;
                 },
                 onDragEnd: function() {
-                    const velocity = typeof this.getVelocity === "function" ? this.getVelocity("x") : 0;
-                    const inertiaDeg = (velocity * 0.05) * 0.4;
-                    targetRotation += inertiaDeg;
-                    const snappedRotation = Math.round(targetRotation / angleIncrement) * angleIncrement;
-                    targetRotation = snappedRotation;
-                    
-                    gsap.to(carousel, {
-                        rotationY: targetRotation,
-                        duration: 1.2,
-                        ease: "power3.out",
-                        overwrite: "auto",
-                        onComplete: () => {
-                            gsap.set(dragProxy3D, { x: 0 });
-                            startAutoplay3D();
-                        }
-                    });
+                    const change = this.x - startDragX;
+                    const limit = 40; // Sensibilidad justa para cambiar de tarjeta
+
+                    if (change > limit && currentIndex > 0) {
+                        currentIndex--;
+                    } else if (change < -limit && currentIndex < numCards3D - 1) {
+                        currentIndex++;
+                    }
+                    updateLayout();
+                    gsap.set(dragProxy3D, { x: 0 });
+                    startAutoplay3D();
                 }
             });
 
@@ -2942,9 +2919,19 @@
             sliderViewport3D?.addEventListener('wheel', (e) => {
                 if (Math.abs(e.deltaY) > 5) {
                     e.preventDefault();
-                    if (gsap.isTweening(carousel)) return;
-                    const direction = e.deltaY > 0 ? -1 : 1;
-                    rotateCarousel(direction);
+                    stopAutoplay3D();
+                    if (e.deltaY > 0) {
+                        if (currentIndex < numCards3D - 1) {
+                            currentIndex++;
+                            updateLayout();
+                        }
+                    } else {
+                        if (currentIndex > 0) {
+                            currentIndex--;
+                            updateLayout();
+                        }
+                    }
+                    startAutoplay3D();
                 }
             }, { passive: false });
 
@@ -2952,13 +2939,9 @@
             function startAutoplay3D() {
                 stopAutoplay3D();
                 autoplayTimeout3D = setTimeout(() => {
-                    targetRotation -= angleIncrement;
-                    gsap.to(carousel, {
-                        rotationY: targetRotation,
-                        duration: 1.5,
-                        ease: "power3.inOut",
-                        onComplete: startAutoplay3D
-                    });
+                    currentIndex = (currentIndex + 1) % numCards3D;
+                    updateLayout();
+                    startAutoplay3D();
                 }, 5000);
             }
 
@@ -2969,7 +2952,6 @@
             // Inicialización
             updateLayoutParameters();
             window.addEventListener('resize', updateLayoutParameters);
-            gsap.ticker.add(updateCardStates);
             startAutoplay3D();
         });
     </script>
