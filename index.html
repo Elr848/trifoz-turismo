@@ -1639,80 +1639,34 @@
             perspective: 1000px;
         }
 
-        /* Estructura de giro (Flip) interna */
-        .card-inner {
-            position: relative;
+        /* Cara del carrusel 3D (Estilo consola del mockup) */
+        .card-back {
             width: 100%;
             height: 100%;
-            text-align: center;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-style: preserve-3d;
-            border-radius: 20px;
-        }
-
-        /* Clase activada mediante JS para girar la tarjeta activa */
-        .card-inner.is-flipped {
-            transform: rotateY(180deg);
-        }
-
-        /* Lados de la tarjeta */
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
             border-radius: 20px;
             overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.08);
-        }
-
-        /* Cara frontal (Imagen) */
-        .card-front {
-            background-color: #0c0a1a;
-        }
-
-        .card-front img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none;
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .card-item-3d.is-active:hover .card-front img {
-            transform: scale(1.06);
-        }
-
-        /* Cara trasera (Descripción / Estilo del mockup) */
-        .card-back {
             background: rgba(12, 10, 26, 0.85); /* Fondo oscuro translúcido */
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            transform: rotateY(180deg);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             padding: clamp(16px, 4vw, 24px) clamp(14px, 3.5vw, 20px);
-            border: 1.5px solid rgba(0, 210, 255, 0.45); /* Borde cian brillante */
-            box-shadow: 0 0 25px rgba(0, 210, 255, 0.15), inset 0 0 20px rgba(186, 104, 200, 0.12);
+            border: 1.5px solid rgba(0, 210, 255, 0.35); /* Borde cian sutil por defecto */
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.1), inset 0 0 20px rgba(186, 104, 200, 0.08);
             color: #fff;
             text-align: left;
+            transition: border-color 0.4s, box-shadow 0.4s;
         }
 
         /* Resplandor especial para la tarjeta central activa */
         .card-item-3d.is-active {
-            filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.15));
+            filter: drop-shadow(0 0 20px rgba(0, 210, 255, 0.20));
         }
 
-        .card-item-3d.is-active .card-front {
-            border-color: rgba(0, 210, 255, 0.6);
-            box-shadow: 0 15px 45px rgba(0, 210, 255, 0.25), 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .card-item-3d.is-active.is-flipped .card-back {
-            border-color: rgba(186, 104, 200, 0.7); /* Borde morado brillante al voltear */
-            box-shadow: 0 15px 45px rgba(186, 104, 200, 0.25), 0 10px 30px rgba(0, 0, 0, 0.5);
+        .card-item-3d.is-active .card-back {
+            border-color: rgba(186, 104, 200, 0.85); /* Borde morado brillante para la tarjeta activa */
+            box-shadow: 0 0 30px rgba(186, 104, 200, 0.35), 0 15px 45px rgba(0, 0, 0, 0.5);
         }
 
         /* Estilo del contenido trasero de la tarjeta */
@@ -2197,105 +2151,80 @@
                 <div class="carousel-3d-wrapper" id="carousel">
                     
                     <div class="card-item-3d" data-index="0">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <img src="images/cataratas mejorada.jpg" alt="Cataratas del Iguazú">
-                            </div>
-                            <div class="card-back">
-                                <div class="card-back-content">
-                                    <div class="card-back-header">
-                                        <h4>Cataratas</h4>
-                                        <span class="card-tag-back">Maravilla</span>
-                                    </div>
-                                    <p class="card-back-desc">Siente la fuerza de las Siete Maravillas Naturales en un recorrido privado y exclusivo en la selva.</p>
-                                    <div class="card-back-footer">
-                                        <span class="console-text">console: ~<span class="console-time">09:00:00</span></span>
-                                        <button class="card-btn-action" data-dest="Cataratas del Iguazú (Argentina)">RESERVAR</button>
-                                    </div>
+                        <div class="card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-header">
+                                    <h4>Cataratas</h4>
+                                    <span class="card-tag-back">Maravilla</span>
+                                </div>
+                                <p class="card-back-desc">Siente la fuerza de las Siete Maravillas Naturales en un recorrido privado y exclusivo en la selva.</p>
+                                <div class="card-back-footer">
+                                    <span class="console-text">console: ~<span class="console-time">09:00:00</span></span>
+                                    <button class="card-btn-action" data-dest="Cataratas del Iguazú (Argentina)">RESERVAR</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="card-item-3d" data-index="1">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <img src="images/macuco_safari_real.jpg" alt="Aventura Extrema">
-                            </div>
-                            <div class="card-back">
-                                <div class="card-back-content">
-                                    <div class="card-back-header">
-                                        <h4>Macuco Safari</h4>
-                                        <span class="card-tag-back">Aventura</span>
-                                    </div>
-                                    <p class="card-back-desc">Navegación extrema en bote bimotor hasta el corazón de las caídas de agua. Emoción y adrenalina pura.</p>
-                                    <div class="card-back-footer">
-                                        <span class="console-text">console: ~<span class="console-time">11:30:00</span></span>
-                                        <button class="card-btn-action" data-dest="Macuco Safari">RESERVAR</button>
-                                    </div>
+                        <div class="card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-header">
+                                    <h4>Macuco Safari</h4>
+                                    <span class="card-tag-back">Aventura</span>
+                                </div>
+                                <p class="card-back-desc">Navegación extrema en bote bimotor hasta el corazón de las caídas de agua. Emoción y adrenalina pura.</p>
+                                <div class="card-back-footer">
+                                    <span class="console-text">console: ~<span class="console-time">11:30:00</span></span>
+                                    <button class="card-btn-action" data-dest="Macuco Safari">RESERVAR</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="card-item-3d" data-index="2">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <img src="images/marco_real.jpg" alt="City Tour Foz">
-                            </div>
-                            <div class="card-back">
-                                <div class="card-back-content">
-                                    <div class="card-back-header">
-                                        <h4>City Tour Foz</h4>
-                                        <span class="card-tag-back">Cultura</span>
-                                    </div>
-                                    <p class="card-back-desc">Descubre la diversidad de la Triple Frontera: el Templo Budista, la Mezquita y el Hito de las 3 Fronteras.</p>
-                                    <div class="card-back-footer">
-                                        <span class="console-text">console: ~<span class="console-time">14:00:00</span></span>
-                                        <button class="card-btn-action" data-dest="Hito de las 3 Fronteras">RESERVAR</button>
-                                    </div>
+                        <div class="card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-header">
+                                    <h4>City Tour Foz</h4>
+                                    <span class="card-tag-back">Cultura</span>
+                                </div>
+                                <p class="card-back-desc">Descubre la diversidad de la Triple Frontera: el Templo Budista, la Mezquita y el Hito de las 3 Fronteras.</p>
+                                <div class="card-back-footer">
+                                    <span class="console-text">console: ~<span class="console-time">14:00:00</span></span>
+                                    <button class="card-btn-action" data-dest="Hito de las 3 Fronteras">RESERVAR</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="card-item-3d" data-index="3">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <img src="images/dutty.jpeg" alt="Hotelería Premium">
-                            </div>
-                            <div class="card-back">
-                                <div class="card-back-content">
-                                    <div class="card-back-header">
-                                        <h4>Premium Hotel</h4>
-                                        <span class="card-tag-back">Confort</span>
-                                    </div>
-                                    <p class="card-back-desc">Traslados exclusivos a los mejores resorts, hoteles y paseos de compras libres de impuestos (Duty Free).</p>
-                                    <div class="card-back-footer">
-                                        <span class="console-text">console: ~<span class="console-time">16:30:00</span></span>
-                                        <button class="card-btn-action" data-dest="Traslado para Hoteles">RESERVAR</button>
-                                    </div>
+                        <div class="card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-header">
+                                    <h4>Premium Hotel</h4>
+                                    <span class="card-tag-back">Confort</span>
+                                </div>
+                                <p class="card-back-desc">Traslados exclusivos a los mejores resorts, hoteles y paseos de compras libres de impuestos (Duty Free).</p>
+                                <div class="card-back-footer">
+                                    <span class="console-text">console: ~<span class="console-time">16:30:00</span></span>
+                                    <button class="card-btn-action" data-dest="Traslado para Hoteles">RESERVAR</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="card-item-3d" data-index="4">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <img src="images/kattamaram2.jpeg" alt="Paquetes Familiares">
-                            </div>
-                            <div class="card-back">
-                                <div class="card-back-content">
-                                    <div class="card-back-header">
-                                        <h4>Familia Tour</h4>
-                                        <span class="card-tag-back">Paseo</span>
-                                    </div>
-                                    <p class="card-back-desc">Navegación familiar premium y confortable. Disfruta del atardecer donde se unen los ríos Paraná e Iguazú.</p>
-                                    <div class="card-back-footer">
-                                        <span class="console-text">console: ~<span class="console-time">19:00:00</span></span>
-                                        <button class="card-btn-action" data-dest="Kattamaram II">RESERVAR</button>
-                                    </div>
+                        <div class="card-back">
+                            <div class="card-back-content">
+                                <div class="card-back-header">
+                                    <h4>Familia Tour</h4>
+                                    <span class="card-tag-back">Paseo</span>
+                                </div>
+                                <p class="card-back-desc">Navegación familiar premium y confortable. Disfruta del atardecer donde se unen los ríos Paraná e Iguazú.</p>
+                                <div class="card-back-footer">
+                                    <span class="console-text">console: ~<span class="console-time">19:00:00</span></span>
+                                    <button class="card-btn-action" data-dest="Kattamaram II">RESERVAR</button>
                                 </div>
                             </div>
                         </div>
@@ -2886,14 +2815,6 @@
             function goToCard(index) {
                 stopAutoplay3D();
                 
-                // Desgirar todas las tarjetas al cambiar
-                document.querySelectorAll('.card-inner').forEach(inner => {
-                    inner.classList.remove('is-flipped');
-                });
-                cards3D.forEach(card => {
-                    card.classList.remove('is-flipped');
-                });
-                
                 const cardAngle = index * angleIncrement;
                 
                 // Encontrar el camino más corto de rotación cilíndrica
@@ -2917,14 +2838,6 @@
             function rotateCarousel(direction) {
                 stopAutoplay3D();
                 
-                // Desgirar todas las tarjetas al cambiar
-                document.querySelectorAll('.card-inner').forEach(inner => {
-                    inner.classList.remove('is-flipped');
-                });
-                cards3D.forEach(card => {
-                    card.classList.remove('is-flipped');
-                });
-
                 targetRotation += direction * angleIncrement;
                 targetRotation = Math.round(targetRotation / angleIncrement) * angleIncrement;
                 
@@ -2950,15 +2863,7 @@
                 card.addEventListener('click', (e) => {
                     if (e.target.closest('.card-btn-action') || e.target.closest('a')) return;
 
-                    if (card.classList.contains('is-active')) {
-                        const cardInner = card.querySelector('.card-inner');
-                        if (cardInner) {
-                            const isFlipped = cardInner.classList.toggle('is-flipped');
-                            card.classList.toggle('is-flipped', isFlipped);
-                            if (isFlipped) stopAutoplay3D();
-                            else startAutoplay3D();
-                        }
-                    } else {
+                    if (!card.classList.contains('is-active')) {
                         goToCard(index);
                     }
                 });
@@ -3019,9 +2924,6 @@
                     const snappedRotation = Math.round(targetRotation / angleIncrement) * angleIncrement;
                     targetRotation = snappedRotation;
                     
-                    document.querySelectorAll('.card-inner').forEach(inner => inner.classList.remove('is-flipped'));
-                    cards3D.forEach(card => card.classList.remove('is-flipped'));
-
                     gsap.to(carousel, {
                         rotationY: targetRotation,
                         duration: 1.2,
