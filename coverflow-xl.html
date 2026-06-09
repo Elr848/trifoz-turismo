@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trifoz Turismo - Destinos Premium</title>
+    
+    <!-- Google Fonts: Outfit (para títulos de gran impacto) y Plus Jakarta Sans (para lectura premium) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CDNs de GSAP y su plugin Draggable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+
+    <style>
+        /* ==========================================================================
+           0. VARIABLES Y PALETA DE COLORES PREMIUM (HSL)
+           ========================================================================== */
+        :root {
+            --bg-dark: #03070b;
+            --bg-accent: #0a1622;
+            --accent-gold: #c5a059;
+            --accent-gold-light: #e5c180;
+            --accent-cyan: #00e5ff;
+            --text-light: #f5f6f8;
+            --text-muted: rgba(245, 246, 248, 0.7);
+            
+            /* Dimensiones dinámicas por variables CSS (se reajustan en JS) */
+            --card-w: 340px;
+            --card-h: 480px;
+        }
+
+        /* Reset General */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ==========================================================================
+           1. BANNERS PRINCIPALES FIJOS (Cataratas e Iguazú)
+           ========================================================================== */
+        
+        /* Banner Cataratas (100vh) */
+        .hero-cataratas {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-cataratas .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            /* Efecto Parallax fijo tradicional optimizado para desktop */
+            background-attachment: fixed;
+        }
+
+        /* Banner Macuco Safari (70vh) */
+        .section-macuco {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-top: 2px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section-macuco .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            background-attachment: fixed;
+        }
+
+        /* Capas de oscurecimiento (Overlays de mezcla premium) */
+        .banner-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(3, 7, 11, 0.2) 0%,
+                rgba(3, 7, 11, 0.6) 60%,
+                rgba(3, 7, 11, 0.95) 100%
+            );
+            z-index: 2;
+        }
+
+        .macuco-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(3, 7, 11, 0.95) 0%,
+                rgba(3, 7, 11, 0.35) 40%,
+                rgba(3, 7, 11, 0.6) 70%,
+                rgba(3, 7, 11, 0.95) 100%
+            );
+            z-index: 2;
+        }
+
+        /* Contenido de los Banners */
+        .banner-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            padding: 0 24px;
+            max-width: 900px;
+        }
+
+        .banner-content h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #ffffff;
+            line-height: 1.1;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
+            margin-bottom: 15px;
+            opacity: 0; /* Animado en JS */
+            transform: translateY(30px);
+        }
+
+        .banner-content p {
+            font-size: clamp(1rem, 2.5vw, 1.35rem);
+            font-weight: 400;
+            color: var(--text-light);
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+            letter-spacing: 1px;
+            max-width: 650px;
+            margin: 0 auto;
+            opacity: 0; /* Animado en JS */
+            transform: translateY(20px);
+        }
+
+        /* Indicador de Scroll del Banner de Entrada */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.8;
+        }
+        
+        .scroll-indicator span {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-gold-light);
+        }
+        
+        .scroll-mouse {
+            width: 26px;
+            height: 42px;
+            border: 2px solid var(--accent-gold);
+            border-radius: 20px;
+            position: relative;
+        }
+        
+        .scroll-wheel {
+            width: 4px;
+            height: 8px;
+            background-color: var(--accent-gold-light);
+            border-radius: 2px;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollMouseAnim 1.6s infinite ease-in-out;
+        }
+
+        @keyframes scrollMouseAnim {
+            0% { top: 8px; opacity: 1; }
+            100% { top: 22px; opacity: 0; }
+        }
+
+        /* ==========================================================================
+           2. SECCIÓN DEL CARRUSEL 3D (Coverflow XL)
+           ========================================================================== */
+        
+        .more-destinations-section {
+            position: relative;
+            padding: 100px 0 160px 0; /* Espaciado extra abajo para que el espejo tenga aire */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, #0a1725 0%, #03070b 100%);
+            overflow: hidden;
+        }
+
+        /* Orbes ambientales luminosos */
+        .glow-blob-1 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.07) 0%, transparent 70%);
+            top: 50%;
+            left: 15%;
+            transform: translateY(-50%);
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-blob-2 {
+            position: absolute;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(197, 160, 89, 0.05) 0%, transparent 70%);
+            top: 40%;
+            right: 10%;
+            transform: translateY(-50%);
+            filter: blur(70px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            z-index: 10;
+            padding: 0 24px;
+        }
+
+        .section-header .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-gold-light);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            background: rgba(10, 22, 34, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 6px 18px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #ffffff 0%, #a2b4c7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Contenedor del Carrusel con perspectiva 3D profunda */
+        .coverflow-container {
+            position: relative;
+            width: 100%;
+            /* Controlado dinámicamente en JS en base al tamaño responsivo de tarjeta */
+            height: 640px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px;
+            z-index: 5;
+            cursor: grab;
+        }
+
+        .coverflow-container:active {
+            cursor: grabbing;
+        }
+
+        /* El riel de las tarjetas */
+        .coverflow-track {
+            position: relative;
+            width: var(--card-w);
+            height: var(--card-h);
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        /* Tarjeta individual */
+        .coverflow-card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            border-radius: 24px;
+            overflow: hidden;
+            background-color: var(--bg-accent);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+            
+            /* ==========================================
+               EL ESPEJO (REFLEJO) RESPONSIVO PREMIUM
+               ========================================== */
+            -webkit-box-reflect: below 12px linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.35) 0%,
+                rgba(255, 255, 255, 0.08) 35%,
+                transparent 65%
+            );
+            
+            /* Se evita usar transiciones CSS para transform para no conflictuar con el renderizado directo de GSAP */
+            will-change: transform, filter;
+            transition: border-color 0.4s, box-shadow 0.4s;
+        }
+
+        /* Tarjeta activa en el centro plano */
+        .coverflow-card.is-active {
+            border-color: rgba(197, 160, 89, 0.45);
+            box-shadow: 0 25px 55px rgba(0, 0, 0, 0.8), 0 0 25px rgba(197, 160, 89, 0.15);
+        }
+
+        /* Imagen de la tarjeta */
+        .coverflow-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* Efecto Zoom en Hover para la activa */
+        .coverflow-card.is-active:hover img {
+            transform: scale(1.06);
+        }
+
+        /* Degradado de lectura oscuro */
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(3, 7, 11, 0.95) 0%,
+                rgba(3, 7, 11, 0.45) 50%,
+                transparent 100%
+            );
+            z-index: 2;
+        }
+
+        /* Textos dentro del carrusel */
+        .card-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 35px 25px 25px 25px;
+            color: #ffffff;
+            z-index: 3;
+            transform: translateZ(30px); /* Efecto Parallax en 3D en navegadores soportados */
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .card-info h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.85);
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+
+        .coverflow-card.is-active:hover .card-info h3 {
+            color: var(--accent-gold-light);
+        }
+
+        .card-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+
+        .card-badge {
+            align-self: flex-start;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent-gold-light);
+            background: rgba(3, 7, 11, 0.7);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 5px;
+        }
+
+        /* ==========================================================================
+           3. BOTONES Y DOTS DE CONTROL
+           ========================================================================== */
+        
+        .coverflow-controls {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            z-index: 10;
+            margin-top: 40px;
+        }
+
+        .control-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(10, 22, 34, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--accent-gold);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .control-btn:hover {
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+            transform: scale(1.08);
+        }
+
+        .control-btn:active {
+            transform: scale(0.95);
+        }
+
+        .control-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            transition: transform 0.3s;
+        }
+
+        .control-btn.prev:hover svg {
+            transform: translateX(-2px);
+        }
+
+        .control-btn.next:hover svg {
+            transform: translateX(2px);
+        }
+
+        /* Dots indicadores */
+        .progress-indicator {
+            display: flex;
+            gap: 8px;
+            margin-top: 25px;
+            z-index: 10;
+        }
+
+        .progress-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.4s;
+        }
+
+        .progress-dot.active {
+            width: 24px;
+            border-radius: 4px;
+            background: var(--accent-gold-light);
+            box-shadow: 0 0 10px rgba(229, 193, 128, 0.4);
+        }
+
+        /* Hint de ayuda */
+        .swipe-hint {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.6;
+            z-index: 10;
+        }
+
+        .swipe-hint::before,
+        .swipe-hint::after {
+            content: '';
+            display: block;
+            width: 15px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        footer {
+            background-color: #020407;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 10;
+            position: relative;
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        /* ==========================================================================
+           4. RESPONSIVE COMPLETO (Adaptación de Tarjetas y del Reflejo)
+           ========================================================================== */
+        
+        @media (max-width: 1200px) {
+            :root {
+                /* Reducción proporcional para pantallas de laptop intermedias */
+                --card-w: 300px;
+                --card-h: 420px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                /* Reducción para tablets */
+                --card-w: 260px;
+                --card-h: 370px;
+            }
+            .glow-blob-1, .glow-blob-2 {
+                width: 350px;
+                height: 350px;
+            }
+            /* Desactivar 'fixed' background en teléfonos móviles para rendimiento suave */
+            .hero-cataratas .parallax-bg,
+            .section-macuco .parallax-bg {
+                background-attachment: scroll;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                /* Reducción máxima para pantallas pequeñas de celular */
+                --card-w: 210px;
+                --card-h: 300px;
+            }
+            .section-header {
+                margin-bottom: 30px;
+            }
+            .coverflow-controls {
+                gap: 15px;
+                margin-top: 25px;
+            }
+            .control-btn {
+                width: 44px;
+                height: 44px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Globos decorativos luminosos de fondo -->
+    <div class="glow-blob-1"></div>
+    <div class="glow-blob-2"></div>
+
+    <!-- ==========================================================================
+       HERO 1: Cataratas del Iguazú (100vh)
+       ========================================================================== -->
+    <div class="hero-cataratas" id="hero">
+        <div class="banner-overlay"></div>
+        <!-- Reemplaza el src de esta imagen con tu imagen local en producción -->
+        <img class="parallax-bg" src="https://images.unsplash.com/photo-1548811579-017cf2a4268b?q=80&w=1920&auto=format&fit=crop" alt="Cataratas del Iguazú">
+        <div class="banner-content">
+            <h1 id="hero-title">Cataratas del Iguazú</h1>
+            <p id="hero-subtitle">Descubre una de las siete maravillas naturales del mundo con la mejor experiencia premium y guía personalizado.</p>
+        </div>
+        
+        <!-- Indicador Mouse Scroll animado -->
+        <div class="scroll-indicator">
+            <span>Explorar</span>
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       HERO 2: Macuco Safari (70vh)
+       ========================================================================== -->
+    <div class="section-macuco" id="macuco">
+        <div class="macuco-overlay"></div>
+        <!-- Reemplaza el src de esta imagen con tu imagen o video local en producción -->
+        <img class="parallax-bg" src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?q=80&w=1920&auto=format&fit=crop" alt="Macuco Safari Aventura">
+        <div class="banner-content">
+            <h1>Macuco Safari</h1>
+            <p>Siente la fuerza de las caídas de agua desde adentro en una navegación extrema inolvidable.</p>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       CARRUSEL: 3D Coverflow XL (Más Excursiones)
+       ========================================================================== -->
+    <div class="more-destinations-section" id="excursiones">
+        <div class="section-header">
+            <span class="badge">Experiencias Destacadas</span>
+            <h2 class="section-title">Más Excursiones Increíbles</h2>
+            <p class="section-subtitle">Arrastra con el mouse, desliza en tu móvil o usa las flechas para explorar el catálogo.</p>
+        </div>
+
+        <!-- Contenedor general de Perspectiva -->
+        <div class="coverflow-container">
+            <div class="coverflow-track" id="track">
+                
+                <!-- Tarjeta 1: Parque de las Aves -->
+                <div class="coverflow-card">
+                    <!-- Placeholder de Imagen: Cambiar a ruta local cuando desees -->
+                    <img src="https://images.unsplash.com/photo-1552410260-0fd9b577afa6?q=80&w=600&auto=format&fit=crop" alt="Parque de las Aves">
+                    <div class="card-overlay"></div>
+                    <div class="card-info">
+                        <span class="card-badge">Naturaleza</span>
+                        <h3>Parque de las Aves</h3>
+                        <p>Contacto cercano con aves exóticas recuperadas en un santuario ecológico único.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Itaipu Binacional -->
+                <div class="coverflow-card">
+                    <!-- Placeholder de Imagen: Cambiar a ruta local cuando desees -->
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=600&auto=format&fit=crop" alt="Itaipu Binacional">
+                    <div class="card-overlay"></div>
+                    <div class="card-info">
+                        <span class="card-badge">Ingeniería</span>
+                        <h3>Itaipu Binacional</h3>
+                        <p>Visita una de las mayores centrales hidroeléctricas del planeta, un monumento a la ingeniería moderna.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Tres Fronteras -->
+                <div class="coverflow-card">
+                    <!-- Placeholder de Imagen: Cambiar a ruta local cuando desees -->
+                    <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=600&auto=format&fit=crop" alt="Tres Fronteras">
+                    <div class="card-overlay"></div>
+                    <div class="card-info">
+                        <span class="card-badge">Cultura</span>
+                        <h3>Tres Fronteras</h3>
+                        <p>El punto geográfico exacto donde convergen las fronteras y ríos de Brasil, Argentina y Paraguay.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 4: City Tour Foz -->
+                <div class="coverflow-card">
+                    <!-- Placeholder de Imagen: Cambiar a ruta local cuando desees -->
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop" alt="City Tour Foz">
+                    <div class="card-overlay"></div>
+                    <div class="card-info">
+                        <span class="card-badge">Ciudad</span>
+                        <h3>City Tour Foz</h3>
+                        <p>Explora la diversidad cultural, gastronomía local y los templos más representativos de la región.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 5: Complejo Dreamland -->
+                <div class="coverflow-card">
+                    <!-- Placeholder de Imagen: Cambiar a ruta local cuando desees -->
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=600&auto=format&fit=crop" alt="Dreamland Complejo">
+                    <div class="card-overlay"></div>
+                    <div class="card-info">
+                        <span class="card-badge">Diversión</span>
+                        <h3>Dreamland Complejo</h3>
+                        <p>Diviértete en el Museo de Cera, recorre el Valle de los Dinosaurios y refréscate en el Bar de Hielo.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Botones de Navegación Flechas -->
+        <div class="coverflow-controls">
+            <button class="control-btn prev" id="prevBtn" aria-label="Tarjeta Anterior">
+                <svg viewBox="0 0 24 24">
+                    <path d="M15 19l-7-7 7-7" stroke="currentColor"/>
+                </svg>
+            </button>
+            <button class="control-btn next" id="nextBtn" aria-label="Tarjeta Siguiente">
+                <svg viewBox="0 0 24 24">
+                    <path d="M9 5l7 7-7 7" stroke="currentColor"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Indicador de Dots de Progreso -->
+        <div class="progress-indicator" id="dotsContainer"></div>
+
+        <!-- Instrucción visual simple -->
+        <div class="swipe-hint">Desliza para explorar</div>
+    </div>
+
+    <!-- Footer Simple -->
+    <footer>
+        <p>&copy; 2026 Trifoz Turismo - Experiencias Premium en Foz do Iguaçu.</p>
+    </footer>
+
+    <!-- ==========================================================================
+       COMPORTAMIENTO Y LOGICA EN JAVASCRIPT (GSAP & 3D Coverflow XL)
+       ========================================================================== -->
+    <script>
+        // Registrar plugin de GSAP
+        gsap.registerPlugin(Draggable);
+
+        // Nodos del DOM
+        const container = document.querySelector('.coverflow-container');
+        const track = document.getElementById('track');
+        const cards = document.querySelectorAll('.coverflow-card');
+        const totalCards = cards.length;
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dotsContainer = document.getElementById('dotsContainer');
+        
+        // Estado de control
+        let currentIndex = 0; 
+        const scrollObj = { position: 0 }; // Objeto numérico puente para que GSAP haga la interpolación decimal
+        
+        // Ajustes adaptativos (se actualizan en handleResize)
+        let centerSpacing = 190;   // Distancia de separación de la primera tarjeta a los costados
+        let sideSpacing = 110;     // Distancia entre tarjetas consecutivas de los costados
+        let rotationY = 60;        // Inclinación Y exacta del Coverflow clásico
+        let zTranslation = -250;   // Envío al fondo en el eje Z para tarjetas laterales
+
+        // 1. Animaciones de entrada iniciales para textos de banner
+        window.addEventListener('DOMContentLoaded', () => {
+            gsap.to('#hero-title', { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out', delay: 0.2 });
+            gsap.to('#hero-subtitle', { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out', delay: 0.4 });
+        });
+
+        // 2. Construcción dinámica de dots de progreso
+        for (let i = 0; i < totalCards; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('progress-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                goToCard(i);
+            });
+            dotsContainer.appendChild(dot);
+        }
+        const dots = document.querySelectorAll('.progress-dot');
+
+        // 3. Renderizador Coverflow 3D: Calcula e interpola rotación y posición en base a scroll decimal
+        function updateCoverflow(position) {
+            // Limitar rango de scroll
+            position = Math.max(0, Math.min(totalCards - 1, position));
+
+            cards.forEach((card, index) => {
+                const diff = index - position;
+                const absDiff = Math.abs(diff);
+                
+                let tx = 0;
+                let tz = 0;
+                let rotY = 0;
+                let blurVal = 0;
+                let brightnessVal = 100;
+                let opacityVal = 1;
+                
+                // Cálculo de apilamiento z-index dinámico
+                let zIndexVal = 100 - Math.round(absDiff * 10);
+
+                if (absDiff === 0) {
+                    // Tarjeta del centro: nítida, plana, al frente
+                    tx = 0;
+                    tz = 0;
+                    rotY = 0;
+                    blurVal = 0;
+                    brightnessVal = 100;
+                    opacityVal = 1;
+                } else {
+                    const sign = diff > 0 ? 1 : -1;
+                    const factor = Math.min(absDiff, 1); // Factor decimal entre [0, 1] para interpolaciones fluidas
+
+                    // Inclinación rotativa
+                    rotY = -sign * rotationY * factor;
+                    
+                    // Profundidad en Z
+                    tz = zTranslation * factor;
+                    
+                    // Traslación en X (Coverflow spacing acumulativo)
+                    if (absDiff <= 1) {
+                        tx = sign * centerSpacing * absDiff;
+                    } else {
+                        tx = sign * (centerSpacing + (absDiff - 1) * sideSpacing);
+                    }
+
+                    // Atenuación visual lateral (Desenfoque, brillo y opacidad)
+                    blurVal = factor * 2.5; // Máximo de 2.5px blur a los lados
+                    brightnessVal = 100 - (factor * 45); // Menor brillo lateral (hasta 55%)
+                    opacityVal = 1 - (factor * 0.35);    // Opacidad de tarjetas de fondo
+                }
+
+                // Aplicar transformaciones instantáneamente sin transiciones CSS (evita demoras en drag)
+                gsap.set(card, {
+                    x: tx,
+                    z: tz,
+                    rotationY: rotY,
+                    filter: `blur(${blurVal}px) brightness(${brightnessVal}%)`,
+                    opacity: opacityVal,
+                    zIndex: zIndexVal,
+                    transformPerspective: 1200,
+                    overwrite: "auto"
+                });
+
+                // Controlar clase activa
+                if (Math.round(position) === index) {
+                    card.classList.add('is-active');
+                } else {
+                    card.classList.remove('is-active');
+                }
+            });
+
+            // Sincronizar dots
+            const activeIdx = Math.round(position);
+            dots.forEach((dot, idx) => {
+                if (idx === activeIdx) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+            
+            currentIndex = activeIdx;
+        }
+
+        // 4. Cuidado Responsivo Avanzado (Dimensionamiento dinámico del carrusel y altura del espejo)
+        function handleResize() {
+            const w = window.innerWidth;
+            let cardHeight = 480;
+
+            // Puntos de quiebre para espaciados, rotaciones e inclinación
+            if (w >= 1200) {
+                // Escritorio XL
+                centerSpacing = 190;
+                sideSpacing = 110;
+                zTranslation = -250;
+                rotationY = 60;
+                cardHeight = 480;
+            } else if (w >= 768) {
+                // Laptops y Tablets Grandes
+                centerSpacing = 150;
+                sideSpacing = 95;
+                zTranslation = -200;
+                rotationY = 55;
+                cardHeight = 420;
+            } else if (w >= 480) {
+                // Móviles Grandes
+                centerSpacing = 110;
+                sideSpacing = 65;
+                zTranslation = -140;
+                rotationY = 45;
+                cardHeight = 370;
+            } else {
+                // Móviles Pequeños (e.g. 360px de ancho)
+                centerSpacing = 85;
+                sideSpacing = 50;
+                zTranslation = -110;
+                rotationY = 40;
+                cardHeight = 300;
+            }
+
+            // CRITICO: Ajustar altura del contenedor dinámicamente para prevenir que se corte
+            // el reflejo de la tarjeta. Un factor de 1.4 garantiza visualización completa
+            container.style.height = `${cardHeight * 1.4}px`;
+
+            // Refrescar renderizado
+            updateCoverflow(scrollObj.position);
+        }
+
+        // Escuchar redimensionamiento y disparar al inicio
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        // 5. Función para transicionar suavemente a un índice de tarjeta específico
+        function goToCard(index) {
+            index = Math.max(0, Math.min(totalCards - 1, index));
+            gsap.to(scrollObj, {
+                position: index,
+                duration: 0.75,
+                ease: "power2.out",
+                onUpdate: () => {
+                    updateCoverflow(scrollObj.position);
+                }
+            });
+        }
+
+        // 6. Integración del Arrastre con Draggable de GSAP
+        const dragProxy = document.createElement("div"); // Elemento virtual de tracking
+        let startDragX = 0;
+        let startDragPos = 0;
+        const dragFactor = 220; // Sensibilidad: píxeles de arrastre para mover 1 tarjeta entera
+
+        Draggable.create(dragProxy, {
+            trigger: ".coverflow-container",
+            type: "x",
+            minimumMovement: 5,
+            onDragStart: function() {
+                startDragX = this.x;
+                startDragPos = scrollObj.position;
+                gsap.killTweensOf(scrollObj); // Detiene animaciones previas para control directo táctil
+            },
+            onDrag: function() {
+                const deltaX = this.x - startDragX;
+                let targetPos = startDragPos - (deltaX / dragFactor);
+                targetPos = Math.max(0, Math.min(totalCards - 1, targetPos));
+                scrollObj.position = targetPos;
+                updateCoverflow(targetPos);
+            },
+            onDragEnd: function() {
+                // Inercia suave en base a la velocidad de la acción
+                const velocityX = this.getVelocity("x");
+                let inertiaOffset = velocityX * -0.0012;
+                
+                // Acotar el impulso máximo para mejor control de experiencia
+                inertiaOffset = Math.max(-1.5, Math.min(1.5, inertiaOffset));
+                
+                let targetPos = scrollObj.position + inertiaOffset;
+                let targetIndex = Math.max(0, Math.min(totalCards - 1, Math.round(targetPos)));
+                
+                goToCard(targetIndex);
+            }
+        });
+
+        // 7. Eventos de botones (Anterior / Siguiente)
+        prevBtn.addEventListener('click', () => {
+            goToCard(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            goToCard(currentIndex + 1);
+        });
+
+        // 8. Clic para enfocar y traer al centro las tarjetas de los costados
+        cards.forEach((card, index) => {
+            card.addEventListener('click', (e) => {
+                if (index !== currentIndex) {
+                    e.preventDefault();
+                    goToCard(index);
+                }
+            });
+        });
+
+        // 9. Control con las flechas físicas del teclado
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                goToCard(currentIndex - 1);
+            } else if (e.key === 'ArrowRight') {
+                goToCard(currentIndex + 1);
+            }
+        });
+
+        // 10. Control por rueda del mouse (Scroll horizontal por rueda vertical/horizontal)
+        let lastWheelTime = 0;
+        container.addEventListener('wheel', (e) => {
+            e.preventDefault(); // Previene scroll regular de pantalla
+            
+            const now = Date.now();
+            if (now - lastWheelTime < 250) return; // Debounce para evitar deslizamientos caóticos
+
+            if (Math.abs(e.deltaY) > 8 || Math.abs(e.deltaX) > 8) {
+                const direction = (e.deltaY || e.deltaX) > 0 ? 1 : -1;
+                goToCard(currentIndex + direction);
+                lastWheelTime = now;
+            }
+        }, { passive: false });
+    </script>
+</body>
+</html>
