@@ -2211,7 +2211,7 @@
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/mezquita 1.png" alt="Mesquita Omar Ibn Al-Khattab" class="galeria-img" style="object-position: center 25%;">
+                <img src="images/mezquita 1.png" alt="Mesquita Omar Ibn Al-Khattab" class="galeria-img" style="object-fit: contain; background-color: #050510;">
                 <div class="galeria-content">
                     <span class="galeria-title">Mesquita Omar Ibn Al-Khattab</span>
                     <span class="galeria-subtitle">Arquitetura islâmica e riqueza cultural no coração de Foz</span>
@@ -2676,22 +2676,18 @@
                 });
             }
 
-            // Botões de Navegação anterior / seguinte
+            // Botões de Navegação anterior / seguinte (Cíclico)
             document.getElementById('prevBtn3D')?.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateLayout();
-                    stopAutoplay3D();
-                    startAutoplay3D();
-                }
+                currentIndex = (currentIndex - 1 + numCards3D) % numCards3D;
+                updateLayout();
+                stopAutoplay3D();
+                startAutoplay3D();
             });
             document.getElementById('nextBtn3D')?.addEventListener('click', () => {
-                if (currentIndex < numCards3D - 1) {
-                    currentIndex++;
-                    updateLayout();
-                    stopAutoplay3D();
-                    startAutoplay3D();
-                }
+                currentIndex = (currentIndex + 1) % numCards3D;
+                updateLayout();
+                stopAutoplay3D();
+                startAutoplay3D();
             });
 
             // Registrar eventos para clique nas placas
@@ -2763,10 +2759,10 @@
                     const change = this.x - startDragX;
                     const limit = 40; // Sensibilidade justa para mudar de placa
 
-                    if (change > limit && currentIndex > 0) {
-                        currentIndex--;
-                    } else if (change < -limit && currentIndex < numCards3D - 1) {
-                        currentIndex++;
+                    if (change > limit) {
+                        currentIndex = (currentIndex - 1 + numCards3D) % numCards3D;
+                    } else if (change < -limit) {
+                        currentIndex = (currentIndex + 1) % numCards3D;
                     }
                     updateLayout();
                     gsap.set(dragProxy3D, { x: 0 });
@@ -2781,15 +2777,11 @@
                     e.preventDefault();
                     stopAutoplay3D();
                     if (e.deltaY > 0) {
-                        if (currentIndex < numCards3D - 1) {
-                            currentIndex++;
-                            updateLayout();
-                        }
+                        currentIndex = (currentIndex + 1) % numCards3D;
+                        updateLayout();
                     } else {
-                        if (currentIndex > 0) {
-                            currentIndex--;
-                            updateLayout();
-                        }
+                        currentIndex = (currentIndex - 1 + numCards3D) % numCards3D;
+                        updateLayout();
                     }
                     startAutoplay3D();
                 }
