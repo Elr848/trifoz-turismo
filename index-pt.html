@@ -2866,6 +2866,30 @@
                 
                 startAutoplay();
                 
+                // Soporte para gestos swipe táctiles en móviles para cambiar imágenes
+                const galeriaFranja = document.querySelector('.galeria-franja');
+                if (galeriaFranja) {
+                    let touchStartX = 0;
+                    let touchEndX = 0;
+                    
+                    galeriaFranja.addEventListener('touchstart', (e) => {
+                        touchStartX = e.changedTouches[0].screenX;
+                    }, { passive: true });
+                    
+                    galeriaFranja.addEventListener('touchend', (e) => {
+                        touchEndX = e.changedTouches[0].screenX;
+                        const diffX = touchEndX - touchStartX;
+                        if (Math.abs(diffX) > 50) { // Sensibilidad del swipe
+                            if (diffX < 0) {
+                                nextSlide(); // Deslizar a la izquierda: siguiente
+                            } else {
+                                prevSlide(); // Deslizar a la derecha: anterior
+                            }
+                            startAutoplay();
+                        }
+                    }, { passive: true });
+                }
+                
                 // Desplazamiento suave para enlaces de anclaje
                 document.querySelectorAll('a[href^="#galeria"]').forEach(anchor => {
                     anchor.addEventListener('click', function(e) {
