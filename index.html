@@ -3205,7 +3205,124 @@
                 }
             })();
     
+        
+
+            // Lógica de la Galería Lightbox Modal para el Carrusel 3D
+            (function() {
+                const lightbox = document.getElementById('lightboxModal');
+                const lightboxImg = document.getElementById('lightboxImg');
+                const lightboxCaption = document.getElementById('lightboxCaption');
+                const prevBtn = document.getElementById('prevLightbox');
+                const nextBtn = document.getElementById('nextLightbox');
+                
+                const carouselCards = document.querySelectorAll('.card-item-3d');
+                let imagesList = [];
+                
+                carouselCards.forEach((card, idx) => {
+                    const cardBack = card.querySelector('.card-back');
+                    if (cardBack) {
+                        const bgStyle = cardBack.style.backgroundImage;
+                        const match = bgStyle.match(/url\(['"]?([^'"]+)['"]?\)/);
+                        if (match) {
+                            const title = destinations[idx] ? destinations[idx].title : "Trifoz Turismo";
+                            imagesList.push({ src: match[1], title: title });
+                        }
+                    }
+                });
+                
+                let currentImgIdx = 0;
+                
+                function openLightbox(index) {
+                    currentImgIdx = index;
+                    const imgData = imagesList[currentImgIdx];
+                    if (!imgData) return;
+                    
+                    lightboxImg.src = imgData.src;
+                    lightboxCaption.textContent = imgData.title;
+                    
+                    lightbox.style.display = 'flex';
+                    setTimeout(() => {
+                        lightbox.style.opacity = '1';
+                    }, 50);
+                }
+                
+                function closeLightbox() {
+                    lightbox.style.opacity = '0';
+                    setTimeout(() => {
+                        lightbox.style.display = 'none';
+                    }, 400);
+                }
+                
+                function nextImage(e) {
+                    if (e) e.stopPropagation();
+                    currentImgIdx = (currentImgIdx + 1) % imagesList.length;
+                    openLightbox(currentImgIdx);
+                }
+                
+                function prevImage(e) {
+                    if (e) e.stopPropagation();
+                    currentImgIdx = (currentImgIdx - 1 + imagesList.length) % imagesList.length;
+                    openLightbox(currentImgIdx);
+                }
+                
+                // Eventos de clic en tarjetas 3D
+                carouselCards.forEach((card, idx) => {
+                    card.addEventListener('click', (e) => {
+                        if (card.classList.contains('is-active')) {
+                            openLightbox(idx);
+                        } else {
+                            currentIndex = idx;
+                            updateLayout();
+                            stopAutoplay3D();
+                            startAutoplay3D();
+                        }
+                    });
+                });
+                
+                // Cierre haciendo click en el fondo o en la imagen misma
+                lightbox.addEventListener('click', closeLightbox);
+                lightboxImg.addEventListener('click', closeLightbox);
+                
+                if (prevBtn) prevBtn.addEventListener('click', nextImage); // Siguiente al pulsar flecha derecha
+                if (nextBtn) nextBtn.addEventListener('click', nextImage);
+                
+                // Flechas prev/next reales para navegación
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        prevImage();
+                    });
+                }
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        nextImage();
+                    });
+                }
+                
+                // Teclado
+                document.addEventListener('keydown', (e) => {
+                    if (lightbox.style.display === 'flex') {
+                        if (e.key === 'Escape') closeLightbox();
+                        if (e.key === 'ArrowRight') nextImage();
+                        if (e.key === 'ArrowLeft') prevImage();
+                    }
+                });
+            })();
+    
         </script>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" style="display: none; position: fixed; inset: 0; background: rgba(5, 5, 15, 0.95); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); z-index: 99999; justify-content: center; align-items: center; cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
+        <div style="position: absolute; top: 20px; right: 20px; color: #fff; font-size: 2.5rem; cursor: pointer; user-select: none; z-index: 100000; font-family: sans-serif;" id="closeLightbox">&times;</div>
+        <div style="position: absolute; left: 20px; color: #fff; font-size: 2.5rem; cursor: pointer; user-select: none; z-index: 100000; padding: 15px;" id="prevLightbox" onclick="event.stopPropagation();">&#x276E;</div>
+        <div style="position: absolute; right: 20px; color: #fff; font-size: 2.5rem; cursor: pointer; user-select: none; z-index: 100000; padding: 15px;" id="nextLightbox" onclick="event.stopPropagation();">&#x276F;</div>
+        <div style="max-width: 90%; max-height: 85%; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+            <img id="lightboxImg" src="" alt="Zoom" style="max-width: 100%; max-height: 75vh; object-fit: contain; border-radius: 12px; border: 2px solid rgba(0, 210, 255, 0.4); box-shadow: 0 0 40px rgba(0, 210, 255, 0.3); transition: transform 0.3s ease; cursor: pointer;">
+            <div id="lightboxCaption" style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1rem; margin-top: 15px; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 1px; color: #00d2ff; text-shadow: 0 2px 10px rgba(0, 210, 255, 0.4);"></div>
+        </div>
+    </div>
+    
 </body>
 
 </html>
