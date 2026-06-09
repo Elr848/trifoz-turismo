@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <title>Transfer Privado em Foz do Iguaçu | Passeios, Aeroporto e Tríplice Fronteira</title>
-    <meta name="description" content="Passeios privados em Foz do Iguaçu. Traslados aeroporto 24/7 e transfer privado Tríplice Fronteira. Guia de turismo Ebert, especialista em LIBRAS. Reserva agora.">
-    <meta name="keywords" content="tours foz do iguaçu, passeios foz do iguaçu, transfer foz do iguaçu, guia de turismo foz, transporte privado foz, traslado aeroporto foz, passeios guiados cataratas, tour cataratas iguazu, guia de turismo cataratas, transfer privado brasil, traslado tríplice fronteira, transporte turístico foz, guia LIBRAS foz, tour macuco safari, traslado puerto iguazu, transfer ciudad del este, guia de turismo ebert">
+    <meta name="description" content="Passeios privados em Foz do Iguaçu. Traslados aeroporto 24/7 e transfer privado Tríplice Fronteira. Especialistas em LIBRAS. Guias certificados. Reserve agora.">
+    <meta name="keywords" content="tours foz do iguaçu, passeios foz do iguaçu, transfer foz do iguaçu, guia de turismo foz, transporte privado foz, traslado aeroporto foz, passeios guiados cataratas, tour cataratas iguazu, guia de turismo cataratas, transfer privado brasil, traslado tríplice fronteira, transporte turístico foz, guia LIBRAS foz, tour macuco safari, traslado puerto iguazu, transfer ciudad del este, passeios guiados Trifoz">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="author" content="Trifoz Turismo - Guia de Turismo Ebert">
+    <meta name="author" content="Trifoz Turismo">
     <link rel="canonical" href="https://trifoz-turismo.com/index-pt.html" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -32,6 +32,8 @@
     <meta property="og:title" content="🥇 Passeios Foz do Iguaçu | Traslados Aeroporto & Transfer Privado | Guia Ebert">
     <meta property="og:description" content="⭐ Passeios privados ✈️ Traslados aeroporto 24/7 🚗 Transfer Tríplice Fronteira ⭐ Guia LIBRAS ⭐ Cataratas, Macuco Safari ⭐ +55(45)933003337">
     <meta property="og:image" content="https://trifoz-turismo.com/images/plataforma.jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Passeios e traslados privados em Foz do Iguaçu">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:locale:alternate" content="es_AR">
@@ -171,7 +173,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oswald:wght@500;700&family=Open+Sans:wght@300;400;600;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oswald:wght@500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
     <link rel="preconnect" href="https://wa.me">
 
     <style>
@@ -1856,6 +1861,16 @@
                 box-shadow: 0 0 0 0 rgba(0, 210, 255, 0);
             }
         }
+
+        /* === ACESSIBILIDADE: Reduçao de movimento === */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     
     </style>
 </head>
@@ -1865,17 +1880,17 @@
     <div class="header-idioma-container">
         <span class="label-idioma-fijo">Idioma:</span>
         <div class="lista-idioma-fija">
-            <a href="index.html" class="opcion-idioma-fija">
-                <img src="https://flagcdn.com/w20/es.png" class="mini-flag" alt="Espanhol"> ES
+            <a href="index.html" class="opcion-idioma-fija" hreflang="es">
+                <img src="https://flagcdn.com/w20/es.png" class="mini-flag" alt="Espanhol" width="20" height="13" loading="lazy"> ES
             </a>
-            <a href="index-pt.html" class="opcion-idioma-fija activo">
-                <img src="https://flagcdn.com/w20/br.png" class="mini-flag" alt="Português"> PT
+            <a href="index-pt.html" class="opcion-idioma-fija activo" hreflang="pt-BR">
+                <img src="https://flagcdn.com/w20/br.png" class="mini-flag" alt="Português" width="20" height="13" loading="lazy"> PT
             </a>
         </div>
     </div>
 
     <section class="hero">
-        <img src="images/plataforma.jpeg" alt="Passeios privados em Foz do Iguaçu com Guia Ebert" class="hero-background" width="1920" height="1080">
+        <img src="images/plataforma.jpeg" alt="Passeios privados em Foz do Iguaçu - Trifoz Turismo" class="hero-background" width="1920" height="1080">
         <div class="fire-wrapper" aria-hidden="true">
             <div class="hero-container">
                 <h1 class="titulo-metalico" style="margin:0; line-height:1.1; font-size: clamp(1.9rem, 5.5vw, 2.7rem);">

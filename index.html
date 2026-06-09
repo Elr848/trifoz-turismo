@@ -10,11 +10,11 @@
 
     <title>Transfer Privado en Foz do Iguaçu | Tours, Aeropuerto y Triple Frontera</title>
     <meta name="description"
-        content="Tours privados en Foz de Iguazú. Traslados aeropuerto 24/7 y transfer privado Triple Frontera. Guía turístico Ebert, especialista LIBRAS. Reserva ahora.">
+        content="Tours privados en Foz de Iguazú. Traslados aeropuerto 24/7 y transfer privado Triple Frontera. Especialistas en LIBRAS. Guías certificados. Reserva ahora.">
     <meta name="keywords"
-        content="tours foz de iguazú, traslados foz de iguazú, transfer foz de iguazú, guía turístico foz, transporte privado foz, traslado aeropuerto foz, paseos guiados cataratas, tour cataratas iguazu, guía turístico cataratas, transfer privado brasil, traslado triple frontera, transporte turístico foz, guía LIBRAS foz, tour macuco safari, traslado puerto iguazu, transfer ciudad del este, guía turístico ebert">
+        content="tours foz de iguazú, traslados foz de iguazú, transfer foz de iguazú, guía turístico foz, transporte privado foz, traslado aeropuerto foz, paseos guiados cataratas, tour cataratas iguazu, guía turístico cataratas, transfer privado brasil, traslado triple frontera, transporte turístico foz, guía LIBRAS foz, tour macuco safari, traslado puerto iguazu, transfer ciudad del este, paseos guiados Trifoz">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="author" content="Trifoz Turismo - Guía Turístico Ebert">
+    <meta name="author" content="Trifoz Turismo">
     <link rel="canonical" href="https://trifoz-turismo.com/" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -36,6 +36,8 @@
     <meta property="og:description"
         content="⭐ Tours privados ✈️ Traslados aeropuerto 24/7 🚗 Transfer Triple Frontera ⭐ Guía LIBRAS ⭐ Cataratas, Macuco Safari ⭐ +55(45)933003337">
     <meta property="og:image" content="https://trifoz-turismo.com/images/plataforma.jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Tours y traslados privados en Foz de Iguazú">
     <meta property="og:locale" content="es_AR">
     <meta property="og:locale:alternate" content="pt_BR">
@@ -179,9 +181,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oswald:wght@500;700&family=Open+Sans:wght@300;400;600;700&display=swap"
         rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
+        crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
     <link rel="preconnect" href="https://wa.me">
 
     <style>
@@ -354,7 +359,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: brilloMetal 4s linear infinite;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+            text-shadow: none;
         }
 
         @keyframes brilloMetal {
@@ -2230,7 +2235,16 @@
                 box-shadow: 0 0 0 0 rgba(0, 210, 255, 0);
             }
         }
-    
+
+        /* === ACCESIBILIDAD: Reducción de movimiento === */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
 </head>
 
@@ -2241,11 +2255,11 @@
     <div class="header-idioma-container">
         <span class="label-idioma-fijo">Idioma:</span>
         <div class="lista-idioma-fija">
-            <a href="index.html" class="opcion-idioma-fija activo">
-                <img src="https://flagcdn.com/w20/es.png" class="mini-flag" alt="Español"> ES
+            <a href="index.html" class="opcion-idioma-fija activo" hreflang="es">
+                <img src="https://flagcdn.com/w20/es.png" class="mini-flag" alt="Español" width="20" height="13" loading="lazy"> ES
             </a>
-            <a href="index-pt.html" class="opcion-idioma-fija">
-                <img src="https://flagcdn.com/w20/br.png" class="mini-flag" alt="Portugués"> PT
+            <a href="index-pt.html" class="opcion-idioma-fija" hreflang="pt-BR">
+                <img src="https://flagcdn.com/w20/br.png" class="mini-flag" alt="Portugués" width="20" height="13" loading="lazy"> PT
             </a>
         </div>
     </div>
@@ -2557,8 +2571,6 @@
         </div>
     </section>
 
-    
-    </div>
 
     <!-- Barra de botones horizontal -->
     <div class="horizontal-button-bar">
@@ -2580,7 +2592,7 @@
         </button>
     </div>
 
-        <section class="informacion-turismo" style="max-width: 1200px; padding: 80px 20px; margin: 0 auto; text-align: center;">
+    <section class="informacion-turismo" style="max-width: 1200px; padding: 80px 20px; margin: 0 auto; text-align: center;">
         <h2 style="color: var(--amarillo); font-size: clamp(1.8rem, 5vw, 2.5rem); text-transform: uppercase; font-family: 'Oswald', sans-serif; letter-spacing: 2px; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); margin-bottom: 10px;">¿Por qué elegir Trifoz Turismo?</h2>
         <p class="subtitulo-info" style="color: #fff; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 500; opacity: 0.95; margin-bottom: 50px; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">Tu viaje soñado en la Triple Frontera, con confort premium y un servicio diseñado exclusivamente para ti.</p>
 
@@ -2588,11 +2600,11 @@
             <div class="info-side-image" onmouseover="this.style.borderColor='rgba(224, 160, 255, 0.8)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='rgba(0, 210, 255, 0.4)'; this.style.transform='translateY(0)';" style="width: 95%; max-width: 580px; aspect-ratio: 1.52; height: auto; position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.5); border: 2px solid rgba(0, 210, 255, 0.4); transition: all 0.4s ease; margin: 0 auto;">
                 <div class="car-slides" style="width: 100%; height: 100%; position: relative;">
                     <div class="car-slide active" style="position: absolute; inset: 0; opacity: 1; transition: opacity 1.2s ease-in-out; z-index: 1;">
-                        <img src="images/1.1.jpeg" alt="Vehículo premium Trifoz" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 5s ease-out;">
+                        <img src="images/1.1.jpeg" alt="Vehículo premium Trifoz Turismo" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 5s ease-out;">
                         <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.35); z-index: 2; pointer-events: none;"></div>
                     </div>
                     <div class="car-slide" style="position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease-in-out; z-index: 1;">
-                        <img src="images/car2 - copia.jpeg" alt="Vehículo premium Trifoz" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 5s ease-out;">
+                        <img src="images/car2 - copia.jpeg" alt="Vehículo premium Trifoz Turismo" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 5s ease-out;">
                         <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.35); z-index: 2; pointer-events: none;"></div>
                     </div>
                 </div>
@@ -2620,10 +2632,6 @@
                 </div>
             </div>
         </div>
-            </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     
@@ -2635,7 +2643,7 @@
         <div class="galeria-overlay"></div>
         <div class="galeria-slides-container" style="width: 100%; height: 100%; position: relative;">
             <div class="galeria-slide active">
-                <img src="images/cataratas.jpg" alt="Cataratas del Iguazú" class="galeria-img">
+                <img src="images/cataratas.jpg" alt="Cataratas del Iguazú" class="galeria-img" loading="lazy">
                 <div class="galeria-content">
                     <span class="galeria-title">Cataratas del Iguazú</span>
                     <span class="galeria-subtitle">Una de las siete maravillas naturales del mundo</span>
