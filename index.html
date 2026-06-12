@@ -2264,23 +2264,6 @@
             }
         }
 
-        /* === ACCESIBILIDAD: Reducción de movimiento === */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-            /* Restablecer animación de fuego decorativo a petición del usuario */
-            .fire-wrapper, .fire-wrapper::before {
-                animation-duration: 4s !important;
-                animation-iteration-count: infinite !important;
-            }
-            .fire-wrapper::before {
-                animation-duration: 3s !important;
-            }
-        }
     </style>
 </head>
 
