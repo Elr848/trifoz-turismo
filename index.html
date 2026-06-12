@@ -8,14 +8,14 @@
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <title>Tours Foz de Iguazú | Traslados & Transfer Privado | Trifoz</title>
+    <title>Transfer Privado en Foz do Iguaçu | Tours, Aeropuerto y Triple Frontera</title>
     <meta name="description"
         content="Tours privados en Foz de Iguazú. Traslados aeropuerto 24/7 y transfer privado Triple Frontera. Guía turístico Ebert, especialista LIBRAS. Reserva ahora.">
     <meta name="keywords"
         content="tours foz de iguazú, traslados foz de iguazú, transfer foz de iguazú, guía turístico foz, transporte privado foz, traslado aeropuerto foz, paseos guiados cataratas, tour cataratas iguazu, guía turístico cataratas, transfer privado brasil, traslado triple frontera, transporte turístico foz, guía LIBRAS foz, tour macuco safari, traslado puerto iguazu, transfer ciudad del este, guía turístico ebert">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Trifoz Turismo - Guía Turístico Ebert">
-    <link rel="canonical" href="https://trifoz-turismo.com" />
+    <link rel="canonical" href="https://trifoz-turismo.com/" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <meta name="theme-color" content="#74ACDF">
@@ -25,9 +25,9 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="format-detection" content="telephone=yes">
 
-    <link rel="alternate" hreflang="es" href="https://trifoz-turismo.com" />
-    <link rel="alternate" hreflang="pt" href="https://trifoz-turismo.com/index-pt.html" />
-    <link rel="alternate" hreflang="x-default" href="https://trifoz-turismo.com" />
+    <link rel="alternate" hreflang="es" href="https://trifoz-turismo.com/" />
+    <link rel="alternate" hreflang="pt-br" href="https://trifoz-turismo.com/index-pt.html" />
+    <link rel="alternate" hreflang="x-default" href="https://trifoz-turismo.com/" />
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Trifoz Turismo">
@@ -607,17 +607,20 @@
         }
 
         .card {
-            background: rgba(75, 83, 88, 0.95) !important;
+            background: rgba(255, 255, 255, 0.8) !important;
+            /* Ligeras y luminosas */
             border-radius: 15px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border: 1px solid rgba(255, 255, 255, 0.4) !important;
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
             display: flex;
             flex-direction: column;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             cursor: pointer;
             position: relative;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08) !important;
+            /* Sombras muy suaves y claras */
             -webkit-tap-highlight-color: transparent;
         }
 
@@ -638,7 +641,8 @@
 
         .card-content {
             padding: 10px 12px !important;
-            background: #1a1f22 !important;
+            background: rgba(255, 255, 255, 0.92) !important;
+            /* Fondo claro */
             display: flex !important;
             flex-direction: column !important;
             justify-content: center !important;
@@ -646,20 +650,23 @@
         }
 
         .card-content h3 {
-            color: var(--amarillo);
+            color: #002366 !important;
+            /* Azul rey para legibilidad excelente */
             margin: 0 0 4px;
             text-transform: uppercase;
             font-size: 1.1rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            text-shadow: none !important;
+            /* Quitar sombra oscura */
         }
 
         .card-content p {
-            color: #f0f0f0;
+            color: #333333 !important;
+            /* Texto oscuro */
             font-weight: 500;
         }
 
         .card:hover .card-content h3 {
-            color: var(--azul-electrico);
+            color: var(--azul-electrico) !important;
         }
 
         .video-card {
@@ -1577,15 +1584,25 @@
            ========================================================================== */
         .slider-container-3d {
             position: relative;
-            width: 100%;
+            width: 95%;
+            max-width: 1200px;
+            margin: 40px auto;
+            border-radius: 24px;
+            /* Redondea las puntas */
             min-height: 600px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            background: radial-gradient(circle at center, rgba(12, 10, 26, 0.6) 0%, transparent 80%);
-            margin: 40px 0;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.25) 0%, rgba(240, 248, 255, 0.4) 60%, rgba(220, 235, 245, 0.5) 100%);
+            /* Fondo metalizado claro y brillante */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1.5px solid rgba(255, 255, 255, 0.45);
+            /* Borde claro brillante */
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4), 0 15px 35px rgba(0, 35, 102, 0.08);
+            /* Sombras sumamente suaves y claras */
             z-index: 5;
             padding: 20px 0 40px 0;
         }
@@ -1645,26 +1662,25 @@
             perspective: 1000px;
         }
 
-        /* Cara del carrusel 3D (Estilo consola del mockup) */
+        /* Cara del carrusel 3D (Estilo oscuro metalizado profesional) */
         .card-back {
             width: 100%;
             height: 100%;
             border-radius: 20px;
             overflow: hidden;
-            background: rgba(12, 10, 26, 0.85);
-            /* Fondo oscuro translúcido */
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             padding: clamp(16px, 4vw, 24px) clamp(14px, 3.5vw, 20px);
-            border: 1.5px solid rgba(0, 210, 255, 0.35);
-            /* Borde cian sutil por defecto */
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.1), inset 0 0 20px rgba(186, 104, 200, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.15) !important;
+            /* Borde metálico sutil */
+            box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1), inset 0 -2px 5px rgba(0, 0, 0, 0.8), 0 10px 25px rgba(0, 0, 0, 0.75) !important;
+            /* Bisel e iluminación metálica */
             color: #fff;
             text-align: left;
-            transition: border-color 0.4s, box-shadow 0.4s;
+            transition: all 0.4s ease;
         }
 
         /* Resplandor especial para la tarjeta central activa */
@@ -1673,9 +1689,9 @@
         }
 
         .card-item-3d.is-active .card-back {
-            border-color: rgba(224, 160, 255, 0.95);
-            /* Borde morado brillante para la tarjeta activa - más vivo */
-            box-shadow: 0 0 30px rgba(224, 160, 255, 0.5), 0 15px 45px rgba(0, 0, 0, 0.5);
+            border-color: #00d2ff !important;
+            /* Borde cian neón metálico */
+            box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.25), inset 0 -2px 8px rgba(0, 210, 255, 0.4), 0 0 30px rgba(0, 210, 255, 0.6), 0 15px 45px rgba(0, 0, 0, 0.7) !important;
         }
 
         /* Estilo del contenido trasero de la tarjeta */
@@ -1910,7 +1926,7 @@
         @media (max-width: 768px) {
             .slider-container-3d {
                 min-height: 480px;
-                margin: 20px 0;
+                margin: 20px auto;
                 padding: 10px 0 20px 0;
             }
 
@@ -1920,8 +1936,27 @@
             }
 
             .nav-btn-container-3d {
-                display: none;
-                /* Ocultar flechas en móvil para dar espacio al gesto swipe */
+                display: flex;
+                /* Mostrar flechas en móvil */
+                width: 100%;
+                max-width: 100%;
+                top: 35%;
+                /* Centrado con respecto a las tarjetas */
+                transform: translateY(-50%);
+                padding: 0 10px;
+                box-sizing: border-box;
+            }
+
+            .nav-btn-3d-cf {
+                width: 42px;
+                height: 42px;
+                background: rgba(12, 10, 26, 0.9);
+                /* Más opaco para mejor visibilidad */
+            }
+
+            .nav-btn-3d-cf svg {
+                width: 16px;
+                height: 16px;
             }
 
             .active-info-container {
@@ -1940,10 +1975,322 @@
                 padding-top: 10px;
             }
         }
+
+        /* BARRA DE BOTONES HORIZONTAL */
+        .horizontal-button-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            width: 90%;
+            max-width: 850px;
+            margin: 30px auto 40px auto;
+            flex-wrap: wrap;
+        }
+
+        .btn-horizontal-bar {
+            flex: 1;
+            min-width: 150px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(12, 10, 26, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1.5px solid rgba(0, 210, 255, 0.4);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .btn-horizontal-bar i {
+            color: #00d2ff;
+            font-size: 1.1rem;
+        }
+
+        .btn-horizontal-bar:hover {
+            background: rgba(0, 210, 255, 0.35);
+            border-color: rgba(224, 160, 255, 0.8);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 210, 255, 0.4);
+        }
+
+        @media (max-width: 580px) {
+            .horizontal-button-bar {
+                flex-direction: column;
+                gap: 12px;
+                width: 95%;
+            }
+
+            .btn-horizontal-bar {
+                width: 100%;
+            }
+        }
+
+        /* Ken Burns Gallery Styles */
+        .galeria-franja {
+            position: relative;
+            width: 100%;
+            height: 520px;
+            /* Incrementado para mejor proporción en notebooks/computadoras */
+            overflow: hidden;
+            background: #050510;
+            border-top: 2px solid rgba(0, 210, 255, 0.3);
+            border-bottom: 2px solid rgba(0, 210, 255, 0.3);
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .galeria-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1.5s ease-in-out, visibility 1.5s;
+            z-index: 1;
+        }
+
+        .galeria-slide.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 2;
+        }
+
+        .galeria-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1);
+        }
+
+        .galeria-slide.active .galeria-img {
+            animation: kenBurnsAnimation 7s forwards ease-out;
+        }
+
+        @keyframes kenBurnsAnimation {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.12);
+            }
+        }
+
+        .galeria-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(12, 10, 26, 0.5) 0%, transparent 40%, rgba(12, 10, 26, 0.2) 100%);
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .galeria-content {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            z-index: 4;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            pointer-events: none;
+        }
+
+        .galeria-title {
+            color: #00d2ff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 10px rgba(0, 210, 255, 0.5);
+        }
+
+        .galeria-subtitle {
+            color: #fff;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .galeria-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(12, 10, 26, 0.6);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .galeria-nav-btn:hover {
+            background: rgba(0, 210, 255, 0.4);
+            border-color: #00d2ff;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+            color: #fff;
+        }
+
+        .galeria-nav-btn.prev {
+            left: 25px;
+        }
+
+        .galeria-nav-btn.next {
+            right: 25px;
+        }
+
+        .galeria-dots {
+            position: absolute;
+            bottom: 25px;
+            right: 30px;
+            z-index: 5;
+            display: flex;
+            gap: 8px;
+        }
+
+        .galeria-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .galeria-dot.active {
+            background: #00d2ff;
+            transform: scale(1.3);
+            box-shadow: 0 0 8px rgba(0, 210, 255, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .galeria-franja {
+                height: 300px;
+            }
+
+            .galeria-nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .galeria-nav-btn.prev {
+                left: 15px;
+            }
+
+            .galeria-nav-btn.next {
+                right: 15px;
+            }
+
+            .galeria-content {
+                bottom: 20px;
+                left: 20px;
+            }
+
+            .galeria-dots {
+                bottom: 15px;
+                right: 20px;
+            }
+        }
+
+
+        /* New Info Box Styles */
+        .info-box {
+            width: 90%;
+            max-width: 1050px;
+            min-height: 400px;
+            margin: 50px auto;
+            padding: 50px;
+            background: linear-gradient(135deg, rgba(76, 99, 137, 0.45) 0%, rgba(63, 85, 122, 0.5) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid rgba(0, 216, 255, 0.35);
+            border-radius: 30px;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            color: white;
+            text-align: left;
+            box-shadow: 0 20px 45px rgba(0, 210, 255, 0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .info-box:hover {
+            border-color: rgba(224, 160, 255, 0.8);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(224, 160, 255, 0.25);
+        }
+
+        .columna {
+            flex: 1;
+        }
+
+        .info-box h2 {
+            color: #00d8ff;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            line-height: 1.2;
+            text-shadow: 0 0 10px rgba(0, 216, 255, 0.3);
+        }
+
+        .info-box p {
+            font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+            line-height: 1.8;
+            color: #ccd1e0;
+        }
+
+        @media (max-width: 768px) {
+            .info-box {
+                flex-direction: column;
+                padding: 30px;
+                gap: 30px;
+            }
+        }
+
+        /* Estilos de zoom de los deslizadores de vehículos */
+        .car-slide img,
+        .car-slide2 img {
+            transform: scale(1.02) !important;
+            transition: transform 6s ease-out !important;
+        }
+
+        .car-slide.active img,
+        .car-slide2.active img {
+            transform: scale(1.08) !important;
+        }
     </style>
 </head>
 
 <body>
+
+
 
     <div class="header-idioma-container">
         <span class="label-idioma-fijo">Idioma:</span>
@@ -2148,25 +2495,15 @@
         </button>
     </div>
 
+
+
+    <div style="text-align: center; margin-bottom: 40px; padding: 0 20px;">
+        <h2 class="subtitulo-amarillo" style="font-size: clamp(1.4rem, 6vw, 2.2rem); margin-bottom: 5px;">
+            Atracciones Imperdibles en Foz de Iguazú
+        </h2>
+    </div>
+
     <section class="attractions">
-        <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer"
-            class="btn-libras-premium">
-            <img src="images/una.jpeg" width="240" height="170" alt="Atendemos en LIBRAS" class="libras-icon-img"
-                loading="lazy">
-            <div class="libras-text-wrapper">
-                <span class="libras-pt" style="color: #002366;">Atendemos en LIBRAS</span>
-                <span class="libras-en">Lengua de Señas • Sign Language</span>
-                <span class="libras-video-text"><i class="fas fa-play-circle"></i> Ver video</span>
-            </div>
-        </a>
-
-        <div style="text-align: center; margin-bottom: 40px; padding: 0 20px;">
-            <h2 class="subtitulo-amarillo" style="font-size: clamp(1.4rem, 6vw, 2.2rem); margin-bottom: 5px;">
-                Atracciones y Traslados Imperdibles en Foz de Iguazú
-            </h2>
-        </div>
-
-        <!-- CARRUSEL 3D COVERFLOW EXCLUSIVO (ESTILO GOOGLE DESIGN) -->
         <div class="slider-container-3d">
             <!-- Texto gigante en el fondo -->
             <div class="bg-text-back">CATARATAS</div>
@@ -2266,214 +2603,265 @@
             </div>
         </div>
 
-        <div class="grid-attractions contenedor-catalogo">
-            <div class="linha-quatro">
-                <div class="card">
-                    <div class="card-image"><img src="images/cataratas mejorada.jpg" alt="Cataratas del Iguazú"
-                            width="600" height="400"></div>
-                    <div class="card-content">
-                        <h3>CATARATAS DE IGUAZÚ</h3>
-                        <p>Visita guiada privada.</p>
-                    </div>
-                    <div class="card-overlay">
-                        <div class="card-overlay-text">Siente la fuerza imponente de la naturaleza en una de las Siete
-                            Maravillas Naturales del Mundo. Un recorrido privado para conectar con la energía pura del
-                            agua.</div>
-                    </div>
+        <div class="contenedor-catalogo"
+            style="display: flex; justify-content: center; align-items: center; padding: 40px 15px; width: 100%;">
+            <div class="video-card card"
+                style="max-width: 650px; width: 100%; margin: 0 auto; box-shadow: 0 15px 35px rgba(0, 35, 102, 0.1); background: rgba(255, 255, 255, 0.85); border-radius: 16px; border: 1.5px solid rgba(255, 255, 255, 0.4); overflow: hidden; display: flex; flex-direction: column;">
+                <div class="card-image" style="width: 100%; overflow: hidden;">
+                    <img src="images/macuco_safari_real.jpg" alt="Macuco Safari" width="800" height="500"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.5s;"
+                        onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
                 </div>
-                <div class="card">
-                    <div class="card-image"><img src="images/pda.png" alt="Parque de las Aves" width="600" height="400">
+                <div class="card-content"
+                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 35px 25px; gap: 20px; text-align: center; background: rgba(255, 255, 255, 0.95);">
+                    <div style="text-align: center;">
+                        <h3
+                            style="font-family: 'Montserrat', sans-serif; font-weight: 900; letter-spacing: 2px; font-size: clamp(1.4rem, 4vw, 1.85rem); margin: 0 0 10px 0; color: #002366; text-transform: uppercase;">
+                            MACUCO SAFARI</h3>
+                        <p
+                            style="color: #333333; font-size: clamp(0.9rem, 2vw, 1.05rem); margin: 0; line-height: 1.5; max-width: 600px;">
+                            Aventura extrema en las caídas de agua. Navegación extrema en bote bimotor hasta el corazón
+                            de las Cataratas.</p>
                     </div>
-                    <div class="card-content">
-                        <h3>PARQUE DE LAS AVES</h3>
-                        <p>Santuario ecológico.</p>
-                    </div>
-                    <div class="card-overlay">
-                        <div class="card-overlay-text">Sumérgete en un santuario ecológico único. Camina entre tucanes y
-                            guacamayos en una experiencia inmersiva de preservación y colores vibrantes.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image"><img src="images/marco_real.jpg" alt="Hito de las Tres Fronteras"
-                            width="600" height="400"></div>
-                    <div class="card-content">
-                        <h3>HITO DE LAS 3 FRONTERAS</h3>
-                        <p>Encuentro de naciones.</p>
-                    </div>
-                    <div class="card-overlay">
-                        <div class="card-overlay-text">El único lugar en el mundo donde tres países se abrazan. Disfruta
-                            de un atardecer mágico, shows culturales y una vista panorámica espectacular.</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image"><img src="images/kattamaram_v2.jpg" alt="Kattamaram II" width="600"
-                            height="400"></div>
-                    <div class="card-content">
-                        <h3>KATTAMARAM II</h3>
-                        <p>Romanticismo al amanecer o atardecer.</p>
-                    </div>
-                    <div class="card-overlay">
-                        <div class="card-overlay-text">Navega por las aguas donde se unen los ríos Paraná e Iguazú. Un
-                            viaje romántico y exclusivo ideal para brindar mientras el sol se esconde.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="secao-macuco-container">
-                <div class="sub-coluna-vertical">
-                    <div class="card">
-                        <div class="card-image"><img src="images/buda.jpeg" alt="Templo Budista" width="600"
-                                height="400"></div>
-                        <div class="card-content">
-                            <h3>TEMPLO BUDISTA</h3>
-                            <p>Paz y meditación.</p>
-                        </div>
-                        <div class="card-overlay">
-                            <div class="card-overlay-text">Encuentra la paz interior en uno de los templos budistas más
-                                grandes de América Latina. Arquitectura majestuosa, jardines zen y una vista inigualable
-                                de la ciudad.</div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-image"><img src="images/mezquita.jpeg" alt="Mezquita Musulmana" width="600"
-                                height="400"></div>
-                        <div class="card-content">
-                            <h3>MEZQUITA MUSULMANA</h3>
-                            <p>Arquitectura y cultura.</p>
-                        </div>
-                        <div class="card-overlay">
-                            <div class="card-overlay-text">Viaja a la cultura árabe sin salir de la frontera. Descubre
-                                detalles arquitectónicos deslumbrantes en un espacio de profundo respeto y belleza.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="video-card card">
-                    <div class="card-image">
-                        <img src="images/macuco_safari_real.jpg" alt="Macuco Safari" width="800" height="500"
-                            style="width: 100%; height: auto; display: block;">
-                    </div>
-                    <div class="card-content"
-                        style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px 20px; gap: 20px;">
-                        <div style="text-align: center;">
-                            <h3>MACUCO SAFARI</h3>
-                            <p style="color: #fff;">Aventura extrema en las caídas de agua.</p>
-                        </div>
-                        <a href="https://youtu.be/1dUpxFeU_u4?si=1p_wqlZU0Bks6DNa" target="_blank"
-                            rel="noopener noreferrer" class="btn-video-elegant">
-                            <i class="fab fa-youtube" style="color: #ff0000;"></i> Ver Aventura Macuco Safari
-                        </a>
-                    </div>
-                </div>
-                <div class="sub-coluna-vertical">
-                    <div class="card">
-                        <div class="card-image"><img src="images/dutty.jpeg" alt="Puerto Iguazú" width="600"
-                                height="400"></div>
-                        <div class="card-content">
-                            <h3>PUERTO IGUAZÚ</h3>
-                            <p>Argentina a tu alcance.</p>
-                        </div>
-                        <div class="card-overlay">
-                            <div class="card-overlay-text">Cruza la frontera para deleitarte con la mejor gastronomía.
-                                Vinos de primera, las famosas parrilladas argentinas y un ambiente nocturno inigualable.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-image"><img src="images/paraguai.jpg" alt="Ciudad del Este" width="600"
-                                height="400"></div>
-                        <div class="card-content">
-                            <h3>CIUDAD DEL ESTE</h3>
-                            <p>Compras y frontera.</p>
-                        </div>
-                        <div class="card-overlay">
-                            <div class="card-overlay-text">El paraíso de las compras a tu alcance. Te guiamos de forma
-                                segura a los mejores centros comerciales para conseguir tecnología y marcas a precios
-                                increíbles.</div>
-                        </div>
-                    </div>
+                    <a href="https://youtu.be/1dUpxFeU_u4?si=1p_wqlZU0Bks6DNa" target="_blank" rel="noopener noreferrer"
+                        class="btn-video-elegant"
+                        style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-family: 'Montserrat', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; color: #fff; background: rgba(255, 0, 0, 0.85); padding: 12px 25px; border-radius: 30px; box-shadow: 0 4px 15px rgba(255,0,0,0.4); transition: all 0.3s;"
+                        onmouseover="this.style.background='#ff0000'; this.style.transform='translateY(-2px)';"
+                        onmouseout="this.style.background='rgba(255, 0, 0, 0.85)'; this.style.transform='translateY(0)';">
+                        <i class="fab fa-youtube" style="color: #fff; font-size: 1.1rem;"></i> Ver Aventura Macuco
+                        Safari
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- OTRAS ATRACCIONES (ACORDEÓN) -->
-    <div class="otras-atracciones-wrapper">
-        <button class="btn-acordeon" id="btnOtrasAtracciones">
-            <span>Ver Otras Atracciones</span>
-            <i class="fas fa-chevron-down"></i>
-        </button>
 
-        <div class="acordeon-contenido" id="acordeonContenido">
-            <div class="grid-extra">
-
-                <div class="extra-card">
-                    <img src="images/itaipu.jpg" alt="Itaipú Binacional" loading="lazy">
-                    <h4>ITAIPÚ BINACIONAL</h4>
-                    <p>Brasil/Paraguay</p>
-                </div>
-
-                <div class="extra-card">
-                    <img src="images/catedral-foz.jpg" alt="Catedral de Foz do Iguaçu" loading="lazy">
-                    <h4>CATEDRAL DE FOZ</h4>
-                    <p>Brasil</p>
-                </div>
-
-                <div class="extra-card">
-                    <img src="images/gramado-foz.jpg" alt="Gramado Foz" loading="lazy">
-                    <h4>GRAMADO (FOZ)</h4>
-                    <p>Brasil</p>
-                </div>
-
-                <div class="extra-card">
-                    <img src="images/rafain-show.jpg" alt="Rafain Show" loading="lazy">
-                    <h4>RAFAIN SHOW</h4>
-                    <p>Brasil</p>
-                </div>
-
-                <div class="extra-card">
-                    <img src="images/yup-star.jpg" alt="Rueda Gigante Yup Star" loading="lazy">
-                    <h4>YUP STAR</h4>
-                    <p>Paraguay</p>
-                </div>
-
-                <div class="extra-card">
-                    <img src="images/minas-wanda.jpg" alt="Minas de Wanda, gemas y piedras preciosas en Argentina"
-                        loading="lazy">
-                    <h4>MINAS DE WANDA</h4>
-                    <p>Argentina</p>
-                </div>
-
-            </div>
-        </div>
     </div>
 
-    <section class="informacion-turismo">
-        <h2>¿Por qué descubrir la Triple Frontera con Trifoz?</h2>
-        <p class="subtitulo-info">Tu aventura en Foz de Iguazú con total comodidad, seguridad y accesibilidad.</p>
+    <!-- Barra de botones horizontal -->
+    <div class="horizontal-button-bar">
+        <a href="#galeria" class="btn-horizontal-bar" aria-label="Galería de Fotos">
+            <i class="fas fa-images"></i>
+            <span>Galería</span>
+        </a>
+        <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer"
+            class="btn-horizontal-bar" aria-label="Atendemos en LIBRAS">
+            <img src="images/libras_hd.png" alt="LIBRAS"
+                style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; vertical-align: middle;">
+            <span>LIBRAS</span>
+        </a>
+        <button class="btn-horizontal-bar" id="btn-ingresos" aria-label="Compra de Ingresos">
+            <i class="fas fa-ticket-alt"></i>
+            <span>Ingresos</span>
+        </button>
+        <button class="btn-horizontal-bar" id="btn-videos" aria-label="Videos de Trifoz">
+            <i class="fas fa-video"></i>
+            <span>Videos</span>
+        </button>
+    </div>
 
-        <div class="info-content-wrapper">
-            <div class="info-side-image">
-                <img src="images/1.1.jpeg" alt="Vehículo de transporte privado">
+    <section class="informacion-turismo"
+        style="max-width: 1200px; padding: 80px 20px; margin: 0 auto; text-align: center;">
+        <h2
+            style="color: var(--amarillo); font-size: clamp(1.8rem, 5vw, 2.5rem); text-transform: uppercase; font-family: 'Oswald', sans-serif; letter-spacing: 2px; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); margin-bottom: 10px;">
+            ¿Por qué elegir Trifoz Turismo?</h2>
+        <p class="subtitulo-info"
+            style="color: #fff; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 500; opacity: 0.95; margin-bottom: 50px; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">
+            Tu viaje soñado en la Triple Frontera, con confort premium y un servicio diseñado exclusivamente para ti.
+        </p>
+
+        <div class="info-content-wrapper"
+            style="display: flex; flex-direction: column; gap: 40px; align-items: center; width: 100%;">
+            <div class="info-side-image"
+                onmouseover="this.style.borderColor='rgba(224, 160, 255, 0.8)'; this.style.transform='translateY(-5px)';"
+                onmouseout="this.style.borderColor='rgba(0, 210, 255, 0.4)'; this.style.transform='translateY(0)';"
+                style="width: 95%; max-width: 580px; aspect-ratio: 1.52; height: auto; position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.5); border: 2px solid rgba(0, 210, 255, 0.4); transition: all 0.4s ease; margin: 0 auto;">
+                <div class="car-slides" style="width: 100%; height: 100%; position: relative;">
+                    <div class="car-slide active"
+                        style="position: absolute; inset: 0; opacity: 1; transition: opacity 1.2s ease-in-out; z-index: 1;">
+                        <img src="images/1.1.jpeg" alt="Vehículo premium Trifoz"
+                            style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 5s ease-out;">
+                        <div
+                            style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.35); z-index: 2; pointer-events: none;">
+                        </div>
+                    </div>
+                    <div class="car-slide"
+                        style="position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease-in-out; z-index: 1;">
+                        <img src="images/car2 - copia.jpeg" alt="Vehículo premium Trifoz"
+                            style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 5s ease-out;">
+                        <div
+                            style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.35); z-index: 2; pointer-events: none;">
+                        </div>
+                    </div>
+                </div>
+                <div style="position: absolute; bottom: 15px; right: 15px; z-index: 5; display: flex; gap: 6px;">
+                    <span class="car-dot active"
+                        style="width: 6px; height: 6px; border-radius: 50%; background: #00d2ff; box-shadow: 0 0 6px #00d2ff; cursor: pointer;"></span>
+                    <span class="car-dot"
+                        style="width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer;"></span>
+                </div>
             </div>
-            <div class="acordeon-container">
-                <details>
-                    <summary>Transporte Privado y Confortable</summary>
-                    <p>Lo buscamos directamente en su hotel para realizar los recorridos por Foz de Iguazú, Puerto
-                        Iguazú (Argentina) y Ciudad del Este (Paraguay).</p>
-                </details>
-                <details>
-                    <summary>Turismo Inclusivo y Accesible (LIBRAS)</summary>
-                    <p>Ofrecemos una experiencia conectada y adaptada. Comunicación completa en Lengua Brasileña de
-                        Señas (LIBRAS), español y portugués.</p>
-                </details>
-                <details>
-                    <summary>Asesoría en Aduanas y Entradas</summary>
-                    <p>Brindamos orientación para cruzar las fronteras de manera ágil y le ayudamos con la compra de
-                        entradas para las principales atracciones.</p>
-                </details>
+
+            <div class="info-box">
+                <div class="columna">
+                    <h2>EXPLORA FOZ DO IGUAÇU CON NOSOTROS</h2>
+                    <p>
+                        Descubrir la inmensidad de las Cataratas y la biodiversidad única de la selva paranaense es una
+                        experiencia inolvidable. Nos complace acompañarte de forma cercana y segura, ofreciendo un
+                        servicio de traslados privados diseñado a tu medida.
+                    </p>
+                </div>
+                <div class="columna">
+                    <p>
+                        Nos encargamos de toda la logística: desde recogidas puntuales en los aeropuertos de la región
+                        hasta los cruces fronterizos hacia Argentina y Paraguay, facilitando los trámites aduaneros para
+                        que tu única preocupación sea disfrutar de la naturaleza. Además, organizamos paseos
+                        confortables dentro del territorio brasileño, garantizando itinerarios flexibles tanto para
+                        viajeros individuales como para familias y grupos organizados. Nuestro guiado incluye
+                        comunicación accesible en español, portugués y LIBRAS, buscando siempre brindar un trato cálido
+                        y humano.
+                    </p>
+                    <div style="border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 20px; margin-top: 20px;">
+                        <h3
+                            style="color: #00d2ff; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Naturaleza &amp; Paseos</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.85; margin: 0; line-height: 1.4;">Tours guiados por las
+                            Cataratas y los rincones más bellos de la región.</p>
+                    </div>
+                </div>
             </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- SECCIÓN GALERÍA DE FOTOS -->
+    <section id="galeria" class="galeria-franja">
+        <div class="galeria-overlay"></div>
+        <div class="galeria-slides-container" style="width: 100%; height: 100%; position: relative;">
+            <div class="galeria-slide active">
+                <img src="images/cataratas.jpg" alt="Cataratas del Iguazú" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Cataratas del Iguazú</span>
+                    <span class="galeria-subtitle">Una de las siete maravillas naturales del mundo</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/aeroporto.jpg" alt="Traslados al Aeropuerto" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Traslados al Aeropuerto</span>
+                    <span class="galeria-subtitle">Puntualidad y confort 24/7 en la Triple Frontera</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/templo budista 1.png" alt="Templo Budista Chen Tien" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Templo Budista Chen Tien</span>
+                    <span class="galeria-subtitle">Paz, meditación y espectaculares esculturas en Foz</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/mezquita 1.png" alt="Mezquita Omar Ibn Al-Khattab" class="galeria-img"
+                    style="object-fit: contain; background-color: #050510;">
+                <div class="galeria-content">
+                    <span class="galeria-title">Mezquita Omar Ibn Al-Khattab</span>
+                    <span class="galeria-subtitle">Arquitectura islámica y riqueza cultural en el corazón de Foz</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/cataratas_panorama.png" alt="Vistas Panorámicas" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Vistas Panorámicas</span>
+                    <span class="galeria-subtitle">Paisajes únicos e inolvidables de la selva</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/china 1.png" alt="Cultura y Sabores" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Cultura y Sabores</span>
+                    <span class="galeria-subtitle">Experiencias gastronómicas y multiculturales locales</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/dutty.jpeg" alt="Duty Free Shop" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Duty Free Shop</span>
+                    <span class="galeria-subtitle">Compras internacionales exclusivas libre de impuestos</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/feirinha argentina.jpeg" alt="Feirinha de Puerto Iguazú" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Feirinha de Puerto Iguazú</span>
+                    <span class="galeria-subtitle">Sabores locales, olivas y quesos tradicionales</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/Kattamaram (2).jpeg" alt="Paseo en Kattamaram" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Paseo en Kattamaram</span>
+                    <span class="galeria-subtitle">Navegación inolvidable en el encuentro de los ríos</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/museo de cera.png" alt="Dreamland Museo de Cera" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Dreamland Museo de Cera</span>
+                    <span class="galeria-subtitle">Diversión para toda la familia con réplicas perfectas</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/pda.png" alt="Parque de las Aves" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Parque de las Aves</span>
+                    <span class="galeria-subtitle">Contacto directo con la fauna y aves rescatadas</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/usina hidrelectrica.jpeg" alt="Itaipú Binacional" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Itaipú Binacional</span>
+                    <span class="galeria-subtitle">Una de las mayores obras de ingeniería del planeta</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/wonder_park_v2.jpg" alt="Wonder Park Show" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Wonder Park Show</span>
+                    <span class="galeria-subtitle">Espectáculos de luces y atracciones interactivas</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/yup star.jpeg" alt="Yup Star Foz" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Yup Star Foz</span>
+                    <span class="galeria-subtitle">Una de las ruedas de la fortuna más grandes de América Latina</span>
+                </div>
+            </div>
+        </div>
+        <button class="galeria-nav-btn prev" aria-label="Anterior">&#x276E;</button>
+        <button class="galeria-nav-btn next" aria-label="Siguiente">&#x276F;</button>
+        <div class="galeria-dots">
+            <span class="galeria-dot active" data-index="0"></span>
+            <span class="galeria-dot" data-index="1"></span>
+            <span class="galeria-dot" data-index="2"></span>
+            <span class="galeria-dot" data-index="3"></span>
+            <span class="galeria-dot" data-index="4"></span>
+            <span class="galeria-dot" data-index="5"></span>
+            <span class="galeria-dot" data-index="6"></span>
+            <span class="galeria-dot" data-index="7"></span>
+            <span class="galeria-dot" data-index="8"></span>
+            <span class="galeria-dot" data-index="9"></span>
+            <span class="galeria-dot" data-index="10"></span>
+            <span class="galeria-dot" data-index="11"></span>
+            <span class="galeria-dot" data-index="12"></span>
         </div>
     </section>
 
@@ -2849,22 +3237,18 @@
                 });
             }
 
-            // Botones de Navegación anterior / siguiente
+            // Botones de Navegación anterior / siguiente (Cíclico)
             document.getElementById('prevBtn3D')?.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateLayout();
-                    stopAutoplay3D();
-                    startAutoplay3D();
-                }
+                currentIndex = (currentIndex - 1 + numCards3D) % numCards3D;
+                updateLayout();
+                stopAutoplay3D();
+                startAutoplay3D();
             });
             document.getElementById('nextBtn3D')?.addEventListener('click', () => {
-                if (currentIndex < numCards3D - 1) {
-                    currentIndex++;
-                    updateLayout();
-                    stopAutoplay3D();
-                    startAutoplay3D();
-                }
+                currentIndex = (currentIndex + 1) % numCards3D;
+                updateLayout();
+                stopAutoplay3D();
+                startAutoplay3D();
             });
 
             // Registrar eventos para click en tarjetas
@@ -2936,10 +3320,10 @@
                     const change = this.x - startDragX;
                     const limit = 40; // Sensibilidad justa para cambiar de tarjeta
 
-                    if (change > limit && currentIndex > 0) {
-                        currentIndex--;
-                    } else if (change < -limit && currentIndex < numCards3D - 1) {
-                        currentIndex++;
+                    if (change > limit) {
+                        currentIndex = (currentIndex - 1 + numCards3D) % numCards3D;
+                    } else if (change < -limit) {
+                        currentIndex = (currentIndex + 1) % numCards3D;
                     }
                     updateLayout();
                     gsap.set(dragProxy3D, { x: 0 });
@@ -2954,15 +3338,11 @@
                     e.preventDefault();
                     stopAutoplay3D();
                     if (e.deltaY > 0) {
-                        if (currentIndex < numCards3D - 1) {
-                            currentIndex++;
-                            updateLayout();
-                        }
+                        currentIndex = (currentIndex + 1) % numCards3D;
+                        updateLayout();
                     } else {
-                        if (currentIndex > 0) {
-                            currentIndex--;
-                            updateLayout();
-                        }
+                        currentIndex = (currentIndex - 1 + numCards3D) % numCards3D;
+                        updateLayout();
                     }
                     startAutoplay3D();
                 }
@@ -2987,7 +3367,353 @@
             window.addEventListener('resize', updateLayoutParameters);
             startAutoplay3D();
         });
+
+
+        // Lógica de la Galería Ken Burns
+        (function () {
+            const slides = document.querySelectorAll('.galeria-slide');
+            const dots = document.querySelectorAll('.galeria-dot');
+            const prevBtn = document.querySelector('.galeria-nav-btn.prev');
+            const nextBtn = document.querySelector('.galeria-nav-btn.next');
+            let currentIdx = 0;
+            let slideInterval;
+
+            function showSlide(index) {
+                if (!slides.length) return;
+                slides[currentIdx].classList.remove('active');
+                dots[currentIdx].classList.remove('active');
+
+                currentIdx = (index + slides.length) % slides.length;
+
+                slides[currentIdx].classList.add('active');
+                dots[currentIdx].classList.add('active');
+            }
+
+            function nextSlide() {
+                showSlide(currentIdx + 1);
+            }
+
+            function prevSlide() {
+                showSlide(currentIdx - 1);
+            }
+
+            function startAutoplay() {
+                stopAutoplay();
+                slideInterval = setInterval(nextSlide, 6000);
+            }
+
+            function stopAutoplay() {
+                clearInterval(slideInterval);
+            }
+
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', () => {
+                    prevSlide();
+                    startAutoplay();
+                });
+                nextBtn.addEventListener('click', () => {
+                    nextSlide();
+                    startAutoplay();
+                });
+            }
+
+            dots.forEach((dot, idx) => {
+                dot.addEventListener('click', () => {
+                    showSlide(idx);
+                    startAutoplay();
+                });
+            });
+
+            startAutoplay();
+
+            // Soporte para gestos swipe táctiles en móviles para cambiar imágenes
+            const galeriaFranja = document.querySelector('.galeria-franja');
+            if (galeriaFranja) {
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                galeriaFranja.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+
+                galeriaFranja.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    const diffX = touchEndX - touchStartX;
+                    if (Math.abs(diffX) > 50) { // Sensibilidad del swipe
+                        if (diffX < 0) {
+                            nextSlide(); // Deslizar a la izquierda: siguiente
+                        } else {
+                            prevSlide(); // Deslizar a la derecha: anterior
+                        }
+                        startAutoplay();
+                    }
+                }, { passive: true });
+            }
+
+            // Desplazamiento suave para enlaces de anclaje
+            document.querySelectorAll('a[href^="#galeria"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        })();
+
+
+
+        // Lógica de transición para la tarjeta de vehículos
+        (function () {
+            const carSlides = document.querySelectorAll('.car-slide');
+            const carDots = document.querySelectorAll('.car-dot');
+            let carIdx = 0;
+            if (carSlides.length > 1) {
+                setInterval(() => {
+                    if (!carSlides[carIdx]) return;
+                    carSlides[carIdx].style.opacity = '0';
+                    carSlides[carIdx].classList.remove('active');
+                    if (carDots[carIdx]) {
+                        carDots[carIdx].style.background = 'rgba(255,255,255,0.4)';
+                        carDots[carIdx].style.boxShadow = 'none';
+                    }
+
+                    carIdx = (carIdx + 1) % carSlides.length;
+
+                    if (!carSlides[carIdx]) return;
+                    carSlides[carIdx].style.opacity = '1';
+                    carSlides[carIdx].classList.add('active');
+                    if (carDots[carIdx]) {
+                        carDots[carIdx].style.background = '#00d2ff';
+                        carDots[carIdx].style.boxShadow = '0 0 6px #00d2ff';
+                    }
+                }, 4000);
+            }
+        })();
+
+
+
+        // Lógica de la Galería Lightbox Modal para el Carrusel 3D
+        (function () {
+            const lightbox = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const prevBtn = document.getElementById('prevLightbox');
+            const nextBtn = document.getElementById('nextLightbox');
+
+            const carouselCards = document.querySelectorAll('.card-item-3d');
+            let imagesList = [];
+
+            carouselCards.forEach((card, idx) => {
+                const cardBack = card.querySelector('.card-back');
+                if (cardBack) {
+                    const bgStyle = cardBack.style.backgroundImage;
+                    const match = bgStyle.match(/url\(['"]?([^'"]+)['"]?\)/);
+                    if (match) {
+                        const title = destinations[idx] ? destinations[idx].title : "Trifoz Turismo";
+                        imagesList.push({ src: match[1], title: title });
+                    }
+                }
+            });
+
+            let currentImgIdx = 0;
+
+            function openLightbox(index) {
+                currentImgIdx = index;
+                const imgData = imagesList[currentImgIdx];
+                if (!imgData) return;
+
+                lightboxImg.src = imgData.src;
+                lightboxCaption.textContent = imgData.title;
+
+                lightbox.style.display = 'flex';
+                setTimeout(() => {
+                    lightbox.style.opacity = '1';
+                }, 50);
+            }
+
+            function closeLightbox() {
+                lightbox.style.opacity = '0';
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                }, 400);
+            }
+
+            function nextImage(e) {
+                if (e) e.stopPropagation();
+                currentImgIdx = (currentImgIdx + 1) % imagesList.length;
+                openLightbox(currentImgIdx);
+            }
+
+            function prevImage(e) {
+                if (e) e.stopPropagation();
+                currentImgIdx = (currentImgIdx - 1 + imagesList.length) % imagesList.length;
+                openLightbox(currentImgIdx);
+            }
+
+            // Eventos de clic en tarjetas 3D
+            carouselCards.forEach((card, idx) => {
+                card.addEventListener('click', (e) => {
+                    if (card.classList.contains('is-active')) {
+                        openLightbox(idx);
+                    } else {
+                        currentIndex = idx;
+                        updateLayout();
+                        stopAutoplay3D();
+                        startAutoplay3D();
+                    }
+                });
+            });
+
+            // Cierre haciendo click en el fondo o en la imagen misma
+            lightbox.addEventListener('click', closeLightbox);
+            lightboxImg.addEventListener('click', closeLightbox);
+
+            // Flechas prev/next reales para navegación
+            if (prevBtn) {
+                prevBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    prevImage();
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    nextImage();
+                });
+            }
+
+            // Teclado
+            document.addEventListener('keydown', (e) => {
+                if (lightbox.style.display === 'flex') {
+                    if (e.key === 'Escape') closeLightbox();
+                    if (e.key === 'ArrowRight') nextImage();
+                    if (e.key === 'ArrowLeft') prevImage();
+                }
+            });
+            // Modales de la Barra Flotante
+            (function () {
+                const modalIngresos = document.getElementById('modalIngresos');
+                const modalVideos = document.getElementById('modalVideos');
+                const btnIngresos = document.getElementById('btn-ingresos');
+                const btnVideos = document.getElementById('btn-videos');
+                const closeIngresos = document.getElementById('closeIngresos');
+                const closeVideos = document.getElementById('closeVideos');
+
+                if (btnIngresos && modalIngresos) {
+                    btnIngresos.addEventListener('click', () => {
+                        modalIngresos.style.display = 'flex';
+                        setTimeout(() => modalIngresos.style.opacity = '1', 50);
+                    });
+                }
+                if (btnVideos && modalVideos) {
+                    btnVideos.addEventListener('click', () => {
+                        modalVideos.style.display = 'flex';
+                        setTimeout(() => modalVideos.style.opacity = '1', 50);
+                    });
+                }
+
+                function closeModal(modal) {
+                    if (!modal) return;
+                    modal.style.opacity = '0';
+                    setTimeout(() => modal.style.display = 'none', 400);
+                }
+
+                closeIngresos?.addEventListener('click', () => closeModal(modalIngresos));
+                closeVideos?.addEventListener('click', () => closeModal(modalVideos));
+
+                modalIngresos?.addEventListener('click', (e) => {
+                    if (e.target === modalIngresos) closeModal(modalIngresos);
+                });
+                modalVideos?.addEventListener('click', (e) => {
+                    if (e.target === modalVideos) closeModal(modalVideos);
+                });
+            })();
+        });
+
+
+
+
+
     </script>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal"
+        style="display: none; position: fixed; inset: 0; background: rgba(5, 5, 15, 0.95); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); z-index: 99999; justify-content: center; align-items: center; cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
+        <div style="position: absolute; top: 20px; right: 20px; color: #fff; font-size: 2.5rem; cursor: pointer; user-select: none; z-index: 100000; font-family: sans-serif;"
+            id="closeLightbox">&times;</div>
+        <div style="position: absolute; left: 20px; color: #fff; font-size: 2.5rem; cursor: pointer; user-select: none; z-index: 100000; padding: 15px;"
+            id="prevLightbox" onclick="event.stopPropagation();">&#x276E;</div>
+        <div style="position: absolute; right: 20px; color: #fff; font-size: 2.5rem; cursor: pointer; user-select: none; z-index: 100000; padding: 15px;"
+            id="nextLightbox" onclick="event.stopPropagation();">&#x276F;</div>
+        <div
+            style="max-width: 90%; max-height: 85%; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+            <img id="lightboxImg" src="" alt="Zoom"
+                style="max-width: 100%; max-height: 75vh; object-fit: contain; border-radius: 12px; border: 2px solid rgba(0, 210, 255, 0.4); box-shadow: 0 0 40px rgba(0, 210, 255, 0.3); transition: transform 0.3s ease; cursor: pointer;">
+            <div id="lightboxCaption"
+                style="color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1rem; margin-top: 15px; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 1px; color: #00d2ff; text-shadow: 0 2px 10px rgba(0, 210, 255, 0.4);">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Ingresos -->
+    <div id="modalIngresos"
+        style="display: none; position: fixed; inset: 0; background: rgba(5, 5, 15, 0.85); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); z-index: 99999; justify-content: center; align-items: center; cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
+        <div
+            style="background: rgba(12, 10, 26, 0.95); border: 2px solid rgba(0, 210, 255, 0.4); box-shadow: 0 0 30px rgba(0, 210, 255, 0.25); border-radius: 20px; max-width: 500px; width: 90%; padding: 30px; position: relative; cursor: default; color: #fff; font-family: 'Open Sans', sans-serif;">
+            <div style="position: absolute; top: 15px; right: 20px; font-size: 1.8rem; cursor: pointer; color: #fff;"
+                id="closeIngresos">&times;</div>
+            <h3
+                style="color: #00d2ff; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.4rem; margin-top: 0; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">
+                Asesoría en Compra de Ingresos</h3>
+            <p style="line-height: 1.6; font-size: 1rem; color: #ccd1e0; margin-bottom: 15px;">
+                Te ayudamos y asesoramos de forma personalizada en la compra de tus entradas para todas las atracciones
+                de Foz de Iguazú (Cataratas, Macuco Safari, Parque de las Aves, Itaipú, etc.).
+            </p>
+            <h4
+                style="color: #ffd700; font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 10px; font-size: 1.05rem;">
+                ¿Cómo te ayudamos?</h4>
+            <ul style="padding-left: 20px; line-height: 1.6; color: #ccd1e0; margin-bottom: 25px;">
+                <li style="margin-bottom: 8px;"><b>Evita estafas:</b> Te indicamos los canales oficiales y páginas
+                    seguras de compra.</li>
+                <li style="margin-bottom: 8px;"><b>Sincronización logística:</b> Te asesoramos en la elección de días y
+                    horarios para que coordinen perfectamente con tus traslados privados.</li>
+                <li style="margin-bottom: 8px;"><b>Acompañamiento Ebert:</b> Tu guía Ebert te ayuda con cualquier
+                    consulta sobre los ingresos directamente.</li>
+            </ul>
+            <a href="https://wa.me/5545933003337?text=Hola%20Ebert,%20me%20gustar%C3%ADa%20que%20me%20asesores%20con%20la%20compra%20de%20los%20ingresos%20para%20las%20atracciones."
+                target="_blank" rel="noopener noreferrer"
+                style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; background: #25d366; color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 0.85rem; text-transform: uppercase; padding: 12px; border-radius: 30px; box-shadow: 0 4px 15px rgba(37,211,102,0.4); transition: all 0.3s;"
+                onmouseover="this.style.background='#20ba5a'; this.style.transform='translateY(-2px)';"
+                onmouseout="this.style.background='#25d366'; this.style.transform='translateY(0)';">
+                <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Consultar por WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Videos -->
+    <div id="modalVideos"
+        style="display: none; position: fixed; inset: 0; background: rgba(5, 5, 15, 0.85); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); z-index: 99999; justify-content: center; align-items: center; cursor: pointer; opacity: 0; transition: opacity 0.4s ease;">
+        <div
+            style="background: rgba(12, 10, 26, 0.95); border: 2px solid rgba(0, 210, 255, 0.4); box-shadow: 0 0 30px rgba(0, 210, 255, 0.25); border-radius: 20px; max-width: 500px; width: 90%; padding: 30px; position: relative; cursor: default; color: #fff; font-family: 'Open Sans', sans-serif; text-align: center;">
+            <div style="position: absolute; top: 15px; right: 20px; font-size: 1.8rem; cursor: pointer; color: #fff;"
+                id="closeVideos">&times;</div>
+            <i class="fas fa-play-circle"
+                style="color: #00d2ff; font-size: 3.5rem; margin-bottom: 20px; text-shadow: 0 0 15px rgba(0,210,255,0.4);"></i>
+            <h3
+                style="color: #00d2ff; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.4rem; margin-top: 0; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">
+                Galería de Videos</h3>
+            <p style="line-height: 1.6; font-size: 1rem; color: #ccd1e0; margin-bottom: 25px;">
+                ¡Próximamente! Estamos preparando una colección exclusiva de videos y shorts con nuestras aventuras,
+                recorridos turísticos y traslados privados en toda la región de las Tres Fronteras.
+            </p>
+            <button
+                onclick="document.getElementById('modalVideos').style.opacity='0'; setTimeout(()=>document.getElementById('modalVideos').style.display='none',400)"
+                style="background: linear-gradient(135deg, #00d2ff 0%, #e0a0ff 100%); border: none; color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; padding: 10px 24px; border-radius: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,210,255,0.3);">Entendido</button>
+        </div>
+    </div>
+
 </body>
 
 </html>
