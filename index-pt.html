@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: https://flagcdn.com https://upload.wikimedia.org; connect-src 'self' https://wa.me; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content;">
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 
     <title>Transfer Privado em Foz do Iguaçu | Passeios, Aeroporto e Tríplice Fronteira</title>
     <meta name="description" content="Passeios privados em Foz do Iguaçu. Traslados aeroporto 24/7 e transfer privado Tríplice Fronteira. Especialistas em LIBRAS. Guias certificados. Reserve agora.">
@@ -180,6 +180,20 @@
     <link rel="preconnect" href="https://wa.me">
 
     <style>
+        /* RESET AMBIENTAL DE ENCAPSULAMIENTO */
+        html {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden !important;
+            scroll-behavior: smooth;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box !important;
+            margin: 0;
+            padding: 0;
+        }
+
         :root {
             --azul-oscuro: #064e82;
             --azul-rey: #002366;
@@ -198,7 +212,9 @@
             background-size: cover;
             color: #ffffff;
             min-height: 100vh;
-            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden !important;
             position: relative;
         }
 
