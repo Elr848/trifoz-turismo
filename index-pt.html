@@ -16,7 +16,9 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <meta name="theme-color" content="#74ACDF">
-    <link rel="preload" href="images/plataforma_opt.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="images/plataforma_mejorada_desktop.webp" as="image" fetchpriority="high"
+        imagesrcset="images/plataforma_mejorada_mobile.webp 750w, images/plataforma_mejorada_tablet.webp 1200w, images/plataforma_mejorada_desktop.webp 1920w"
+        imagesizes="100vw">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -1911,7 +1913,12 @@
     </div>
 
     <section class="hero">
-        <img src="images/plataforma_opt.jpg" alt="Passeios privados em Foz do Iguaçu - Trifoz Turismo" class="hero-background" width="1920" height="1080">
+        <picture>
+            <source srcset="images/plataforma_mejorada_desktop.webp" media="(min-width: 1024px)" type="image/webp">
+            <source srcset="images/plataforma_mejorada_tablet.webp" media="(min-width: 768px)" type="image/webp">
+            <source srcset="images/plataforma_mejorada_mobile.webp" type="image/webp">
+            <img src="images/plataforma_mejorada_desktop.jpg" alt="Passeios privados em Foz do Iguaçu - Trifoz Turismo" class="hero-background" width="1920" height="1080" fetchpriority="high">
+        </picture>
         <div class="fire-wrapper" aria-hidden="true">
             <div class="hero-container">
                 <h1 class="titulo-metalico" style="margin:0; line-height:1.1; font-size: clamp(1.9rem, 5.5vw, 2.7rem);">
@@ -2107,13 +2114,13 @@
             <div class="carousel-viewport-3d">
                 <div class="carousel-3d-wrapper" id="carousel">
                     
-                    <div class="card-item-3d" data-index="0" data-src="images/cataratas mejorada.jpg">
-                        <div class="card-back" style="background: url('images/cataratas mejorada.jpg') no-repeat center center / cover; padding: 0;">
+                    <div class="card-item-3d" data-index="0" data-src="images/cataratas_mejorada_opt.webp">
+                        <div class="card-back" style="background: url('images/cataratas_mejorada_opt.webp') no-repeat center center / cover; padding: 0;">
                         </div>
                     </div>
 
-                    <div class="card-item-3d" data-index="1" data-src="images/macuco_safari_real.jpg">
-                        <div class="card-back" style="background: url('images/macuco_safari_real.jpg') no-repeat center center / cover; padding: 0;">
+                    <div class="card-item-3d" data-index="1" data-src="images/macuco_safari_real_opt.webp">
+                        <div class="card-back" style="background: url('images/macuco_safari_real_opt.webp') no-repeat center center / cover; padding: 0;">
                         </div>
                     </div>
 
@@ -2122,18 +2129,18 @@
                         </div>
                     </div>
 
-                    <div class="card-item-3d" data-index="3" data-src="images/dutty.jpeg">
-                        <div class="card-back" style="background: url('images/dutty.jpeg') no-repeat center center / cover; padding: 0;">
+                    <div class="card-item-3d" data-index="3" data-src="images/dutty_opt.webp">
+                        <div class="card-back" style="background: url('images/dutty_opt.webp') no-repeat center center / cover; padding: 0;">
                         </div>
                     </div>
 
-                    <div class="card-item-3d" data-index="4" data-src="images/Kattamaram (2).jpeg">
-                        <div class="card-back" style="background: url('images/Kattamaram (2).jpeg') no-repeat center center / cover; padding: 0;">
+                    <div class="card-item-3d" data-index="4" data-src="images/kattamaram_2_opt.webp">
+                        <div class="card-back" style="background: url('images/kattamaram_2_opt.webp') no-repeat center center / cover; padding: 0;">
                         </div>
                     </div>
 
-                    <div class="card-item-3d" data-index="5" data-src="images/dutty.jpeg">
-                        <div class="card-back" style="background: url('images/dutty.jpeg') no-repeat center center / cover; padding: 0;">
+                    <div class="card-item-3d" data-index="5" data-src="images/dutty_opt.webp">
+                        <div class="card-back" style="background: url('images/dutty_opt.webp') no-repeat center center / cover; padding: 0;">
                         </div>
                     </div>
 
@@ -2142,8 +2149,8 @@
                         </div>
                     </div>
 
-                    <div class="card-item-3d" data-index="7" data-src="images/marco_real.jpg">
-                        <div class="card-back" style="background: url('images/marco_real.jpg') no-repeat center center / cover; padding: 0;">
+                    <div class="card-item-3d" data-index="7" data-src="images/marco.webp">
+                        <div class="card-back" style="background: url('images/marco.webp') no-repeat center center / cover; padding: 0;">
                         </div>
                     </div>
 
@@ -2188,6 +2195,56 @@
                         rel="noopener noreferrer" class="btn-video-elegant" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-family: 'Montserrat', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; color: #fff; background: rgba(255, 0, 0, 0.85); padding: 12px 25px; border-radius: 30px; box-shadow: 0 4px 15px rgba(255,0,0,0.4); transition: all 0.3s;" onmouseover="this.style.background='#ff0000'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(255, 0, 0, 0.85)'; this.style.transform='translateY(0)';">
                         <i class="fab fa-youtube" style="color: #fff; font-size: 1.1rem;"></i> Ver Aventura Macuco Safari
                     </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- OUTRAS ATRAÇÕES (ACORDEÃO) -->
+        <div class="otras-atracciones-wrapper">
+            <button class="btn-acordeon" id="btnOtrasAtracciones">
+                <span><i class="fas fa-star"></i> Outras Atrações Imperdíveis <i class="fas fa-star"></i></span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            
+            <div class="acordeon-contenido" id="acordeonContenido">
+                <div class="grid-extra">
+                    
+                    <div class="extra-card">
+                        <img src="images/itaipu_turismo.jpg" alt="Itaipu Binacional" loading="lazy">
+                        <h4>ITAIPU BINACIONAL</h4>
+                        <p>A maior usina hidrelétrica do mundo em geração de energia. Visita técnica ou panorâmica com iluminação noturna.</p>
+                    </div>
+                    
+                    <div class="extra-card">
+                        <img src="images/templo_budista.webp" alt="Templo Budista Chen Tien" loading="lazy">
+                        <h4>TEMPLO BUDISTA</h4>
+                        <p>Um recanto de paz com mais de 120 estátuas, jardins zen e uma vista panorâmica incrível do Rio Paraná.</p>
+                    </div>
+                    
+                    <div class="extra-card">
+                        <img src="images/mezquita1.jpg" alt="Mesquita Omar Ibn Al-Khattab" loading="lazy">
+                        <h4>MESQUITA</h4>
+                        <p>Templo islâmico com arquitetura deslumbrante. Conheça de perto a cultura e tradições árabes na fronteira.</p>
+                    </div>
+                    
+                    <div class="extra-card">
+                        <img src="images/yup star.jpeg" alt="Roda-gigante Yup Star" loading="lazy">
+                        <h4>RODA-GIGANTE YUP STAR</h4>
+                        <p>Uma das maiores rodas-gigantes da América Latina. Desfrute de uma vista única das três fronteiras.</p>
+                    </div>
+                    
+                    <div class="extra-card">
+                        <img src="images/museo_de_cera.webp" alt="Dreamland Museu de Cera" loading="lazy">
+                        <h4>MUSEU DE CERA</h4>
+                        <p>Conheça suas estrelas, líderes e personagens favoritos recriados em cera com realismo impressionante.</p>
+                    </div>
+                    
+                    <div class="extra-card">
+                        <img src="images/wonder_park_v2.jpg" alt="Wonder Park Foz" loading="lazy">
+                        <h4>WONDER PARK</h4>
+                        <p>Parque temático com show de águas dançantes e o famoso Movie Cars, uma coleção de carros de cinema.</p>
+                    </div>
+                    
                 </div>
             </div>
         </div>
