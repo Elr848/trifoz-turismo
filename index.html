@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -2567,49 +2567,58 @@
 
             <div class="carousel-viewport-3d">
                 <div class="carousel-3d-wrapper" id="carousel">
-                    
+
                     <div class="card-item-3d" data-index="0">
-                        <div class="card-back" style="background-image: url('images/cataratas_mejorada_opt.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
+                        <div class="card-back"
+                            style="background-image: url('images/cataratas_mejorada_opt.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
                         </div>
                     </div>
 
                     <div class="card-item-3d" data-index="1">
-                        <div class="card-back" style="background-image: url('images/macuco_safari_real_opt.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
+                        <div class="card-back"
+                            style="background-image: url('images/macuco_safari_real_opt.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
                         </div>
                     </div>
 
                     <div class="card-item-3d" data-index="2">
-                        <div class="card-back" style="background-image: url('images/buda.jpeg'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
+                        <div class="card-back"
+                            style="background-image: url('images/buda.jpeg'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
                         </div>
                     </div>
 
                     <div class="card-item-3d" data-index="3">
-                        <div class="card-back" style="background-image: url('images/dutty_opt.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
+                        <div class="card-back"
+                            style="background-image: url('images/dutty_opt.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
                         </div>
                     </div>
 
                     <div class="card-item-3d" data-index="4">
-                        <div class="card-back" style="background-image: url('images/kattamaram_2_opt.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
+                        <div class="card-back"
+                            style="background-image: url('images/kattamaram_2_opt.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
                         </div>
                     </div>
 
                     <div class="card-item-3d" data-index="5">
-                        <div class="card-back" style="background-image: url('images/dutty_opt.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
+                        <div class="card-back"
+                            style="background-image: url('images/dutty_opt.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
                         </div>
                     </div>
 
                     <div class="card-item-3d" data-index="6">
-                        <div class="card-back" style="background-image: url('images/china.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
+                        <div class="card-back"
+                            style="background-image: url('images/china.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
                         </div>
                     </div>
 
                     <div class="card-item-3d" data-index="7">
-                        <div class="card-back" style="background-image: url('images/marco.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
+                        <div class="card-back"
+                            style="background-image: url('images/marco.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
                         </div>
                     </div>
 
                     <div class="card-item-3d" data-index="8">
-                        <div class="card-back" style="background-image: url('images/pda.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
+                        <div class="card-back"
+                            style="background-image: url('images/pda.webp'); background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 0;">
                         </div>
                     </div>
 
@@ -3354,7 +3363,7 @@
             const lightboxCaption = document.getElementById('lightboxCaption');
             const prevLightboxBtn = document.getElementById('prevLightbox');
             const nextLightboxBtn = document.getElementById('nextLightbox');
-            
+
             let imagesList = [];
             cards3D.forEach((card, idx) => {
                 const cardBack = card.querySelector('.card-back');
@@ -3367,24 +3376,24 @@
                     }
                 }
             });
-            
+
             let currentImgIdx = 0;
-            
+
             function openLightbox(index) {
                 currentImgIdx = index;
                 const imgData = imagesList[currentImgIdx];
                 if (!imgData) return;
-                
+
                 lightboxImg.src = imgData.src;
                 lightboxCaption.textContent = imgData.title;
-                
+
                 lightbox.style.display = 'flex';
                 setTimeout(() => {
                     lightbox.style.opacity = '1';
                 }, 50);
                 stopAutoplay3D();
             }
-            
+
             function closeLightbox() {
                 lightbox.style.opacity = '0';
                 setTimeout(() => {
@@ -3392,14 +3401,14 @@
                     startAutoplay3D();
                 }, 400);
             }
-            
+
             function nextImage(e) {
                 if (e) e.stopPropagation();
                 if (!imagesList.length) return;
                 currentImgIdx = (currentImgIdx + 1) % imagesList.length;
                 openLightbox(currentImgIdx);
             }
-            
+
             function prevImage(e) {
                 if (e) e.stopPropagation();
                 if (!imagesList.length) return;

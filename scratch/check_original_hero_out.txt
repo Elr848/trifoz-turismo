@@ -1,0 +1,22 @@
+=== index.html ===
+  L2286:     <section class="hero">
+  L2287:         <img src="images/plataforma.jpeg" alt="Tours privados en Foz de Iguaz├║ con Gu├¡a Ebert" class="hero-background"
+  L2288:             width="1920" height="1080">
+  L2289:         <div class="fire-wrapper" aria-hidden="true">
+  L2290:             <div class="hero-container">
+  L2291:                 <h1 class="titulo-metalico" style="margin:0; line-height:1.1; font-size: clamp(1.9rem, 5.5vw, 2.7rem);">
+  L2292:                     Trifoz Turismo
+  L2293:                 </h1>
+  L2294:                 <h2 class="subtitulo-amarillo" style="margin:10px 0 0 0; font-size: clamp(0.9rem, 2.2vw, 1.15rem);">
+  L2295:                     Tours &amp; Traslados Privados en la Triple Frontera
+=== index-pt.html ===
+  L1913:     <section class="hero">
+  L1914:         <img src="images/plataforma_opt.jpg" alt="Passeios privados em Foz do Iguaçu - Trifoz Turismo" class="hero-background" width="1920" height="1080">
+  L1915:         <div class="fire-wrapper" aria-hidden="true">
+  L1916:             <div class="hero-container">
+  L1917:                 <h1 class="titulo-metalico" style="margin:0; line-height:1.1; font-size: clamp(1.9rem, 5.5vw, 2.7rem);">
+  L1918:                     Trifoz Turismo
+  L1919:                 </h1>
+  L1920:                 <h2 class="subtitulo-amarillo" style="margin:10px 0 0 0; font-size: clamp(0.9rem, 2.2vw, 1.15rem);">
+  L1921:                     Passeios &amp; Traslados Privados na Tríplice Fronteira
+  L1922:                 </h2>
