@@ -1,0 +1,800 @@
+Total hunks since 9bfee93: 71
+
+Hunk 1 [CSS] (Original Line: 6, New Line: 6):
+  Added 8 lines, Deleted 7 lines
+  Deleted:
+     -6,20 +6,22 @@
+     -    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+     -    <title>Transfer Privado en Foz do Igua├ºu | Tours, Aeropuerto y Triple Frontera</title>
+     -        content="Tours privados en Foz de Iguaz├║. Traslados aeropuerto 24/7 y transfer privado Triple Frontera. Especialistas en LIBRAS. Gu├¡as certificados. Reserva ahora.">
+     -        content="tours foz de iguaz├║, traslados foz de iguaz├║, transfer foz de iguaz├║, gu├¡a tur├¡stico foz, transporte privado foz, traslado aeropuerto foz, paseos guiados cataratas, tour cataratas iguazu, gu├¡a tur├¡stico cataratas, transfer privado brasil, traslado triple frontera, transporte tur├¡stico foz, gu├¡a LIBRAS foz, tour macuco safari, traslado puerto iguazu, transfer ciudad del este, paseos guiados Trifoz">
+     -    <meta name="author" content="Trifoz Turismo">
+  Added:
+     +    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+     +    <title>Transfer Privado en Foz do Iguaçu | Tours, Aeropuerto y Triple Frontera</title>
+     +        content="Tours privados en Foz de Iguazú. Traslados aeropuerto 24/7 y transfer privado Triple Frontera. Guía turístico Ebert, especialista LIBRAS. Reserva ahora.">
+     +        content="tours foz de iguazú, traslados foz de iguazú, transfer foz de iguazú, guía turístico foz, transporte privado foz, traslado aeropuerto foz, paseos guiados cataratas, tour cataratas iguazu, guía turístico cataratas, transfer privado brasil, traslado triple frontera, transporte turístico foz, guía LIBRAS foz, tour macuco safari, traslado puerto iguazu, transfer ciudad del este, guía turístico ebert">
+     +    <meta name="author" content="Trifoz Turismo - Guía Turístico Ebert">
+     +    <link rel="preload" href="images/plataforma_mejorada_desktop.webp" as="image" fetchpriority="high"
+
+Hunk 2 [CSS] (Original Line: 32, New Line: 34):
+  Added 7 lines, Deleted 10 lines
+  Deleted:
+     -32,27 +34,25 @@
+     -    <meta property="og:title" content="≡ƒÑç Tours Foz de Iguaz├║ | Traslados Aeropuerto & Transfer Privado | Gu├¡a Ebert">
+     -        content="Γ¡É Tours privados Γ£ê∩╕Å Traslados aeropuerto 24/7 ≡ƒÜù Transfer Triple Frontera Γ¡É Gu├¡a LIBRAS Γ¡É Cataratas, Macuco Safari Γ¡É +55(45)933003337">
+     -    <meta property="og:image:width" content="1200">
+     -    <meta property="og:image:height" content="630">
+     -    <meta property="og:image:alt" content="Tours y traslados privados en Foz de Iguaz├║">
+  Added:
+     +    <meta property="og:title" content="🥇 Tours Foz de Iguazú | Traslados Aeropuerto & Transfer Privado | Guía Ebert">
+     +        content="⭐ Tours privados ✈️ Traslados aeropuerto 24/7 🚗 Transfer Triple Frontera ⭐ Guía LIBRAS ⭐ Cataratas, Macuco Safari ⭐ +55(45)933003337">
+     +    <meta property="og:image:alt" content="Tours y traslados privados en Foz de Iguazú">
+     +    <meta name="twitter:title" content="🥇 Tours Foz de Iguazú | Traslados Aeropuerto & Transfer Privado">
+     +        content="⭐ Tours privados ✈️ Traslados aeropuerto 24/7 🚗 Transfer Triple Frontera ⭐ Guía LIBRAS ⭐ +55(45)933003337">
+     +    <meta name="twitter:image:alt" content="Tours y traslados privados en Foz de Iguazú">
+
+Hunk 3 [CSS] (Original Line: 72, New Line: 72):
+  Added 3 lines, Deleted 4 lines
+  Deleted:
+     -72,9 +72,9 @@
+     -        "streetAddress": "Foz do Igua├ºu",
+     -        "addressLocality": "Foz do Igua├ºu",
+     -        "addressRegion": "Paran├í",
+  Added:
+     +        "streetAddress": "Foz do Iguaçu",
+     +        "addressLocality": "Foz do Iguaçu",
+     +        "addressRegion": "Paraná",
+
+Hunk 4 [CSS] (Original Line: 95, New Line: 95):
+  Added 3 lines, Deleted 4 lines
+  Deleted:
+     -95,14 +95,14 @@
+     -        "Cataratas de Iguaz├║", 
+     -        { "@type": "AdministrativeArea", "name": "Foz do Igua├ºu" },
+     -        { "@type": "AdministrativeArea", "name": "Puerto Iguaz├║" },
+  Added:
+     +        "Cataratas de Iguazú", 
+     +        { "@type": "AdministrativeArea", "name": "Foz do Iguaçu" },
+     +        { "@type": "AdministrativeArea", "name": "Puerto Iguazú" },
+
+Hunk 5 [CSS] (Original Line: 135, New Line: 135):
+  Added 2 lines, Deleted 3 lines
+  Deleted:
+     -135,8 +135,8 @@
+     -      "name": "Cataratas de Iguaz├║",
+     -      "description": "Una de las mayores ca├¡das de agua del mundo, Patrimonio Natural de la Humanidad por la UNESCO. Visita guiada privada con transporte incluido.",
+  Added:
+     +      "name": "Cataratas de Iguazú",
+     +      "description": "Una de las mayores caídas de agua del mundo, Patrimonio Natural de la Humanidad por la UNESCO. Visita guiada privada con transporte incluido.",
+
+Hunk 6 [CSS] (Original Line: 147, New Line: 147):
+  Added 2 lines, Deleted 3 lines
+  Deleted:
+     -147,8 +147,8 @@
+     -        "addressLocality": "Foz do Igua├ºu",
+     -        "addressRegion": "Paran├í",
+  Added:
+     +        "addressLocality": "Foz do Iguaçu",
+     +        "addressRegion": "Paraná",
+
+Hunk 7 [CSS] (Original Line: 160, New Line: 160):
+  Added 1 lines, Deleted 2 lines
+  Deleted:
+     -160,7 +160,7 @@
+     -        { "@type": "LocationFeatureSpecification", "name": "Gu├¡a en LIBRAS", "value": true }
+  Added:
+     +        { "@type": "LocationFeatureSpecification", "name": "Guía en LIBRAS", "value": true }
+
+Hunk 8 [CSS] (Original Line: 169, New Line: 169):
+  Added 1 lines, Deleted 2 lines
+  Deleted:
+     -169,7 +169,7 @@
+     -        "description": "Transporte privado incluido ΓÇô consulte valores"
+  Added:
+     +        "description": "Transporte privado incluido – consulte valores"
+
+Hunk 9 [CSS] (Original Line: 181, New Line: 181):
+  Added 1 lines, Deleted 19 lines
+  Deleted:
+     -181,29 +181,12 @@
+     -    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
+     -        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+     -        crossorigin="anonymous">
+     -        crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
+     -        /* RESET AMBIENTAL DE ENCAPSULAMIENTO */
+  Added:
+     +        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+Hunk 10 [CSS] (Original Line: 222, New Line: 205):
+  Added 2 lines, Deleted 5 lines
+  Deleted:
+     -222,13 +205,11 @@
+     -            width: 100%;
+     -            max-width: 100%;
+     -            overflow-x: hidden !important;
+     -        /* CONFIGURACI├ôN TOP BAR DE IDIOMAS FIJO */
+  Added:
+     +            overflow-x: hidden;
+     +        /* CONFIGURACIÓN TOP BAR DE IDIOMAS FIJO */
+
+Hunk 11 [CSS] (Original Line: 339, New Line: 320):
+  Added 6 lines, Deleted 9 lines
+  Deleted:
+     -339,25 +320,23 @@
+     -            backface-visibility: hidden;
+     -            top: -50%;
+     -            left: -50%;
+     -            width: 200%;
+     -            height: 200%;
+  Added:
+     +            width: 250%;
+     +            height: 250%;
+     +            background: conic-gradient(transparent, #ff4500, #ffd700, transparent 30%);
+     +            background: rgba(0, 20, 50, 0.82) !important;
+     +            backdrop-filter: blur(15px);
+     +            -webkit-backdrop-filter: blur(15px);
+
+Hunk 12 [CSS] (Original Line: 377, New Line: 356):
+  Added 1 lines, Deleted 2 lines
+  Deleted:
+     -377,7 +356,7 @@
+     -            text-shadow: none;
+  Added:
+     +            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+
+Hunk 13 [CSS] (Original Line: 630, New Line: 609):
+  Added 2 lines, Deleted 2 lines
+  Deleted:
+     -630,7 +609,8 @@
+     -            background: rgba(255, 255, 255, 0.8) !important; /* Ligeras y luminosas */
+  Added:
+     +            background: rgba(255, 255, 255, 0.8) !important;
+     +            /* Ligeras y luminosas */
+
+Hunk 14 [CSS] (Original Line: 641, New Line: 621):
+  Added 2 lines, Deleted 2 lines
+  Deleted:
+     -641,7 +621,8 @@
+     -            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08) !important; /* Sombras muy suaves y claras */
+  Added:
+     +            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08) !important;
+     +            /* Sombras muy suaves y claras */
+
+Hunk 15 [CSS] (Original Line: 662, New Line: 643):
+  Added 2 lines, Deleted 2 lines
+  Deleted:
+     -662,7 +643,8 @@
+     -            background: rgba(255, 255, 255, 0.92) !important; /* Fondo claro */
+  Added:
+     +            background: rgba(255, 255, 255, 0.92) !important;
+     +            /* Fondo claro */
+
+Hunk 16 [CSS] (Original Line: 670, New Line: 652):
+  Added 6 lines, Deleted 4 lines
+  Deleted:
+     -670,15 +652,18 @@
+     -            color: #002366 !important; /* Azul rey para legibilidad excelente */
+     -            text-shadow: none !important; /* Quitar sombra oscura */
+     -            color: #333333 !important; /* Texto oscuro */
+  Added:
+     +            color: #002366 !important;
+     +            /* Azul rey para legibilidad excelente */
+     +            text-shadow: none !important;
+     +            /* Quitar sombra oscura */
+     +            color: #333333 !important;
+     +            /* Texto oscuro */
+
+Hunk 17 [CSS] (Original Line: 763, New Line: 748):
+  Added 1 lines, Deleted 2 lines
+  Deleted:
+     -763,7 +748,7 @@
+     -        /* RESPONSIVE M├ôVIL (Sincronizado con el segundo archivo) */
+  Added:
+     +        /* RESPONSIVE MÓVIL (Sincronizado con el segundo archivo) */
+
+Hunk 18 [CSS] (Original Line: 840, New Line: 825):
+  Added 3 lines, Deleted 1 lines
+  Deleted:
+     -840,6 +825,9 @@
+  Added:
+     +            .fire-wrapper {
+     +                animation: none !important;
+     +            }
+
+Hunk 19 [CSS] (Original Line: 1047, New Line: 1035):
+  Added 1 lines, Deleted 2 lines
+  Deleted:
+     -1047,7 +1035,7 @@
+     -        /* COMPONENTES DE RESERVA INTERFAZ M├ôVIL */
+  Added:
+     +        /* COMPONENTES DE RESERVA INTERFAZ MÓVIL */
+
+Hunk 20 [CSS] (Original Line: 1248, New Line: 1236):
+  Added 1 lines, Deleted 2 lines
+  Deleted:
+     -1248,7 +1236,7 @@
+     -        /* DROPDOWNS SELECCI├ôN PERSONALIZADA */
+  Added:
+     +        /* DROPDOWNS SELECCIÓN PERSONALIZADA */
+
+Hunk 21 [CSS] (Original Line: 1345, New Line: 1333):
+  Added 1 lines, Deleted 2 lines
+  Deleted:
+     -1345,7 +1333,7 @@
+     -        /* SECCI├ôN ACORDEONES INFO REFORZADA */
+  Added:
+     +        /* SECCIÓN ACORDEONES INFO REFORZADA */
+
+Hunk 22 [CSS] (Original Line: 1443, New Line: 1431):
+  Added 1 lines, Deleted 2 lines
+  Deleted:
+     -1443,7 +1431,7 @@
+     -        /* BOT├ôN ACORDE├ôN OTRAS ATRACCIONES */
+  Added:
+     +        /* BOTÓN ACORDEÓN OTRAS ATRACCIONES */
+
+Hunk 23 [CSS] (Original Line: 1587, New Line: 1575):
+  Added 1 lines, Deleted 1 lines
+  Deleted:
+     -1587,6 +1575,7 @@
+  Added:
+     +
+
+Hunk 24 [CSS] (Original Line: 1600, New Line: 1589):
+  Added 8 lines, Deleted 5 lines
+  Deleted:
+     -1600,18 +1589,22 @@
+     -            border-radius: 24px; /* Redondea las puntas */
+     -            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.25) 0%, rgba(240, 248, 255, 0.4) 60%, rgba(220, 235, 245, 0.5) 100%); /* Fondo metalizado claro y brillante */
+     -            border: 1.5px solid rgba(255, 255, 255, 0.45); /* Borde claro brillante */
+     -            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4), 0 15px 35px rgba(0, 35, 102, 0.08); /* Sombras sumamente suaves y claras */
+  Added:
+     +            border-radius: 24px;
+     +            /* Redondea las puntas */
+     +            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.25) 0%, rgba(240, 248, 255, 0.4) 60%, rgba(220, 235, 245, 0.5) 100%);
+     +            /* Fondo metalizado claro y brillante */
+     +            border: 1.5px solid rgba(255, 255, 255, 0.45);
+     +            /* Borde claro brillante */
+
+Hunk 25 [CSS] (Original Line: 1624, New Line: 1617):
+  Added 2 lines, Deleted 2 lines
+  Deleted:
+     -1624,7 +1617,8 @@
+     -            color: rgba(0, 210, 255, 0.04); /* Cian ne├│n ultra-tenue */
+  Added:
+     +            color: rgba(0, 210, 255, 0.04);
+     +            /* Cian neón ultra-tenue */
+
+Hunk 26 [CSS] (Original Line: 1639, New Line: 1633):
+  Added 4 lines, Deleted 3 lines
+  Deleted:
+     -1639,9 +1633,11 @@
+     -            align-items: flex-start; /* Alinear arriba para dejar espacio al espejo abajo */
+     -            perspective: 800px; /* Perspectiva ajustada para el quiebre exacto */
+  Added:
+     +            align-items: flex-start;
+     +            /* Alinear arriba para dejar espacio al espejo abajo */
+     +            perspective: 800px;
+     +            /* Perspectiva ajustada para el quiebre exacto */
+
+Hunk 27 [CSS] (Original Line: 1680, New Line: 1676):
+  Added 4 lines, Deleted 3 lines
+  Deleted:
+     -1680,8 +1676,10 @@
+     -            border: 2px solid rgba(255, 255, 255, 0.15) !important; /* Borde met├ílico sutil */
+     -            box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1), inset 0 -2px 5px rgba(0, 0, 0, 0.8), 0 10px 25px rgba(0, 0, 0, 0.75) !important; /* Bisel e iluminaci├│n met├ílica */
+  Added:
+     +            border: 2px solid rgba(255, 255, 255, 0.15) !important;
+     +            /* Borde metálico sutil */
+     +            box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1), inset 0 -2px 5px rgba(0, 0, 0, 0.8), 0 10px 25px rgba(0, 0, 0, 0.75) !important;
+     +            /* Bisel e iluminación metálica */
+
+Hunk 28 [CSS] (Original Line: 1693, New Line: 1691):
+  Added 2 lines, Deleted 2 lines
+  Deleted:
+     -1693,7 +1691,8 @@
+     -            border-color: #00d2ff !important; /* Borde cian ne├│n met├ílico */
+  Added:
+     +            border-color: #00d2ff !important;
+     +            /* Borde cian neón metálico */
+
+Hunk 29 [CSS] (Original Line: 1717, New Line: 1716):
+  Added 2 lines, Deleted 2 lines
+  Deleted:
+     -1717,7 +1716,8 @@
+     -            color: #00d2ff; /* T├¡tulo en cian */
+  Added:
+     +            color: #00d2ff;
+     +            /* Título en cian */
+
+Hunk 30 [CSS] (Original Line: 1726, New Line: 1726):
+  Added 2 lines, Deleted 2 lines
+  Deleted:
+     -1726,7 +1726,8 @@
+     -            color: #ff007f; /* Rosa ne├│n */
+  Added:
+     +            color: #ff007f;
+     +            /* Rosa neón */
+
+Hunk 31 [CSS] (Original Line: 1737, New Line: 1738):
+  Added 4 lines, Deleted 3 lines
+  Deleted:
+     -1737,17 +1738,19 @@
+     -            color: #ccd1e0; /* Texto lavanda muy claro */
+     -        /* Scrollbar discreto si el texto se desborda en pantallas peque├▒as */
+  Added:
+     +            color: #ccd1e0;
+     +            /* Texto lavanda muy claro */
+     +        /* Scrollbar discreto si el texto se desborda en pantallas pequeñas */
+     +
+
+Hunk 32 [CSS] (Original Line: 1764, New Line: 1767):
+  Added 4 lines, Deleted 3 lines
+  Deleted:
+     -1764,12 +1767,14 @@
+     -            color: #00f0ff; /* C├│digo cian */
+     -            color: #ff007f; /* Hora rosa ne├│n */
+  Added:
+     +            color: #00f0ff;
+     +            /* Código cian */
+     +            color: #ff007f;
+     +            /* Hora rosa neón */
+
+Hunk 33 [CSS] (Original Line: 1798, New Line: 1803):
+  Added 1 lines, Deleted 2 lines
+  Deleted:
+     -1798,7 +1803,7 @@
+     -        /* Informaci├│n del destino activo abajo */
+  Added:
+     +        /* Información del destino activo abajo */
+
+Hunk 34 [CSS] (Original Line: 1832, New Line: 1837):
+  Added 3 lines, Deleted 3 lines
+  Deleted:
+     -1832,12 +1837,13 @@
+     -            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+     -            color: #5c00d2; /* P├║rpura intenso de alta legibilidad */
+  Added:
+     +            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+     +            color: #5c00d2;
+     +            /* Púrpura intenso de alta legibilidad */
+
+Hunk 35 [CSS] (Original Line: 1861, New Line: 1867):
+  Added 2 lines, Deleted 2 lines
+  Deleted:
+     -1861,7 +1867,8 @@
+     -            background: rgba(12, 10, 26, 0.85); /* Fondo oscuro cian */
+  Added:
+     +            background: rgba(12, 10, 26, 0.85);
+     +            /* Fondo oscuro cian */
+
+Hunk 36 [CSS] (Original Line: 1893, New Line: 1900):
+  Added 1 lines, Deleted 2 lines
+  Deleted:
+     -1893,7 +1900,7 @@
+     -        /* Navegaci├│n por puntos */
+  Added:
+     +        /* Navegación por puntos */
+
+Hunk 37 [CSS] (Original Line: 1924, New Line: 1931):
+  Added 14 lines, Deleted 5 lines
+  Deleted:
+     -1924,43 +1931,53 @@
+     -                display: flex; /* Mostrar flechas en m├│vil */
+     -                top: 35%; /* Centrado con respecto a las tarjetas */
+     -                background: rgba(12, 10, 26, 0.9); /* M├ís opaco para mejor visibilidad */
+     -    
+  Added:
+     +
+     +
+     +                display: flex;
+     +                /* Mostrar flechas en móvil */
+     +                top: 35%;
+     +                /* Centrado con respecto a las tarjetas */
+
+Hunk 38 [CSS] (Original Line: 1972, New Line: 1989):
+  Added 1 lines, Deleted 1 lines
+  Deleted:
+     -1972,6 +1989,7 @@
+  Added:
+     +
+
+Hunk 39 [CSS] (Original Line: 1992, New Line: 2010):
+  Added 11 lines, Deleted 19 lines
+  Deleted:
+     -1992,57 +2010,50 @@
+     -            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+     -                display: grid;
+     -                grid-template-columns: repeat(2, 1fr);
+     -                gap: 8px;
+     -                min-width: 0;
+  Added:
+     +            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+     +
+     +
+     +
+     +                flex-direction: column;
+     +                gap: 12px;
+
+Hunk 40 [CSS] (Original Line: 2054, New Line: 2065):
+  Added 12 lines, Deleted 3 lines
+  Deleted:
+     -2054,24 +2065,34 @@
+     -            0% { transform: scale(1); }
+     -            100% { transform: scale(1.12); }
+  Added:
+     +
+     +
+     +
+     +
+     +            0% {
+     +                transform: scale(1);
+
+Hunk 41 [CSS] (Original Line: 2079, New Line: 2100):
+  Added 1 lines, Deleted 1 lines
+  Deleted:
+     -2079,6 +2100,7 @@
+  Added:
+     +
+
+Hunk 42 [CSS] (Original Line: 2089, New Line: 2111):
+  Added 1 lines, Deleted 1 lines
+  Deleted:
+     -2089,6 +2111,7 @@
+  Added:
+     +
+
+Hunk 43 [CSS] (Original Line: 2098, New Line: 2121):
+  Added 2 lines, Deleted 1 lines
+  Deleted:
+     -2098,12 +2121,14 @@
+  Added:
+     +
+     +
+
+Hunk 44 [CSS] (Original Line: 2122, New Line: 2147):
+  Added 11 lines, Deleted 5 lines
+  Deleted:
+     -2122,17 +2147,24 @@
+     -            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+     -        .galeria-nav-btn.prev { left: 25px; }
+     -        .galeria-nav-btn.next { right: 25px; }
+     -        
+  Added:
+     +            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+     +
+     +
+     +        .galeria-nav-btn.prev {
+     +            left: 25px;
+     +        }
+
+Hunk 45 [CSS] (Original Line: 2141, New Line: 2173):
+  Added 1 lines, Deleted 1 lines
+  Deleted:
+     -2141,6 +2173,7 @@
+  Added:
+     +
+
+Hunk 46 [CSS] (Original Line: 2149, New Line: 2182):
+  Added 32 lines, Deleted 10 lines
+  Deleted:
+     -2149,21 +2182,44 @@
+     -            .galeria-franja { height: 300px; }
+     -            .galeria-nav-btn { width: 40px; height: 40px; font-size: 1rem; }
+     -            .galeria-nav-btn.prev { left: 15px; }
+     -            .galeria-nav-btn.next { right: 15px; }
+     -            .galeria-content { bottom: 20px; left: 20px; }
+  Added:
+     +
+     +
+     +            .galeria-franja {
+     +                height: 300px;
+     +            }
+     +
+
+Hunk 47 [CSS] (Original Line: 2184, New Line: 2240):
+  Added 3 lines, Deleted 1 lines
+  Deleted:
+     -2184,14 +2240,17 @@
+  Added:
+     +
+     +
+     +
+
+Hunk 48 [CSS] (Original Line: 2202, New Line: 2261):
+  Added 2 lines, Deleted 1 lines
+  Deleted:
+     -2202,11 +2261,13 @@
+  Added:
+     +
+     +
+
+Hunk 49 [CSS] (Original Line: 2214, New Line: 2275):
+  Added 8 lines, Deleted 6 lines
+  Deleted:
+     -2214,17 +2275,20 @@
+     -        
+     -        /* Estilos de zoom de los deslizadores de veh├¡culos */
+     -        .car-slide img, .car-slide2 img {
+     -        .car-slide.active img, .car-slide2.active img {
+     -        /* Bot├│n LIBRAS circular interactivo */
+  Added:
+     +
+     +        /* Estilos de zoom de los deslizadores de vehículos */
+     +        .car-slide img,
+     +        .car-slide2 img {
+     +
+     +        .car-slide.active img,
+
+Hunk 50 [CSS] (Original Line: 2256, New Line: 2320):
+  Added 12 lines, Deleted 10 lines
+  Deleted:
+     -2256,36 +2320,39 @@
+     -
+     -
+     -
+     -            <a href="index.html" class="opcion-idioma-fija activo" hreflang="es">
+     -                <img src="https://flagcdn.com/w20/es.png" class="mini-flag" alt="Espa├▒ol" width="20" height="13" loading="lazy"> ES
+  Added:
+     +
+     +
+     +            <a href="index.html" class="opcion-idioma-fija activo">
+     +                <img src="https://flagcdn.com/w20/es.png" class="mini-flag" alt="Español"> ES
+     +            <a href="index-pt.html" class="opcion-idioma-fija">
+     +                <img src="https://flagcdn.com/w20/br.png" class="mini-flag" alt="Portugués"> PT
+
+Hunk 51 [CSS] (Original Line: 2295, New Line: 2362):
+  Added 2 lines, Deleted 3 lines
+  Deleted:
+     -2295,8 +2362,8 @@
+     -                    Especialistas en LIBRAS ΓÇó Espa├▒ol ΓÇó Portugu├⌐s<br>
+     -                    Incluye paseos guiados con gu├¡as certificados
+  Added:
+     +                    Especialistas en LIBRAS • Español • Portugués<br>
+     +                    Incluye paseos guiados con guías certificados
+
+Hunk 52 [CSS] (Original Line: 2304, New Line: 2371):
+  Added 19 lines, Deleted 20 lines
+  Deleted:
+     -2304,42 +2371,42 @@
+     -                    <div class="booking-field-icon">≡ƒôì</div>
+     -                                <span>┬┐A d├│nde vas?</span> <i class="fas fa-chevron-down" style="font-size:0.8em;"></i>
+     -                                <li class="dropdown-item help-option" data-value="Itinerario Personalizado">Γ£¿ Necesito
+     -                                <li class="dropdown-item" data-value="Cataratas de Iguaz├║ (Brasil)"><span
+     -                                        class="country-tag">BR</span> Cataratas de Iguaz├║ (Brasil)</li>
+  Added:
+     +                    <div class="booking-field-icon">📍</div>
+     +                                <span>¿A dónde vas?</span> <i class="fas fa-chevron-down" style="font-size:0.8em;"></i>
+     +                                <li class="dropdown-item help-option" data-value="Itinerario Personalizado">✨ Necesito
+     +                                <li class="dropdown-item" data-value="Cataratas de Iguazú (Brasil)"><span
+     +                                        class="country-tag">BR</span> Cataratas de Iguazú (Brasil)</li>
+     +                                <li class="dropdown-item" data-value="Cataratas del Iguazú (Argentina)"><span
+
+Hunk 53 [CSS] (Original Line: 2352, New Line: 2419):
+  Added 1 lines, Deleted 2 lines
+  Deleted:
+     -2352,7 +2419,7 @@
+     -                            <button type="button" class="pax-btn" id="pax-minus">ΓêÆ</button>
+  Added:
+     +                            <button type="button" class="pax-btn" id="pax-minus">−</button>
+
+Hunk 54 [CSS] (Original Line: 2360, New Line: 2427):
+  Added 1 lines, Deleted 2 lines
+  Deleted:
+     -2360,7 +2427,7 @@
+     -                    <div class="booking-field-icon">≡ƒùô∩╕Å</div>
+  Added:
+     +                    <div class="booking-field-icon">🗓️</div>
+
+Hunk 55 [CSS] (Original Line: 2371, New Line: 2438):
+  Added 1 lines, Deleted 2 lines
+  Deleted:
+     -2371,7 +2438,7 @@
+     -                        M├üS INFORMACI├ôN
+  Added:
+     +                        MÁS INFORMACIÓN
+
+Hunk 56 [CSS] (Original Line: 2393, New Line: 2460):
+  Added 1 lines, Deleted 2 lines
+  Deleted:
+     -2393,7 +2460,7 @@
+     -            M├üS INFORMACI├ôN
+  Added:
+     +            MÁS INFORMACIÓN
+
+Hunk 57 [CSS] (Original Line: 2414, New Line: 2481):
+  Added 11 lines, Deleted 12 lines
+  Deleted:
+     -2414,31 +2481,31 @@
+     -                        <span>┬┐A d├│nde vas?</span> <i class="fas fa-chevron-down" style="font-size:0.8em;"></i>
+     -                        <li class="dropdown-item help-option" data-value="Itinerario Personalizado">Γ£¿ Necesito ayuda con
+     -                        <li class="dropdown-item" data-value="Cataratas de Iguaz├║ (Brasil)">Cataratas de Iguaz├║ (Brasil)
+     -                        <li class="dropdown-item" data-value="Cataratas del Iguaz├║ (Argentina)">Cataratas del Iguaz├║
+     -                        <li class="dropdown-item" data-value="Itaip├║ Binacional">Itaip├║ Binacional</li>
+  Added:
+     +                        <span>¿A dónde vas?</span> <i class="fas fa-chevron-down" style="font-size:0.8em;"></i>
+     +                        <li class="dropdown-item help-option" data-value="Itinerario Personalizado">✨ Necesito ayuda con
+     +                        <li class="dropdown-item" data-value="Cataratas de Iguazú (Brasil)">Cataratas de Iguazú (Brasil)
+     +                        <li class="dropdown-item" data-value="Cataratas del Iguazú (Argentina)">Cataratas del Iguazú
+     +                        <li class="dropdown-item" data-value="Itaipú Binacional">Itaipú Binacional</li>
+     +                        <li class="dropdown-item" data-value="Aeropuerto de Foz de Iguazú">✈️ <span
+
+Hunk 58 [HTML] (Original Line: 2449, New Line: 2516):
+  Added 1 lines, Deleted 2 lines
+  Deleted:
+     -2449,7 +2516,7 @@
+     -                    <button type="button" class="booking-mobile-pax-btn" id="pax-minus-m">ΓêÆ</button>
+  Added:
+     +                    <button type="button" class="booking-mobile-pax-btn" id="pax-minus-m">−</button>
+
+Hunk 59 [HTML] (Original Line: 2476, New Line: 2543):
+  Added 127 lines, Deleted 52 lines
+  Deleted:
+     -2476,129 +2543,205 @@
+     -            <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer" class="libras-round-button" aria-label="Video LIBRAS">
+     -                <img src="images/una.jpeg" alt="LIBRAS" class="libras-btn-img">
+     -            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #ffd700; letter-spacing: 1.5px; text-shadow: 0 2px 4px rgba(0,0,0,0.6);">Invitaci├│n</span>
+     -                Atracciones Imperdibles en Foz de Iguaz├║
+     -            <!-- Texto gigante en el fondo -->
+  Added:
+     +            <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer"
+     +                class="libras-round-button" aria-label="Video LIBRAS">
+     +                <img src="images/una.jpeg" alt="LIBRAS" class="libras-btn-img" loading="lazy">
+     +            <span
+     +                style="font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #ffd700; letter-spacing: 1.5px; text-shadow: 0 2px 4px rgba(0,0,0,0.6);">Invitación</span>
+     +                Atracciones Imperdibles en Foz de Iguazú
+
+Hunk 60 [HTML] (Original Line: 2611, New Line: 2754):
+  Added 89 lines, Deleted 53 lines
+  Deleted:
+     -2611,152 +2754,189 @@
+     -    <section class="informacion-turismo" style="max-width: 1200px; padding: 80px 20px; margin: 0 auto; text-align: center;">
+     -        <h2 style="color: var(--amarillo); font-size: clamp(1.8rem, 5vw, 2.5rem); text-transform: uppercase; font-family: 'Oswald', sans-serif; letter-spacing: 2px; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); margin-bottom: 10px;">┬┐Por qu├⌐ elegir Trifoz Turismo?</h2>
+     -        <p class="subtitulo-info" style="color: #fff; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 500; opacity: 0.95; margin-bottom: 50px; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">Tu viaje so├▒ado en la Triple Frontera, con confort premium y un servicio dise├▒ado exclusivamente para ti.</p>
+     -
+     -        <div class="info-content-wrapper" style="display: flex; flex-direction: column; gap: 40px; align-items: center; width: 100%;">
+  Added:
+     +    <section class="informacion-turismo"
+     +        style="max-width: 1200px; padding: 80px 20px; margin: 0 auto; text-align: center;">
+     +        <h2
+     +            style="color: var(--amarillo); font-size: clamp(1.8rem, 5vw, 2.5rem); text-transform: uppercase; font-family: 'Oswald', sans-serif; letter-spacing: 2px; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); margin-bottom: 10px;">
+     +            ¿Por qué elegir Trifoz Turismo?</h2>
+     +        <p class="subtitulo-info"
+
+Hunk 61 [HTML] (Original Line: 2788, New Line: 2968):
+  Added 2 lines, Deleted 3 lines
+  Deleted:
+     -2788,10 +2968,10 @@
+     -        <p>┬⌐ 2026 Trifoz Turismo ΓÇó Gu├¡a Tur├¡stico Ebert ΓÇó Foz de Iguaz├║</p>
+     -    <!-- Librer├¡as de animaci├│n GSAP y Draggable -->
+  Added:
+     +        <p>© 2026 Trifoz Turismo • Guía Turístico Ebert • Foz de Iguazú</p>
+     +    <!-- Librerías de animación GSAP y Draggable -->
+
+Hunk 62 [JS] (Original Line: 2876, New Line: 3056):
+  Added 1 lines, Deleted 2 lines
+  Deleted:
+     -2876,7 +3056,7 @@
+     -                // Clic en items del men├║
+  Added:
+     +                // Clic en items del menú
+
+Hunk 63 [JS] (Original Line: 2917, New Line: 3097):
+  Added 2 lines, Deleted 3 lines
+  Deleted:
+     -2917,9 +3097,9 @@
+     -                    mensaje = `┬íHola! Me gustar├¡a recibir ayuda para armar un itinerario personalizado.\n\n*Detalles iniciales:*\n≡ƒæÑ Pasajeros: ${pax}\n≡ƒôà Fecha de llegada: ${fechaFormateada}`;
+     -                    mensaje = `┬íHola! Me gustar├¡a solicitar un presupuesto para el siguiente tour/traslado:\n\n≡ƒôì Destino: ${destino}\n≡ƒæÑ Pasajeros: ${pax}\n≡ƒôà Fecha y Hora: ${fechaFormateada}`;
+  Added:
+     +                    mensaje = `¡Hola! Me gustaría recibir ayuda para armar un itinerario personalizado.\n\n*Detalles iniciales:*\n👥 Pasajeros: ${pax}\n📅 Fecha de llegada: ${fechaFormateada}`;
+     +                    mensaje = `¡Hola! Me gustaría solicitar un presupuesto para el siguiente tour/traslado:\n\n📍 Destino: ${destino}\n👥 Pasajeros: ${pax}\n📅 Fecha y Hora: ${fechaFormateada}`;
+
+Hunk 64 [JS] (Original Line: 2937, New Line: 3117):
+  Added 2 lines, Deleted 3 lines
+  Deleted:
+     -2937,11 +3117,11 @@
+     -            // L├│gica Touch para tarjetas (Mostrar/Ocultar texto al tocar)
+     -                        // Ocultamos en las dem├ís
+  Added:
+     +            // Lógica Touch para tarjetas (Mostrar/Ocultar texto al tocar)
+     +                        // Ocultamos en las demás
+
+Hunk 65 [JS] (Original Line: 2951, New Line: 3131):
+  Added 8 lines, Deleted 7 lines
+  Deleted:
+     -2951,19 +3131,21 @@
+     -            // ACORDE├ôN OTRAS ATRACCIONES
+     -
+     -                    this.classList.toggle('active');
+     -
+     -            // ==========================================================================
+  Added:
+     +            // ACORDEÓN OTRAS ATRACCIONES
+     +                    btnAcordeon.classList.toggle('active');
+     +                    if (acordeonContenido.classList.contains('open')) {
+     +                        acordeonContenido.style.maxHeight = acordeonContenido.scrollHeight + "px";
+     +                    } else {
+     +                        acordeonContenido.style.maxHeight = "0";
+
+Hunk 66 [JS] (Original Line: 2971, New Line: 3153):
+  Added 21 lines, Deleted 72 lines
+  Deleted:
+     -2971,128 +3153,78 @@
+     -            
+     -            let currentIndex = 4; // Iniciar al centro (quinta tarjeta de nueve)
+     -            // Datos de los destinos para las transiciones de texto
+     -                { title: "Cataratas del Iguaz├║", subtitle: "Siente la fuerza de las Siete Maravillas Naturales en un recorrido privado y exclusivo en la selva.", bgTitle: "CATARATAS", dest: "Cataratas del Iguaz├║ (Argentina)" },
+     -                { title: "Macuco Safari", subtitle: "Navegaci├│n extrema en bote bimotor hasta el coraz├│n de las ca├¡das de agua. Emoci├│n y adrenalina pura.", bgTitle: "AVENTURA", dest: "Macuco Safari" },
+  Added:
+     +
+     +            let currentIndex = 4;
+     +                { title: "Cataratas del Iguazú", subtitle: "Siente la fuerza de las Siete Maravillas Naturales en un recorrido privado y exclusivo en la selva.", bgTitle: "CATARATAS", dest: "Cataratas del Iguazú (Argentina)" },
+     +                { title: "Macuco Safari", subtitle: "Navegación extrema en bote bimotor hasta el corazón de las caídas de agua. Emoción y adrenalina pura.", bgTitle: "AVENTURA", dest: "Macuco Safari" },
+     +                { title: "Familia Tour", subtitle: "Navegación familiar premium y confortable. Disfruta del atardecer donde se unen los ríos Paraná e Iguazú.", bgTitle: "FAMILIA", dest: "Kattamaram II" },
+     +                { title: "Puerto de Iguazú", subtitle: "Cruza la frontera y disfruta de la mejor gastronomía argentina: parrilladas, vinos selectos y compras.", bgTitle: "ARGENTINA", dest: "Paseo Puerto Iguazú" },
+
+Hunk 67 [JS] (Original Line: 3101, New Line: 3233):
+  Added 23 lines, Deleted 60 lines
+  Deleted:
+     -3101,114 +3233,78 @@
+     -            // Actualiza la info de texto y dots
+     -                // Actualizar clases de los puntos de navegaci├│n
+     -                    if (idx === index) {
+     -                        dot.classList.add('is-active');
+     -                    } else {
+  Added:
+     +                    dot.classList.toggle('is-active', idx === index);
+     +
+     +                    y: 10, opacity: 0, duration: 0.2,
+     +                        document.getElementById("activeCardBtn")?.setAttribute("data-dest", destinations[index].dest);
+     +                        gsap.to(".active-info-container", { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" });
+     +
+
+Hunk 68 [JS] (Original Line: 3216, New Line: 3312):
+  Added 113 lines, Deleted 106 lines
+  Deleted:
+     -3216,158 +3312,166 @@
+     -            // Registrar eventos de arrastre virtual proxy
+     -                allowContextMenu: true,
+     -                onDragStart: function() {
+     -                    stopAutoplay3D();
+     -                    startDragX = this.x;
+  Added:
+     +                    } else {
+     +                        const bBar = document.querySelector('.booking-bar');
+     +                        bBar?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+     +                        if (bBar) {
+     +                            bBar.style.transform = 'scale(1.03)';
+     +                            bBar.style.boxShadow = '0 0 30px rgba(0, 210, 255, 0.5)';
+
+Hunk 69 [JS] (Original Line: 3377, New Line: 3481):
+  Added 3 lines, Deleted 4 lines
+  Deleted:
+     -3377,14 +3481,14 @@
+     -                            startAutoplay();
+     -                
+     -                    anchor.addEventListener('click', function(e) {
+  Added:
+     +                            startG();
+     +
+     +                    anchor.addEventListener('click', function (e) {
+
+Hunk 70 [JS] (Original Line: 3394, New Line: 3498):
+  Added 120 lines, Deleted 200 lines
+  Deleted:
+     -3394,257 +3498,178 @@
+     -            // L├│gica de transici├│n para la tarjeta de veh├¡culos
+     -            (function() {
+     -                        if (!carSlides[carIdx]) return;
+     -                        if (carDots[carIdx]) {
+     -                            carDots[carIdx].style.background = 'rgba(255,255,255,0.4)';
+  Added:
+     +            // --- INTERMITENCIA AUTOPLAY VEHÍCULOS ---
+     +            (function () {
+     +                        if (carDots[carIdx]) carDots[carIdx].className = 'car-dot';
+     +                        if (carDots[carIdx]) carDots[carIdx].className = 'car-dot active';
+     +
+     +            // --- MODALES EXTRA (INGRESOS / VIDEOS) ---
+
+Summary of changes: CSS=57, HTML=4, JS=9

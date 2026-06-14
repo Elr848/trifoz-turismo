@@ -1,0 +1,243 @@
+Total hunks: 11
+
+Hunk 1: @@  -1,4 +1,4 @@
+Added 1 lines, Deleted 1 lines
+Deleted sample:
+   -﻿<!DOCTYPE html>
+Added sample:
+   +<!DOCTYPE html>
+
+Hunk 2: @@  -2537,12 +2537,10 @@
+Added 3 lines, Deleted 5 lines
+Deleted sample:
+   -            <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer"
+   -                class="libras-round-button" aria-label="Video LIBRAS">
+   -                <img src="images/una.jpeg" alt="LIBRAS" class="libras-btn-img">
+   -            <span
+   -                style="font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #ffd700; letter-spacing: 1.5px; text-shadow: 0 2px 4px rgba(0,0,0,0.6);">Invitación</span>
+Added sample:
+   +            <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer" class="libras-round-button" aria-label="Video LIBRAS">
+   +                <img src="images/una.jpeg" alt="LIBRAS" class="libras-btn-img" loading="lazy">
+   +            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #ffd700; letter-spacing: 1.5px; text-shadow: 0 2px 4px rgba(0,0,0,0.6);">Invitación</span>
+
+Hunk 3: @@  -2550,130 +2548,86 @@
+Added 36 lines, Deleted 80 lines
+Deleted sample:
+   -            <!-- Texto gigante en el fondo -->
+   -
+   -            <!-- Controles laterales flotantes -->
+   -                    <svg viewBox="0 0 24 24">
+   -                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+   -                    </svg>
+   -                    <svg viewBox="0 0 24 24">
+   -                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+   -                    </svg>
+   -            <!-- Viewport 3D -->
+   -
+   -                    <div class="card-item-3d" data-index="0">
+   -                        <div class="card-back"
+   -                            style="background: url('images/cataratas mejorada.jpg') no-repeat center center / cover; padding: 0;">
+   -                        </div>
+Added sample:
+   +            
+   +                    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+   +                    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+   +                    
+   +                    <div class="card-item-3d" data-index="0" data-src="images/cataratas mejorada.jpg">
+   +                        <div class="card-back" style="background: url('images/cataratas mejorada.jpg') no-repeat center center / cover; padding: 0;"></div>
+   +                    <div class="card-item-3d" data-index="1" data-src="images/macuco_safari_real.jpg">
+   +                        <div class="card-back" style="background: url('images/macuco_safari_real.jpg') no-repeat center center / cover; padding: 0;"></div>
+   +                    <div class="card-item-3d" data-index="2" data-src="images/buda.jpeg">
+   +                        <div class="card-back" style="background: url('images/buda.jpeg') no-repeat center center / cover; padding: 0;"></div>
+   +                    <div class="card-item-3d" data-index="3" data-src="images/dutty.jpeg">
+   +                        <div class="card-back" style="background: url('images/dutty.jpeg') no-repeat center center / cover; padding: 0;"></div>
+   +                    <div class="card-item-3d" data-index="4" data-src="images/Kattamaram (2).jpeg">
+   +                        <div class="card-back" style="background: url('images/Kattamaram (2).jpeg') no-repeat center center / cover; padding: 0;"></div>
+   +                    <div class="card-item-3d" data-index="5" data-src="images/dutty.jpeg">
+
+Hunk 4: @@  -2798,92 +2752,91 @@
+Added 13 lines, Deleted 14 lines
+Deleted sample:
+   -                <img src="images/aeroporto.jpg" alt="Traslados al Aeropuerto" class="galeria-img">
+   -                <img src="images/templo budista 1.png" alt="Templo Budista Chen Tien" class="galeria-img">
+   -                <img src="images/mezquita 1.png" alt="Mezquita Omar Ibn Al-Khattab" class="galeria-img"
+   -                    style="object-fit: contain; background-color: #050510;">
+   -                <img src="images/cataratas_panorama.png" alt="Vistas Panorámicas" class="galeria-img">
+   -                <img src="images/china 1.png" alt="Cultura y Sabores" class="galeria-img">
+   -                <img src="images/dutty.jpeg" alt="Duty Free Shop" class="galeria-img">
+   -                <img src="images/feirinha argentina.jpeg" alt="Feirinha de Puerto Iguazú" class="galeria-img">
+   -                <img src="images/Kattamaram (2).jpeg" alt="Paseo en Kattamaram" class="galeria-img">
+   -                <img src="images/museo de cera.png" alt="Dreamland Museo de Cera" class="galeria-img">
+   -                <img src="images/pda.png" alt="Parque de las Aves" class="galeria-img">
+   -                <img src="images/usina hidrelectrica.jpeg" alt="Itaipú Binacional" class="galeria-img">
+   -                <img src="images/wonder_park_v2.jpg" alt="Wonder Park Show" class="galeria-img">
+   -                <img src="images/yup star.jpeg" alt="Yup Star Foz" class="galeria-img">
+Added sample:
+   +                <img src="images/aeroporto.jpg" alt="Traslados al Aeropuerto" class="galeria-img" loading="lazy">
+   +                <img src="images/templo_budista.webp" alt="Templo Budista Chen Tien" class="galeria-img" loading="lazy">
+   +                <img src="images/mezquita1.jpg" alt="Mezquita Omar Ibn Al-Khattab" class="galeria-img" style="object-fit: contain; background-color: #050510;" loading="lazy">
+   +                <img src="images/cataratas_panorama.webp" alt="Vistas Panorámicas" class="galeria-img" loading="lazy">
+   +                <img src="images/china.webp" alt="Cultura y Sabores" class="galeria-img" loading="lazy">
+   +                <img src="images/dutty.jpeg" alt="Duty Free Shop" class="galeria-img" loading="lazy">
+   +                <img src="images/feirinha argentina.jpeg" alt="Feirinha de Puerto Iguazú" class="galeria-img" loading="lazy">
+   +                <img src="images/Kattamaram (2).jpeg" alt="Paseo en Kattamaram" class="galeria-img" loading="lazy">
+   +                <img src="images/museo_de_cera.webp" alt="Dreamland Museo de Cera" class="galeria-img" loading="lazy">
+   +                <img src="images/pda.webp" alt="Parque de las Aves" class="galeria-img" loading="lazy">
+   +                <img src="images/usina hidrelectrica.jpeg" alt="Itaipú Binacional" class="galeria-img" loading="lazy">
+   +                <img src="images/wonder_park_v2.jpg" alt="Wonder Park Show" class="galeria-img" loading="lazy">
+   +                <img src="images/yup star.jpeg" alt="Yup Star Foz" class="galeria-img" loading="lazy">
+
+Hunk 5: @@  -3083,17 +3036,8 @@
+Added 2 lines, Deleted 11 lines
+Deleted sample:
+   -            const acordeonContenido = document.getElementById('acordeonContenido');
+   -
+   -            if (btnAcordeon && acordeonContenido) {
+   -                btnAcordeon.addEventListener('click', function () {
+   -                    this.classList.toggle('active');
+   -                    acordeonContenido.classList.toggle('open');
+   -                });
+   -            }
+   -
+   -            // ==========================================================================
+   -            // LOGICA DEL CARRUSEL 3D COVERFLOW (ESPEJO & RESPONSIVE)
+Added sample:
+   +            const acordeonContenido = document.getElementById('acordeonConte            // ==========================================================================
+   +            // NÚCLEO OPTIMIZADO: CARRUSEL 3D COVERFLOW (ESPEJO & RESPONSIVE)
+
+Hunk 6: @@  -3101,13 +3045,12 @@
+Added 2 lines, Deleted 3 lines
+Deleted sample:
+   -
+   -            let currentIndex = 4; // Iniciar al centro (quinta tarjeta de nueve)
+   -            // Datos de los destinos para las transiciones de texto
+Added sample:
+   +            
+   +            let currentIndex = 4; 
+
+Hunk 7: @@  -3120,109 +3063,60 @@
+Added 12 lines, Deleted 61 lines
+Deleted sample:
+   -            // Generar puntos de navegación (dots)
+   -                dot.setAttribute('data-index', i);
+   -                    stopAutoplay3D();
+   -            // Parámetros responsive de Coverflow
+   -
+   -                    cardWidth = 130;
+   -                    cardHeight = 200;
+   -                    xOffset = 70;
+   -                    zDepth = -120;
+   -                    yRotation = 45;
+   -                    cardWidth = 160;
+   -                    cardHeight = 250;
+   -                    xOffset = 100;
+   -                    zDepth = -140;
+   -                    yRotation = 50;
+Added sample:
+   +            // Inicializar puntos de navegación
+   +                    cardWidth = 130; cardHeight = 200; xOffset = 70; zDepth = -120; yRotation = 45;
+   +                    cardWidth = 160; cardHeight = 250; xOffset = 100; zDepth = -140; yRotation = 50;
+   +                    cardWidth = 195; cardHeight = 295; xOffset = 125; zDepth = -160; yRotation = 55;
+   +                    cardWidth = 220; cardHeight = 330; xOffset = 150; zDepth = -180; yRotation = 55;
+   +                        gsap.to(card, { x: 0, z: 0, rotationY: 0, duration: 0.5, ease: "power2.out", overwrite: "auto" });
+   +                        
+   +                    } else if (diff > 0) {
+   +                        gsap.to(card, { x: diff * xOffset, z: zDepth, rotationY: -yRotation, duration: 0.5, ease: "power2.out", overwrite: "auto" });
+   +                        card.style.filter = "brightness(45%)";
+   +                    } else {
+   +                        gsap.to(card, { x: diff * xOffset, z: zDepth, rotationY: yRotation, duration: 0.5, ease: "power2.out", overwrite: "auto" });
+
+Hunk 8: @@  -3231,89 +3125,65 @@
+Added 18 lines, Deleted 42 lines
+Deleted sample:
+   -            // Actualiza la info de texto y dots
+   -                // Actualizar clases de los puntos de navegación
+   -                    if (idx === index) {
+   -                        dot.classList.add('is-active');
+   -                    } else {
+   -                        dot.classList.remove('is-active');
+   -                    }
+   -
+   -                // Animación de los textos inferiores
+   -                    y: 10,
+   -                    opacity: 0,
+   -                    duration: 0.25,
+   -                        const activeBtn = document.getElementById("activeCardBtn");
+   -                        if (activeBtn) {
+   -                            activeBtn.setAttribute("data-dest", destinations[index].dest);
+Added sample:
+   +                    dot.classList.toggle('is-active', idx === index);
+   +                
+   +                    y: 10, opacity: 0, duration: 0.2,
+   +                        document.getElementById("activeCardBtn")?.setAttribute("data-dest", destinations[index].dest);
+   +                        gsap.to(".active-info-container", { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" });
+   +                
+   +                    opacity: 0, scale: 0.95, duration: 0.2,
+   +                        gsap.to(".bg-text-back", { opacity: 0.04, scale: 1, duration: 0.3, ease: "power2.out" });
+   +            // UNIFICACIÓN ESTRATÉGICA DEL MANEJO DE CLICS (Previene el congelamiento en PC)
+   +                    e.preventDefault();
+   +                    
+   +                    } else {
+   +                        // Solo abre el Lightbox si ya es la tarjeta activa en el centro
+   +                        openLightbox(index);
+   +            // ACCIÓN DEL BOTÓN CENTRAL DE RESERVA DE TARJETA ACTIVA
+
+Hunk 9: @@  -3322,23 +3192,11 @@
+Added 5 lines, Deleted 17 lines
+Deleted sample:
+   -                    if (triggerDesktop && triggerDesktop.querySelector('span')) triggerDesktop.querySelector('span').textContent = destination.replace(/BR|AR|PY/g, '').trim();
+   -                    if (triggerMobile && triggerMobile.querySelector('span')) triggerMobile.querySelector('span').textContent = destination.replace(/BR|AR|PY/g, '').trim();
+   -
+   -                    const bookingSection = document.querySelector('.booking-bar-wrapper') || document.querySelector('.booking-bar');
+   -                    if (bookingSection) bookingSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+   -
+   -                    const bookingBar = document.querySelector('.booking-bar');
+   -                    if (bookingBar) {
+   -                        bookingBar.style.transition = 'all 0.5s ease';
+   -                        bookingBar.style.transform = 'scale(1.03)';
+   -                        bookingBar.style.boxShadow = '0 0 30px rgba(0, 210, 255, 0.5)';
+   -                        setTimeout(() => {
+   -                            bookingBar.style.transform = '';
+   -                            bookingBar.style.boxShadow = '';
+   -                        }, 1500);
+Added sample:
+   +                    
+   +                    const cleanDestName = destination.replace(/BR|AR|PY/g, '').trim();
+   +                    if (triggerDesktop && triggerDesktop.querySelector('span')) triggerDesktop.querySelector('span').textContent = cleanDestName;
+   +                    if (triggerMobile && triggerMobile.querySelector('span')) triggerMobile.querySelector('span').textContent = cleanDestName;
+   +                    
+
+Hunk 10: @@  -3346,347 +3204,235 @@
+Added 162 lines, Deleted 274 lines
+Deleted sample:
+   -            // Registrar eventos de arrastre virtual proxy
+   -                allowContextMenu: true,
+   -                onDragStart: function () {
+   -                    stopAutoplay3D();
+   -                    startDragX = this.x;
+   -                },
+   -                onDragEnd: function () {
+   -                    const limit = 40; // Sensibilidad justa para cambiar de tarjeta
+   -
+   -                    if (change > limit) {
+   -                        currentIndex = (currentIndex - 1 + numCards3D) % numCards3D;
+   -                    } else if (change < -limit) {
+   -                        currentIndex = (currentIndex + 1) % numCards3D;
+   -                    }
+   -            // Soporte para la rueda del ratón
+Added sample:
+   +                    } else {
+   +                        const bBar = document.querySelector('.booking-bar');
+   +                        bBar?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+   +                        if (bBar) {
+   +                            bBar.style.transform = 'scale(1.03)';
+   +                            bBar.style.boxShadow = '0 0 30px rgba(0, 210, 255, 0.5)';
+   +                            setTimeout(() => { bBar.style.transform = ''; bBar.style.boxShadow = ''; }, 1200);
+   +                        }
+   +            // DRAGGABLE POR PROXY
+   +                onDragStart: function() { stopAutoplay3D(); startDragX = this.x; },
+   +                onDragEnd: function() {
+   +                    if (change > 40) currentIndex = (currentIndex - 1 + numCards3D) % numCards3D;
+   +                    else if (change < -40) currentIndex = (currentIndex + 1) % numCards3D;
+   +            // SOPORTE RUEDA MOUSE (Ajustado para no bloquear el scroll de la notebook)
+   +            document.querySelector('.carousel-viewport-3d')?.addEventListener('wheel', (e) => {

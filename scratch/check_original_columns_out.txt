@@ -1,0 +1,41 @@
+Found at line 2638
+                    <h2>EXPLORA FOZ DO IGUA├çU CON NOSOTROS</h2>
+                    <p>
+                        Descubrir la inmensidad de las Cataratas y la biodiversidad ├║nica de la selva paranaense es una experiencia inolvidable. Nos complace acompa├▒arte de forma cercana y segura, ofreciendo un servicio de traslados privados dise├▒ado a tu medida.
+                    </p>
+                </div>
+                <div class="columna">
+                    <p>
+                        Nos encargamos de toda la log├¡stica: desde recogidas puntuales en los aeropuertos de la regi├│n hasta los cruces fronterizos hacia Argentina y Paraguay, facilitando los tr├ímites aduaneros para que tu ├║nica preocupaci├│n sea disfrutar de la naturaleza. Adem├ís, organizamos paseos confortables dentro del territorio brasile├▒o, garantizando itinerarios flexibles tanto para viajeros individuales como para familias y grupos organizados. Nuestro guiado incluye comunicaci├│n accesible en espa├▒ol, portugu├⌐s y LIBRAS, buscando siempre brindar un trato c├ílido y humano.
+                    </p>
+                    <div style="border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 20px; margin-top: 20px;">
+                        <h3 style="color: #00d2ff; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 0.5px;">Naturaleza &amp; Paseos</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.85; margin: 0; line-height: 1.4;">Tours guiados por las Cataratas y los rincones m├ís bellos de la regi├│n.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <!-- SECCI├ôN GALER├ìA DE FOTOS -->
+    <section id="galeria" class="galeria-franja">
+        <div class="galeria-overlay"></div>
+        <div class="galeria-slides-container" style="width: 100%; height: 100%; position: relative;">
+            <div class="galeria-slide active">
+                <img src="images/cataratas.jpg" alt="Cataratas del Iguaz├║" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Cataratas del Iguaz├║</span>
+                    <span class="galeria-subtitle">Una de las siete maravillas naturales del mundo</span>
+                </div>
+            </div>
+            <div class="galeria-slide">
+                <img src="images/aeroporto.jpg" alt="Traslados al Aeropuerto" class="galeria-img">
+                <div class="galeria-content">
+                    <span class="galeria-title">Traslados al Aeropuerto</span>
+                    <span class="galeria-subtitle">Puntualidad y confort 24/7 en la Triple Frontera</span>
+                </div>
+            </div>

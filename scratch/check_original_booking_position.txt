@@ -1,0 +1,41 @@
+=== lines 2370 to 2410 ===
+2371:                 <button class="booking-cta" id="booking-submit-btn">
+2372:                     <i class="fab fa-whatsapp" style="font-size:1.25rem;"></i>
+2373:                     <span class="booking-cta-label">
+2374:                         M├üS INFORMACI├ôN
+2375:                         <span class="booking-cta-phone">+55(45)933003337</span>
+2376:                     </span>
+2377:                 </button>
+2378: 
+2379:                 <div class="social-buttons-container">
+2380:                     <a href="mailto:trifozturismo@gmail.com" class="btn-social btn-email" aria-label="Enviar Email"><i
+2381:                             class="fa-solid fa-envelope"></i></a>
+2382:                     <a href="https://www.facebook.com/share/1Qr8RiKxrz/" target="_blank" rel="noopener noreferrer"
+2383:                         class="btn-social btn-facebook" aria-label="Facebook"><i
+2384:                             class="fa-brands fa-facebook-f"></i></a>
+2385:                     <a href="https://www.instagram.com/trifoz.turismo" target="_blank" rel="noopener noreferrer"
+2386:                         class="btn-social btn-instagram" aria-label="Instagram"><i
+2387:                             class="fa-brands fa-instagram"></i></a>
+2388:                 </div>
+2389:             </div>
+2390:         </div>
+2391:     </section>
+2392: 
+2393:     <button class="booking-mobile-btn" id="booking-mobile-trigger">
+2394:         <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
+2395:         <span class="booking-mobile-btn-label">
+2396:             M├üS INFORMACI├ôN
+2397:             <span class="booking-mobile-btn-phone">+55(45)933003337</span>
+2398:         </span>
+2399:     </button>
+2400: 
+2401:     <div class="booking-overlay" id="booking-overlay"></div>
+2402: 
+2403:     <div class="booking-mobile-panel" id="booking-mobile-panel">
+2404:         <div class="booking-mobile-panel-handle"></div>
+2405:         <div class="booking-mobile-panel-header">
+2406:             <span class="booking-mobile-panel-title">
+2407:                 <i class="fas fa-map-marker-alt" style="color: #ff4500;"></i> Hacer una consulta
+2408:             </span>
+2409:             <button class="booking-mobile-close" id="booking-mobile-close">&#x2715;</button>
+2410:         </div>
