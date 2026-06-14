@@ -2774,8 +2774,12 @@
             const lightbox = document.getElementById('lightboxModal');
             const lightboxImg = document.getElementById('lightboxImg');
             const lightboxCaption = document.getElementById('lightboxCaption');
+            const prevLightboxBtn = document.getElementById('prevLightbox');
+            const nextLightboxBtn = document.getElementById('nextLightbox');
+            let currentLightboxIndex = 0;
 
             function openLightbox(index) {
+                currentLightboxIndex = index;
                 const targetCard = cards3D[index];
                 if (!targetCard) return;
                 const src = targetCard.getAttribute('data-src');
@@ -2793,8 +2797,41 @@
                 setTimeout(() => { lightbox.style.display = 'none'; startAutoplay3D(); }, 400);
             }
 
-            lightbox?.addEventListener('click', closeLightbox);
+            function nextLightboxImage() {
+                currentLightboxIndex = (currentLightboxIndex + 1) % numCards3D;
+                openLightbox(currentLightboxIndex);
+            }
+
+            function prevLightboxImage() {
+                currentLightboxIndex = (currentLightboxIndex - 1 + numCards3D) % numCards3D;
+                openLightbox(currentLightboxIndex);
+            }
+
+            lightbox?.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target === lightboxImg || e.target === document.getElementById('closeLightbox')) {
+                    closeLightbox();
+                }
+            });
+
             document.getElementById('closeLightbox')?.addEventListener('click', closeLightbox);
+
+            prevLightboxBtn?.addEventListener('click', (e) => {
+                e.stopPropagation();
+                prevLightboxImage();
+            });
+
+            nextLightboxBtn?.addEventListener('click', (e) => {
+                e.stopPropagation();
+                nextLightboxImage();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (lightbox && lightbox.style.display === 'flex') {
+                    if (e.key === 'Escape') closeLightbox();
+                    if (e.key === 'ArrowRight') nextLightboxImage();
+                    if (e.key === 'ArrowLeft') prevLightboxImage();
+                }
+            });
 
             // --- GALERÍA KEN BURNS INFRAESTRUCTURA ---
             (function() {
