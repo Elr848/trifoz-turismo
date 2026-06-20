@@ -94,7 +94,7 @@
         "Turismo Inclusivo LIBRAS", 
         "Turismo Accesible", 
         "Traslados Triple Frontera", 
-        "Cataratas de Iguazú", 
+        "Iguazu Falls", 
         "Puente de la Amistad", 
         "Transfers Foz",
         "Tours Iguassu Falls"
@@ -134,7 +134,7 @@
       "@context": "https://schema.org",
       "@type": ["TouristAttraction", "Service"],
       "@id": "https://trifoz-turismo.com/#cataratas",
-      "name": "Cataratas de Iguazú",
+      "name": "Iguazu Falls",
       "description": "Una de las mayores caídas de agua del mundo, Patrimonio Natural de la Humanidad por la UNESCO. Visita guiada privada con transporte incluido.",
       "url": "https://trifoz-turismo.com",
       "image": "https://trifoz-turismo.com/images/cataratas mejorada.jpg",
@@ -2374,38 +2374,33 @@
                         <span class="booking-field-label">Destination</span>
                         <div class="dropdown-container">
                             <div class="custom-select-trigger" id="trigger-destino">
-                                <span>¿A dónde vas?</span> <i class="fas fa-chevron-down" style="font-size:0.8em;"></i>
+                                <span>Where are you going?</span> <i class="fas fa-chevron-down" style="font-size:0.8em;"></i>
                             </div>
                             <input type="hidden" id="booking-destino" value="">
                             <ul class="dropdown-menu" id="menu-destino">
-                                <li class="dropdown-item help-option" data-value="Custom Itinerary">✨ Necesito
-                                    ayuda con el itinerario</li>
+                                <li class="dropdown-item help-option" data-value="Custom Itinerary">✨ I need help with the itinerary</li>
                                 <li class="dropdown-divider"></li>
-                                <li class="dropdown-item" data-value="Cataratas de Iguazú (Brasil)"><span
-                                        class="country-tag">BR</span> Cataratas de Iguazú (Brasil)</li>
+                                <li class="dropdown-item" data-value="Iguazu Falls (Brazil)"><span
+                                        class="country-tag">BR</span> Iguazu Falls (Brazil)</li>
                                 <li class="dropdown-item" data-value="Iguazu Falls (Argentina)"><span
-                                        class="country-tag">AR</span> Iguazu Falls (Arg)</li>
-                                <li class="dropdown-item" data-value="Parque de las Aves">🦜 Parque de las Aves</li>
-                                <li class="dropdown-item" data-value="Hito de las 3 Fronteras">🏛️ Hito de las 3
-                                    Fronteras</li>
-                                <li class="dropdown-item" data-value="Itaipú Binacional">⚡ Itaipú Binacional</li>
+                                        class="country-tag">AR</span> Iguazu Falls (Argentina)</li>
+                                <li class="dropdown-item" data-value="Bird Park">🦜 Bird Park</li>
+                                <li class="dropdown-item" data-value="Three Borders Landmark">🏛️ Three Borders Landmark</li>
+                                <li class="dropdown-item" data-value="Itaipu Binacional">⚡ Itaipu Binacional</li>
                                 <li class="dropdown-item" data-value="Macuco Safari">🚤 Macuco Safari</li>
-                                <li class="dropdown-item" data-value="Roda Gigante Yup Star">🎡 Rueda Gigante Yup Star
-                                </li>
-                                <li class="dropdown-item" data-value="Museo de Cera Dreamland">🎭 Museo de Cera
-                                    Dreamland</li>
+                                <li class="dropdown-item" data-value="Yup Star Ferris Wheel">🎡 Yup Star Ferris Wheel</li>
+                                <li class="dropdown-item" data-value="Dreamland Wax Museum">🎭 Dreamland Wax Museum</li>
                                 <li class="dropdown-item" data-value="Ciudad del Este (Paraguay)"><span
-                                        class="country-tag">PY</span> Ciudad del Este</li>
+                                        class="country-tag">PY</span> Ciudad del Este (Paraguay)</li>
                                 <li class="dropdown-divider"></li>
                                 <li class="dropdown-header">TRASLADOS &amp; HOTELES</li>
-                                <li class="dropdown-item" data-value="Aeropuerto de Foz de Iguazú">✈️ <span
-                                        class="country-tag">BR</span> Aeropuerto de Foz de Iguazú</li>
-                                <li class="dropdown-item" data-value="Aeropuerto de Puerto Iguazú">✈️ <span
-                                        class="country-tag">AR</span> Aeropuerto de Puerto Iguazú</li>
-                                <li class="dropdown-item" data-value="Aeropuerto de Ciudad del Este">✈️ <span
-                                        class="country-tag">PY</span> Aeropuerto de Ciudad del Este</li>
-                                <li class="dropdown-item" data-value="Traslado para Hoteles">🏨 Traslado para Hoteles
-                                    (BR / AR / PY)</li>
+                                <li class="dropdown-item" data-value="Foz do Iguaçu Airport">✈️ <span
+                                        class="country-tag">BR</span> Foz do Iguaçu Airport</li>
+                                <li class="dropdown-item" data-value="Puerto Iguazú Airport">✈️ <span
+                                        class="country-tag">AR</span> Puerto Iguazú Airport</li>
+                                <li class="dropdown-item" data-value="Ciudad del Este Airport">✈️ <span
+                                        class="country-tag">PY</span> Ciudad del Este Airport</li>
+                                <li class="dropdown-item" data-value="Hotel Transfers">🏨 Hotel Transfers (BR / AR / PY)</li>
                             </ul>
                         </div>
                     </div>
@@ -2427,7 +2422,7 @@
                 <div class="booking-field" id="booking-datetime-wrapper">
                     <div class="booking-field-icon">🗓️</div>
                     <div class="booking-field-body">
-                        <span class="booking-field-label">Fecha &amp; Hora</span>
+                        <span class="booking-field-label">Date &amp; Time</span>
                         <input type="datetime-local" id="booking-datetime" class="booking-datetime"
                             aria-label="Fecha y hora de reserva">
                     </div>
@@ -2436,7 +2431,7 @@
                 <button class="booking-cta" id="booking-submit-btn">
                     <i class="fab fa-whatsapp" style="font-size:1.25rem;"></i>
                     <span class="booking-cta-label">
-                        MÁS INFORMACIÓN
+                        MORE INFORMATION
                         <span class="booking-cta-phone">+55(45)933003337</span>
                     </span>
                 </button>
@@ -2458,7 +2453,7 @@
     <button class="booking-mobile-btn" id="booking-mobile-trigger">
         <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
         <span class="booking-mobile-btn-label">
-            MÁS INFORMACIÓN
+            MORE INFORMATION
             <span class="booking-mobile-btn-phone">+55(45)933003337</span>
         </span>
     </button>
@@ -2469,7 +2464,7 @@
         <div class="booking-mobile-panel-handle"></div>
         <div class="booking-mobile-panel-header">
             <span class="booking-mobile-panel-title">
-                <i class="fas fa-map-marker-alt" style="color: #ff4500;"></i> Hacer una consulta
+                <i class="fas fa-map-marker-alt" style="color: #ff4500;"></i> Make an inquiry
             </span>
             <button class="booking-mobile-close" id="booking-mobile-close">&#x2715;</button>
         </div>
@@ -2479,31 +2474,29 @@
                 <span class="booking-mobile-label">Destination</span>
                 <div class="dropdown-container">
                     <div class="custom-select-trigger" id="trigger-destino-m">
-                        <span>¿A dónde vas?</span> <i class="fas fa-chevron-down" style="font-size:0.8em;"></i>
+                        <span>Where are you going?</span> <i class="fas fa-chevron-down" style="font-size:0.8em;"></i>
                     </div>
                     <input type="hidden" id="booking-destino-m" value="">
                     <ul class="dropdown-menu" id="menu-destino-m">
-                        <li class="dropdown-item help-option" data-value="Custom Itinerary">✨ Necesito ayuda con
-                            el itinerario</li>
+                        <li class="dropdown-item help-option" data-value="Custom Itinerary">✨ I need help with the itinerary</li>
                         <li class="dropdown-divider"></li>
-                        <li class="dropdown-item" data-value="Cataratas de Iguazú (Brasil)">Cataratas de Iguazú (Brasil)
+                        <li class="dropdown-item" data-value="Iguazu Falls (Brazil)">Iguazu Falls (Brasil)
                         </li>
-                        <li class="dropdown-item" data-value="Iguazu Falls (Argentina)">Iguazu Falls
-                            (Arg)</li>
-                        <li class="dropdown-item" data-value="Parque de las Aves">Parque de las Aves</li>
-                        <li class="dropdown-item" data-value="Hito de las Tres Fronteras">Hito de las 3 Fronteras</li>
-                        <li class="dropdown-item" data-value="Itaipú Binacional">Itaipú Binacional</li>
+                        <li class="dropdown-item" data-value="Iguazu Falls (Argentina)">Iguazu Falls (Argentina)</li>
+                        <li class="dropdown-item" data-value="Bird Park">Bird Park</li>
+                        <li class="dropdown-item" data-value="Three Borders Landmark">Three Borders Landmark</li>
+                        <li class="dropdown-item" data-value="Itaipu Binacional">Itaipu Binational</li>
                         <li class="dropdown-item" data-value="Macuco Safari">Macuco Safari</li>
-                        <li class="dropdown-item" data-value="Ciudad del Este">Ciudad del Este (Paraguay)</li>
+                        <li class="dropdown-item" data-value="Ciudad del Este (Paraguay)">Ciudad del Este (Paraguay)</li>
                         <li class="dropdown-divider"></li>
                         <li class="dropdown-header">TRASLADOS &amp; HOTELES</li>
-                        <li class="dropdown-item" data-value="Aeropuerto de Foz de Iguazú">✈️ <span
-                                class="country-tag">BR</span> Aeropuerto de Foz de Iguazú</li>
-                        <li class="dropdown-item" data-value="Aeropuerto de Puerto Iguazú">✈️ <span
-                                class="country-tag">AR</span> Aeropuerto de Puerto Iguazú</li>
-                        <li class="dropdown-item" data-value="Aeropuerto de Ciudad del Este">✈️ <span
-                                class="country-tag">PY</span> Aeropuerto de Ciudad del Este</li>
-                        <li class="dropdown-item" data-value="Traslado para Hoteles">🏨 Traslado para Hoteles (BR / AR /
+                        <li class="dropdown-item" data-value="Foz do Iguaçu Airport">✈️ <span
+                                class="country-tag">BR</span> Foz do Iguaçu Airport</li>
+                        <li class="dropdown-item" data-value="Puerto Iguazú Airport">✈️ <span
+                                class="country-tag">AR</span> Puerto Iguazú Airport</li>
+                        <li class="dropdown-item" data-value="Ciudad del Este Airport">✈️ <span
+                                class="country-tag">PY</span> Ciudad del Este Airport</li>
+                        <li class="dropdown-item" data-value="Hotel Transfers">🏨 Hotel Transfers (BR / AR /
                             PY)</li>
                     </ul>
                 </div>
@@ -2523,7 +2516,7 @@
 
         <div class="booking-mobile-field">
             <div class="booking-mobile-field-body">
-                <span class="booking-mobile-label">Fecha &amp; Hora</span>
+                <span class="booking-mobile-label">Date &amp; Time</span>
                 <input type="datetime-local" id="booking-datetime-m" class="booking-mobile-datetime">
             </div>
         </div>
@@ -2531,7 +2524,7 @@
         <button class="booking-mobile-cta" id="booking-submit-btn-m">
             <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
             <span style="display:flex; flex-direction:column; line-height:1.2; text-align:left;">
-                <b>SOLICITAR CONSULTA</b>
+                <b>SEND INQUIRY</b>
                 <span class="booking-mobile-cta-phone">+55(45)933003337</span>
             </span>
         </button>
@@ -2641,7 +2634,7 @@
                     <span class="title-line"></span>
                 </div>
                 <p class="active-subtitle-3d" id="activeSubtitle"
-                    style="margin: 0; max-width: 600px; line-height: 1.4;">Maravilla del Mundo • Paseo Privado</p>
+                    style="margin: 0; max-width: 600px; line-height: 1.4;">Natural Wonder • Private Tour</p>
                 <button class="card-btn-action" id="activeCardBtn"
                     data-dest="Iguazu Falls (Argentina)">INQUIRE</button>
             </div>
@@ -2676,8 +2669,7 @@
                         style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-family: 'Montserrat', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; color: #fff; background: rgba(255, 0, 0, 0.85); padding: 12px 25px; border-radius: 30px; box-shadow: 0 4px 15px rgba(255,0,0,0.4); transition: all 0.3s;"
                         onmouseover="this.style.background='#ff0000'; this.style.transform='translateY(-2px)';"
                         onmouseout="this.style.background='rgba(255, 0, 0, 0.85)'; this.style.transform='translateY(0)';">
-                        <i class="fab fa-youtube" style="color: #fff; font-size: 1.1rem;"></i> Ver Aventura Macuco
-                        Safari
+                        <i class="fab fa-youtube" style="color: #fff; font-size: 1.1rem;"></i> Watch Macuco Safari Adventure
                     </a>
                 </div>
             </div>
@@ -2773,9 +2765,8 @@
                     <div style="border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 20px; margin-top: 20px;">
                         <h3
                             style="color: #00d2ff; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 0.5px;">
-                            Naturaleza &amp; Paseos</h3>
-                        <p style="font-size: 0.95rem; opacity: 0.85; margin: 0; line-height: 1.4;">Tours guiados por las
-                            Cataratas y los rincones más bellos de la región.</p>
+                            Nature &amp; Tours</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.85; margin: 0; line-height: 1.4;">Guided tours of the Falls and the most beautiful spots in the region.</p>
                     </div>
                 </div>
             </div>
@@ -2798,13 +2789,13 @@
                 <img src="images/cataratas.jpg" alt="Iguazu Falls" class="galeria-img">
                 <div class="galeria-content">
                     <span class="galeria-title">Iguazu Falls</span>
-                    <span class="galeria-subtitle">Una de las siete maravillas naturales del mundo</span>
+                    <span class="galeria-subtitle">One of the seven natural wonders of the world</span>
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/aeroporto.jpg" alt="Traslados al Aeropuerto" class="galeria-img">
+                <img src="images/aeroporto.jpg" alt="Airport Transfers" class="galeria-img">
                 <div class="galeria-content">
-                    <span class="galeria-title">Traslados al Aeropuerto</span>
+                    <span class="galeria-title">Airport Transfers</span>
                     <span class="galeria-subtitle">Punctuality and comfort 24/7 in the Triple Frontier</span>
                 </div>
             </div>
@@ -2859,23 +2850,23 @@
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/museo de cera.png" alt="Dreamland Museo de Cera" class="galeria-img">
+                <img src="images/museo de cera.png" alt="Dreamland Dreamland Wax Museum" class="galeria-img">
                 <div class="galeria-content">
-                    <span class="galeria-title">Dreamland Museo de Cera</span>
+                    <span class="galeria-title">Dreamland Dreamland Wax Museum</span>
                     <span class="galeria-subtitle">Family fun with perfect replicas</span>
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/pda.png" alt="Parque de las Aves" class="galeria-img">
+                <img src="images/pda.png" alt="Bird Park" class="galeria-img">
                 <div class="galeria-content">
-                    <span class="galeria-title">Parque de las Aves</span>
+                    <span class="galeria-title">Bird Park</span>
                     <span class="galeria-subtitle">Direct contact with fauna and rescued birds</span>
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/usina hidrelectrica.jpeg" alt="Itaipú Binacional" class="galeria-img">
+                <img src="images/usina hidrelectrica.jpeg" alt="Itaipu Binational" class="galeria-img">
                 <div class="galeria-content">
-                    <span class="galeria-title">Itaipú Binacional</span>
+                    <span class="galeria-title">Itaipu Binational</span>
                     <span class="galeria-subtitle">One of the greatest engineering works on the planet</span>
                 </div>
             </div>
@@ -3025,7 +3016,11 @@
                 });
             }
             setupCustomDropdown('trigger-destino', 'menu-destino', 'booking-destino');
+            // Set initial trigger label in English
+            document.getElementById('trigger-destino').querySelector('span').textContent = 'Where are you going?';
             setupCustomDropdown('trigger-destino-m', 'menu-destino-m', 'booking-destino-m');
+            // Set initial trigger label in English
+            document.getElementById('trigger-destino-m').querySelector('span').textContent = 'Where are you going?';
 
             document.addEventListener('click', function () {
                 document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
@@ -3115,13 +3110,13 @@
             const destinations = [
                 { title: "Iguazu Falls", subtitle: "Feel the force of the Seven Natural Wonders on a private and exclusive tour in the rainforest.", bgTitle: "FALLS", dest: "Iguazu Falls (Argentina)" },
                 { title: "Macuco Safari", subtitle: "Extreme navigation in a twin-engine boat to the heart of the waterfalls. Pure emotion and adrenaline.", bgTitle: "ADVENTURE", dest: "Macuco Safari" },
-                { title: "City Tour Foz", subtitle: "Discover the diversity of the Triple Frontier: the Buddhist Temple, the Mosque, and the Three Borders Landmark.", bgTitle: "CITY TOUR", dest: "Hito de las 3 Fronteras" },
-                { title: "Premium Hotel", subtitle: "Exclusive transfers to the best resorts, hotels, and duty-free shopping tours (Duty Free).", bgTitle: "HOTEL", dest: "Traslado para Hoteles" },
+                { title: "City Tour Foz", subtitle: "Discover the diversity of the Triple Frontier: the Buddhist Temple, the Mosque, and the Three Borders Landmark.", bgTitle: "CITY TOUR", dest: "Three Borders Landmark" },
+                { title: "Premium Hotel", subtitle: "Exclusive transfers to the best resorts, hotels, and duty-free shopping tours (Duty Free).", bgTitle: "HOTEL", dest: "Hotel Transfers" },
                 { title: "Family Tour", subtitle: "Premium and comfortable family navigation. Enjoy the sunset where the Paraná and Iguazú rivers meet.", bgTitle: "FAMILY", dest: "Kattamaram II" },
                 { title: "Puerto Iguazú", subtitle: "Cross the border and enjoy the best Argentine gastronomy: grills, select wines, and shopping.", bgTitle: "ARGENTINA", dest: "Paseo Puerto Iguazú" },
                 { title: "Ciudad del Este", subtitle: "Your safe shopping guide in Paraguay. Find technology, perfumes, and exclusive brands at incredible prices.", bgTitle: "SHOPPING", dest: "Compras Ciudad del Este" },
                 { title: "Marco 3 Fronteras", subtitle: "The only place in the world where three countries embrace. Enjoy a magical sunset, shows, and panoramic view.", bgTitle: "FRONTIER", dest: "Paseo Paraguay" },
-                { title: "Bird Park", subtitle: "Walk among toucans, macaws, and exotic species in a unique ecological sanctuary integrated into the rainforest.", bgTitle: "BIRDS", dest: "Parque de las Aves" }
+                { title: "Bird Park", subtitle: "Walk among toucans, macaws, and exotic species in a unique ecological sanctuary integrated into the rainforest.", bgTitle: "BIRDS", dest: "Bird Park" }
             ];
 
             // Generar puntos de navegación (dots)
@@ -3731,7 +3726,7 @@
                 Asesoría en Compra de Tickets</h3>
             <p style="line-height: 1.6; font-size: 1rem; color: #ccd1e0; margin-bottom: 15px;">
                 Te ayudamos y asesoramos de forma personalizada en la compra de tus entradas para todas las atracciones
-                de Foz de Iguazú (Cataratas, Macuco Safari, Parque de las Aves, Itaipú, etc.).
+                de Foz de Iguazú (Cataratas, Macuco Safari, Bird Park, Itaipu, etc.).
             </p>
             <h4
                 style="color: #ffd700; font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 10px; font-size: 1.05rem;">
