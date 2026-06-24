@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Fondo circular degradado azul oscuro -->
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1a6fa0"/>
+      <stop offset="100%" stop-color="#0a2540"/>
+    </radialGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe6c2"/>
+      <stop offset="50%" stop-color="#d6ad76"/>
+      <stop offset="100%" stop-color="#8f5c30"/>
+    </linearGradient>
+  </defs>
+  <!-- Círculo de fondo -->
+  <circle cx="50" cy="50" r="48" fill="url(#bgGrad)" stroke="#c9a961" stroke-width="3"/>
+  <!-- Letra T de Trifoz -->
+  <text x="50" y="68"
+        font-family="Arial Black, sans-serif"
+        font-size="58"
+        font-weight="900"
+        text-anchor="middle"
+        fill="url(#textGrad)">T</text>
+</svg>

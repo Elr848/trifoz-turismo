@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
     <!-- PÁGINA PRINCIPAL (ESPAÑOL) -->
@@ -10,14 +9,13 @@
         <lastmod>2026-06-09T18:30:00Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
-        <mobile:mobile/>
         
         <image:image>
             <image:loc>https://trifoz-turismo.com/images/plataforma.jpeg</image:loc>
             <image:title>Tours privados en Foz de Iguazú</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://trifoz-turismo.com/images/cataratas mejorada.jpg</image:loc>
+            <image:loc>https://trifoz-turismo.com/images/cataratas%20mejorada.jpg</image:loc>
             <image:title>Cataratas de Iguazú</image:title>
         </image:image>
         <image:image>
@@ -25,7 +23,7 @@
             <image:title>Macuco Safari</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://trifoz-turismo.com/images/pda.png</image:loc>
+            <image:loc>https://trifoz-turismo.com/images/pda.webp</image:loc>
             <image:title>Parque de las Aves</image:title>
         </image:image>
         <image:image>
@@ -37,23 +35,23 @@
             <image:title>Hito de las 3 Fronteras</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://trifoz-turismo.com/images/usina hidrelectrica.jpeg</image:loc>
+            <image:loc>https://trifoz-turismo.com/images/usina%20hidrelectrica.jpeg</image:loc>
             <image:title>Itaipú Binacional</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://trifoz-turismo.com/images/yup star.jpeg</image:loc>
+            <image:loc>https://trifoz-turismo.com/images/yup%20star.jpeg</image:loc>
             <image:title>Yup Star - Rueda Gigante</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://trifoz-turismo.com/images/museo de cera.png</image:loc>
+            <image:loc>https://trifoz-turismo.com/images/museo%20de%20cera.png</image:loc>
             <image:title>Dreamland Museo de Cera</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://trifoz-turismo.com/images/china 1.png</image:loc>
+            <image:loc>https://trifoz-turismo.com/images/china%201.png</image:loc>
             <image:title>Gastronomía China</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://trifoz-turismo.com/images/feirinha argentina.jpeg</image:loc>
+            <image:loc>https://trifoz-turismo.com/images/feirinha%20argentina.jpeg</image:loc>
             <image:title>Feirinha de Puerto Iguazú</image:title>
         </image:image>
         <image:image>
@@ -91,15 +89,31 @@
         <lastmod>2026-06-09T18:30:00Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
-        <mobile:mobile/>
         
         <image:image>
             <image:loc>https://trifoz-turismo.com/images/plataforma.jpeg</image:loc>
             <image:title>Tours privados em Foz do Iguaçu</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://trifoz-turismo.com/images/cataratas mejorada.jpg</image:loc>
+            <image:loc>https://trifoz-turismo.com/images/cataratas%20mejorada.jpg</image:loc>
             <image:title>Cataratas do Iguaçu</image:title>
+        </image:image>
+    </url>
+
+    <!-- PÁGINA PRINCIPAL (INGLÉS) -->
+    <url>
+        <loc>https://trifoz-turismo.com/index-en.html</loc>
+        <lastmod>2026-06-09T18:30:00Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/plataforma.jpeg</image:loc>
+            <image:title>Private Tours in Foz do Iguaçu</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://trifoz-turismo.com/images/cataratas%20mejorada.jpg</image:loc>
+            <image:title>Iguazu Falls</image:title>
         </image:image>
     </url>
 

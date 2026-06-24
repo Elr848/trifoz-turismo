@@ -20,6 +20,15 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Scratch and dev notes
+scratch/
+seo-optimizado.txt
+
 # Other tools
 .sixth/
 .antigravityrules

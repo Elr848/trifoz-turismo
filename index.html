@@ -17,6 +17,8 @@
     <meta name="author" content="Trifoz Turismo - Guía Turístico Ebert">
     <link rel="canonical" href="https://trifoz-turismo.com/" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <meta name="theme-color" content="#74ACDF">
     <link rel="preload" href="images/plataforma.jpeg" as="image" fetchpriority="high">
@@ -2495,7 +2497,7 @@
                         <li class="dropdown-item" data-value="Cataratas del Iguazú (Argentina)">Cataratas del Iguazú
                             (Arg)</li>
                         <li class="dropdown-item" data-value="Parque de las Aves">Parque de las Aves</li>
-                        <li class="dropdown-item" data-value="Hito de las Tres Fronteras">Hito de las 3 Fronteras</li>
+                        <li class="dropdown-item" data-value="Hito de las 3 Fronteras">Hito de las 3 Fronteras</li>
                         <li class="dropdown-item" data-value="Itaipú Binacional">Itaipú Binacional</li>
                         <li class="dropdown-item" data-value="Macuco Safari">Macuco Safari</li>
                         <li class="dropdown-item" data-value="Ciudad del Este">Ciudad del Este (Paraguay)</li>
@@ -2687,9 +2689,6 @@
             </div>
         </div>
     </section>
-
-
-    </div>
 
     <!-- Barra de botones horizontal -->
     <div class="horizontal-button-bar">
@@ -3412,7 +3411,6 @@
             startAutoplay3D();
         });
 
-
         // Lógica de la Galería Ken Burns
         (function () {
             const slides = document.querySelectorAll('.galeria-slide');
@@ -3543,8 +3541,6 @@
                 }, 4000);
             }
         })();
-
-
 
         // Lógica de la Galería Lightbox Modal para el Carrusel 3D
         (function () {
@@ -3688,7 +3684,8 @@
                     if (e.target === modalVideos) closeModal(modalVideos);
                 });
             })();
-        });
+
+        }); // Fin DOMContentLoaded
 
 
 

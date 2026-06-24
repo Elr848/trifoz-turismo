@@ -2,5 +2,8 @@ User-agent: *
 Allow: /
 Disallow: /.git/
 Disallow: /.venv/
+Disallow: /scratch/
+Disallow: /__pycache__/
+Disallow: /.vs/
 
-Sitemap: https://www.trifozturismo.com/sitemap.xml
+Sitemap: https://trifoz-turismo.com/sitemap.xml
