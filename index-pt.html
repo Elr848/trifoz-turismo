@@ -16,7 +16,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <meta name="theme-color" content="#74ACDF">
-    <link rel="preload" href="images/plataforma_opt.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="images/plataforma_opt.webp" as="image" type="image/webp" fetchpriority="high">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -32,7 +32,7 @@
     <meta property="og:url" content="https://trifoz-turismo.com/index-pt.html">
     <meta property="og:title" content="🥇 Passeios Foz do Iguaçu | Traslados Aeroporto & Transfer Privado | Guia Ebert">
     <meta property="og:description" content="⭐ Passeios privados ✈️ Traslados aeroporto 24/7 🚗 Transfer Tríplice Fronteira ⭐ Guia LIBRAS ⭐ Cataratas, Macuco Safari ⭐ +55(45)933003337">
-    <meta property="og:image" content="https://trifoz-turismo.com/images/plataforma_opt.jpg">
+    <meta property="og:image" content="https://trifoz-turismo.com/images/plataforma_opt.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Passeios e traslados privados em Foz do Iguaçu">
@@ -44,7 +44,7 @@
     <meta name="twitter:url" content="https://trifoz-turismo.com/index-pt.html">
     <meta name="twitter:title" content="🥇 Passeios Foz do Iguaçu | Traslados Aeroporto & Transfer Privado">
     <meta name="twitter:description" content="⭐ Passeios privados ✈️ Traslados aeroporto 24/7 🚗 Transfer Tríplice Fronteira ⭐ Guia LIBRAS ⭐ +55(45)933003337">
-    <meta name="twitter:image" content="https://trifoz-turismo.com/images/plataforma_opt.jpg">
+    <meta name="twitter:image" content="https://trifoz-turismo.com/images/plataforma_opt.webp">
     <meta name="twitter:image:alt" content="Passeios e traslados privados em Foz do Iguaçu">
 
     <meta name="geo.region" content="BR-PR" />
@@ -58,7 +58,7 @@
       "@type": ["TravelAgency", "LocalBusiness"],
       "@id": "https://trifoz-turismo.com/#trifoz",
       "name": "Trifoz Turismo",
-      "image": "https://trifoz-turismo.com/images/plataforma_opt.jpg",
+      "image": "https://trifoz-turismo.com/images/plataforma_opt.webp",
       "telephone": "+5545933003337",
       "url": "https://trifoz-turismo.com/index-pt.html",
       "sameAs": [
@@ -604,22 +604,25 @@
         @media (min-width: 1024px) { .video-card .card-image img { height: 400px !important; width: 100% !important; object-fit: cover !important; } }
 
         .btn-video-elegant {
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 10px 24px;
-            border: 1px solid #b3b3b3;
-            border-radius: 20px;
-            background: linear-gradient(145deg, #e6e6e6, #ffffff);
-            color: #333;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
+            gap: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: #fff !important;
+            background: rgba(255, 0, 0, 0.85);
+            padding: 12px 25px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
             transition: all 0.3s ease;
-            box-shadow: 3px 3px 6px #c8c8c8, -3px -3px 6px #ffffff;
+            border: none;
         }
-        .btn-video-elegant:hover { background: linear-gradient(145deg, #ffffff, #e6e6e6); transform: translateY(-2px); color: #000; }
-        .btn-video-elegant i { color: #ff0000; }
+        .btn-video-elegant:hover { background: #ff0000; transform: translateY(-2px); color: #fff !important; box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6); }
+        .btn-video-elegant i { color: #fff !important; font-size: 1.1rem; }
 
         @keyframes rotate-fire { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes floating { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
@@ -1915,7 +1918,7 @@
     </div>
 
     <section class="hero">
-        <img src="images/plataforma_opt.jpg" alt="Passeios privados em Foz do Iguaçu - Trifoz Turismo" class="hero-background" width="1920" height="1080">
+        <img src="images/plataforma_opt.webp" alt="Passeios privados em Foz do Iguaçu - Trifoz Turismo" class="hero-background" width="1920" height="1080">
         <div class="fire-wrapper" aria-hidden="true">
             <div class="hero-container">
                 <h1 class="titulo-metalico" style="margin:0; line-height:1.1; font-size: clamp(1.9rem, 5.5vw, 2.7rem);">
@@ -2205,8 +2208,8 @@
                         <p style="color: #333333; font-size: clamp(0.9rem, 2vw, 1.05rem); margin: 0; line-height: 1.5; max-width: 600px;">Aventura extrema nas quedas d'água.</p>
                     </div>
                     <a href="https://youtu.be/1dUpxFeU_u4?si=1p_wqlZU0Bks6DNa" target="_blank"
-                        rel="noopener noreferrer" class="btn-video-elegant" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-family: 'Montserrat', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; color: #fff; background: rgba(255, 0, 0, 0.85); padding: 12px 25px; border-radius: 30px; box-shadow: 0 4px 15px rgba(255,0,0,0.4); transition: all 0.3s;" onmouseover="this.style.background='#ff0000'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(255, 0, 0, 0.85)'; this.style.transform='translateY(0)';">
-                        <i class="fab fa-youtube" style="color: #fff; font-size: 1.1rem;"></i> Ver Aventura Macuco Safari
+                        rel="noopener noreferrer" class="btn-video-elegant">
+                        <i class="fab fa-youtube"></i> Ver Aventura Macuco Safari
                     </a>
                 </div>
             </div>

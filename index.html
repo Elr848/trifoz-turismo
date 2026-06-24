@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <meta name="theme-color" content="#74ACDF">
-    <link rel="preload" href="images/plataforma.jpeg" as="image" fetchpriority="high">
+    <link rel="preload" href="images/plataforma_opt.webp" as="image" type="image/webp" fetchpriority="high">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -38,7 +38,7 @@
     <meta property="og:title" content="🥇 Tours Foz de Iguazú | Traslados Aeropuerto & Transfer Privado | Guía Ebert">
     <meta property="og:description"
         content="⭐ Tours privados ✈️ Traslados aeropuerto 24/7 🚗 Transfer Triple Frontera ⭐ Guía LIBRAS ⭐ Cataratas, Macuco Safari ⭐ +55(45)933003337">
-    <meta property="og:image" content="https://trifoz-turismo.com/images/plataforma.jpeg">
+    <meta property="og:image" content="https://trifoz-turismo.com/images/plataforma_opt.webp">
     <meta property="og:image:alt" content="Tours y traslados privados en Foz de Iguazú">
     <meta property="og:locale" content="es_AR">
     <meta property="og:locale:alternate" content="pt_BR">
@@ -49,7 +49,7 @@
     <meta name="twitter:title" content="🥇 Tours Foz de Iguazú | Traslados Aeropuerto & Transfer Privado">
     <meta name="twitter:description"
         content="⭐ Tours privados ✈️ Traslados aeropuerto 24/7 🚗 Transfer Triple Frontera ⭐ Guía LIBRAS ⭐ +55(45)933003337">
-    <meta name="twitter:image" content="https://trifoz-turismo.com/images/plataforma.jpeg">
+    <meta name="twitter:image" content="https://trifoz-turismo.com/images/plataforma_opt.webp">
     <meta name="twitter:image:alt" content="Tours y traslados privados en Foz de Iguazú">
 
     <meta name="geo.region" content="BR-PR" />
@@ -63,7 +63,7 @@
       "@type": ["TravelAgency", "LocalBusiness"],
       "@id": "https://trifoz-turismo.com/#trifoz",
       "name": "Trifoz Turismo",
-      "image": "https://trifoz-turismo.com/images/plataforma.jpeg",
+      "image": "https://trifoz-turismo.com/images/plataforma_opt.webp",
       "telephone": "+5545933003337",
       "url": "https://trifoz-turismo.com",
       "sameAs": [
@@ -689,29 +689,34 @@
         }
 
         .btn-video-elegant {
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 10px 24px;
-            border: 1px solid #b3b3b3;
-            border-radius: 20px;
-            background: linear-gradient(145deg, #e6e6e6, #ffffff);
-            color: #333;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
+            gap: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: #fff !important;
+            background: rgba(255, 0, 0, 0.85);
+            padding: 12px 25px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
             transition: all 0.3s ease;
-            box-shadow: 3px 3px 6px #c8c8c8, -3px -3px 6px #ffffff;
+            border: none;
         }
 
         .btn-video-elegant:hover {
-            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            background: #ff0000;
             transform: translateY(-2px);
-            color: #000;
+            color: #fff !important;
+            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
         }
 
         .btn-video-elegant i {
-            color: #ff0000;
+            color: #fff !important;
+            font-size: 1.1rem;
         }
 
         @keyframes rotate-fire {
@@ -2355,7 +2360,7 @@
     </div>
 
     <section class="hero">
-        <img src="images/plataforma.jpeg" alt="Tours privados en Foz de Iguazú con Guía Ebert" class="hero-background"
+        <img src="images/plataforma_opt.webp" alt="Tours privados en Foz de Iguazú con Guía Ebert" class="hero-background"
             width="1920" height="1080">
         <div class="fire-wrapper" aria-hidden="true">
             <div class="hero-container">
@@ -2678,12 +2683,8 @@
                             Aventura extrema en las caídas de agua.</p>
                     </div>
                     <a href="https://youtu.be/1dUpxFeU_u4?si=1p_wqlZU0Bks6DNa" target="_blank" rel="noopener noreferrer"
-                        class="btn-video-elegant"
-                        style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-family: 'Montserrat', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; color: #fff; background: rgba(255, 0, 0, 0.85); padding: 12px 25px; border-radius: 30px; box-shadow: 0 4px 15px rgba(255,0,0,0.4); transition: all 0.3s;"
-                        onmouseover="this.style.background='#ff0000'; this.style.transform='translateY(-2px)';"
-                        onmouseout="this.style.background='rgba(255, 0, 0, 0.85)'; this.style.transform='translateY(0)';">
-                        <i class="fab fa-youtube" style="color: #fff; font-size: 1.1rem;"></i> Ver Aventura Macuco
-                        Safari
+                        class="btn-video-elegant">
+                        <i class="fab fa-youtube"></i> Ver Aventura Macuco Safari
                     </a>
                 </div>
             </div>
