@@ -1312,15 +1312,18 @@
             flex-direction: column;
             justify-content: space-between;
             padding: 0; /* Padding a 0 para centrar la imagen en todo el contenedor y evitar desfases del espejo */
+            
+            /* 🛠️ SOLUCIÓN AL RECORTE DE IMÁGENES y MÁXIMA VELOCIDAD */
+            background-size: contain !important; /* Muestra la imagen COMPLETA sin recortar */
+            background-repeat: no-repeat !important;
+            background-position: center center !important;
+            background-color: #0b0d19 !important; /* Fondo oscuro estético para los bordes */
+            
             border: 2px solid rgba(255, 255, 255, 0.15) !important; /* Borde metálico sutil */
             box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1), inset 0 -2px 5px rgba(0, 0, 0, 0.8), 0 10px 25px rgba(0, 0, 0, 0.75) !important; /* Bisel e iluminación metálica */
             color: #fff;
             text-align: left;
             transition: all 0.4s ease;
-            background-color: #0c0a1a;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: contain;
         }
 
         /* Resplandor especial para la tarjeta central activa */
@@ -2645,29 +2648,30 @@
                 const w = window.innerWidth;
 
                 if (w < 480) {
-                    cardWidth = 195;
-                    cardHeight = 130;
-                    xOffset = 65;
+                    cardWidth = 150;    // Vertical en móviles
+                    cardHeight = 240;   // Proporción ~5:8
+                    xOffset = 70;
                     zDepth = -120;
                     yRotation = 45;
                 } else if (w < 768) {
-                    cardWidth = 240;
-                    cardHeight = 160;
-                    xOffset = 90;
+                    cardWidth = 180;    // Tablets verticales
+                    cardHeight = 290;
+                    xOffset = 100;
                     zDepth = -140;
                     yRotation = 50;
-                } else if (w < 1024) {
-                    cardWidth = 270;
-                    cardHeight = 180;
-                    xOffset = 110;
+                } else if (w <= 1200) { 
+                    // 💻 OPTIMIZADO PARA NOTEBOOKS: Tarjetas verticales grandes y visibles
+                    cardWidth = 240;    
+                    cardHeight = 380;   
+                    xOffset = 150;      // Separación equilibrada para laptops
                     zDepth = -160;
-                    yRotation = 55;
+                    yRotation = 45;     // Rotación suave para que se aprecie toda la foto
                 } else {
-                    cardWidth = 300;
-                    cardHeight = 200;
-                    xOffset = 130;
+                    cardWidth = 260;    // Pantallas grandes de escritorio
+                    cardHeight = 420;
+                    xOffset = 180;
                     zDepth = -180;
-                    yRotation = 55;
+                    yRotation = 50;
                 }
 
                 carousel.style.setProperty('--card-width', `${cardWidth}px`);
