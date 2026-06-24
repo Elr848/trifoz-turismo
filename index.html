@@ -2355,8 +2355,13 @@
     </div>
 
     <section class="hero">
-        <img src="images/plataforma.jpeg" alt="Tours privados en Foz de Iguazú con Guía Ebert" class="hero-background"
-            width="1920" height="1080">
+        <picture>
+            <source media="(max-width: 480px)" srcset="images/plataforma_mejorada_mobile.webp" type="image/webp">
+            <source media="(max-width: 1023px)" srcset="images/plataforma_mejorada_tablet.webp" type="image/webp">
+            <source srcset="images/plataforma_mejorada_desktop.webp" type="image/webp">
+            <img src="images/plataforma.jpeg" alt="Tours privados en Foz de Iguazú con Guía Ebert" class="hero-background"
+                width="1920" height="1080" fetchpriority="high">
+        </picture>
         <div class="fire-wrapper" aria-hidden="true">
             <div class="hero-container">
                 <h1 class="titulo-metalico" style="margin:0; line-height:1.1; font-size: clamp(1.9rem, 5.5vw, 2.7rem);">
@@ -2663,9 +2668,13 @@
             <div class="video-card card"
                 style="max-width: 650px; width: 100%; margin: 0 auto; box-shadow: 0 15px 35px rgba(0, 35, 102, 0.1); background: rgba(255, 255, 255, 0.85); border-radius: 16px; border: 1.5px solid rgba(255, 255, 255, 0.4); overflow: hidden; display: flex; flex-direction: column;">
                 <div class="card-image" style="width: 100%; overflow: hidden;">
-                    <img src="images/macuco_safari_real.jpg" alt="Macuco Safari" width="800" height="500"
-                        style="width: 100%; height: auto; display: block; transition: transform 0.5s;"
-                        onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                    <picture>
+                        <source srcset="images/macuco_safari_real.webp" type="image/webp">
+                        <img src="images/macuco_safari_real.jpg" alt="Macuco Safari" width="800" height="500"
+                            style="width: 100%; height: auto; display: block; transition: transform 0.5s;"
+                            loading="lazy"
+                            onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                    </picture>
                 </div>
                 <div class="card-content"
                     style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 35px 25px; gap: 20px; text-align: center; background: rgba(255, 255, 255, 0.95);">
@@ -2789,100 +2798,144 @@
     <section id="galeria" class="galeria-franja">
         <div class="galeria-overlay"></div>
         <div class="galeria-slides-container" style="width: 100%; height: 100%; position: relative;">
+            <!-- Slide 1 — HERO GALERÍA: sin lazy (visible inmediatamente) -->
             <div class="galeria-slide active">
-                <img src="images/cataratas.jpg" alt="Cataratas del Iguazú" class="galeria-img">
+                <picture>
+                    <source srcset="images/cataratas.webp" type="image/webp">
+                    <img src="images/cataratas.jpg" alt="Cataratas del Iguazú" class="galeria-img">
+                </picture>
                 <div class="galeria-content">
                     <span class="galeria-title">Cataratas del Iguazú</span>
                     <span class="galeria-subtitle">Una de las siete maravillas naturales del mundo</span>
                 </div>
             </div>
+            <!-- Slides 2–14: lazy loading activado -->
             <div class="galeria-slide">
-                <img src="images/aeroporto.jpg" alt="Traslados al Aeropuerto" class="galeria-img">
+                <picture>
+                    <source srcset="images/aeroporto.webp" type="image/webp">
+                    <img src="images/aeroporto.jpg" alt="Traslados al Aeropuerto" class="galeria-img" loading="lazy">
+                </picture>
                 <div class="galeria-content">
                     <span class="galeria-title">Traslados al Aeropuerto</span>
                     <span class="galeria-subtitle">Puntualidad y confort 24/7 en la Triple Frontera</span>
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/templo budista 1.png" alt="Templo Budista Chen Tien" class="galeria-img">
+                <picture>
+                    <source srcset="images/templo_budista.webp" type="image/webp">
+                    <img src="images/templo budista 1.png" alt="Templo Budista Chen Tien" class="galeria-img" loading="lazy">
+                </picture>
                 <div class="galeria-content">
                     <span class="galeria-title">Templo Budista Chen Tien</span>
                     <span class="galeria-subtitle">Paz, meditación y espectaculares esculturas en Foz</span>
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/mezquita 1.png" alt="Mezquita Omar Ibn Al-Khattab" class="galeria-img"
-                    style="object-fit: contain; background-color: #050510;">
+                <picture>
+                    <source srcset="images/mezquita.webp" type="image/webp">
+                    <img src="images/mezquita 1.png" alt="Mezquita Omar Ibn Al-Khattab" class="galeria-img"
+                        style="object-fit: contain; background-color: #050510;" loading="lazy">
+                </picture>
                 <div class="galeria-content">
                     <span class="galeria-title">Mezquita Omar Ibn Al-Khattab</span>
                     <span class="galeria-subtitle">Arquitectura islámica y riqueza cultural en el corazón de Foz</span>
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/cataratas_panorama.png" alt="Vistas Panorámicas" class="galeria-img">
+                <picture>
+                    <source srcset="images/cataratas_panorama.webp" type="image/webp">
+                    <img src="images/cataratas_panorama.png" alt="Vistas Panorámicas" class="galeria-img" loading="lazy">
+                </picture>
                 <div class="galeria-content">
                     <span class="galeria-title">Vistas Panorámicas</span>
                     <span class="galeria-subtitle">Paisajes únicos e inolvidables de la selva</span>
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/china 1.png" alt="Cultura y Sabores" class="galeria-img">
+                <picture>
+                    <source srcset="images/china.webp" type="image/webp">
+                    <img src="images/china 1.png" alt="Cultura y Sabores" class="galeria-img" loading="lazy">
+                </picture>
                 <div class="galeria-content">
                     <span class="galeria-title">Cultura y Sabores</span>
                     <span class="galeria-subtitle">Experiencias gastronómicas y multiculturales locales</span>
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/dutty.jpeg" alt="Duty Free Shop" class="galeria-img">
+                <picture>
+                    <source srcset="images/dutty_opt.webp" type="image/webp">
+                    <img src="images/dutty.jpeg" alt="Duty Free Shop" class="galeria-img" loading="lazy">
+                </picture>
                 <div class="galeria-content">
                     <span class="galeria-title">Duty Free Shop</span>
                     <span class="galeria-subtitle">Compras internacionales exclusivas libre de impuestos</span>
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/feirinha argentina.jpeg" alt="Feirinha de Puerto Iguazú" class="galeria-img">
+                <picture>
+                    <source srcset="images/feirinha_argentina.webp" type="image/webp">
+                    <img src="images/feirinha argentina.jpeg" alt="Feirinha de Puerto Iguazú" class="galeria-img" loading="lazy">
+                </picture>
                 <div class="galeria-content">
                     <span class="galeria-title">Feirinha de Puerto Iguazú</span>
                     <span class="galeria-subtitle">Sabores locales, olivas y quesos tradicionales</span>
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/Kattamaram (2).jpeg" alt="Paseo en Kattamaram" class="galeria-img">
+                <picture>
+                    <source srcset="images/kattamaram.webp" type="image/webp">
+                    <img src="images/Kattamaram (2).jpeg" alt="Paseo en Kattamaram" class="galeria-img" loading="lazy">
+                </picture>
                 <div class="galeria-content">
                     <span class="galeria-title">Paseo en Kattamaram</span>
                     <span class="galeria-subtitle">Navegación inolvidable en el encuentro de los ríos</span>
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/museo de cera.png" alt="Dreamland Museo de Cera" class="galeria-img">
+                <picture>
+                    <source srcset="images/museo_de_cera.webp" type="image/webp">
+                    <img src="images/museo de cera.png" alt="Dreamland Museo de Cera" class="galeria-img" loading="lazy">
+                </picture>
                 <div class="galeria-content">
                     <span class="galeria-title">Dreamland Museo de Cera</span>
                     <span class="galeria-subtitle">Diversión para toda la familia con réplicas perfectas</span>
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/pda.png" alt="Parque de las Aves" class="galeria-img">
+                <picture>
+                    <source srcset="images/pda.webp" type="image/webp">
+                    <img src="images/pda.png" alt="Parque de las Aves" class="galeria-img" loading="lazy">
+                </picture>
                 <div class="galeria-content">
                     <span class="galeria-title">Parque de las Aves</span>
                     <span class="galeria-subtitle">Contacto directo con la fauna y aves rescatadas</span>
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/usina hidrelectrica.jpeg" alt="Itaipú Binacional" class="galeria-img">
+                <picture>
+                    <source srcset="images/usina_hidrelectrica.webp" type="image/webp">
+                    <img src="images/usina hidrelectrica.jpeg" alt="Itaipú Binacional" class="galeria-img" loading="lazy">
+                </picture>
                 <div class="galeria-content">
                     <span class="galeria-title">Itaipú Binacional</span>
                     <span class="galeria-subtitle">Una de las mayores obras de ingeniería del planeta</span>
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/wonder_park_v2.jpg" alt="Wonder Park Show" class="galeria-img">
+                <picture>
+                    <source srcset="images/wonder_park.webp" type="image/webp">
+                    <img src="images/wonder_park_v2.jpg" alt="Wonder Park Show" class="galeria-img" loading="lazy">
+                </picture>
                 <div class="galeria-content">
                     <span class="galeria-title">Wonder Park Show</span>
                     <span class="galeria-subtitle">Espectáculos de luces y atracciones interactivas</span>
                 </div>
             </div>
             <div class="galeria-slide">
-                <img src="images/yup star.jpeg" alt="Yup Star Foz" class="galeria-img">
+                <picture>
+                    <source srcset="images/cataratas_mejorada_opt.webp" type="image/webp">
+                    <img src="images/yup star.jpeg" alt="Yup Star Foz" class="galeria-img" loading="lazy">
+                </picture>
                 <div class="galeria-content">
                     <span class="galeria-title">Yup Star Foz</span>
                     <span class="galeria-subtitle">Una de las ruedas de la fortuna más grandes de América Latina</span>
@@ -2920,9 +2973,14 @@
         <p>© 2026 Trifoz Turismo • Guía Turístico Ebert • Foz de Iguazú</p>
     </footer>
 
-    <!-- Librerías de animación GSAP y Draggable -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+    <!-- Librerías de animación GSAP y Draggable (defer: no bloquean render) -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+            integrity="sha512-ExxxlR5ORh4Gc3a16KR8g35N3GtRwOBvDm+/dOTkOsDfBNc3PKZF0oCMFKCHs+D5u2FREMHYNbBkVHYOxqxA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"
+            integrity="sha512-f5SuAVjy+BHDM0S33DRTQBnB7VeWqkAbBn0RWLPGNq2OxMVOm6FqnJZ0E8OWMzWflRtKHCo7MiMx5bWM/VjA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
