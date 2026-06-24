@@ -1311,12 +1311,16 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: clamp(16px, 4vw, 24px) clamp(14px, 3.5vw, 20px);
+            padding: 0; /* Padding a 0 para centrar la imagen en todo el contenedor y evitar desfases del espejo */
             border: 2px solid rgba(255, 255, 255, 0.15) !important; /* Borde metálico sutil */
             box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1), inset 0 -2px 5px rgba(0, 0, 0, 0.8), 0 10px 25px rgba(0, 0, 0, 0.75) !important; /* Bisel e iluminación metálica */
             color: #fff;
             text-align: left;
             transition: all 0.4s ease;
+            background-color: #0c0a1a;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
         }
 
         /* Resplandor especial para la tarjeta central activa */
@@ -2118,57 +2122,57 @@
             <div class="carousel-viewport-3d">
                 <div class="carousel-3d-wrapper" id="carousel">
 
+                    <!-- Tarjeta 0: Cataratas do Iguaçu -->
                     <div class="card-item-3d" data-index="0">
-                        <div class="card-back"
-                            style="background: url('images/cataratas_mejorada_opt.webp') no-repeat center center / cover; padding: 0;">
+                        <div class="card-back" style="background-image: url('images/cataratas_mejorada_opt.webp');">
                         </div>
                     </div>
 
+                    <!-- Tarjeta 1: Macuco Safari -->
                     <div class="card-item-3d" data-index="1">
-                        <div class="card-back"
-                            style="background: url('images/macuco_safari_hd esta es.webp') no-repeat center center / cover; padding: 0;">
+                        <div class="card-back" style="background-image: url('images/macuco_safari_hd esta es.webp');">
                         </div>
                     </div>
 
+                    <!-- Tarjeta 2: Templo Budista -->
                     <div class="card-item-3d" data-index="2">
-                        <div class="card-back"
-                            style="background: url('images/buda.jpeg') no-repeat center center / cover; padding: 0;">
+                        <div class="card-back" style="background-image: url('images/buda.jpeg');">
                         </div>
                     </div>
 
+                    <!-- Tarjeta 3: Premium Hotel (Duty Free Shop) -->
                     <div class="card-item-3d" data-index="3">
-                        <div class="card-back"
-                            style="background: url('images/dutty esta es.webp') no-repeat center center / cover; padding: 0;">
+                        <div class="card-back" style="background-image: url('images/dutty esta es.webp');">
                         </div>
                     </div>
 
+                    <!-- Tarjeta 4: Familia Tour (Kattamaram II) -->
                     <div class="card-item-3d" data-index="4">
-                        <div class="card-back"
-                            style="background: url('images/kattamaram_2_opt.webp') no-repeat center center / cover; padding: 0;">
+                        <div class="card-back" style="background-image: url('images/kattamaram_2_opt.webp');">
                         </div>
                     </div>
 
+                    <!-- Tarjeta 5: Puerto de Iguazú (Duty Free Shop) -->
                     <div class="card-item-3d" data-index="5">
-                        <div class="card-back"
-                            style="background: url('images/dutty esta es.webp') no-repeat center center / cover; padding: 0;">
+                        <div class="card-back" style="background-image: url('images/dutty esta es.webp');">
                         </div>
                     </div>
 
+                    <!-- Tarjeta 6: Ciudad del Este (Gastronomía China) -->
                     <div class="card-item-3d" data-index="6">
-                        <div class="card-back"
-                            style="background: url('images/china.webp') no-repeat center center / cover; padding: 0;">
+                        <div class="card-back" style="background-image: url('images/china.webp');">
                         </div>
                     </div>
 
+                    <!-- Tarjeta 7: Marco 3 Fronteras -->
                     <div class="card-item-3d" data-index="7">
-                        <div class="card-back"
-                            style="background: url('images/marco_real.jpg') no-repeat center center / cover; padding: 0;">
+                        <div class="card-back" style="background-image: url('images/marco_real.jpg');">
                         </div>
                     </div>
 
+                    <!-- Tarjeta 8: Parque de las Aves -->
                     <div class="card-item-3d" data-index="8">
-                        <div class="card-back"
-                            style="background: url('images/pda.webp') no-repeat center center / cover; padding: 0;">
+                        <div class="card-back" style="background-image: url('images/pda.webp');">
                         </div>
                     </div>
 
@@ -2641,27 +2645,27 @@
                 const w = window.innerWidth;
 
                 if (w < 480) {
-                    cardWidth = 130;
-                    cardHeight = 200;
-                    xOffset = 70;
+                    cardWidth = 195;
+                    cardHeight = 130;
+                    xOffset = 65;
                     zDepth = -120;
                     yRotation = 45;
                 } else if (w < 768) {
-                    cardWidth = 160;
-                    cardHeight = 250;
-                    xOffset = 100;
+                    cardWidth = 240;
+                    cardHeight = 160;
+                    xOffset = 90;
                     zDepth = -140;
                     yRotation = 50;
                 } else if (w < 1024) {
-                    cardWidth = 195;
-                    cardHeight = 295;
-                    xOffset = 125;
+                    cardWidth = 270;
+                    cardHeight = 180;
+                    xOffset = 110;
                     zDepth = -160;
                     yRotation = 55;
                 } else {
-                    cardWidth = 220;
-                    cardHeight = 330;
-                    xOffset = 150;
+                    cardWidth = 300;
+                    cardHeight = 200;
+                    xOffset = 130;
                     zDepth = -180;
                     yRotation = 55;
                 }
