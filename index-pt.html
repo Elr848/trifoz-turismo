@@ -2648,28 +2648,28 @@
                 const w = window.innerWidth;
 
                 if (w < 480) {
-                    cardWidth = 195;    // Proporción widescreen en móviles
-                    cardHeight = 130;   // Relación 3:2 exacta
-                    xOffset = 65;
+                    cardWidth = 150;    // Vertical en móviles
+                    cardHeight = 240;   // Proporción ~5:8
+                    xOffset = 70;
                     zDepth = -120;
                     yRotation = 45;
                 } else if (w < 768) {
-                    cardWidth = 240;    // Tablets en landscape/widescreen
-                    cardHeight = 160;
-                    xOffset = 90;
+                    cardWidth = 180;    // Tablets verticales
+                    cardHeight = 290;
+                    xOffset = 100;
                     zDepth = -140;
                     yRotation = 50;
                 } else if (w <= 1200) { 
-                    // 💻 OPTIMIZADO PARA NOTEBOOKS: Widescreen para laptops
-                    cardWidth = 300;    
-                    cardHeight = 200;   
-                    xOffset = 120;      // Separación equilibrada para laptops
+                    // 💻 OPTIMIZADO PARA NOTEBOOKS: Tarjetas verticales grandes y visibles
+                    cardWidth = 240;    
+                    cardHeight = 380;   
+                    xOffset = 150;      // Separación equilibrada para laptops
                     zDepth = -160;
                     yRotation = 45;     // Rotación suave para que se aprecie toda la foto
                 } else {
-                    cardWidth = 330;    // Pantallas grandes de escritorio
-                    cardHeight = 220;
-                    xOffset = 130;
+                    cardWidth = 260;    // Pantallas grandes de escritorio
+                    cardHeight = 420;
+                    xOffset = 180;
                     zDepth = -180;
                     yRotation = 50;
                 }
