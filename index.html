@@ -1681,14 +1681,16 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 0; /* Padding a 0 para centrar la imagen en todo el contenedor y evitar desfases del espejo */
-            
+            padding: 0;
+            /* Padding a 0 para centrar la imagen en todo el contenedor y evitar desfases del espejo */
+
             /* 🛠️ SOLUCIÓN AL RECORTE DE IMÁGENES y EVITAR BARRAS NEGRAS */
-            background-size: cover !important; /* Llena la tarjeta completamente eliminando las barras negras */
+            background-size: cover !important;
+            /* Llena la tarjeta completamente eliminando las barras negras */
             background-repeat: no-repeat !important;
             background-position: center center !important;
             background-color: #0b0d19 !important;
-            
+
             border: 2px solid rgba(255, 255, 255, 0.15) !important;
             box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1), inset 0 -2px 5px rgba(0, 0, 0, 0.8), 0 10px 25px rgba(0, 0, 0, 0.75) !important;
             color: #fff;
@@ -3159,10 +3161,10 @@
                     xOffset = 90;
                     zDepth = -140;
                     yRotation = 50;
-                } else if (w <= 1200) { 
+                } else if (w <= 1200) {
                     // 💻 OPTIMIZADO PARA NOTEBOOKS: Widescreen para laptops
-                    cardWidth = 300;    
-                    cardHeight = 200;   
+                    cardWidth = 300;
+                    cardHeight = 200;
                     xOffset = 120;      // Separación equilibrada para laptops
                     zDepth = -160;
                     yRotation = 45;     // Rotación suave para que se aprecie toda la foto
