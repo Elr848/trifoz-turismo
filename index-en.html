@@ -2355,7 +2355,7 @@
 
 <body>
 
-        <div class="header-idioma-container">
+        <header><nav><div class="header-idioma-container">
         <span class="label-idioma-fijo">Language:</span>
         <div class="lista-idioma-fija">
             <a href="index.html" class="opcion-idioma-fija">
@@ -2368,7 +2368,8 @@
                 <img src="https://flagcdn.com/w20/us.png" class="mini-flag" alt="English"> EN
             </a>
         </div>
-    </div>
+    </div></nav></header>
+    <main>
 
     <section class="hero">
         <img src="images/plataforma_opt.webp" alt="Tours privados en Foz de Iguazú con Guide Ebert" class="hero-background"
@@ -2378,9 +2379,7 @@
                 <h1 class="titulo-metalico" style="margin:0; line-height:1.1; font-size: clamp(1.9rem, 5.5vw, 2.7rem);">
                     Trifoz Turismo
                 </h1>
-                <h2 class="subtitulo-amarillo" style="margin:10px 0 0 0; font-size: clamp(0.9rem, 2.2vw, 1.15rem);">
-                    Private Tours &amp; Transfers in the Triple Frontier
-                </h2>
+                <h2>Our Key Destinations</h2>
                 <h3 style="margin:12px 0 20px; font-size: clamp(0.85rem, 2vw, 1.1rem); color:#fff; opacity:0.9;">
                     Specialists in LIBRAS • Spanish • Portuguese<br>
                     Includes guided tours with certified guides
@@ -2388,171 +2387,34 @@
             </div>
         </div>
 
-        <div class="booking-bar-wrapper">
+                <div class="booking-bar-wrapper">
             <div class="booking-bar">
-                <div class="booking-field" id="booking-destino-wrapper">
-                    <div class="booking-field-icon">📍</div>
-                    <div class="booking-field-body">
-                        <span class="booking-field-label">Destination</span>
-                        <div class="dropdown-container">
-                            <div class="custom-select-trigger" id="trigger-destino">
-                                <span>Where are you going?</span> <i class="fas fa-chevron-down" style="font-size:0.8em;"></i>
-                            </div>
-                            <input type="hidden" id="booking-destino" value="">
-                            <ul class="dropdown-menu" id="menu-destino">
-                                <li class="dropdown-item help-option" data-value="Custom Itinerary">✨ I need help with the itinerary</li>
-                                <li class="dropdown-divider"></li>
-                                <li class="dropdown-item" data-value="Iguazu Falls (Brazil)"><span
-                                        class="country-tag">BR</span> Iguazu Falls (Brazil)</li>
-                                <li class="dropdown-item" data-value="Iguazu Falls (Argentina)"><span
-                                        class="country-tag">AR</span> Iguazu Falls (Argentina)</li>
-                                <li class="dropdown-item" data-value="Bird Park">🦜 Bird Park</li>
-                                <li class="dropdown-item" data-value="Three Borders Landmark">🏛️ Three Borders Landmark</li>
-                                <li class="dropdown-item" data-value="Itaipu Binacional">⚡ Itaipu Binacional</li>
-                                <li class="dropdown-item" data-value="Macuco Safari">🚤 Macuco Safari</li>
-                                <li class="dropdown-item" data-value="Yup Star Ferris Wheel">🎡 Yup Star Ferris Wheel</li>
-                                <li class="dropdown-item" data-value="Dreamland Wax Museum">🎭 Dreamland Wax Museum</li>
-                                <li class="dropdown-item" data-value="Ciudad del Este (Paraguay)"><span
-                                        class="country-tag">PY</span> Ciudad del Este (Paraguay)</li>
-                                <li class="dropdown-divider"></li>
-                                <li class="dropdown-header">TRASLADOS &amp; HOTELES</li>
-                                <li class="dropdown-item" data-value="Foz do Iguaçu Airport">✈️ <span
-                                        class="country-tag">BR</span> Foz do Iguaçu Airport</li>
-                                <li class="dropdown-item" data-value="Puerto Iguazú Airport">✈️ <span
-                                        class="country-tag">AR</span> Puerto Iguazú Airport</li>
-                                <li class="dropdown-item" data-value="Ciudad del Este Airport">✈️ <span
-                                        class="country-tag">PY</span> Ciudad del Este Airport</li>
-                                <li class="dropdown-item" data-value="Hotel Transfers">🏨 Hotel Transfers (BR / AR / PY)</li>
-                            </ul>
-                        </div>
+                <div class="booking-field">
+                    <div>
+                        <div class="booking-field-label">Service Date</div>
+                        <input type="date" id="booking-date" class="booking-datetime">
                     </div>
                 </div>
-
                 <div class="booking-field">
-                    <div class="booking-field-icon" style="color: var(--amarillo);"><i class="fas fa-user-group"></i>
-                    </div>
-                    <div class="booking-field-body">
-                        <span class="booking-field-label">Passengers</span>
+                    <div>
+                        <div class="booking-field-label">Passengers</div>
                         <div class="passenger-counter">
-                            <button type="button" class="pax-btn" id="pax-minus">−</button>
-                            <span class="pax-value" id="pax-display">2</span>
+                            <button type="button" class="pax-btn" id="pax-minus">-</button>
+                            <span class="pax-value" id="pax-count">1</span>
                             <button type="button" class="pax-btn" id="pax-plus">+</button>
                         </div>
                     </div>
                 </div>
-
-                <div class="booking-field" id="booking-datetime-wrapper">
-                    <div class="booking-field-icon">🗓️</div>
-                    <div class="booking-field-body">
-                        <span class="booking-field-label">Date &amp; Time</span>
-                        <input type="datetime-local" id="booking-datetime" class="booking-datetime"
-                            aria-label="Fecha y hora de reserva">
-                    </div>
-                </div>
-
-                <button class="booking-cta" id="booking-submit-btn">
-                    <i class="fab fa-whatsapp" style="font-size:1.25rem;"></i>
-                    <span class="booking-cta-label">
-                        MORE INFORMATION
-                        <span class="booking-cta-phone">+55(45)933003337</span>
-                    </span>
+                <button class="booking-cta" id="btn-reservar">
+                    Book Now <i class="fa-brands fa-whatsapp"></i>
                 </button>
-
-                <div class="social-buttons-container">
-                    <a href="mailto:trifozturismo@gmail.com" class="btn-social btn-email" aria-label="Enviar Email"><i
-                            class="fa-solid fa-envelope"></i></a>
-                    <a href="https://www.facebook.com/share/1Qr8RiKxrz/" target="_blank" rel="noopener noreferrer"
-                        class="btn-social btn-facebook" aria-label="Facebook"><i
-                            class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/trifoz.turismo" target="_blank" rel="noopener noreferrer"
-                        class="btn-social btn-instagram" aria-label="Instagram"><i
-                            class="fa-brands fa-instagram"></i></a>
-                </div>
             </div>
         </div>
     </section>
 
-    <button class="booking-mobile-btn" id="booking-mobile-trigger">
-        <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
-        <span class="booking-mobile-btn-label">
-            <span class="booking-mobile-btn-text">MORE INFORMATION</span>
-            <span class="booking-mobile-btn-phone">+55(45)933003337</span>
-        </span>
-    </button>
+    
 
-    <div class="booking-overlay" id="booking-overlay"></div>
-
-    <div class="booking-mobile-panel" id="booking-mobile-panel">
-        <div class="booking-mobile-panel-handle"></div>
-        <div class="booking-mobile-panel-header">
-            <span class="booking-mobile-panel-title">
-                <i class="fas fa-map-marker-alt" style="color: #ff4500;"></i> Make an inquiry
-            </span>
-            <button class="booking-mobile-close" id="booking-mobile-close">&#x2715;</button>
-        </div>
-
-        <div class="booking-mobile-field">
-            <div class="booking-mobile-field-body">
-                <span class="booking-mobile-label">Destination</span>
-                <div class="dropdown-container">
-                    <div class="custom-select-trigger" id="trigger-destino-m">
-                        <span>Where are you going?</span> <i class="fas fa-chevron-down" style="font-size:0.8em;"></i>
-                    </div>
-                    <input type="hidden" id="booking-destino-m" value="">
-                    <ul class="dropdown-menu" id="menu-destino-m">
-                        <li class="dropdown-item help-option" data-value="Custom Itinerary">✨ I need help with the itinerary</li>
-                        <li class="dropdown-divider"></li>
-                        <li class="dropdown-item" data-value="Iguazu Falls (Brazil)">Iguazu Falls (Brasil)
-                        </li>
-                        <li class="dropdown-item" data-value="Iguazu Falls (Argentina)">Iguazu Falls (Argentina)</li>
-                        <li class="dropdown-item" data-value="Bird Park">Bird Park</li>
-                        <li class="dropdown-item" data-value="Three Borders Landmark">Three Borders Landmark</li>
-                        <li class="dropdown-item" data-value="Itaipu Binacional">Itaipu Binational</li>
-                        <li class="dropdown-item" data-value="Macuco Safari">Macuco Safari</li>
-                        <li class="dropdown-item" data-value="Ciudad del Este (Paraguay)">Ciudad del Este (Paraguay)</li>
-                        <li class="dropdown-divider"></li>
-                        <li class="dropdown-header">TRASLADOS &amp; HOTELES</li>
-                        <li class="dropdown-item" data-value="Foz do Iguaçu Airport">✈️ <span
-                                class="country-tag">BR</span> Foz do Iguaçu Airport</li>
-                        <li class="dropdown-item" data-value="Puerto Iguazú Airport">✈️ <span
-                                class="country-tag">AR</span> Puerto Iguazú Airport</li>
-                        <li class="dropdown-item" data-value="Ciudad del Este Airport">✈️ <span
-                                class="country-tag">PY</span> Ciudad del Este Airport</li>
-                        <li class="dropdown-item" data-value="Hotel Transfers">🏨 Hotel Transfers (BR / AR /
-                            PY)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="booking-mobile-field">
-            <div class="booking-mobile-field-body">
-                <span class="booking-mobile-label">Passengers</span>
-                <div class="booking-mobile-pax">
-                    <button type="button" class="booking-mobile-pax-btn" id="pax-minus-m">−</button>
-                    <span class="booking-mobile-pax-val" id="pax-display-m">2</span>
-                    <button type="button" class="booking-mobile-pax-btn" id="pax-plus-m">+</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="booking-mobile-field">
-            <div class="booking-mobile-field-body">
-                <span class="booking-mobile-label">Date &amp; Time</span>
-                <input type="datetime-local" id="booking-datetime-m" class="booking-mobile-datetime">
-            </div>
-        </div>
-
-        <button class="booking-mobile-cta" id="booking-submit-btn-m">
-            <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
-            <span style="display:flex; flex-direction:column; line-height:1.2; text-align:center; align-items:center;">
-                <b>SEND INQUIRY</b>
-                <span class="booking-mobile-cta-phone">+55(45)933003337</span>
-            </span>
-        </button>
-    </div>
-
-
+    
 
     <section class="attractions">
         <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 15px; gap: 6px;">
@@ -2564,9 +2426,7 @@
                 style="font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #ffd700; letter-spacing: 1.5px; text-shadow: 0 2px 4px rgba(0,0,0,0.6);">Invitation</span>
         </div>
         <div style="text-align: center; margin-bottom: 15px; padding: 0 20px;">
-            <h2 class="subtitulo-amarillo" style="font-size: clamp(1.4rem, 6vw, 2.2rem); margin-bottom: 5px;">
-                Must-See Attractions in Foz do Iguaçu
-            </h2>
+            <h2>Our Key Destinations</h2>
         </div>
         <div class="slider-container-3d">
             <!-- Giant background text -->
@@ -2669,7 +2529,7 @@
 
         <div class="contenedor-catalogo"
             style="display: flex; justify-content: center; align-items: center; padding: 40px 15px; width: 100%;">
-            <div class="video-card card"
+            <div class="video-card card" tabindex="0"
                 style="max-width: 650px; width: 100%; margin: 0 auto; box-shadow: 0 15px 35px rgba(0, 35, 102, 0.1); background: rgba(255, 255, 255, 0.85); border-radius: 16px; border: 1.5px solid rgba(255, 255, 255, 0.4); overflow: hidden; display: flex; flex-direction: column;">
                 <div class="card-image" style="width: 100%; overflow: hidden;">
                     <img src="images/macuco_safari_hd esta es.webp" alt="Macuco Safari" width="800" height="500"
@@ -2919,6 +2779,8 @@
         </div>
     </section>
 
+    </main>
+
     <footer>
         <div class="social-buttons-footer">
             <a href="mailto:trifozturismo@gmail.com" class="btn-social btn-email" aria-label="Enviar Email"><i
@@ -2929,6 +2791,8 @@
                 class="btn-social btn-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>
         <p>© 2026 Trifoz Turismo • Guía Turístico Ebert • Foz de Iguazú</p>
+    
+        <p style="margin-top: 10px;">&copy; 2026 Trifoz Turismo. Todos los derechos reservados. Developed with accessibility.</p>
     </footer>
 
     <!-- Librerías de animación GSAP y Draggable -->
