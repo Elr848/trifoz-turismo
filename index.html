@@ -2351,423 +2351,614 @@
 
 <body>
 
-    <header><nav><div class="header-idioma-container">
-        <span class="label-idioma-fijo">Idioma:</span>
-        <div class="lista-idioma-fija">
-            <a href="index.html" class="opcion-idioma-fija activo">
-                <img src="https://flagcdn.com/w20/es.png" class="mini-flag" alt="Español"> ES
-            </a>
-            <a href="index-pt.html" class="opcion-idioma-fija">
-                <img src="https://flagcdn.com/w20/br.png" class="mini-flag" alt="Portugués"> PT
-            </a>
-            <a href="index-en.html" class="opcion-idioma-fija">
-                <img src="https://flagcdn.com/w20/us.png" class="mini-flag" alt="English"> EN
-            </a>
-        </div>
-    </div></nav></header>
-    <main>
-
-    <section class="hero">
-        <img src="images/plataforma_opt.webp" alt="Tours privados en Foz de Iguazú con Guía Ebert"
-            class="hero-background" width="1920" height="1080">
-        <div class="fire-wrapper" aria-hidden="true">
-            <div class="hero-container">
-                <h1 class="titulo-metalico" style="margin:0; line-height:1.1; font-size: clamp(1.9rem, 5.5vw, 2.7rem);">
-                    Trifoz Turismo
-                </h1>
-                <h2>Nuestros Destinos Clave</h2>
-                <h3 style="margin:12px 0 20px; font-size: clamp(0.85rem, 2vw, 1.1rem); color:#fff; opacity:0.9;">
-                    Especialistas en LIBRAS • Español • Portugués<br>
-                    Incluye paseos guiados con guías certificados
-                </h3>
-            </div>
-        </div>
-
-                <div class="booking-bar-wrapper">
-            <div class="booking-bar">
-                <div class="booking-field">
-                    <div>
-                        <div class="booking-field-label">Fecha del servicio</div>
-                        <input type="date" id="booking-date" class="booking-datetime">
-                    </div>
-                </div>
-                <div class="booking-field">
-                    <div>
-                        <div class="booking-field-label">Pasajeros</div>
-                        <div class="passenger-counter">
-                            <button type="button" class="pax-btn" id="pax-minus">-</button>
-                            <span class="pax-value" id="pax-count">1</span>
-                            <button type="button" class="pax-btn" id="pax-plus">+</button>
-                        </div>
-                    </div>
-                </div>
-                <button class="booking-cta" id="btn-reservar">
-                    Reservar Ahora <i class="fa-brands fa-whatsapp"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    
-
-    
-
-    <section class="attractions">
-        <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 15px; gap: 6px;">
-            <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer"
-                class="libras-round-button" aria-label="Video LIBRAS">
-                <img src="images/una.jpeg" alt="LIBRAS" class="libras-btn-img">
-            </a>
-            <span
-                style="font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #ffd700; letter-spacing: 1.5px; text-shadow: 0 2px 4px rgba(0,0,0,0.6);">Invitación</span>
-        </div>
-        <div style="text-align: center; margin-bottom: 15px; padding: 0 20px;">
-            <h2>Nuestros Destinos Clave</h2>
-        </div>
-        <div class="slider-container-3d">
-            <!-- Texto gigante en el fondo -->
-            <div class="bg-text-back">CATARATAS</div>
-
-            <!-- Controles laterales flotantes -->
-            <div class="nav-btn-container-3d">
-                <button class="nav-btn-3d-cf" id="prevBtn3D" aria-label="Anterior">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-                    </svg>
-                </button>
-                <button class="nav-btn-3d-cf" id="nextBtn3D" aria-label="Siguiente">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Viewport 3D -->
-            <div class="carousel-viewport-3d">
-                <div class="carousel-3d-wrapper" id="carousel">
-
-                    <!-- Tarjeta 0: Cataratas del Iguazú -->
-                    <div class="card-item-3d" data-index="0">
-                        <div class="card-back" style="background-image: url('images/cataratas_mejorada_opt.webp');">
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 1: Macuco Safari -->
-                    <div class="card-item-3d" data-index="1">
-                        <div class="card-back" style="background-image: url('images/macuco_safari_hd esta es.webp');">
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 2: Templo Budista -->
-                    <div class="card-item-3d" data-index="2">
-                        <div class="card-back" style="background-image: url('images/buda.jpeg');">
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 3: Premium Hotel (Duty Free Shop) -->
-                    <div class="card-item-3d" data-index="3">
-                        <div class="card-back" style="background-image: url('images/dutty esta es.webp');">
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 4: Familia Tour (Kattamaram II) -->
-                    <div class="card-item-3d" data-index="4">
-                        <div class="card-back" style="background-image: url('images/kattamaram_2_opt.webp');">
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 5: Puerto de Iguazú (Duty Free Shop) -->
-                    <div class="card-item-3d" data-index="5">
-                        <div class="card-back" style="background-image: url('images/dutty esta es.webp');">
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 6: Ciudad del Este (Gastronomía China) -->
-                    <div class="card-item-3d" data-index="6">
-                        <div class="card-back" style="background-image: url('images/china.webp');">
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 7: Marco 3 Fronteras -->
-                    <div class="card-item-3d" data-index="7">
-                        <div class="card-back" style="background-image: url('images/marco_real.jpg');">
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta 8: Parque de las Aves -->
-                    <div class="card-item-3d" data-index="8">
-                        <div class="card-back" style="background-image: url('images/pda.webp');">
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Información del destino activo -->
-            <div class="active-info-container"
-                style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 25px;">
-                <div class="active-info-title-row">
-                    <span class="title-line"></span>
-                    <h3 class="active-title-3d" id="activeTitle">Cataratas del Iguazú</h3>
-                    <span class="title-line"></span>
-                </div>
-                <p class="active-subtitle-3d" id="activeSubtitle"
-                    style="margin: 0; max-width: 600px; line-height: 1.4;">Maravilla del Mundo • Paseo Privado</p>
-                <button class="card-btn-action" id="activeCardBtn"
-                    data-dest="Cataratas del Iguazú (Argentina)">CONSULTAR</button>
-            </div>
-
-            <!-- Navegación por puntos -->
-            <div class="navigation-dots-3d" id="dotsContainer3D">
-                <!-- Se generan dinámicamente -->
-            </div>
-        </div>
-
-        <div class="contenedor-catalogo"
-            style="display: flex; justify-content: center; align-items: center; padding: 40px 15px; width: 100%;">
-            <div class="video-card card" tabindex="0"
-                style="max-width: 650px; width: 100%; margin: 0 auto; box-shadow: 0 15px 35px rgba(0, 35, 102, 0.1); background: rgba(255, 255, 255, 0.85); border-radius: 16px; border: 1.5px solid rgba(255, 255, 255, 0.4); overflow: hidden; display: flex; flex-direction: column;">
-                <div class="card-image" style="width: 100%; overflow: hidden;">
-                    <img src="images/macuco_safari_hd esta es.webp" alt="Macuco Safari" width="800" height="500"
-                        style="width: 100%; height: auto; display: block; transition: transform 0.5s;"
-                        onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                </div>
-                <div class="card-content"
-                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 35px 25px; gap: 20px; text-align: center; background: rgba(255, 255, 255, 0.95);">
-                    <div style="text-align: center;">
-                        <h3
-                            style="font-family: 'Montserrat', sans-serif; font-weight: 900; letter-spacing: 2px; font-size: clamp(1.4rem, 4vw, 1.85rem); margin: 0 0 10px 0; color: #002366; text-transform: uppercase;">
-                            MACUCO SAFARI</h3>
-                        <p
-                            style="color: #333333; font-size: clamp(0.9rem, 2vw, 1.05rem); margin: 0; line-height: 1.5; max-width: 600px;">
-                            Aventura extrema en las caídas de agua.</p>
-                    </div>
-                    <a href="https://youtu.be/1dUpxFeU_u4?si=1p_wqlZU0Bks6DNa" target="_blank" rel="noopener noreferrer"
-                        class="btn-video-elegant">
-                        <i class="fab fa-youtube"></i> Ver Aventura Macuco Safari
+    <header>
+        <nav>
+            <div class="header-idioma-container">
+                <span class="label-idioma-fijo">Idioma:</span>
+                <div class="lista-idioma-fija">
+                    <a href="index.html" class="opcion-idioma-fija activo">
+                        <img src="https://flagcdn.com/w20/es.png" class="mini-flag" alt="Español"> ES
+                    </a>
+                    <a href="index-pt.html" class="opcion-idioma-fija">
+                        <img src="https://flagcdn.com/w20/br.png" class="mini-flag" alt="Portugués"> PT
+                    </a>
+                    <a href="index-en.html" class="opcion-idioma-fija">
+                        <img src="https://flagcdn.com/w20/us.png" class="mini-flag" alt="English"> EN
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </nav>
+    </header>
+    <main>
 
-    <!-- Barra de botones horizontal -->
-    <div class="horizontal-button-bar">
-        <a href="#galeria" class="btn-horizontal-bar" aria-label="Galería de Fotos">
-            <i class="fas fa-images"></i>
-            <span>Galería</span>
-        </a>
-        <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer"
-            class="btn-horizontal-bar" aria-label="Atendemos en LIBRAS">
-            <img src="images/libras_hd.png" alt="LIBRAS"
-                style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; vertical-align: middle;">
-            <span>LIBRAS</span>
-        </a>
-        <button class="btn-horizontal-bar" id="btn-ingresos" aria-label="Compra de Ingresos">
-            <i class="fas fa-ticket-alt"></i>
-            <span>Ingresos</span>
-        </button>
-        <button class="btn-horizontal-bar" id="btn-videos" aria-label="Videos de Trifoz">
-            <i class="fas fa-video"></i>
-            <span>Videos</span>
-        </button>
-    </div>
+        <section class="hero">
+            <img src="images/plataforma_opt.webp" alt="Tours privados en Foz de Iguazú con Guía Ebert"
+                class="hero-background" width="1920" height="1080">
+            <div class="fire-wrapper" aria-hidden="true">
+                <div class="hero-container">
+                    <h1 class="titulo-metalico"
+                        style="margin:0; line-height:1.1; font-size: clamp(1.9rem, 5.5vw, 2.7rem);">
+                        Trifoz Turismo
+                    </h1>
 
-    <section class="informacion-turismo"
-        style="max-width: 1200px; padding: 80px 20px; margin: 0 auto; text-align: center;">
-        <h2
-            style="color: var(--amarillo); font-size: clamp(1.8rem, 5vw, 2.5rem); text-transform: uppercase; font-family: 'Oswald', sans-serif; letter-spacing: 2px; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); margin-bottom: 10px;">
-            ¿Por qué elegir Trifoz Turismo?</h2>
-        <p class="subtitulo-info"
-            style="color: #fff; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 500; opacity: 0.95; margin-bottom: 50px; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">
-            Tu viaje soñado en la Triple Frontera, con confort premium y un servicio diseñado exclusivamente para ti.
-        </p>
+                    <h3 style="margin:12px 0 20px; font-size: clamp(0.85rem, 2vw, 1.1rem); color:#fff; opacity:0.9;">
+                        Especialistas en LIBRAS • Español • Portugués<br>
+                        Incluye paseos guiados con guías certificados
+                    </h3>
+                </div>
+            </div>
 
-        <div class="info-content-wrapper"
-            style="display: flex; flex-direction: column; gap: 40px; align-items: center; width: 100%;">
-            <div class="info-side-image"
-                onmouseover="this.style.borderColor='rgba(224, 160, 255, 0.8)'; this.style.transform='translateY(-5px)';"
-                onmouseout="this.style.borderColor='rgba(0, 210, 255, 0.4)'; this.style.transform='translateY(0)';"
-                style="width: 95%; max-width: 580px; aspect-ratio: 1.52; height: auto; position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.5); border: 2px solid rgba(0, 210, 255, 0.4); transition: all 0.4s ease; margin: 0 auto;">
-                <div class="car-slides" style="width: 100%; height: 100%; position: relative;">
-                    <div class="car-slide active"
-                        style="position: absolute; inset: 0; opacity: 1; transition: opacity 1.2s ease-in-out; z-index: 1;">
-                        <img src="images/1.1.jpeg" alt="Vehículo premium Trifoz"
-                            style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 5s ease-out;">
-                        <div
-                            style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.35); z-index: 2; pointer-events: none;">
+            <div class="booking-bar-wrapper">
+                <div class="booking-bar">
+                    <div class="booking-field" id="booking-destino-wrapper">
+                        <div class="booking-field-icon">📍</div>
+                        <div class="booking-field-body">
+                            <span class="booking-field-label">Destino</span>
+                            <div class="dropdown-container" role="listbox">
+                                <div class="custom-select-trigger" id="trigger-destino">
+                                    <span>¿A dónde vas?</span> <i class="fas fa-chevron-down"
+                                        style="font-size:0.8em;"></i>
+                                </div>
+                                <input type="hidden" id="booking-destino" value="">
+                                <ul class="dropdown-menu" id="menu-destino">
+                                    <li class="dropdown-item help-option" role="option" tabindex="0"
+                                        data-value="Itinerario Personalizado">✨ Necesito
+                                        ayuda con el itinerario</li>
+                                    <li class="dropdown-divider"></li>
+                                    <li class="dropdown-item" role="option" tabindex="0"
+                                        data-value="Cataratas de Iguazú (Brasil)"><span class="country-tag">BR</span>
+                                        Cataratas de Iguazú (Brasil)</li>
+                                    <li class="dropdown-item" role="option" tabindex="0"
+                                        data-value="Cataratas del Iguazú (Argentina)"><span
+                                            class="country-tag">AR</span> Cataratas del Iguazú (Arg)</li>
+                                    <li class="dropdown-item" role="option" tabindex="0"
+                                        data-value="Parque de las Aves">🦜 Parque de las Aves</li>
+                                    <li class="dropdown-item" role="option" tabindex="0"
+                                        data-value="Hito de las 3 Fronteras">🏛️ Hito de las 3
+                                        Fronteras</li>
+                                    <li class="dropdown-item" role="option" tabindex="0" data-value="Itaipú Binacional">
+                                        ⚡ Itaipú Binacional</li>
+                                    <li class="dropdown-item" role="option" tabindex="0" data-value="Macuco Safari">🚤
+                                        Macuco Safari</li>
+                                    <li class="dropdown-item" role="option" tabindex="0"
+                                        data-value="Roda Gigante Yup Star">🎡 Rueda Gigante Yup Star
+                                    </li>
+                                    <li class="dropdown-item" role="option" tabindex="0"
+                                        data-value="Museo de Cera Dreamland">🎭 Museo de Cera
+                                        Dreamland</li>
+                                    <li class="dropdown-item" role="option" tabindex="0"
+                                        data-value="Ciudad del Este (Paraguay)"><span class="country-tag">PY</span>
+                                        Ciudad del Este</li>
+                                    <li class="dropdown-divider"></li>
+                                    <li class="dropdown-header">TRASLADOS &amp; HOTELES</li>
+                                    <li class="dropdown-item" role="option" tabindex="0"
+                                        data-value="Aeropuerto de Foz de Iguazú">✈️ <span class="country-tag">BR</span>
+                                        Aeropuerto de Foz de Iguazú</li>
+                                    <li class="dropdown-item" role="option" tabindex="0"
+                                        data-value="Aeropuerto de Puerto Iguazú">✈️ <span class="country-tag">AR</span>
+                                        Aeropuerto de Puerto Iguazú</li>
+                                    <li class="dropdown-item" role="option" tabindex="0"
+                                        data-value="Aeropuerto de Ciudad del Este">✈️ <span
+                                            class="country-tag">PY</span> Aeropuerto de Ciudad del Este</li>
+                                    <li class="dropdown-item" role="option" tabindex="0"
+                                        data-value="Traslado para Hoteles">🏨 Traslado para Hoteles
+                                        (BR / AR / PY)</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="car-slide"
-                        style="position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease-in-out; z-index: 1;">
-                        <img src="images/car2 - copia.jpeg" alt="Vehículo premium Trifoz"
-                            style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 5s ease-out;">
+
+                    <div class="booking-field">
+                        <div class="booking-field-icon" style="color: var(--amarillo);"><i
+                                class="fas fa-user-group"></i>
+                        </div>
+                        <div class="booking-field-body">
+                            <span class="booking-field-label">Pasajeros</span>
+                            <div class="passenger-counter">
+                                <button type="button" class="pax-btn" id="pax-minus">−</button>
+                                <span class="pax-value" id="pax-display">2</span>
+                                <button type="button" class="pax-btn" id="pax-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="booking-field" id="booking-datetime-wrapper">
+                        <div class="booking-field-icon">🗓️</div>
+                        <div class="booking-field-body">
+                            <span class="booking-field-label">Fecha &amp; Hora</span>
+                            <input type="datetime-local" id="booking-datetime" aria-label="Fecha y hora de reserva"
+                                class="booking-datetime" aria-label="Fecha y hora de reserva">
+                        </div>
+                    </div>
+
+                    <button class="booking-cta" id="booking-submit-btn">
+                        <i class="fab fa-whatsapp" style="font-size:1.25rem;"></i>
+                        <span class="booking-cta-label">
+                            MÁS INFORMACIÓN
+                            <span class="booking-cta-phone">+55(45)933003337</span>
+                        </span>
+                    </button>
+
+                    <div class="social-buttons-container">
+                        <a href="mailto:trifozturismo@gmail.com" class="btn-social btn-email"
+                            aria-label="Enviar Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://www.facebook.com/share/1Qr8RiKxrz/" target="_blank" rel="noopener noreferrer"
+                            class="btn-social btn-facebook" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/trifoz.turismo" target="_blank" rel="noopener noreferrer"
+                            class="btn-social btn-instagram" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <button class="booking-mobile-btn" id="booking-mobile-trigger">
+            <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
+            <span class="booking-mobile-btn-label">
+                MÁS INFORMACIÓN
+                <span class="booking-mobile-btn-phone">+55(45)933003337</span>
+            </span>
+        </button>
+
+        <div class="booking-overlay" id="booking-overlay"></div>
+
+        <div class="booking-mobile-panel" id="booking-mobile-panel">
+            <div class="booking-mobile-panel-handle"></div>
+            <div class="booking-mobile-panel-header">
+                <span class="booking-mobile-panel-title">
+                    <i class="fas fa-map-marker-alt" style="color: #ff4500;"></i> Hacer una consulta
+                </span>
+                <button class="booking-mobile-close" id="booking-mobile-close">&#x2715;</button>
+            </div>
+
+            <div class="booking-mobile-field">
+                <div class="booking-mobile-field-body">
+                    <span class="booking-mobile-label">Destino</span>
+                    <div class="dropdown-container" role="listbox">
+                        <div class="custom-select-trigger" id="trigger-destino-m">
+                            <span>¿A dónde vas?</span> <i class="fas fa-chevron-down" style="font-size:0.8em;"></i>
+                        </div>
+                        <input type="hidden" id="booking-destino-m" value="">
+                        <ul class="dropdown-menu" id="menu-destino-m">
+                            <li class="dropdown-item help-option" role="option" tabindex="0"
+                                data-value="Itinerario Personalizado">✨ Necesito ayuda con
+                                el itinerario</li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item" role="option" tabindex="0"
+                                data-value="Cataratas de Iguazú (Brasil)">Cataratas de Iguazú (Brasil)
+                            </li>
+                            <li class="dropdown-item" role="option" tabindex="0"
+                                data-value="Cataratas del Iguazú (Argentina)">Cataratas del Iguazú
+                                (Arg)</li>
+                            <li class="dropdown-item" role="option" tabindex="0" data-value="Parque de las Aves">Parque
+                                de las Aves</li>
+                            <li class="dropdown-item" role="option" tabindex="0" data-value="Hito de las 3 Fronteras">
+                                Hito de las 3 Fronteras</li>
+                            <li class="dropdown-item" role="option" tabindex="0" data-value="Itaipú Binacional">Itaipú
+                                Binacional</li>
+                            <li class="dropdown-item" role="option" tabindex="0" data-value="Macuco Safari">Macuco
+                                Safari</li>
+                            <li class="dropdown-item" role="option" tabindex="0" data-value="Ciudad del Este">Ciudad del
+                                Este (Paraguay)</li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-header">TRASLADOS &amp; HOTELES</li>
+                            <li class="dropdown-item" role="option" tabindex="0"
+                                data-value="Aeropuerto de Foz de Iguazú">✈️ <span class="country-tag">BR</span>
+                                Aeropuerto de Foz de Iguazú</li>
+                            <li class="dropdown-item" role="option" tabindex="0"
+                                data-value="Aeropuerto de Puerto Iguazú">✈️ <span class="country-tag">AR</span>
+                                Aeropuerto de Puerto Iguazú</li>
+                            <li class="dropdown-item" role="option" tabindex="0"
+                                data-value="Aeropuerto de Ciudad del Este">✈️ <span class="country-tag">PY</span>
+                                Aeropuerto de Ciudad del Este</li>
+                            <li class="dropdown-item" role="option" tabindex="0" data-value="Traslado para Hoteles">🏨
+                                Traslado para Hoteles (BR / AR /
+                                PY)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-mobile-field">
+                <div class="booking-mobile-field-body">
+                    <span class="booking-mobile-label">Pasajeros</span>
+                    <div class="booking-mobile-pax">
+                        <button type="button" class="booking-mobile-pax-btn" id="pax-minus-m">−</button>
+                        <span class="booking-mobile-pax-val" id="pax-display-m">2</span>
+                        <button type="button" class="booking-mobile-pax-btn" id="pax-plus-m">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-mobile-field">
+                <div class="booking-mobile-field-body">
+                    <span class="booking-mobile-label">Fecha &amp; Hora</span>
+                    <input type="datetime-local" id="booking-datetime-m" class="booking-mobile-datetime">
+                </div>
+            </div>
+
+            <button class="booking-mobile-cta" id="booking-submit-btn-m">
+                <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
+                <span style="display:flex; flex-direction:column; line-height:1.2; text-align:left;">
+                    <b>SOLICITAR CONSULTA</b>
+                    <span class="booking-mobile-cta-phone">+55(45)933003337</span>
+                </span>
+            </button>
+        </div>
+
+
+
+        <section class="attractions">
+            <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 15px; gap: 6px;">
+                <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer"
+                    class="libras-round-button" aria-label="Video LIBRAS">
+                    <img src="images/una.jpeg" alt="LIBRAS" class="libras-btn-img">
+                </a>
+                <span
+                    style="font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #ffd700; letter-spacing: 1.5px; text-shadow: 0 2px 4px rgba(0,0,0,0.6);">Invitación</span>
+            </div>
+            <div style="text-align: center; margin-bottom: 15px; padding: 0 20px;">
+                <h2 class="subtitulo-amarillo" style="font-size: clamp(1.4rem, 6vw, 2.2rem); margin-bottom: 5px;">
+                    Atracciones Imperdibles en Foz de Iguazú
+                </h2>
+            </div>
+            <div class="slider-container-3d">
+                <!-- Texto gigante en el fondo -->
+                <div class="bg-text-back">CATARATAS</div>
+
+                <!-- Controles laterales flotantes -->
+                <div class="nav-btn-container-3d">
+                    <button class="nav-btn-3d-cf" id="prevBtn3D" aria-label="Anterior">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                        </svg>
+                    </button>
+                    <button class="nav-btn-3d-cf" id="nextBtn3D" aria-label="Siguiente">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Viewport 3D -->
+                <div class="carousel-viewport-3d">
+                    <div class="carousel-3d-wrapper" id="carousel">
+
+                        <!-- Tarjeta 0: Cataratas del Iguazú -->
+                        <div class="card-item-3d" data-index="0">
+                            <div class="card-back" style="background-image: url('images/cataratas_mejorada_opt.webp');">
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 1: Macuco Safari -->
+                        <div class="card-item-3d" data-index="1">
+                            <div class="card-back"
+                                style="background-image: url('images/macuco_safari_hd esta es.webp');">
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 2: Templo Budista -->
+                        <div class="card-item-3d" data-index="2">
+                            <div class="card-back" style="background-image: url('images/buda.jpeg');">
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 3: Premium Hotel (Duty Free Shop) -->
+                        <div class="card-item-3d" data-index="3">
+                            <div class="card-back" style="background-image: url('images/dutty esta es.webp');">
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 4: Familia Tour (Kattamaram II) -->
+                        <div class="card-item-3d" data-index="4">
+                            <div class="card-back" style="background-image: url('images/kattamaram_2_opt.webp');">
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 5: Puerto de Iguazú (Duty Free Shop) -->
+                        <div class="card-item-3d" data-index="5">
+                            <div class="card-back" style="background-image: url('images/dutty esta es.webp');">
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 6: Ciudad del Este (Gastronomía China) -->
+                        <div class="card-item-3d" data-index="6">
+                            <div class="card-back" style="background-image: url('images/china.webp');">
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 7: Marco 3 Fronteras -->
+                        <div class="card-item-3d" data-index="7">
+                            <div class="card-back" style="background-image: url('images/marco_real.jpg');">
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 8: Parque de las Aves -->
+                        <div class="card-item-3d" data-index="8">
+                            <div class="card-back" style="background-image: url('images/pda.webp');">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Información del destino activo -->
+                <div class="active-info-container"
+                    style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 25px;">
+                    <div class="active-info-title-row">
+                        <span class="title-line"></span>
+                        <h3 class="active-title-3d" id="activeTitle">Cataratas del Iguazú</h3>
+                        <span class="title-line"></span>
+                    </div>
+                    <p class="active-subtitle-3d" id="activeSubtitle"
+                        style="margin: 0; max-width: 600px; line-height: 1.4;">Maravilla del Mundo • Paseo Privado</p>
+                    <button class="card-btn-action" id="activeCardBtn"
+                        data-dest="Cataratas del Iguazú (Argentina)">CONSULTAR</button>
+                </div>
+
+                <!-- Navegación por puntos -->
+                <div class="navigation-dots-3d" id="dotsContainer3D">
+                    <!-- Se generan dinámicamente -->
+                </div>
+            </div>
+
+            <div class="contenedor-catalogo"
+                style="display: flex; justify-content: center; align-items: center; padding: 40px 15px; width: 100%;">
+                <div class="video-card card" tabindex="0"
+                    style="max-width: 650px; width: 100%; margin: 0 auto; box-shadow: 0 15px 35px rgba(0, 35, 102, 0.1); background: rgba(255, 255, 255, 0.85); border-radius: 16px; border: 1.5px solid rgba(255, 255, 255, 0.4); overflow: hidden; display: flex; flex-direction: column;">
+                    <div class="card-image" style="width: 100%; overflow: hidden;">
+                        <img src="images/macuco_safari_hd esta es.webp" alt="Macuco Safari" width="800" height="500"
+                            style="width: 100%; height: auto; display: block; transition: transform 0.5s;"
+                            onmouseover="this.style.transform='scale(1.03)'"
+                            onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                    <div class="card-content"
+                        style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 35px 25px; gap: 20px; text-align: center; background: rgba(255, 255, 255, 0.95);">
+                        <div style="text-align: center;">
+                            <h3
+                                style="font-family: 'Montserrat', sans-serif; font-weight: 900; letter-spacing: 2px; font-size: clamp(1.4rem, 4vw, 1.85rem); margin: 0 0 10px 0; color: #002366; text-transform: uppercase;">
+                                MACUCO SAFARI</h3>
+                            <p
+                                style="color: #333333; font-size: clamp(0.9rem, 2vw, 1.05rem); margin: 0; line-height: 1.5; max-width: 600px;">
+                                Aventura extrema en las caídas de agua.</p>
+                        </div>
+                        <a href="https://youtu.be/1dUpxFeU_u4?si=1p_wqlZU0Bks6DNa" target="_blank"
+                            rel="noopener noreferrer" class="btn-video-elegant">
+                            <i class="fab fa-youtube"></i> Ver Aventura Macuco Safari
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Barra de botones horizontal -->
+        <div class="horizontal-button-bar">
+            <a href="#galeria" class="btn-horizontal-bar" aria-label="Galería de Fotos">
+                <i class="fas fa-images"></i>
+                <span>Galería</span>
+            </a>
+            <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer"
+                class="btn-horizontal-bar" aria-label="Atendemos en LIBRAS">
+                <img src="images/libras_hd.png" alt="LIBRAS"
+                    style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; vertical-align: middle;">
+                <span>LIBRAS</span>
+            </a>
+            <button class="btn-horizontal-bar" id="btn-ingresos" aria-label="Compra de Ingresos">
+                <i class="fas fa-ticket-alt"></i>
+                <span>Ingresos</span>
+            </button>
+            <button class="btn-horizontal-bar" id="btn-videos" aria-label="Videos de Trifoz">
+                <i class="fas fa-video"></i>
+                <span>Videos</span>
+            </button>
+        </div>
+
+        <section class="informacion-turismo"
+            style="max-width: 1200px; padding: 80px 20px; margin: 0 auto; text-align: center;">
+            <h2
+                style="color: var(--amarillo); font-size: clamp(1.8rem, 5vw, 2.5rem); text-transform: uppercase; font-family: 'Oswald', sans-serif; letter-spacing: 2px; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); margin-bottom: 10px;">
+                ¿Por qué elegir Trifoz Turismo?</h2>
+            <p class="subtitulo-info"
+                style="color: #fff; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 500; opacity: 0.95; margin-bottom: 50px; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">
+                Tu viaje soñado en la Triple Frontera, con confort premium y un servicio diseñado exclusivamente para
+                ti.
+            </p>
+
+            <div class="info-content-wrapper"
+                style="display: flex; flex-direction: column; gap: 40px; align-items: center; width: 100%;">
+                <div class="info-side-image"
+                    onmouseover="this.style.borderColor='rgba(224, 160, 255, 0.8)'; this.style.transform='translateY(-5px)';"
+                    onmouseout="this.style.borderColor='rgba(0, 210, 255, 0.4)'; this.style.transform='translateY(0)';"
+                    style="width: 95%; max-width: 580px; aspect-ratio: 1.52; height: auto; position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.5); border: 2px solid rgba(0, 210, 255, 0.4); transition: all 0.4s ease; margin: 0 auto;">
+                    <div class="car-slides" style="width: 100%; height: 100%; position: relative;">
+                        <div class="car-slide active"
+                            style="position: absolute; inset: 0; opacity: 1; transition: opacity 1.2s ease-in-out; z-index: 1;">
+                            <img src="images/1.1.jpeg" alt="Vehículo premium Trifoz"
+                                style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 5s ease-out;">
+                            <div
+                                style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.35); z-index: 2; pointer-events: none;">
+                            </div>
+                        </div>
+                        <div class="car-slide"
+                            style="position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease-in-out; z-index: 1;">
+                            <img src="images/car2 - copia.jpeg" alt="Vehículo premium Trifoz"
+                                style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 5s ease-out;">
+                            <div
+                                style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.35); z-index: 2; pointer-events: none;">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="position: absolute; bottom: 15px; right: 15px; z-index: 5; display: flex; gap: 6px;">
+                        <span class="car-dot active"
+                            style="width: 6px; height: 6px; border-radius: 50%; background: #00d2ff; box-shadow: 0 0 6px #00d2ff; cursor: pointer;"></span>
+                        <span class="car-dot"
+                            style="width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer;"></span>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="columna">
+                        <h2>EXPLORA FOZ DO IGUAÇU CON NOSOTROS</h2>
+                        <p>
+                            Descubrir la inmensidad de las Cataratas y la biodiversidad única de la selva paranaense es
+                            una
+                            experiencia inolvidable. Nos complace acompañarte de forma cercana y segura, ofreciendo un
+                            servicio de traslados privados diseñado a tu medida.
+                        </p>
+                    </div>
+                    <div class="columna">
+                        <p>
+                            Nos encargamos de toda la logística: desde recogidas puntuales en los aeropuertos de la
+                            región
+                            hasta los cruces fronterizos hacia Argentina y Paraguay, facilitando los trámites aduaneros
+                            para
+                            que tu única preocupación sea disfrutar de la naturaleza. Además, organizamos paseos
+                            confortables dentro del territorio brasileño, garantizando itinerarios flexibles tanto para
+                            viajeros individuales como para familias y grupos organizados. Nuestro guiado incluye
+                            comunicación accesible en español, portugués y LIBRAS, buscando siempre brindar un trato
+                            cálido
+                            y humano.
+                        </p>
                         <div
-                            style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.35); z-index: 2; pointer-events: none;">
+                            style="border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 20px; margin-top: 20px;">
+                            <h3
+                                style="color: #00d2ff; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 0.5px;">
+                                Naturaleza &amp; Paseos</h3>
+                            <p style="font-size: 0.95rem; opacity: 0.85; margin: 0; line-height: 1.4;">Tours guiados por
+                                las
+                                Cataratas y los rincones más bellos de la región.</p>
                         </div>
                     </div>
                 </div>
-                <div style="position: absolute; bottom: 15px; right: 15px; z-index: 5; display: flex; gap: 6px;">
-                    <span class="car-dot active"
-                        style="width: 6px; height: 6px; border-radius: 50%; background: #00d2ff; box-shadow: 0 0 6px #00d2ff; cursor: pointer;"></span>
-                    <span class="car-dot"
-                        style="width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer;"></span>
-                </div>
             </div>
+        </section>
 
-            <div class="info-box">
-                <div class="columna">
-                    <h2>EXPLORA FOZ DO IGUAÇU CON NOSOTROS</h2>
-                    <p>
-                        Descubrir la inmensidad de las Cataratas y la biodiversidad única de la selva paranaense es una
-                        experiencia inolvidable. Nos complace acompañarte de forma cercana y segura, ofreciendo un
-                        servicio de traslados privados diseñado a tu medida.
-                    </p>
+        <!-- SECCIÓN GALERÍA DE FOTOS -->
+        <section id="galeria" class="galeria-franja">
+            <div class="galeria-overlay"></div>
+            <div class="galeria-slides-container" style="width: 100%; height: 100%; position: relative;">
+                <div class="galeria-slide active">
+                    <img src="images/cataratas.jpg" alt="Cataratas del Iguazú" class="galeria-img">
+                    <div class="galeria-content">
+                        <span class="galeria-title">Cataratas del Iguazú</span>
+                        <span class="galeria-subtitle">Una de las siete maravillas naturales del mundo</span>
+                    </div>
                 </div>
-                <div class="columna">
-                    <p>
-                        Nos encargamos de toda la logística: desde recogidas puntuales en los aeropuertos de la región
-                        hasta los cruces fronterizos hacia Argentina y Paraguay, facilitando los trámites aduaneros para
-                        que tu única preocupación sea disfrutar de la naturaleza. Además, organizamos paseos
-                        confortables dentro del territorio brasileño, garantizando itinerarios flexibles tanto para
-                        viajeros individuales como para familias y grupos organizados. Nuestro guiado incluye
-                        comunicación accesible en español, portugués y LIBRAS, buscando siempre brindar un trato cálido
-                        y humano.
-                    </p>
-                    <div style="border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 20px; margin-top: 20px;">
-                        <h3
-                            style="color: #00d2ff; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 0.5px;">
-                            Naturaleza &amp; Paseos</h3>
-                        <p style="font-size: 0.95rem; opacity: 0.85; margin: 0; line-height: 1.4;">Tours guiados por las
-                            Cataratas y los rincones más bellos de la región.</p>
+                <div class="galeria-slide">
+                    <img src="images/aeroporto esta.webp" alt="Traslados al Aeropuerto" class="galeria-img">
+                    <div class="galeria-content">
+                        <span class="galeria-title">Traslados al Aeropuerto</span>
+                        <span class="galeria-subtitle">Puntualidad y confort 24/7 en la Triple Frontera</span>
+                    </div>
+                </div>
+                <div class="galeria-slide">
+                    <img src="images/templo_budista.webp" alt="Templo Budista Chen Tien" class="galeria-img">
+                    <div class="galeria-content">
+                        <span class="galeria-title">Templo Budista Chen Tien</span>
+                        <span class="galeria-subtitle">Paz, meditación y espectaculares esculturas en Foz</span>
+                    </div>
+                </div>
+                <div class="galeria-slide">
+                    <img src="images/mezquita 1.png" alt="Mezquita Omar Ibn Al-Khattab" class="galeria-img"
+                        style="object-fit: contain; background-color: #050510;">
+                    <div class="galeria-content">
+                        <span class="galeria-title">Mezquita Omar Ibn Al-Khattab</span>
+                        <span class="galeria-subtitle">Arquitectura islámica y riqueza cultural en el corazón de
+                            Foz</span>
+                    </div>
+                </div>
+                <div class="galeria-slide">
+                    <img src="images/cataratas_panorama.webp" alt="Vistas Panorámicas" class="galeria-img">
+                    <div class="galeria-content">
+                        <span class="galeria-title">Vistas Panorámicas</span>
+                        <span class="galeria-subtitle">Paisajes únicos e inolvidables de la selva</span>
+                    </div>
+                </div>
+                <div class="galeria-slide">
+                    <img src="images/china.webp" alt="Cultura y Sabores" class="galeria-img">
+                    <div class="galeria-content">
+                        <span class="galeria-title">Cultura y Sabores</span>
+                        <span class="galeria-subtitle">Experiencias gastronómicas y multiculturales locales</span>
+                    </div>
+                </div>
+                <div class="galeria-slide">
+                    <img src="images/dutty esta es.webp" alt="Duty Free Shop" class="galeria-img">
+                    <div class="galeria-content">
+                        <span class="galeria-title">Duty Free Shop</span>
+                        <span class="galeria-subtitle">Compras internacionales exclusivas libre de impuestos</span>
+                    </div>
+                </div>
+                <div class="galeria-slide">
+                    <img src="images/feirinha argentina esta es.webp" alt="Feirinha de Puerto Iguazú"
+                        class="galeria-img">
+                    <div class="galeria-content">
+                        <span class="galeria-title">Feirinha de Puerto Iguazú</span>
+                        <span class="galeria-subtitle">Sabores locales, olivas y quesos tradicionales</span>
+                    </div>
+                </div>
+                <div class="galeria-slide">
+                    <img src="images/kattamaram_2_opt.webp" alt="Paseo en Kattamaram" class="galeria-img">
+                    <div class="galeria-content">
+                        <span class="galeria-title">Paseo en Kattamaram</span>
+                        <span class="galeria-subtitle">Navegación inolvidable en el encuentro de los ríos</span>
+                    </div>
+                </div>
+                <div class="galeria-slide">
+                    <img src="images/museo de cera esta es.webp" alt="Dreamland Museo de Cera" class="galeria-img">
+                    <div class="galeria-content">
+                        <span class="galeria-title">Dreamland Museo de Cera</span>
+                        <span class="galeria-subtitle">Diversión para toda la familia con réplicas perfectas</span>
+                    </div>
+                </div>
+                <div class="galeria-slide">
+                    <img src="images/pda.webp" alt="Parque de las Aves" class="galeria-img">
+                    <div class="galeria-content">
+                        <span class="galeria-title">Parque de las Aves</span>
+                        <span class="galeria-subtitle">Contacto directo con la fauna y aves rescatadas</span>
+                    </div>
+                </div>
+                <div class="galeria-slide">
+                    <img src="images/usina hidrelectrica esta si.webp" alt="Itaipú Binacional" class="galeria-img">
+                    <div class="galeria-content">
+                        <span class="galeria-title">Itaipú Binacional</span>
+                        <span class="galeria-subtitle">Una de las mayores obras de ingeniería del planeta</span>
+                    </div>
+                </div>
+                <div class="galeria-slide">
+                    <img src="images/wonder park.webp" alt="Wonder Park Show" class="galeria-img">
+                    <div class="galeria-content">
+                        <span class="galeria-title">Wonder Park Show</span>
+                        <span class="galeria-subtitle">Espectáculos de luces y atracciones interactivas</span>
+                    </div>
+                </div>
+                <div class="galeria-slide">
+                    <img src="images/yup star.jpeg" alt="Yup Star Foz" class="galeria-img">
+                    <div class="galeria-content">
+                        <span class="galeria-title">Yup Star Foz</span>
+                        <span class="galeria-subtitle">Una de las ruedas de la fortuna más grandes de América
+                            Latina</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN GALERÍA DE FOTOS -->
-    <section id="galeria" class="galeria-franja">
-        <div class="galeria-overlay"></div>
-        <div class="galeria-slides-container" style="width: 100%; height: 100%; position: relative;">
-            <div class="galeria-slide active">
-                <img src="images/cataratas.jpg" alt="Cataratas del Iguazú" class="galeria-img">
-                <div class="galeria-content">
-                    <span class="galeria-title">Cataratas del Iguazú</span>
-                    <span class="galeria-subtitle">Una de las siete maravillas naturales del mundo</span>
-                </div>
+            <button class="galeria-nav-btn prev" aria-label="Anterior">&#x276E;</button>
+            <button class="galeria-nav-btn next" aria-label="Siguiente">&#x276F;</button>
+            <div class="galeria-dots">
+                <span class="galeria-dot active" data-index="0"></span>
+                <span class="galeria-dot" data-index="1"></span>
+                <span class="galeria-dot" data-index="2"></span>
+                <span class="galeria-dot" data-index="3"></span>
+                <span class="galeria-dot" data-index="4"></span>
+                <span class="galeria-dot" data-index="5"></span>
+                <span class="galeria-dot" data-index="6"></span>
+                <span class="galeria-dot" data-index="7"></span>
+                <span class="galeria-dot" data-index="8"></span>
+                <span class="galeria-dot" data-index="9"></span>
+                <span class="galeria-dot" data-index="10"></span>
+                <span class="galeria-dot" data-index="11"></span>
+                <span class="galeria-dot" data-index="12"></span>
             </div>
-            <div class="galeria-slide">
-                <img src="images/aeroporto esta.webp" alt="Traslados al Aeropuerto" class="galeria-img">
-                <div class="galeria-content">
-                    <span class="galeria-title">Traslados al Aeropuerto</span>
-                    <span class="galeria-subtitle">Puntualidad y confort 24/7 en la Triple Frontera</span>
-                </div>
-            </div>
-            <div class="galeria-slide">
-                <img src="images/templo_budista.webp" alt="Templo Budista Chen Tien" class="galeria-img">
-                <div class="galeria-content">
-                    <span class="galeria-title">Templo Budista Chen Tien</span>
-                    <span class="galeria-subtitle">Paz, meditación y espectaculares esculturas en Foz</span>
-                </div>
-            </div>
-            <div class="galeria-slide">
-                <img src="images/mezquita 1.png" alt="Mezquita Omar Ibn Al-Khattab" class="galeria-img"
-                    style="object-fit: contain; background-color: #050510;">
-                <div class="galeria-content">
-                    <span class="galeria-title">Mezquita Omar Ibn Al-Khattab</span>
-                    <span class="galeria-subtitle">Arquitectura islámica y riqueza cultural en el corazón de Foz</span>
-                </div>
-            </div>
-            <div class="galeria-slide">
-                <img src="images/cataratas_panorama.webp" alt="Vistas Panorámicas" class="galeria-img">
-                <div class="galeria-content">
-                    <span class="galeria-title">Vistas Panorámicas</span>
-                    <span class="galeria-subtitle">Paisajes únicos e inolvidables de la selva</span>
-                </div>
-            </div>
-            <div class="galeria-slide">
-                <img src="images/china.webp" alt="Cultura y Sabores" class="galeria-img">
-                <div class="galeria-content">
-                    <span class="galeria-title">Cultura y Sabores</span>
-                    <span class="galeria-subtitle">Experiencias gastronómicas y multiculturales locales</span>
-                </div>
-            </div>
-            <div class="galeria-slide">
-                <img src="images/dutty esta es.webp" alt="Duty Free Shop" class="galeria-img">
-                <div class="galeria-content">
-                    <span class="galeria-title">Duty Free Shop</span>
-                    <span class="galeria-subtitle">Compras internacionales exclusivas libre de impuestos</span>
-                </div>
-            </div>
-            <div class="galeria-slide">
-                <img src="images/feirinha argentina esta es.webp" alt="Feirinha de Puerto Iguazú" class="galeria-img">
-                <div class="galeria-content">
-                    <span class="galeria-title">Feirinha de Puerto Iguazú</span>
-                    <span class="galeria-subtitle">Sabores locales, olivas y quesos tradicionales</span>
-                </div>
-            </div>
-            <div class="galeria-slide">
-                <img src="images/kattamaram_2_opt.webp" alt="Paseo en Kattamaram" class="galeria-img">
-                <div class="galeria-content">
-                    <span class="galeria-title">Paseo en Kattamaram</span>
-                    <span class="galeria-subtitle">Navegación inolvidable en el encuentro de los ríos</span>
-                </div>
-            </div>
-            <div class="galeria-slide">
-                <img src="images/museo de cera esta es.webp" alt="Dreamland Museo de Cera" class="galeria-img">
-                <div class="galeria-content">
-                    <span class="galeria-title">Dreamland Museo de Cera</span>
-                    <span class="galeria-subtitle">Diversión para toda la familia con réplicas perfectas</span>
-                </div>
-            </div>
-            <div class="galeria-slide">
-                <img src="images/pda.webp" alt="Parque de las Aves" class="galeria-img">
-                <div class="galeria-content">
-                    <span class="galeria-title">Parque de las Aves</span>
-                    <span class="galeria-subtitle">Contacto directo con la fauna y aves rescatadas</span>
-                </div>
-            </div>
-            <div class="galeria-slide">
-                <img src="images/usina hidrelectrica esta si.webp" alt="Itaipú Binacional" class="galeria-img">
-                <div class="galeria-content">
-                    <span class="galeria-title">Itaipú Binacional</span>
-                    <span class="galeria-subtitle">Una de las mayores obras de ingeniería del planeta</span>
-                </div>
-            </div>
-            <div class="galeria-slide">
-                <img src="images/wonder park.webp" alt="Wonder Park Show" class="galeria-img">
-                <div class="galeria-content">
-                    <span class="galeria-title">Wonder Park Show</span>
-                    <span class="galeria-subtitle">Espectáculos de luces y atracciones interactivas</span>
-                </div>
-            </div>
-            <div class="galeria-slide">
-                <img src="images/yup star.jpeg" alt="Yup Star Foz" class="galeria-img">
-                <div class="galeria-content">
-                    <span class="galeria-title">Yup Star Foz</span>
-                    <span class="galeria-subtitle">Una de las ruedas de la fortuna más grandes de América Latina</span>
-                </div>
-            </div>
-        </div>
-        <button class="galeria-nav-btn prev" aria-label="Anterior">&#x276E;</button>
-        <button class="galeria-nav-btn next" aria-label="Siguiente">&#x276F;</button>
-        <div class="galeria-dots">
-            <span class="galeria-dot active" data-index="0"></span>
-            <span class="galeria-dot" data-index="1"></span>
-            <span class="galeria-dot" data-index="2"></span>
-            <span class="galeria-dot" data-index="3"></span>
-            <span class="galeria-dot" data-index="4"></span>
-            <span class="galeria-dot" data-index="5"></span>
-            <span class="galeria-dot" data-index="6"></span>
-            <span class="galeria-dot" data-index="7"></span>
-            <span class="galeria-dot" data-index="8"></span>
-            <span class="galeria-dot" data-index="9"></span>
-            <span class="galeria-dot" data-index="10"></span>
-            <span class="galeria-dot" data-index="11"></span>
-            <span class="galeria-dot" data-index="12"></span>
-        </div>
-    </section>
+        </section>
 
     </main>
 
@@ -2781,8 +2972,9 @@
                 class="btn-social btn-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>
         <p>© 2026 Trifoz Turismo • Guía Turístico Ebert • Foz de Iguazú</p>
-    
-        <p style="margin-top: 10px;">&copy; 2026 Trifoz Turismo. Todos los derechos reservados. Desarrollado con accesibilidad.</p>
+
+        <p style="margin-top: 10px;">&copy; 2026 Trifoz Turismo. Todos los derechos reservados. Desarrollado con
+            accesibilidad.</p>
     </footer>
 
     <!-- Librerías de animación GSAP y Draggable -->
