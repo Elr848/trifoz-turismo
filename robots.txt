@@ -5,5 +5,9 @@ Disallow: /.venv/
 Disallow: /scratch/
 Disallow: /__pycache__/
 Disallow: /.vs/
+Disallow: /3d-slider.html
+Disallow: /coverflow-xl.html
+Disallow: /index-pt.html
+Disallow: /index-en.html
 
 Sitemap: https://trifoz-turismo.com/sitemap.xml
