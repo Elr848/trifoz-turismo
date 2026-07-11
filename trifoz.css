@@ -873,11 +873,12 @@
             color: #fff;
             border: none;
             border-radius: 50px;
-            padding: 10px 22px;
-            gap: 10px;
-            flex-direction: row;
+            padding: 12px 22px;
+            gap: 12px;
             align-items: center;
             justify-content: center;
+            display: flex;
+            flex-direction: row;
             cursor: pointer;
             box-shadow: 0 6px 20px rgba(20, 178, 196, 0.4);
             font-family: 'Montserrat', sans-serif;
@@ -893,13 +894,11 @@
         }
 
         .booking-mobile-btn-label {
-            display: inline-flex;
+            display: flex;
             flex-direction: column;
             align-items: flex-start;
-            justify-content: center;
             line-height: 1.2;
             text-align: left;
-            white-space: normal;
         }
 
         .booking-mobile-btn-content {
