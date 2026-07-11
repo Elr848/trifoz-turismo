@@ -893,10 +893,13 @@
         }
 
         .booking-mobile-btn-label {
-            display: flex;
+            display: inline-flex;
             flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
             line-height: 1.2;
             text-align: left;
+            white-space: normal;
         }
 
         .booking-mobile-btn-content {
