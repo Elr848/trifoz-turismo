@@ -1064,7 +1064,7 @@
             border: none;
             border-radius: 50px;
             padding: 10px 22px;
-            gap: 8px;
+            gap: 10px;
             align-items: center;
             justify-content: center;
             cursor: pointer;
@@ -1074,9 +1074,15 @@
             font-weight: 900;
             text-transform: uppercase;
             min-width: 200px;
+            flex-direction: row;
         }
 
-        .booking-mobile-btn-label {
+        .booking-mobile-btn .fa-whatsapp {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .booking-mobile-btn-content {
             display: flex;
             flex-direction: column;
             line-height: 1.2;
@@ -1088,11 +1094,6 @@
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: none;
-        }
-
-        .booking-mobile-btn .fa-whatsapp {
-            position: absolute;
-            left: 22px;
         }
 
         .booking-overlay {
@@ -2507,9 +2508,9 @@
         </section>
 
         <button class="booking-mobile-btn" id="booking-mobile-trigger">
-            <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
-            <span class="booking-mobile-btn-label">
-                MÁS INFORMACIÓN
+            <i class="fab fa-whatsapp"></i>
+            <span class="booking-mobile-btn-content">
+                <span class="booking-mobile-btn-text">MÁS INFORMACIÓN</span>
                 <span class="booking-mobile-btn-phone">+55(45)933003337</span>
             </span>
         </button>

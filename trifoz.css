@@ -872,21 +872,24 @@
             background: linear-gradient(135deg, #14b2c4 0%, #0a8a99 100%);
             color: #fff;
             border: none;
-            border-radius: 999px;
-            padding: 10px 16px;
-            gap: 6px;
-            flex-direction: column;
+            border-radius: 50px;
+            padding: 10px 22px;
+            gap: 10px;
+            flex-direction: row;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             box-shadow: 0 6px 20px rgba(20, 178, 196, 0.4);
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.67rem;
+            font-size: 0.75rem;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.2px;
-            min-width: 150px;
-            min-height: 86px;
+            min-width: 200px;
+        }
+
+        .booking-mobile-btn .fa-whatsapp {
+            font-size: 1.4rem;
+            flex-shrink: 0;
         }
 
         .booking-mobile-btn-content {
@@ -894,26 +897,14 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            line-height: 1.05;
+            line-height: 1.2;
             text-align: center;
-            white-space: nowrap;
         }
 
         .booking-mobile-btn-phone {
-            font-size: 0.64rem;
+            font-size: 0.75rem;
             font-weight: 600;
             text-transform: none;
-            margin-top: 2px;
-        }
-
-        html[lang="es"] .booking-mobile-btn-content .booking-mobile-btn-text,
-        html[lang="pt"] .booking-mobile-btn-content .booking-mobile-btn-text {
-            white-space: nowrap;
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 900;
-            line-height: 1;
-            padding: 0 4px;
         }
 
         .booking-overlay {
