@@ -892,6 +892,13 @@
             flex-shrink: 0;
         }
 
+        .booking-mobile-btn-label {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+            text-align: left;
+        }
+
         .booking-mobile-btn-content {
             display: flex;
             flex-direction: column;
