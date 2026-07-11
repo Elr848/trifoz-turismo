@@ -896,7 +896,7 @@
             justify-content: center;
             line-height: 1.05;
             text-align: center;
-            white-space: normal;
+            white-space: nowrap;
         }
 
         .booking-mobile-btn-phone {
@@ -905,11 +905,11 @@
             text-transform: none;
             margin-top: 2px;
         }
-        /* Force label text into a single line for Spanish and Portuguese mobile pages */
+
         html[lang="es"] .booking-mobile-btn-content .booking-mobile-btn-text,
         html[lang="pt"] .booking-mobile-btn-content .booking-mobile-btn-text {
             white-space: nowrap;
-            display: block;
+            display: inline-block;
             font-size: 0.75rem;
             font-weight: 900;
             line-height: 1;
