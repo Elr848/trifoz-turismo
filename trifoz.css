@@ -873,30 +873,34 @@
             color: #fff;
             border: none;
             border-radius: 50px;
-            padding: 10px 22px;
-            gap: 8px;
+            padding: 10px 14px;
+            gap: 7px;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             box-shadow: 0 6px 20px rgba(20, 178, 196, 0.4);
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.75rem;
+            font-size: 0.67rem;
             font-weight: 900;
             text-transform: uppercase;
+            letter-spacing: 0.2px;
         }
 
         .booking-mobile-btn-label {
             display: flex;
             flex-direction: column;
-            line-height: 1.2;
-            text-align: left;
-            white-space: nowrap;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.1;
+            text-align: center;
+            white-space: normal;
         }
 
         .booking-mobile-btn-phone {
-            font-size: 0.75rem;
+            font-size: 0.64rem;
             font-weight: 600;
             text-transform: none;
+            margin-top: 2px;
         }
 
         .booking-overlay {
