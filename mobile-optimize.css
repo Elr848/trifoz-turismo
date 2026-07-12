@@ -1,0 +1,154 @@
+/* ==========================================================================
+   MOBILE OPTIMIZATION CSS - Trifoz Turismo
+   Optimizado para modo escritorio en móviles y velocidad
+   ========================================================================== */
+
+/* ===== DETECTAR MODO ESCRITORIO EN MÓVILES ===== */
+@media (pointer: coarse) and (min-width: 769px) {
+    /* Desactivar animaciones pesadas */
+    .fire-wrapper,
+    .fire-wrapper::before,
+    .btn-libras-premium::before,
+    .bg-text-back {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    /* Optimizar carrusel 3D */
+    .slider-container-3d {
+        min-height: 400px !important;
+        margin: 10px 0 !important;
+    }
+    
+    .carousel-viewport-3d {
+        height: 300px !important;
+        padding-top: 10px !important;
+    }
+    
+    .card-item-3d {
+        -webkit-box-reflect: none !important;
+        filter: none !important;
+    }
+    
+    /* Reducir efectos de sombra */
+    .card-back,
+    .hero-container,
+    .booking-bar {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+    }
+    
+    /* Optimizar texto */
+    .card-back-header h4 {
+        font-size: 1.2rem !important;
+    }
+    
+    .card-back-desc {
+        font-size: 0.9rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    /* Aumentar zonas táctiles */
+    .card-btn-action {
+        padding: 10px 18px !important;
+        min-height: 44px !important;
+    }
+    
+    .nav-btn-3d-cf {
+        width: 44px !important;
+        height: 44px !important;
+    }
+}
+
+/* ===== OPTIMIZACIONES GENERALES MÓVIL ===== */
+@media (max-width: 1023px) {
+    /* Mejorar rendimiento de scroll */
+    body {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-y: contain;
+    }
+    
+    /* Desactivar will-change excesivo */
+    .card-item-3d,
+    .carousel-3d-wrapper,
+    .bg-text-back {
+        will-change: auto;
+    }
+    
+    /* Optimizar imágenes */
+    .card-image img,
+    .card-back {
+        image-rendering: -webkit-optimize-contrast;
+    }
+    
+    /* Reducir animaciones en batería baja */
+    @media (prefers-reduced-motion: reduce) {
+        .fire-wrapper,
+        .fire-wrapper::before,
+        .bg-text-back {
+            animation: none !important;
+        }
+    }
+}
+
+/* ===== AJUSTES PARA PANTALLAS PEQUEÑAS ===== */
+@media (max-width: 480px) {
+    .slider-container-3d {
+        min-height: 380px !important;
+    }
+    
+    .carousel-viewport-3d {
+        height: 280px !important;
+    }
+    
+    .bg-text-back {
+        font-size: 3rem !important;
+        letter-spacing: 4px !important;
+    }
+    
+    .card-back {
+        padding: 12px 14px !important;
+    }
+    
+    .card-back-header h4 {
+        font-size: 0.95rem !important;
+    }
+    
+    .card-back-desc {
+        font-size: 0.75rem !important;
+        line-height: 1.25 !important;
+        margin: 6px 0 !important;
+    }
+    
+    .active-title-3d {
+        font-size: 1.1rem !important;
+    }
+    
+    .active-subtitle-3d {
+        font-size: 0.75rem !important;
+    }
+}
+
+/* ===== MODO ESCRITORIO FORZADO EN MÓVIL ===== */
+@media (pointer: coarse) and (min-width: 1024px) {
+    /* Ajustes específicos para tablets en modo escritorio */
+    .hero-background {
+        object-position: center 30%;
+    }
+    
+    .fire-wrapper {
+        margin-top: 70px !important;
+        max-width: 850px !important;
+    }
+    
+    .hero-container {
+        padding: 25px 35px !important;
+    }
+    
+    .booking-bar-wrapper {
+        bottom: 20px !important;
+    }
+    
+    .booking-bar {
+        padding: 8px 8px 8px 18px !important;
+    }
+}
