@@ -422,6 +422,77 @@
             width: 100%;
         }
 
+        /* BARRA DE BOTONES HORIZONTAL (ESTILO VERSIÓN PORTUGUÉS) */
+        .horizontal-button-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            width: 90%;
+            max-width: 850px;
+            margin: 30px auto 40px auto;
+            flex-wrap: wrap;
+        }
+
+        .btn-horizontal-bar {
+            flex: 1;
+            min-width: 150px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(12, 10, 26, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1.5px solid rgba(0, 210, 255, 0.4);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .btn-horizontal-bar i {
+            color: #00d2ff;
+            font-size: 1.1rem;
+        }
+
+        .btn-horizontal-bar img {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+
+        .btn-horizontal-bar:hover {
+            background: rgba(0, 210, 255, 0.35);
+            border-color: rgba(224, 160, 255, 0.8);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 210, 255, 0.4);
+        }
+
+        @media (max-width: 580px) {
+            .horizontal-button-bar {
+                flex-direction: column;
+                gap: 12px;
+                width: 95%;
+            }
+
+            .btn-horizontal-bar {
+                width: 100%;
+            }
+        }
+
         /* Exclusivo para celulares con Modo Escritorio activado */
         @media (pointer: coarse) and (min-width: 769px) {
             .card-overlay-text {
@@ -488,99 +559,6 @@
             margin-top: 10px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7) !important;
-        }
-
-        .btn-libras-premium {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 45px;
-            padding: 0px 18px;
-            border-radius: 10px;
-            background: linear-gradient(145deg, #ffffff, #f0f4f8) !important;
-            color: #1a2a3a;
-            text-decoration: none;
-            font-weight: 900;
-            border: 1px solid #c2cbd6;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.7);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-libras-premium::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -150%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-            animation: metal-shimmer 4s infinite linear;
-            pointer-events: none;
-        }
-
-        @keyframes metal-shimmer {
-            0% {
-                left: -150%;
-            }
-
-            30% {
-                left: 150%;
-            }
-
-            100% {
-                left: 150%;
-            }
-        }
-
-        .btn-libras-premium:hover {
-            transform: scale(1.02) translateY(-3px);
-            background: linear-gradient(145deg, #f0f4f8, #e2eaf0) !important;
-            box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.15), -3px -3px 8px rgba(255, 255, 255, 0.8);
-            color: #002366;
-        }
-
-        .libras-icon-img {
-            width: auto !important;
-            height: 65px !important;
-            mix-blend-mode: multiply;
-            border-radius: 10px 0 0 10px;
-        }
-
-        .libras-text-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .libras-pt {
-            font-size: clamp(0.75rem, 1.8vw, 1.1rem);
-            color: #002366;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 2px;
-        }
-
-        .libras-en {
-            font-size: clamp(0.5rem, 1.2vw, 0.75rem);
-            color: #4b6584;
-            font-weight: 700;
-            opacity: 0.8;
-        }
-
-        .libras-video-text {
-            font-size: clamp(0.65rem, 1.5vw, 0.95rem);
-            margin-top: 5px;
-            font-weight: 900;
-            color: #cc0000;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 5px;
         }
 
         .grid-attractions,
@@ -829,17 +807,6 @@
         }
 
         @media (max-width: 768px) {
-            .btn-libras-premium {
-                padding: 8px 16px;
-                font-size: 0.78rem;
-                margin-bottom: 20px;
-                width: 95%;
-            }
-
-            .libras-icon-img {
-                height: 60px !important;
-            }
-
             footer {
                 padding: 28px 16px;
             }
@@ -1583,15 +1550,21 @@
            ========================================================================== */
         .slider-container-3d {
             position: relative;
-            width: 100%;
+            width: 95%;
+            max-width: 1200px;
+            margin: 15px auto 40px auto;
+            border-radius: 24px;
             min-height: 600px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            background: radial-gradient(circle at center, rgba(12, 10, 26, 0.6) 0%, transparent 80%);
-            margin: 40px 0;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.25) 0%, rgba(240, 248, 255, 0.4) 60%, rgba(220, 235, 245, 0.5) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1.5px solid rgba(255, 255, 255, 0.45);
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4), 0 15px 35px rgba(0, 35, 102, 0.08);
             z-index: 5;
             padding: 20px 0 40px 0;
         }
@@ -1648,24 +1621,27 @@
             perspective: 1000px;
         }
 
-        /* Cara del carrusel 3D (Estilo consola del mockup) */
+        /* Cara del carrusel 3D (Estilo oscuro metalizado profesional) */
         .card-back {
             width: 100%;
             height: 100%;
             border-radius: 20px;
             overflow: hidden;
-            background: rgba(12, 10, 26, 0.85); /* Fondo oscuro translúcido */
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: clamp(16px, 4vw, 24px) clamp(14px, 3.5vw, 20px);
-            border: 1.5px solid rgba(0, 210, 255, 0.35); /* Borde cian sutil por defecto */
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.1), inset 0 0 20px rgba(186, 104, 200, 0.08);
+            padding: 0;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+            background-position: center center !important;
+            background-color: #0b0d19 !important;
+            border: 2px solid rgba(255, 255, 255, 0.15) !important;
+            box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1), inset 0 -2px 5px rgba(0, 0, 0, 0.8), 0 10px 25px rgba(0, 0, 0, 0.75) !important;
             color: #fff;
             text-align: left;
-            transition: border-color 0.4s, box-shadow 0.4s;
+            transition: all 0.4s ease;
         }
 
         /* Resplandor especial para la tarjeta central activa */
@@ -1674,8 +1650,8 @@
         }
 
         .card-item-3d.is-active .card-back {
-            border-color: rgba(186, 104, 200, 0.85); /* Borde morado brillante para la tarjeta activa */
-            box-shadow: 0 0 30px rgba(186, 104, 200, 0.35), 0 15px 45px rgba(0, 0, 0, 0.5);
+            border-color: #00d2ff !important;
+            box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.25), inset 0 -2px 8px rgba(0, 210, 255, 0.4), 0 0 30px rgba(0, 210, 255, 0.6), 0 15px 45px rgba(0, 0, 0, 0.7) !important;
         }
 
         /* Estilo del contenido trasero de la tarjeta */
@@ -1736,7 +1712,7 @@
 
         .card-back-footer {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding-top: clamp(6px, 1.5vw, 10px);
@@ -1756,7 +1732,7 @@
         }
 
         .card-btn-action {
-            background: linear-gradient(135deg, #00d2ff 0%, #ba68c8 100%);
+            background: linear-gradient(135deg, #00d2ff 0%, #e0a0ff 100%);
             border: none;
             color: #fff;
             padding: clamp(5px, 1.5vw, 7px) clamp(10px, 2.5vw, 15px);
@@ -1817,11 +1793,12 @@
         }
 
         .active-subtitle-3d {
-            font-size: clamp(0.8rem, 2vw, 0.95rem);
-            color: #ba68c8; /* Púrpura elegante */
+            font-size: clamp(0.85rem, 2vw, 1.05rem);
+            color: #5c00d2;
             margin: 0;
-            font-weight: 500;
+            font-weight: 700;
             letter-spacing: 0.5px;
+            text-shadow: 0 0 8px rgba(92, 0, 210, 0.15);
         }
 
         /* Controles laterales flotantes */
@@ -1901,7 +1878,7 @@
         @media (max-width: 768px) {
             .slider-container-3d {
                 min-height: 480px;
-                margin: 20px 0;
+                margin: 20px auto;
                 padding: 10px 0 20px 0;
             }
             .carousel-viewport-3d {
@@ -1909,7 +1886,22 @@
                 padding-top: 15px;
             }
             .nav-btn-container-3d {
-                display: none; /* Ocultar flechas en móvil para dar espacio al gesto swipe */
+                display: flex;
+                width: 100%;
+                max-width: 100%;
+                top: 35%;
+                transform: translateY(-50%);
+                padding: 0 10px;
+                box-sizing: border-box;
+            }
+            .nav-btn-3d-cf {
+                width: 42px;
+                height: 42px;
+                background: rgba(12, 10, 26, 0.9);
+            }
+            .nav-btn-3d-cf svg {
+                width: 16px;
+                height: 16px;
             }
             .active-info-container {
                 margin-top: 20px;
@@ -2135,16 +2127,13 @@
     </div>
 
     <section class="attractions">
-        <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer"
-            class="btn-libras-premium">
-            <img src="images/una.jpeg" width="240" height="170" alt="Atendemos en LIBRAS" class="libras-icon-img"
-                loading="lazy">
-            <div class="libras-text-wrapper">
-                <span class="libras-pt" style="color: #002366;">Atendemos en LIBRAS</span>
-                <span class="libras-en">Lengua de Señas • Sign Language</span>
-                <span class="libras-video-text"><i class="fas fa-play-circle"></i> Ver video</span>
-            </div>
-        </a>
+        <div class="horizontal-button-bar">
+            <a href="https://www.youtube.com/shorts/Ulz_WJArmqA" target="_blank" rel="noopener noreferrer"
+                class="btn-horizontal-bar" aria-label="Atendemos en LIBRAS">
+                <img loading="lazy" src="images/libras_hd.png" alt="LIBRAS">
+                <span>LIBRAS</span>
+            </a>
+        </div>
 
         <div style="text-align: center; margin-bottom: 40px; padding: 0 20px;">
             <h2 class="subtitulo-amarillo" style="font-size: clamp(1.4rem, 6vw, 2.2rem); margin-bottom: 5px;">
